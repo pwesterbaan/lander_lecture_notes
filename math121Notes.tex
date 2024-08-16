@@ -1,0 +1,59 @@
+\documentclass[mathNotesPreamble]{subfiles}
+%% Externalize graphics and save in ./images/ folder
+%% pdflatex --shell-escape <tex file>
+%% The document can be compiled with the two following
+%% lines commented out, but will recompile all figures
+%% each time.
+\usetikzlibrary{external}
+\tikzexternalize[prefix=images/]
+\begin{document}
+  \makeatletter
+  \title{Math 121 Class notes\\[0.25\baselineskip]Fall 2024}
+  \author{Peter Westerbaan}
+
+  \pagestyle{headandfoot}
+
+  %\firstpageheader{\@title\\\@date}{}{Math 1040}
+  %\firstpageheadrule
+
+  \newcommand{\currentname}{\@currentlabelname}
+
+  \runningfootrule
+  \runningfooter{\parbox{0.45\linewidth}{\currentname}}{\thepage}{\@title}
+  \makeatother
+
+  %% Title
+  \pagenumbering{roman}
+  \vspace*{\stretch{1}}
+  \begin{center}
+    \makeatletter
+    {\huge
+    \@title}\\[\baselineskip]
+    \@author\\[\baselineskip]
+    Last updated:
+    \@date\\
+    \makeatother
+  \end{center}
+  \vspace*{\stretch{1}}
+  \thispagestyle{empty}
+  \pagebreak
+  \pagestyle{headandfoot}
+
+  \renewcommand{\contentsname}{Table Of Contents}
+  \renewcommand\thesection{}
+  \tableofcontents
+  \newpage
+  
+  \makeatletter
+  \firstpageheader{}{}{}
+  \firstpagefooter{\parbox{0.45\linewidth}{\currentname}}{\thepage}{\@title}
+  \firstpagefootrule
+  \makeatother
+  \pagenumbering{arabic}
+  \setcounter{page}{1}
+  %% everything else
+
+  \relscale{1.4}
+
+%  \subfile{subfiles/}
+\end{document}
