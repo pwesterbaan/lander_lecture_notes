@@ -1,5 +1,5 @@
 # Lander Lecture Notes
-This repository contains notes to be used for while lecturing at Lander University.
+This repository contains notes to be used while lecturing at Lander University.
 
 The main files are `math???Notes.{pdf,tex}` which inherit their styling from `mathNotesPreamble.tex`. The `subfile` package is used to import each section's source file, contained in the `subfiles` directory, into the main `math???Notes.tex` file.
 
