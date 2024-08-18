@@ -3,7 +3,7 @@
 \begin{document}
 %\relscale{1.4} %TODO
   \section{1.1: Solutions of Linear Equations and Inequalities in One Variable}
-  \begin{defn*}[Functions]
+  \begin{defn*}
     A \textbf{function} $f$ is a special relation between $x$ and $y$ such that each input $x$ results in \emph{at most} one $y$. The symbol $f(x)$ is read ``$f$ of $x$'' and is called the \textbf{value of $f$ at $x$}
   \end{defn*}
   \vspace*{0\baselineskip}
@@ -84,7 +84,7 @@
         \item[Addition Property:] The equation formed by adding the same quantity to both sides of an equation is equivalent to the original equation:
           \begin{align*}
             x-4&=6 & x+5&=12\\
-            x-4+4&=6+4& x+5+(-5)&=12+(-5)\\
+            x-4\textcolor{red}{+4}&=6\textcolor{red}{+4}& x+5\textcolor{lander_blue}{+(-5)}&=12\textcolor{lander_blue}{+(-5)}\\
             x&=10& x&=7
           \end{align*}
         \item[Multiplication Property:] The equation formed by multiplying both sides of an equation by the same \emph{nonzero} quantity is equivalent to the original equation:
@@ -103,13 +103,13 @@
     \fbox{\parbox{0.9875\linewidth}{
       Using the properties of equality above, we can solve any linear equation in $1$ variable:
       \begin{ex*}
-        Solve $\frac{3x}{4}+3=\frac{x-1}{3}$
+        Solve $\displaystyle\frac{3x}{4}+3=\frac{x-1}{3}$
         \begin{align*}
           &\textnormal{1. Eliminate fractions:}& 12\parens{\frac{3x}{4}+3}&=12\parens{\frac{x-1}{3}}\\
           &\textnormal{2. Remove/evaluate parenthesis:}& 9x+36&=4x-4\\
-          &\textnormal{\parbox{0.45\linewidth}{3. Use addition property to isolate the variable to one side:}}& 9x+36\textcolor{red}{-36}\textcolor{blue}{-4x}&=4x-4\textcolor{red}{-36}\textcolor{blue}{-4x}\\
+          &\textnormal{\parbox{0.45\linewidth}{3. Use addition property to isolate the variable to one side:}}& 9x+36\textcolor{red}{-36}\textcolor{lander_blue}{-4x}&=4x-4\textcolor{red}{-36}\textcolor{lander_blue}{-4x}\\
           &\textnormal{4. Use multiplication property to isolate variable:}& \frac{5x}{5}&=\frac{-40}{5}\\
-          &\textnormal{5. Verify solution via substitution:}& \underbrace{\frac{3(\textcolor{blue}{-8})}{4}+3}_{\textstyle -6+3=-3}&\overset{?}{=}\underbrace{\frac{(\textcolor{blue}{-8})-1}{3}}_{\textstyle \frac{-9}{3}=-3}\\
+          &\textnormal{5. Verify solution via substitution:}& \underbrace{\frac{3(\textcolor{lander_blue}{-8})}{4}+3}_{\textstyle -6+3=-3}&\overset{?}{=}\underbrace{\frac{(\textcolor{lander_blue}{-8})-1}{3}}_{\textstyle \frac{-9}{3}=-3}\\
         \end{align*}
       \end{ex*}
     }}
@@ -118,9 +118,100 @@
   \begin{ex*}
     Solve the following:
     \begin{extasks}[after-item-skip=\stretch{1}](2)
-      \task $\frac{3x+1}{2}=\frac{x}{3}-3$
-      \task $\frac{2x-1}{x-3}=4+\frac{5}{x-3}$
+      \task $\displaystyle\frac{3x+1}{2}=\frac{x}{3}-3$
+      \task $\displaystyle\frac{2x-1}{x-3}=4+\frac{5}{x-3}$
     \end{extasks}
   \end{ex*}
+  \pagebreak
   %TODO Pick up on page 23 in Trevor's notes/ page 56 in text
+
+  \begin{ex*}
+    Solve $-2x+6y=4$ for $y$
+    \begin{flushright}
+      \vspace*{-1\baselineskip}
+      \begin{tikzpicture}[scale=1.0, declare function={
+        f(\x)=x/3+2/3;}]
+        \begin{axis}[
+          axis lines=center,
+          axis line style={black,->},
+          xmin=-2, xmax=6,
+          enlargelimits={abs=0.75},
+          ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+          xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+          ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+          every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}
+          ]
+          \addplot[<->,domain=-2.5:6] {f(x)};
+        \end{axis}
+      \end{tikzpicture}
+    \end{flushright}
+  \end{ex*}
+
+  \begin{ex*}
+    Suppose that the relationship between a firm's profit, $P$, and the number of items sold, $x$, can be described by the equation
+      \[5x-4P=1200\]
+    \begin{tasks}[after-item-skip=\stretch{1}](1)
+      \task How many units must be produced and sold for the firm to make a profit of \$$150$?
+      \task Solve this equation for $P$ in terms of $x$. Then, find the profit when $240$ units are sold.
+    \end{tasks}
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{defn*}
+    An \textbf{inequality} is a statement that one quantity is greater than (or less than) another quantity. 
+  \end{defn*}
+  
+  \noindent\textbf{Properties of Inequalities}
+  \begin{center}
+    \fbox{\parbox{0.9875\linewidth}{
+      \begin{description}
+        \item[Substitution Property:] The inequality formed by substituting one expression for an equal expression is equivalent to the original inequality:
+          \begin{align*}
+            5x-4x+2&<6\\
+            x&<4\quad
+            \Rightarrow \textnormal{The solution set is } \set{x: x<6}
+          \end{align*}
+        \item[Addition Property:] The inequality formed by adding the same quantity to both sides of an inequality is equivalent to the original inequality:
+          \begin{align*}
+            x-4&<6 & x+5&\geq12\\
+            x-4\textcolor{red}{+4}&<6\textcolor{red}{+4}& x+5\textcolor{lander_blue}{+(-5)}&\geq 12\textcolor{lander_blue}{+(-5)}\\
+            x&<10& x&\geq 7
+          \end{align*}
+        \item[Multiplication Property] The inequality formed by multiplying both sides of an inequality by the same \emph{positive} quantity is equivalent to the original inequality. The direction of the inequality is flipped when multiplying by a \emph{negative} quantity:
+          \begin{align*}
+            \frac{1}{3}x&>6 & 5x-5&\leq6x+20\\
+            3\parens{\frac{1}{3}x}&>3(6) & -x&\leq 25\\
+            x&>18& x&\geq-25
+          \end{align*}
+      \end{description}
+    }}
+  \end{center}
+  \pagebreak
+  
+  \begin{ex*}
+    Solve 
+      \[-x+8\leq 2x-4\]
+    first by gathering the $x$ variable on the left, then again on the right. See that the multiplication property holds in both cases.
+    \begin{flushright}
+      \begin{tikzpicture}[scale=1.0, declare function={
+        f(\x)=-x+8;
+        g(\x)=2*x-4;}]
+        \begin{axis}[
+          axis lines=center,
+          axis line style={black,->},
+          xmin=-2, xmax=6,
+          ymin=-2,
+          enlargelimits={abs=0.75},
+          ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+          xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+          ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+          every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}
+          ]
+          \addplot[<->,domain=-2:6] {f(x)};
+          \addplot[<->, red, domain=1:6] {g(x)};
+        \end{axis}
+      \end{tikzpicture}
+    \end{flushright}
+  \end{ex*}
 \end{document}
