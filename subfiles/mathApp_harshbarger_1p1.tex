@@ -1,0 +1,126 @@
+\documentclass[../mathNotesPreamble]{subfiles}
+
+\begin{document}
+%\relscale{1.4} %TODO
+  \section{1.1: Solutions of Linear Equations and Inequalities in One Variable}
+  \begin{defn*}[Functions]
+    A \textbf{function} $f$ is a special relation between $x$ and $y$ such that each input $x$ results in \emph{at most} one $y$. The symbol $f(x)$ is read ``$f$ of $x$'' and is called the \textbf{value of $f$ at $x$}
+  \end{defn*}
+  \vspace*{0\baselineskip}
+  \begin{ex*}
+    Let $f(x)=\frac{x^2}{2}+x$. Evaluate the following:
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $f\parens{1}$
+      \task $f\parens{\frac{1}{2}}$
+      \task $f\parens{-2}$
+      \task $f\parens{0}$
+      \task $f\parens{f(x)}$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+
+  \noindent\textbf{Composite Functions:}
+
+  \noindent\fbox{\parbox{0.9875\linewidth}{
+  Let $f$ and $g$ be functions of $x$. Then, the \textbf{composite functions} $g$ of $f$ (denoted $g\circ f$) and $f$ of $g$ (denoted $f\circ g$) are defined as:
+  \begin{align*}
+    (g\circ f)(x)&=g\parens{f(x)}\\
+    (f\circ g)(x)&=f\parens{g(x)}
+  \end{align*}
+  }}
+  \begin{ex*}
+    Let $g=x-1$. Find:
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $\parens{g\circ f}(x)$
+      \task $\parens{f\circ g}(x)$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  
+  \pagebreak
+  \noindent\textbf{Operations with Functions:}
+
+  \noindent\fbox{\parbox{0.9875\linewidth}{
+  Let $f$ and $g$ be functions of $x$ and define the following:\\[\baselineskip]
+  \begin{tabularx}{0.7\linewidth}{*{2}{X}}
+    Sum& $(f+g)(x)=f(x)+g(x)$\\
+    Difference& $(f-g)(x)=f(x)-g(x)$\\
+    Product& $(f\cdot g)(x)=f(x)\cdot g(x)$\\
+    Quotient& $\parens{\frac{f}{g}}(x)=\frac{f(x)}{g(x)}$ if $g(x)\neq 0$
+  \end{tabularx}
+  }}
+
+  \vspace*{\stretch{1}}
+  \begin{defn*}
+    An \textbf{expression} is a meaningful string of numbers, variables and operations:
+      \[3x-2\]
+    An \textbf{equation} is a statement that two quantities or algebraic expressions are equal:
+      \[3x-2=7\]
+    A \textbf{solution} is a value of the variable that makes the equation true:
+      \begin{align*}
+        3(3)-2&=7\\
+        9-2&=7\\
+        7&=7
+      \end{align*}
+    A \textbf{solution set} is the set of ALL possible solutions of an equation:
+      \begin{enumerate}[label=]
+        \item $3x-2=7$ only has the solution $x=3$,
+        \item $2(x-1)=2x-2$ is true for all possible values of $x$.
+      \end{enumerate} \vspace*{-0.5\baselineskip}
+  \end{defn*}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \noindent\textbf{Properties of Equality:}
+  \begin{center}
+    \fbox{\parbox{0.9875\linewidth}{
+      \begin{description}
+        \item[Substitution Property:] The equation formed by substituting one expression for an equal expression is equivalent to the original equation:
+          \begin{align*}
+            3(x-3)-\frac{1}{2}(4x-18)&=4\\
+            3x-9-2x+9&=4\\
+            x&=4
+          \end{align*}
+        \item[Addition Property:] The equation formed by adding the same quantity to both sides of an equation is equivalent to the original equation:
+          \begin{align*}
+            x-4&=6 & x+5&=12\\
+            x-4+4&=6+4& x+5+(-5)&=12+(-5)\\
+            x&=10& x&=7
+          \end{align*}
+        \item[Multiplication Property:] The equation formed by multiplying both sides of an equation by the same \emph{nonzero} quantity is equivalent to the original equation:
+          \begin{align*}
+            \frac{1}{3}x&=6 & 5x&=20\\
+            3\parens{\frac{1}{3}x}&=3(6) & \frac{5x}{5}&=\frac{20}{5}\\
+            x&=18& x&=4
+          \end{align*}
+      \end{description}
+    }}
+  \end{center}
+  \pagebreak
+  
+  \noindent\textbf{Solving a linear equation:}
+  \begin{center}
+    \fbox{\parbox{0.9875\linewidth}{
+      Using the properties of equality above, we can solve any linear equation in $1$ variable:
+      \begin{ex*}
+        Solve $\frac{3x}{4}+3=\frac{x-1}{3}$
+        \begin{align*}
+          &\textnormal{1. Eliminate fractions:}& 12\parens{\frac{3x}{4}+3}&=12\parens{\frac{x-1}{3}}\\
+          &\textnormal{2. Remove/evaluate parenthesis:}& 9x+36&=4x-4\\
+          &\textnormal{\parbox{0.45\linewidth}{3. Use addition property to isolate the variable to one side:}}& 9x+36\textcolor{red}{-36}\textcolor{blue}{-4x}&=4x-4\textcolor{red}{-36}\textcolor{blue}{-4x}\\
+          &\textnormal{4. Use multiplication property to isolate variable:}& \frac{5x}{5}&=\frac{-40}{5}\\
+          &\textnormal{5. Verify solution via substitution:}& \underbrace{\frac{3(\textcolor{blue}{-8})}{4}+3}_{\textstyle -6+3=-3}&\overset{?}{=}\underbrace{\frac{(\textcolor{blue}{-8})-1}{3}}_{\textstyle \frac{-9}{3}=-3}\\
+        \end{align*}
+      \end{ex*}
+    }}
+  \end{center}
+  
+  \begin{ex*}
+    Solve the following:
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $\frac{3x+1}{2}=\frac{x}{3}-3$
+      \task $\frac{2x-1}{x-3}=4+\frac{5}{x-3}$
+    \end{extasks}
+  \end{ex*}
+  %TODO Pick up on page 23 in Trevor's notes/ page 56 in text
+\end{document}

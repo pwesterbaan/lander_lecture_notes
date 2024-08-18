@@ -1,3 +1,6 @@
+texPreamble.sty
+texShortcutsWesterbaan.tex
+## .gitignore tex template
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
