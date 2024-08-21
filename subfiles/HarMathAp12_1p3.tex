@@ -1,6 +1,168 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-\relscale{1.4} %TODO
-  \section{1.3 }
+%\relscale{1.4} %TODO
+  \section{1.3 Linear Functions}
+    \begin{defn*}
+      A \textbf{linear function} is a function of the form
+        \[y=f(x)=ax+b\]
+      where $a$ and $b$ are constants.
+    \end{defn*}
+
+    \noindent
+%    \begin{minipage}[t]{0.5\linewidth}
+      \begin{ex*}
+        $y=-2x+8$
+      \end{ex*}
+      \vspace*{-\baselineskip}
+%    \end{minipage}%
+%    \begin{minipage}[t]{0.5\linewidth}
+      \begin{flushright}
+        \begin{tikzpicture}[scale=1.0, declare function={
+          f(\x)=-2*x+8;}]
+          \begin{axis}[
+            axis lines=center,
+            axis line style={black,->},
+%            xmin=-2, xmax=6,
+%            ymin=-2,
+            enlargelimits={abs=0.75},
+            ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+            xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+            ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+            every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}
+            ]
+            \addplot[<->,domain=-1:5] {f(x)};
+            \addplot[soldot, lander_blue] coordinates{(0,8)} node[above right] {$(0,8)$};
+            \addplot[soldot, lander_blue] coordinates{(4,0)} node[above right] {$(4,0)$};
+          \end{axis}
+        \end{tikzpicture}
+      \end{flushright}
+%    \end{minipage}
+
+    \begin{center}
+      A linear function can be uniquely determined using only \emph{two} distinct points.
+    \end{center}
+    \begin{defn*}
+      The point(s) where a graph intersects the axes are called intercepts. The $x$-coordinate of the point where the function intersects the $x$-axis is called the \textbf{$x$-intercepts}. The $y$-coordinate of the point where the function intersects the $x$-axis is called the \textbf{$y$-intercepts}.
+    \end{defn*}
+    \begin{tasks}[label=\textbullet](2)
+      \task To solve for the $y$-intercept:
+        \begin{itemize}
+          \item Set $x=0$,
+          \item Solve for $y$.
+        \end{itemize}
+      \task To solve for the $x$-intercept:
+        \begin{itemize}
+          \item Set $y=0$,
+          \item Solve for $x$.
+        \end{itemize}
+    \end{tasks}
+    \pagebreak
+
+    \begin{ex*}
+      Find the intercepts and graph the following lines:
+      \begin{extasks}[after-item-skip=\stretch{1}](2)
+        \task $3x+2y=12$\\
+        \task $x=4y$
+        \task
+          \begin{tikzpicture}[scale=1.0, declare function={
+            f(\x)=-1.5*\x+6;}]
+            \begin{axis}[
+              axis lines=center,
+              axis line style={black,->},
+              enlargelimits={abs=0.75},
+              ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+              xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+              ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+              every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}
+              ]
+              \addplot[draw=none,<->] expression[domain=-1:5]{f(x)};
+            \end{axis}
+          \end{tikzpicture}
+        \task
+          \begin{tikzpicture}[scale=1.0, declare function={
+            f(\x)=0.25*\x;}]
+            \begin{axis}[
+              axis lines=center,
+              axis line style={black,->},
+              enlargelimits={abs=0.75},
+              ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+              xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+              ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+              every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}
+              ]
+              \addplot[draw=none,<->] expression[domain=-4:4]{f(x)};
+            \end{axis}
+          \end{tikzpicture}
+      \end{extasks}
+    \end{ex*}
+    \pagebreak
+
+    \begin{defn*}
+      If a nonvertical line passes through the points $P_1(x_1,y_1)$ and $P_2(x_2,y_2)$, its \textbf{slope}, denoted by $m$, is found using
+        \[m=\frac{y_2-y_1}{x_2-x_1}=\frac{\Delta y}{\Delta x}\]
+      $\Delta y$ is ``delta $y$'', and represents the change in $y$\newline
+      $\Delta x$ is ``delta $x$'', and represents the change in $x$
+    \end{defn*}
+    \emph{Note:} The slope of a vertical line is undefined.
+    \begin{ex*}
+      Find the slope of the line passing through the points $(-2,1)$ and $(5,3)$.
+    \end{ex*}
+    \vspace*{\stretch{1}}
+    \noindent
+    \fbox{\parbox{0.9875\linewidth}{
+      \emph{Note:}
+      \begin{itemize}
+        \item Two distinct nonvertical lines are \emph{parallel} if and only if their slopes are \emph{equal}.
+        \item Two distinct nonvertical lines are \emph{perpendicular} if and only if their slopes are \emph{negative reciprocals}:\newline
+          e.g. If $\ell_1$ has a nonzero slope $m$, then $\ell_2$ is perpendicular if its slope is $-\sfrac{1}{m}$.
+      \end{itemize}
+    }}
+    \pagebreak
+
+    \noindent\textbf{Point-slope form}
+    \begin{defn*}
+      The equation of the line passing through the point $(x_1,y_1)$ with slope $m$ can be written in the point-slope form:
+        \[y-y_1=m\parens{x-x_1}\]
+    \end{defn*}
+    \begin{ex*}
+      Find the equation of each line that passes through the point $(-3,4)$ and has
+      \begin{extasks}[after-item-skip=\stretch{1}](2)
+        \task a slope of $\displaystyle m=\frac{1}{4}$
+        \task the point $(-2,1)$ on the line
+        \task a slope of zero (horizontal)
+        \task an undefined slope (vertical)
+      \end{extasks}
+      \vspace*{\stretch{1}}
+    \end{ex*}
+    \pagebreak
+
+    \noindent\textbf{Slope-intercept form}
+    \begin{defn*}
+      The slope-intercept form of the equation of a line with slope $m$ and $y$-intercept $b$ is
+        \[y=mx+b\]
+    \end{defn*}
+    \begin{ex*}[Example 7, p.82]
+      The population of U.S. males, $y$ (in thousands), projected from $2015$ to $2060$ can be modeled by
+        \[y=1125.9x+142,960\]
+      where $x$ is the number of years after $2000$.
+      \begin{itemize}
+        \setlength{\itemsep}{\stretch{1}}
+        \item Find the slope and $y$-intercept of the graph of this function.
+        \item What does the $y$-intercept tell us abut the population of U.S. males?
+        \item Interpret the slope as a rate of change.
+      \end{itemize}
+      \vspace*{\stretch{1}}
+    \end{ex*}
+    \pagebreak
+
+    \textbf{Forms of Linear Equations}\\
+      \begin{align*}
+        \textnormal{General form: }& ax+by+c=0\\
+        \textnormal{Point-slope form: }& y-y_1=m(x-x_1)\\
+        \textnormal{Slope-intercept form: }& y=mx+b\\
+        \textnormal{Vertical line: }& x=a\\
+        \textnormal{Horizontal line: }& y=b
+      \end{align*}
+    \pagebreak
 \end{document}
