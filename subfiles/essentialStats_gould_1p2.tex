@@ -2,6 +2,112 @@
 
 \begin{document}
 %\relscale{1.4} %TODO
-  \section{}
+  \section{Section 1.2: Classifying and Storing Data}
+  \begin{itemize}
+    \item The collection of data is called a \textbf{data set} or a \textbf{sample}. The \textbf{population} refers to the set or group that contains everything relevant to the data.
+    \item When we collect data, the characteristics of that data (e.g. gender, weight, temperature) are called \textbf{variables}.
+    \item Variables can be categorized into two groups:
+      \begin{itemize}
+        \setlength{\itemsep}{\stretch{1}}
+        \item Numerical variables
+        \item Categorical variables
+      \end{itemize}
+  \end{itemize}
+  
+  \vspace*{\stretch{1}}
+  \begin{ex*}
+    The following table contains data crash-test dummy studies. 
+    \begin{itemize}
+      \item How many variables does this table have?
+      \item How many observations does this table have?
+      \item For each variable, identify whether it is numerical or categorical:
+    \end{itemize}
+    \begin{center}
+      \begin{tabularx}{0.85\linewidth}{@{}
+        >{\hsize=1.18\hsize}X
+        >{\hsize=1.18\hsize}X
+        >{\hsize=0.87\hsize}Y
+        >{\hsize=0.87\hsize}Y
+        >{\hsize=0.90\hsize}Y@{}}\toprule
+        Make  &  Model  &  Doors  &  Weight  &  Head Injury  \\\midrule
+        Acura  &  Integra  &  2  &  2350  &  599  \\
+        Chevrolet  &  Camaro  &  2  &  3070  &  733  \\
+        Chevrolet  &  S-10 Blazer 4X4  &  2  &  3518  &  834  \\
+        Ford  &  Escort  &  2  &  2280  &  551  \\
+        Ford  &  Taurus  &  4  &  2390  &  480  \\
+        Hyundai  &  Excel  &  4  &  2200  &  757  \\
+        Mazda  &  626  &  4  &  2590  &  846  \\
+        Volkswagen  &  Passat  &  4  &  2990  &  1182  \\
+        Toyota  &  Tercel  &  4  &  2120  &  1138  \\\bottomrule
+      \end{tabularx}
+    \end{center}
+  \end{ex*}
+  \pagebreak
+  
+  \textbf{Coding} categorical data using numbers:
+  \begin{center}
+    \begin{tabular}{@{}ccc@{}}\toprule
+      Weight & Gender & Smoke\\\midrule
+      7.69 & Female & No\\
+      0.88 & Male & Yes\\
+      6.00 & Female & No\\
+      7.19 & Female & No\\
+      8.06 & Female & No\\
+      7.94 & Female & No\\\bottomrule
+    \end{tabular}
+    \hspace*{10mm}$\longrightarrow$\hspace*{10mm}
+    \begin{tabular}{@{}ccc@{}}\toprule
+      Weight & Female & Smoke \\\midrule
+      7.69 & 1 & 0\\
+      0.88 & 0 & 1\\
+      6.00 & 1 & 0\\
+      7.19 & 1 & 0\\
+      8.06 & 1 & 0\\
+      7.94 & 1 & 0\\\bottomrule
+    \end{tabular}
+  \end{center}
+  \vspace*{\stretch{1}}
+  
+  We can further break down variables into five types:
+  \begin{center}
+    \tikzstyle{label} = [rectangle, 
+      fill=white,
+      rounded corners, 
+      minimum width=85pt, 
+      minimum height=20pt,
+      align=left,
+      text centered, 
+      draw=black]
+    \tikzstyle{arrow} = [thick,->,>=stealth, shorten >=5pt]
+    \begin{tikzpicture}
+      \node (type) [label] at (0,0) {Types of\\ variables};
+      \node (cate) [label] at (6,2) {Categorical};
+      \node (quan) [label] at (6,-2) {Quantitative};
+      \node (bina) [label] at (12,4) {Binary};
+      \node (nomi) [label] at (12,2) {Nominal};
+      \node (ordi) [label] at (12,0) {Ordinal};
+      \node (disc) [label] at (12,-2) {Discrete};
+      \node (cont) [label] at (12,-4) {Continuous};
+      
+      \draw [arrow] (type) -- (cate.west);
+      \draw [arrow] (type) -- (quan.west);
+      \draw [arrow] (cate) -- (bina.west);
+      \draw [arrow] (cate) -- (nomi.west);
+      \draw [arrow] (cate) -- (ordi.west);
+      \draw [arrow] (quan) -- (disc.west);
+      \draw [arrow] (quan) -- (cont.west);
+    \end{tikzpicture}
+  \end{center}
+  \pagebreak
+  \begin{ex*}
+    Suppose a local store was interested in whether a new product would sell or not. The manager decided to take a random sample of $100$ customers over a two-week period and asked each person whether they would buy the product or not and how many times would they buy the product over a six month period.
+    \begin{enumerate}[a)]
+      \item What is the population?
+      \item What is the sample?
+      \item What are the variables?
+      \item Classify each variable as numerical or categorical.
+    \end{enumerate}
+  \end{ex*}
+
   \pagebreak
 \end{document}
