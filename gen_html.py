@@ -8,10 +8,13 @@ environment = Environment(loader=FileSystemLoader("docs/"))
 template = environment.get_template("annotated_notes_template.html")
 github_url="https://github.com/pwesterbaan/lander_lecture_notes/raw/main"
 
-for dir_title in glob("*_NoteKeys"):
-    print(f'''Generating {dir_title} list''')
+directories=glob("*_NoteKeys")
+directories.sort()
+for dir_title in directories:
+    # print(f'''Generating {dir_title} list''')
     list_of_pdfs=os.listdir(f"""{dir_title}/annotated_notes/""")
-    # list_of_pdfs=glob(f"""{dir_title}/annotated_notes/""")
+    list_of_pdfs.sort()
+    print(list_of_pdfs)
 
     notes_list=''.join([f'''<li><a href="{github_url}/{dir_title}/annotated_notes/{file}">{file}</li>
 ''' for file in list_of_pdfs])
