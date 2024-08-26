@@ -1,11 +1,42 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4}
+%  \relscale{1.4}
   \section{1.4: Graphs and Graphing Utilities}
   As graphing calculators are \emph{not} required for this course, we will use Desmos:
   \begin{center}
     \href{https://www.desmos.com/calculator}{\textcolor{blue}{\underline{desmos.com/calculator}}}
   \end{center}
+  
+  \hrule\vspace{\baselineskip}
+  \begin{ex*}
+    For a certain city, the cost $C$ of obtaining drinking water with $p$ percent impurities (by volume) is given by
+      \[C=\frac{120,000}{p}-1200\]
+    The equation for $C$ requires that $p\neq 0$, and because $p$ is the percent impurities, we know $0<p\leq 100$. Use the restriction on $p$ and a graphing calculator to obtain an accurate graph of the equation.
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  \begin{center}
+    \begin{tikzpicture}[scale=1.0, declare function={
+      C(\p)=120000/\p-1200;}]
+      \begin{groupplot}[
+        group style={group size=2 by 1, horizontal sep=2cm},
+        axis lines=center,
+        axis line style={black,->},
+        xmin=-2, 
+%        enlargelimits={abs=0.75},
+        ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+        xlabel=$p$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+%        ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south},
+        every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}
+        ]
+        \nextgroupplot[xmax=105,, ymin=-18000]
+          \addplot[<->] expression[domain=1:100]{C(x)} node[pos=0.9, above right, black] {$C(p)$};
+        \nextgroupplot[xmax=135, ymin=-500, ymax=3500]
+          \addplot[<->] expression[domain=27:130]{C(x)} node[pos=0.8, above right, black] {$C(p)$};
+      \end{groupplot}
+    \end{tikzpicture}
+  \end{center}
+  \vspace*{\stretch{1}}
+
   \pagebreak
 \end{document}
