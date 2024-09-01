@@ -1,7 +1,7 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
+%  \relscale{1.4} %TODO
   \section{3.1: Summaries for Symmetric Distributions}
   \begin{defn*}
     Given a collection of data $\set{x_1,x_2,\dots,x_n}$, the \textbf{mean} of the data is the arithmetic mean:
@@ -42,9 +42,9 @@
     \begin{minipage}{0.4\linewidth}
       \begin{center}
         \begin{tabular}{@{}*{4}{c}@{}}\toprule
-          \$2.19	&	\$2.19	&	\$2.39	&	\$2.19	\\
-          \$2.24	&	\$2.39	&	\$2.27	&	\$2.29	\\
-          \$2.17	&	\$2.29	&	\$2.30	&	\$2.29	\\\bottomrule
+          \$2.19 & \$2.19 & \$2.39 & \$2.19 \\
+          \$2.24 & \$2.39 & \$2.27 & \$2.29 \\
+          \$2.17 & \$2.29 & \$2.30 & \$2.29 \\\bottomrule
         \end{tabular}
       \end{center}
     \end{minipage}\hspace*{\stretch{1}}
@@ -82,10 +82,10 @@
   \pagebreak
   
   \begin{defn*}
-    The \textbf{standard deviation} is a number that measures how far the typical observation is from the mean. For symmetric, unimodal distributions, a majority of the data is within one standard deviation of the mean. For a collection of data $\set{x_1,x_2,\dots, x_n}$, the standard deviation is given by
-      \[s=\sqrt{\frac{\displaystyle\sum_{i=1}^n \parens{x_i-\bar{x}}^2}{n-1}}\]
+    The \textbf{standard deviation} is a number that measures how far the typical observation is from the mean. For symmetric, unimodal distributions, a majority of the data is within one standard deviation of the mean. The standard deviation is given by
+      \[s=\sqrt{\frac{\sum \parens{x_i-\bar{x}}^2}{n-1}}\]
+    \vspace*{-0.75\baselineskip}
   \end{defn*}
-  \vspace*{2\baselineskip}
   
   \begin{ex*}
     The histograms below show daily high temperatures in degrees Fahrenheit recorded over one year in Provo, Utah (left), and San Francisco, California (right). Which city do we expect to have a higher standard deviation?
@@ -93,8 +93,40 @@
   \begin{center}
     \includegraphics[width=0.8\linewidth]{images/math211_figure_3p7}
   \end{center}
+  \vspace*{\stretch{1}}
   
-  
+  \begin{ex*}
+    Below are three histograms representing distributions with the same mean. Which distribution has the largest standard deviation? Which has the smallest?
+  \end{ex*}
+  \begin{center}
+    \includegraphics[width=0.95\linewidth]{images/math211_figure_3p8}
+  \end{center}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{ex*}
+    Recall the data set of gas prices from before. Use StatCrunch to compute the standard deviation of this data set and interpret the result:
+    \hspace*{\stretch{1}}\href{https://www.statcrunch.com/}{\textcolor{blue}{\underline{statcrunch.com}}}
+    
+  \end{ex*}
+  \begin{center}
+    \begin{tabular}{@{}*{4}{c}@{}}\toprule
+      \$2.19 & \$2.19 & \$2.39 & \$2.19 \\
+      \$2.24 & \$2.39 & \$2.27 & \$2.29 \\
+      \$2.17 & \$2.29 & \$2.30 & \$2.29 \\\bottomrule
+    \end{tabular}
+  \end{center}
+  \begin{enumerate}
+    \item Click ``Open StatCrunch''
+    \item Enter data into spreadsheet
+    \item Under the ``Stat'' menu, select ``Summary Stats'' then ``Columns'' or ``Rows''
+  \end{enumerate}
+  \vspace*{\stretch{1}}
+  \begin{defn*}
+    The \textbf{variance} is the standard deviation squared:
+      \[s^2=\frac{\sum \parens{x_i-\bar{x}}^2}{n-1}\]
+    \vspace*{-\baselineskip}
+  \end{defn*}
 
   \pagebreak
 \end{document}
