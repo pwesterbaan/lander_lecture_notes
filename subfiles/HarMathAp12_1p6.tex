@@ -1,8 +1,196 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{}
+%  \relscale{1.4} %TODO
+  \section{1.6: Applications of Functions in Business and Economics}
+  \begin{defn*}
+    \textbf{Profit} is the difference between the revenue and total cost:
+      \[P(x)=R(x)-C(x)\]
+    where
+      \begin{align*}
+        P(x)&= \textnormal{profit from sale of $x$ units,}\\
+        R(x)&= \textnormal{total revenue from sale of $x$ units,}\\
+        C(x)&= \textnormal{total cost from production and sale of $x$ units.}
+      \end{align*}
+    \emph{Note}: In general, the symbols used in economics are $\pi$, $TR$ and $TC$ respectively.
+
+    \vspace*{\baselineskip}
+    In general, \textbf{total revenue} is
+      \[\textnormal{Revenue}=\parens{\textnormal{price per unit}}\parens{\textnormal{number of units}}\]
+    The \textbf{total cost} is composed of fixed cost and variable cost:
+    \begin{itemize}
+      \item \textbf{Fixed costs} $(FC)$ remain constant regardless of the number of units produced.
+      \item \textbf{Variable costs} $(VC)$ are directly related to the number of units produced.
+    \end{itemize}
+    The total cost is given by
+      \[\textnormal{Cost}=\textnormal{variable costs}+\textnormal{fixed costs}\]
+  \end{defn*}
+  \pagebreak
+
+  \begin{ex*}
+    Suppose a firm manufactures MP3 players and sells them for \$50 each. The costs incurred in the production and sale of the MP3 players are \$200,000 plus \$10 for each player produced and sold. Write the profit function for the production and sale of $x$ players.
+  \end{ex*}
+  \vspace*{\stretch{1}}
+
+  \begin{center}
+    \begin{tikzpicture}[scale=0.8, declare function={
+      R(\x)=50*\x;
+      C(\x)=10*\x+200000;
+      P(\x)=R(\x)-C(\x);}]
+      \begin{groupplot}[
+        group style={group size=3 by 1, horizontal sep=20mm},
+        axis lines=center,
+        axis line style={black,->},
+        xmin=0, xmax=15000,
+        ymin=0, ymax=350000,
+        width=0.3\linewidth/0.8,
+        ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+        xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=west, xshift=5pt},
+        every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255},
+        yticklabel style={/pgf/number format/fixed},
+        ]
+        \nextgroupplot[ylabel=$R(x)$, ylabel style={at={(ticklabel* cs:1)},anchor=south east}]
+          \addplot[<->] expression[domain=0:7000]{R(x)}
+          node[below right, pos=0.6, color=black] {$R(x)=50x$};
+        \nextgroupplot[ylabel=$C(x)$, ylabel style={at={(ticklabel* cs:1)},anchor=south east}]
+          \addplot[<->] expression[domain=0:12000]{C(x)}
+          node[below right, pos=0.1, color=black] {$C(x)=10x+200,000$};
+        \nextgroupplot[ylabel=$P(x)$, ylabel style={at={(ticklabel* cs:1)},anchor=south east}, ymin=-200000]
+          \addplot[<->] expression[domain=0:12000]{P(x)}
+          node[below right, pos=0.175, xshift=-6pt, color=black] {$P(x)=40x-200,000$};
+      \end{groupplot}
+    \end{tikzpicture}
+  \end{center}
+  \pagebreak
+
+  \begin{ex*}
+    The ABC company produces widgets which sell at \$25 each. ABC can produce 30 widgets at a total cost of \$2,050, and 180 widgets at a total cost of \$4,300. Find the revenue, cost, and profit functions.
+  \end{ex*}
+  \vspace*{\stretch{1}}
+
+  \begin{defn*}[Marginals]
+    The
+    \begin{itemize}
+      \item \textbf{marginal profit} $(\overline{MP})$ is the rate of change in profit\dots
+      \item \textbf{marginal cost} $(\overline{MC})$ is the rate of change in costs\dots
+      \item \textbf{marginal revenue} $(\overline{MR})$ is the rate of change in revenue\dots
+    \end{itemize}
+    with respect to the number of units produced and sold. When these functions are linear, the marginals are given by the slope of their respective function.
+  \end{defn*}
+  \pagebreak
+
+  \begin{ex*}
+    A manufacturer sells widgets for \$10 per unit. The manufacturer's variable costs are \$2.50 per unit, and the total cost of 100 units is \$1,450.
+    \begin{tasks}[after-item-skip=\stretch{1}, label=\textbullet](1)
+      \task Find the profit function. What are the marginal revenue, cost and profit?
+      \task Find the break-even point (where $R(x)=C(x)$). What happens if we sell more or less than the break-even point?
+    \end{tasks}
+  \end{ex*}
+  \vspace{\stretch{2}}
+
+  \begin{center}
+    \begin{tikzpicture}[scale=1.0, declare function={
+      R(\x)=10*\x;
+      C(\x)=2.5*\x+1200;
+      P(\x)=R(\x)-C(\x);},
+      every node/.append style={black, align=left, font=\normalsize}]
+      \begin{groupplot}[
+        group style={group size=2 by 1, horizontal sep=30mm},
+        axis lines=center,
+        axis line style={black,->},
+        xmax=290,
+        ymin=0, ymax=2900,
+        width=0.425\linewidth,
+        ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=0.0, text opacity=1},
+        xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=west, xshift=5pt},
+        ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south east},
+        every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255},
+        ]
+        \nextgroupplot
+          \addplot[<-, name path=R] expression[domain=0:160]{R(x)};
+          \addplot[<-, name path=C] expression[domain=0:160]{C(x)};
+          \addplot[red!50,opacity=0.6] fill between[of=R and C];
+          \node at (40,950) {Loss\\ region};
+
+          \addplot[->, name path=R] expression[domain=160:290]{R(x)} node[above left, pos=0.75] {$R(x)$};
+          \addplot[->, name path=C] expression[domain=160:290]{C(x)} node[below right, pos=0.5] {$C(x)$};
+          \addplot[lander_blue!50,opacity=0.6] fill between[of=R and C];
+          \node at (250,2100) {Profit\\ region};
+        \nextgroupplot[ymin=-1300, ymax=1300]
+          \addplot[draw=none, name path=Z] expression[domain=0:160]{0};
+          \addplot[<-, name path=P] expression[domain=0:160]{P(x)};
+          \addplot[red!50,opacity=0.6] fill between[of=P and Z];
+          \node at (40,-450) {Loss\\ region};
+
+          \addplot[draw=none, name path=Z] expression[domain=160:290]{0};
+          \addplot[->, name path=P] expression[domain=160:290]{P(x)} node[above left, pos=0.75] {$P(x)$};
+          \addplot[lander_blue!50,opacity=0.6] fill between[of=P and Z];
+          \node at (250,300) {Profit\\ region};
+      \end{groupplot}
+    \end{tikzpicture}
+  \end{center}
+  \pagebreak
+
+  \begin{defn*}
+    \begin{itemize}
+      \item \textbf{Market equilibrium} occurs when the quantity of a commodity demanded is equal to the quantity supplied.
+      \item The \textbf{law of demand} states that the quantity demanded will decrease as the price increases
+      \item The \textbf{law of supply} states that the quantity supplied will increase as the price increases
+    \end{itemize}
+  \end{defn*}
+  \begin{ex*}
+    Below is a graph containing a supply and demand curve. Find the market equilibrium.
+  \end{ex*}
+  \begin{center}
+    \begin{tikzpicture}[scale=1.0, declare function={
+      S(\q)=\q/10+5;
+      D(\q)=-\q/10+35;},
+      every node/.append style={black, align=center, font=\large}]
+      \begin{axis}[
+        axis lines=center,
+        axis line style={black,->},
+        xmax=290,
+        ymin=0, ymax=45,
+        width=0.7\linewidth, height=0.35\linewidth,
+        xtick={0,60,...,240},
+        ytick={10,30,...,50},
+        minor x tick num=1,
+        minor y tick num=1,
+        ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=0.0, text opacity=1},
+        xlabel=$q$, xlabel style={at={(ticklabel* cs:1)},anchor=north west, xshift=5pt},
+        ylabel=$p$, ylabel style={at={(ticklabel* cs:1)},anchor=south},
+        every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255},
+        clip=false
+        ]
+        \addplot[<->] expression[domain=0:290]{S(x)} node[right,pos=1] {Supply: $10p-q=50$};
+        \addplot[<->] expression[domain=0:290]{D(x)} node[right,pos=1] {Demand: $10p+q=350$};
+        \draw[dashed] (150,0) |- (0,20);
+        \node at (axis cs: -30,20) {Equilibrium\\ price};
+        \node at (axis cs: 150,-10) {Equilibrium\\ quantity};
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \pagebreak
+
+  \begin{ex*}
+    Find the market equilibrium point for the following demand and supply functions:
+      \begin{align*}
+        \textnormal{Supply: \quad} p&=2q+170\\
+        \textnormal{Demand: \quad} p&=-5q+450
+      \end{align*}
+  \end{ex*}
+  \vspace*{\stretch{1.5}}
+  
+  \begin{ex*}
+    Using the supply and demand functions above, modify the supply function to include a \$14 tax per unit sold, then find the new market equilibrium point.
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{ex*}
+    Retailers will buy 45 Wi-Fi routers from a wholesaler if the price is \$10 each but only 20 if the price is \$60. The wholesaler will supply 56 outers at \$42 each and 70 at \$50 each. Assuming that the supply and demand functions are linear, find the market equilibrium point.
+  \end{ex*}
+  \pagebreak
 
   \pagebreak
 \end{document}
