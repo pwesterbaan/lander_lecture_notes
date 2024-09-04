@@ -36,7 +36,8 @@
     \begin{tikzpicture}[scale=0.8, declare function={
       R(\x)=50*\x;
       C(\x)=10*\x+200000;
-      P(\x)=R(\x)-C(\x);}]
+      P(\x)=R(\x)-C(\x);},
+      every node/.append style={black, align=left, font=\large}]
       \begin{groupplot}[
         group style={group size=3 by 1, horizontal sep=20mm},
         axis lines=center,
@@ -93,7 +94,7 @@
       R(\x)=10*\x;
       C(\x)=2.5*\x+1200;
       P(\x)=R(\x)-C(\x);},
-      every node/.append style={black, align=left, font=\normalsize}]
+      every node/.append style={black, align=left, font=\small}]
       \begin{groupplot}[
         group style={group size=2 by 1, horizontal sep=30mm},
         axis lines=center,
@@ -115,7 +116,7 @@
           \addplot[->, name path=R] expression[domain=160:290]{R(x)} node[above left, pos=0.75] {$R(x)$};
           \addplot[->, name path=C] expression[domain=160:290]{C(x)} node[below right, pos=0.5] {$C(x)$};
           \addplot[lander_blue!50,opacity=0.6] fill between[of=R and C];
-          \node at (250,2100) {Profit\\ region};
+          \node at (260,2150) {Profit\\ region};
         \nextgroupplot[ymin=-1300, ymax=1300]
           \addplot[draw=none, name path=Z] expression[domain=0:160]{0};
           \addplot[<-, name path=P] expression[domain=0:160]{P(x)};
@@ -165,7 +166,7 @@
         \addplot[<->] expression[domain=0:290]{S(x)} node[right,pos=1] {Supply: $10p-q=50$};
         \addplot[<->] expression[domain=0:290]{D(x)} node[right,pos=1] {Demand: $10p+q=350$};
         \draw[dashed] (150,0) |- (0,20);
-        \node at (axis cs: -30,20) {Equilibrium\\ price};
+        \node at (axis cs: -35,20) {Equilibrium\\ price};
         \node at (axis cs: 150,-10) {Equilibrium\\ quantity};
       \end{axis}
     \end{tikzpicture}
