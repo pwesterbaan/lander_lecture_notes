@@ -51,13 +51,13 @@
         yticklabel style={/pgf/number format/fixed},
         ]
         \nextgroupplot[ylabel=$R(x)$, ylabel style={at={(ticklabel* cs:1)},anchor=south east}]
-          \addplot[<->] expression[domain=0:7000]{R(x)}
+          \addplot[->] expression[domain=0:7000]{R(x)}
           node[below right, pos=0.6, color=black] {$R(x)=50x$};
         \nextgroupplot[ylabel=$C(x)$, ylabel style={at={(ticklabel* cs:1)},anchor=south east}]
-          \addplot[<->] expression[domain=0:12000]{C(x)}
+          \addplot[->] expression[domain=0:12000]{C(x)}
           node[below right, pos=0.1, color=black] {$C(x)=10x+200,000$};
         \nextgroupplot[ylabel=$P(x)$, ylabel style={at={(ticklabel* cs:1)},anchor=south east}, ymin=-200000]
-          \addplot[<->] expression[domain=0:12000]{P(x)}
+          \addplot[->] expression[domain=0:12000]{P(x)}
           node[below right, pos=0.175, xshift=-6pt, color=black] {$P(x)=40x-200,000$};
       \end{groupplot}
     \end{tikzpicture}
@@ -87,7 +87,7 @@
       \task Find the break-even point (where $R(x)=C(x)$). What happens if we sell more or less than the break-even point?
     \end{tasks}
   \end{ex*}
-  \vspace{\stretch{2}}
+  \vspace{\stretch{0.5}}
 
   \begin{center}
     \begin{tikzpicture}[scale=1.0, declare function={
@@ -181,7 +181,7 @@
       \end{align*}
   \end{ex*}
   \vspace*{\stretch{1.5}}
-  
+
   \begin{ex*}
     Using the supply and demand functions above, modify the supply function to include a \$14 tax per unit sold, then find the new market equilibrium point.
   \end{ex*}
@@ -189,7 +189,7 @@
   \pagebreak
 
   \begin{ex*}
-    Retailers will buy 45 Wi-Fi routers from a wholesaler if the price is \$10 each but only 20 if the price is \$60. The wholesaler will supply 56 outers at \$42 each and 70 at \$50 each. Assuming that the supply and demand functions are linear, find the market equilibrium point.
+    Retailers will buy 45 Wi-Fi routers from a wholesaler if the price is \$10 each but only 20 if the price is \$60. The wholesaler will supply 56 routers at \$42 each and 70 at \$50 each. Assuming that the supply and demand functions are linear, find the market equilibrium point.
   \end{ex*}
   \pagebreak
 
