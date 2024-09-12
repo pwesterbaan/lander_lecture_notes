@@ -8,10 +8,10 @@
 \tikzexternalize[prefix=images/]
 
 % define gaussian pdf and cdf
-\pgfmathdeclarefunction{gauss}{3}{%
-  \pgfmathparse{1/(#3*sqrt(2*pi))*exp(-((#1-#2)^2)/(2*#3^2))}%
-  }
-  
+%\pgfmathdeclarefunction{gauss}{3}{%
+%  \pgfmathparse{1/(#3*sqrt(2*pi))*exp(-((#1-#2)^2)/(2*#3^2))}%
+%  }
+%  
 \begin{document}
   \makeatletter
   \title{Math 211 Class notes\\[0.25\baselineskip]Fall 2024}
@@ -74,8 +74,8 @@
   \subfile{subfiles/essentialStats_gould_3p1.tex}
   \subfile{subfiles/essentialStats_gould_3p2.tex}
   \subfile{subfiles/essentialStats_gould_3p3.tex}
-%  \subfile{subfiles/essentialStats_gould_3p4.tex}
-%  \subfile{subfiles/essentialStats_gould_3p5.tex}
+  \subfile{subfiles/essentialStats_gould_3p4.tex}
+  \subfile{subfiles/essentialStats_gould_3p5.tex}
 %  \subfile{subfiles/essentialStats_gould_4p1.tex}
 %  \subfile{subfiles/essentialStats_gould_4p2.tex}
 %  \subfile{subfiles/essentialStats_gould_4p3.tex}
