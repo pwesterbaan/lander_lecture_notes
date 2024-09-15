@@ -205,7 +205,26 @@
         2x&+&4y&\leq &60\\
         &&\mathllap{x\geq0,}\ y& \geq &0
       \end{alignat*}
+    Then compute the corners of this region.
   \end{ex*}
+  \vspace*{\stretch{1}}
+  \begin{flushright}
+    \begin{tikzpicture}
+      \begin{axis}[
+        grid=both, %major,minor
+        grid style={line width=0.3pt, draw=gray!35},
+        major grid style={line width=0.375pt, draw=gray!75},
+        axis lines=center,
+        axis line style={black,->},
+        xmin=-100, xmax=7750, minor x tick num=1,
+        ymin=-100, ymax=6750, minor y tick num=1,
+        ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=0.5, text opacity=1},
+        xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+        ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+        every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}]
+      \end{axis}
+    \end{tikzpicture}
+  \end{flushright}
 
   \pagebreak
 \end{document}
