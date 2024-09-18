@@ -1,14 +1,55 @@
 # Lander Lecture Notes
 
-Below are links to the notes used in math 121 and math 211 at Lander University:
+Below are links Dr. Westerbaan's notes used at Lander University:
 
+
+## math121
+* [math121Notes.pdf](https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121Notes.pdf)
+<details>
+  <summary>math121 Annotated Notes</summary>
+    <ul>
+      <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121_NoteKeys/annotated_notes/mathApp_harshbarger_1p1_annotated.pdf">mathApp_harshbarger_1p1_annotated.pdf</li>
+<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121_NoteKeys/annotated_notes/mathApp_harshbarger_1p3_annotated.pdf">mathApp_harshbarger_1p3_annotated.pdf</li>
+<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121_NoteKeys/annotated_notes/mathApp_harshbarger_1p4_annotated.pdf">mathApp_harshbarger_1p4_annotated.pdf</li>
+<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121_NoteKeys/annotated_notes/mathApp_harshbarger_1p5_annotated.pdf">mathApp_harshbarger_1p5_annotated.pdf</li>
+<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121_NoteKeys/annotated_notes/mathApp_harshbarger_1p6_annotated.pdf">mathApp_harshbarger_1p6_annotated.pdf</li>
+
+    </ul>
+</details>
+
+## math211
+* [math211Notes.pdf](https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211Notes.pdf)
+<details>
+  <summary>math211 Annotated Notes</summary>
+    <ul>
+      <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_1p1_annotated.pdf">math211Notes_1p1_annotated.pdf</li>
+<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_1p2_1p4_1p5_annotated.pdf">math211Notes_1p2_1p4_1p5_annotated.pdf</li>
+<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_2p1_2p2_2p3_annotated.pdf">math211Notes_2p1_2p2_2p3_annotated.pdf</li>
+<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_2p4_2p5_annotated.pdf">math211Notes_2p4_2p5_annotated.pdf</li>
+<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_3p1_annotated.pdf">math211Notes_3p1_annotated.pdf</li>
+<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_3p2_3p3_annotated.pdf">math211Notes_3p2_3p3_annotated.pdf</li>
+<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_3p4_3p5_annotated.pdf">math211Notes_3p4_3p5_annotated.pdf</li>
+
+    </ul>
+</details>
+
+
+<!--
 ## math 121
 * [math121Notes.pdf](https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121Notes.pdf)
-* [math 121 annotated notes](math121_annotated_notes.html)
-<!-- * [math 121 annotated notes](https://github.com/pwesterbaan/lander_lecture_notes/tree/main/math121_NoteKeys/annotated_notes/) -->
-
+<details>
+  <summary></summary>
+    <ul>
+      
+    </ul>
+</details>
 
 ## math 211
-* [math211Notes.pdf](https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211Notes.pdf)
-* [math 211 annotated notes](math211_annotated_notes.html)
-<!--* [math 211 annotated notes](https://github.com/pwesterbaan/lander_lecture_notes/tree/main/math211_NoteKeys/annotated_notes/) -->
+[math211Notes.pdf](https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211Notes.pdf)
+<details>
+  <summary></summary>
+    <ul>
+      
+    </ul>
+</details>
+-->
