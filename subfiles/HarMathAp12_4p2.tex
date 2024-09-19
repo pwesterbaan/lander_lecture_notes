@@ -1,8 +1,223 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{}
+%  \relscale{1.4} %TODO
+  \section{4.2: Linear Programming: Graphical Methods}
+    \begin{defn*}
+      Linear programming is an optimization technique that can be used to solve linearly constrained problems:
+      \begin{alignat*}{4}
+%        r&l&r&l&r&l&r&l\\
+        \max F&=&\,3x&+&y\\
+        \textnormal{subject to }&& x&+&5y&\leq &\,50\\
+          &&2x&+&y&\leq& 28\\
+          &&&&\mathllap{x\geq 0}, y&\geq& 0
+      \end{alignat*}
+      
+      The \textbf{constraints} of a linear program (LP) may be limitations or requirements of the variables. The \textbf{objective function} is the function that we wish to optimize (e.g. maximize profit \emph{or} minimize cost).
+    \end{defn*}
+    \vspace*{\stretch{1}}
+    
+    \begin{center}
+      \begin{tikzpicture}[declare function={
+        f(\x)=-\x/5+10; g(\x)=-2*\x+28;
+        h(\x)=f(\x)<=g(\x) ? f(\x) : g(\x);}]
+        \begin{axis}[
+          grid=both, %major,minor
+          grid style={line width=0.3pt, draw=gray!35},
+          major grid style={line width=0.375pt, draw=gray!75},
+          axis lines=center,
+          axis line style={black,->},
+          xmin=-1.5, xmax=22.5,
+          ymin=-1.5, ymax=11.5,
+          width=0.625\linewidth,
+          ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=0.5, text opacity=1},
+          xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+          ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+          every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}]
+            \draw[fill=lander_blue!50, opacity=0.5] plot[smooth, samples=100, domain=0:14] (\x,{h(\x)}) -| (0,0) -- cycle;
+            \addplot[<->] expression[domain=-1.25:16]{f(x)}
+              node[pos=0.95, above right, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$x+5y=50$};
+            \addplot[<->] expression[domain=8.5:14.5]{g(x)}
+              node[pos=0.025, right, xshift=5pt, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$2x+y=28$};
+            \addplot[soldot] coordinates{(10,8)} node[above right, black, fill=white, opacity=0.75, text opacity=1.0, inner sep=2pt, font=\normalsize] {$(10,8)$};
+            \addplot[soldot] coordinates{(14,0)} node[above right, black, fill=white, opacity=0.75, text opacity=1.0, inner sep=2pt, font=\normalsize] {$(14,0)$};
+            \addplot[soldot] coordinates{(0,10)} node[above right, black, fill=white, opacity=0.75, text opacity=1.0, inner sep=2pt, font=\normalsize] {$(0,10)$};
+        \end{axis}
+      \end{tikzpicture}
+    \end{center}
+  \pagebreak
+  
+  \noindent \textbf{Linear programming (graphical method)}
+  
+  \begin{center}
+    \fbox{\parbox{0.95\linewidth}{
+      \begin{enumerate}
+        \item Write the objective function and constraint inequalities from the problem.
+        \item Graph the solution of the constraint system.
+        \item Find the corners of the resulting feasible region.
+        \item Evaluate the objective function at each corner.
+        \item If two corners give the optimal value, then the entire boundary joining these two points optimizes the function.
+      \end{enumerate}
+    }}
+  \end{center}
+  \begin{ex*}
+    A farm co-op has 6000 acres available on which to plant corn and soybeans. The following table summarizes each crop's requirement for fertilizer/herbicide, harvesting labor hours, and the available amounts of these resources.
+    \begin{center}
+      \begin{tabular}{@{}lccc@{}}\toprule
+        & \textbf{Corn}& \textbf{Soybeans}& \textbf{Available}\\\midrule
+        Fertilizer/herbicide& 9 gal/acre& 3 gal/acre& 40,500 gal\\
+        Harvesting labor& 3/4 hr/acre& 1 hr/acre& 5,250 hr\\\bottomrule
+      \end{tabular}
+    \end{center}
+    Setup the system of inequalities that represents the constraints.
+  \end{ex*}
+  
+  \vspace*{\stretch{1}}
+  \begin{flushright}
+    \begin{tikzpicture}[declare function={
+        f(\x)=-3*\x+13500; g(\x)=-0.75*\x+5250; h(\x)=-\x+6000;
+        j(\x)=f(\x)<=h(\x) ? f(\x) : k(\x);
+        k(\x)=h(\x)<=g(\x) ? h(\x) : g(\x);}]
+        \begin{axis}[
+          grid=both, %major,minor
+          grid style={line width=0.3pt, draw=gray!35},
+          major grid style={line width=0.375pt, draw=gray!75},
+          axis lines=center,
+          axis line style={black,->},
+          xmin=-15, xmax=7400,
+          ymin=-15, ymax=5500,
+          ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=0.5, text opacity=1},
+          xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+          ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+          every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}]
+            \draw[fill=lander_blue!50, opacity=0.5] plot[smooth, samples=255, domain=0:7000] (\x,{j(\x)}) -| (0,0) -- cycle;
+            \addplot[<->] expression[domain=900:6000]{h(x)}
+              node[pos=0.2, sloped, above, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$x+y=6,000$};
+            \addplot[<->] expression[domain=2750:4500]{f(x)}
+              node[pos=0.225, above right, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$9x+3y=40,500$};
+            \addplot[<->] expression[domain=0:7000]{g(x)}
+              node[pos=0.77, sloped, above, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$\frac{3}{4}x+y=5,250$};
+        \end{axis}
+      \end{tikzpicture}
+  \end{flushright}
+  \pagebreak
+  
+  \begin{ex*}
+    Using the linear constraints from above, suppose the co-ops profits per acre are \$240 for corn and \$160 for soybeans. This gives us the following linear program:
+      \begin{alignat*}{4}
+%        r&l&r&l&r&l&r&l\\
+        \max P&=&\,240x&+&160y\\
+        \textnormal{subject to }&& x&+&y&\leq& 6,000\\
+          &&9x&+&3y&\leq &\,40,500\\
+          &&\frac{3}{4}x&+&y&\leq& 5,250\\
+          &&&&\mathllap{x\geq 0}, y&\geq\mathrlap{\,0}& 
+      \end{alignat*}
+    \begin{enumerate}
+      \item Find the ``corners'' of the feasible region
+      \item Evaluate the profit function at the corners
+    \end{enumerate}
+  \end{ex*}
+  
+  \vspace*{\stretch{1}}
+  \begin{minipage}{0.45\linewidth}
+    \begin{tabular}{@{}lr@{}}
+      $(x,y)$& $P=240x+160y$\\\midrule
+      $(0,0)$& \$0\\
+      $(0,5250)$& \$840,000\\
+      $(3000,3000)$& \$1,200,000\\
+      $(3750,2250)$& \$1,260,000\\
+      $(4500,0)$& \$1,080,000\\\bottomrule
+    \end{tabular}
+  \end{minipage}\hspace*{\stretch{1}}%
+  \begin{minipage}{0.45\linewidth}
+    \begin{flushright}
+     \begin{tikzpicture}[declare function={
+        f(\x)=-3*\x+13500; g(\x)=-0.75*\x+5250; h(\x)=-\x+6000;
+        j(\x)=f(\x)<=h(\x) ? f(\x) : k(\x);
+        k(\x)=h(\x)<=g(\x) ? h(\x) : g(\x);}]
+          \begin{axis}[
+            grid=both, %major,minor
+            grid style={line width=0.3pt, draw=gray!35},
+            major grid style={line width=0.375pt, draw=gray!75},
+            axis lines=center,
+            axis line style={black,->},
+            xmin=-15, xmax=7400,
+            ymin=-15, ymax=5500,
+            ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=0.5, text opacity=1},
+            xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+            ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+            every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}]
+              \draw[fill=lander_blue!50, opacity=0.5] plot[smooth, samples=100, domain=0:4500] (\x,{j(\x)}) -| (0,0) -- cycle;
+              \addplot[<->] expression[domain=900:6000]{h(x)}
+                node[pos=0.2, sloped, above, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$x+y=6,000$};
+              \addplot[<->] expression[domain=2750:4500]{f(x)}
+                node[pos=0.225, above right, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$9x+3y=40,500$};
+              \addplot[<->] expression[domain=0:7000]{g(x)}
+                node[pos=0.77, sloped, above, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$\frac{3}{4}x+y=5,250$};
+          \end{axis}
+        \end{tikzpicture}
+    \end{flushright}
+  \end{minipage}
+  \pagebreak
+  
+  \begin{ex*}
+    Suppose the profits per acre are instead \$300 for corn, and \$100 for soybeans. This gives us the following linear program:
+      \begin{alignat*}{4}
+%        r&l&r&l&r&l&r&l\\
+        \max P&=&\,300x&+&100y\\
+        \textnormal{subject to }&& x&+&y&\leq& 6,000\\
+          &&9x&+&3y&\leq &\,40,500\\
+          &&\frac{3}{4}x&+&y&\leq& 5,250\\
+          &&&&\mathllap{x\geq 0}, y&\geq\mathrlap{\,0}& 
+      \end{alignat*}
+    Evaluate the profit function at the corners. What combination of corn and soy-beans maximizes the profit?
+  \end{ex*}
+  
+  \vspace*{\stretch{1}}
+  \begin{minipage}{0.45\linewidth}
+    \begin{tabular}{@{}lr@{}}
+      $(x,y)$& $P=300x+100y$\\\midrule
+      $(0,0)$& \$0\\
+      $(0,5250)$& \$525,000\\
+      $(3000,3000)$& \$1,200,000\\
+      $(3750,2250)$& \$1,350,000\\
+      $(4500,0)$& \$1,350,000\\\bottomrule
+    \end{tabular}
+  \end{minipage}\hspace*{\stretch{1}}%
+  \begin{minipage}{0.45\linewidth}
+    \begin{flushright}
+     \begin{tikzpicture}[declare function={
+        f(\x)=-3*\x+13500; g(\x)=-0.75*\x+5250; h(\x)=-\x+6000;
+        j(\x)=f(\x)<=h(\x) ? f(\x) : k(\x);
+        k(\x)=h(\x)<=g(\x) ? h(\x) : g(\x);}]
+          \begin{axis}[
+            grid=both, %major,minor
+            grid style={line width=0.3pt, draw=gray!35},
+            major grid style={line width=0.375pt, draw=gray!75},
+            axis lines=center,
+            axis line style={black,->},
+            xmin=-15, xmax=7400,
+            ymin=-15, ymax=5500,
+            ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=0.5, text opacity=1},
+            xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+            ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+            every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}]
+              \draw[fill=lander_blue!50, opacity=0.5] plot[smooth, samples=100, domain=0:4500] (\x,{j(\x)}) -| (0,0) -- cycle;
+              \addplot[<->] expression[domain=900:6000]{h(x)}
+                node[pos=0.2, sloped, above, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$x+y=6,000$};
+              \addplot[<->] expression[domain=2750:4500]{f(x)}
+                node[pos=0.225, above right, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$9x+3y=40,500$};
+              \addplot[<->] expression[domain=0:7000]{g(x)}
+                node[pos=0.77, sloped, above, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$\frac{3}{4}x+y=5,250$};
+          \end{axis}
+        \end{tikzpicture}
+    \end{flushright}
+  \end{minipage}
+  \pagebreak
+  
+  \begin{ex*}
+    
+  \end{ex*}
 
   \pagebreak
 \end{document}
