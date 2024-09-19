@@ -1,7 +1,6 @@
-  <h1>Dr. Westerbaan's Lecture Notes</h1>
+<h1>Dr. Westerbaan's Lecture Notes</h1>
 
 Below are links to notes used at Lander University:
-
 
 <ul>
 <h1> math121 </h1>
@@ -12,7 +11,7 @@ Below are links to notes used at Lander University:
   <summary>math121 Annotated Notes</summary>
 
 <ul>
-<li> <a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121_NoteKeys/annotated_notes/mathApp_harshbarger_1p1_annotated.pdf">mathApp_harshbarger_1p1_annotated.pdf</a></li>
+<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121_NoteKeys/annotated_notes/mathApp_harshbarger_1p1_annotated.pdf">mathApp_harshbarger_1p1_annotated.pdf</a></li>
 
 <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121_NoteKeys/annotated_notes/mathApp_harshbarger_1p3_annotated.pdf">mathApp_harshbarger_1p3_annotated.pdf</a></li>
 
@@ -23,7 +22,6 @@ Below are links to notes used at Lander University:
 <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121_NoteKeys/annotated_notes/mathApp_harshbarger_1p6_annotated.pdf">mathApp_harshbarger_1p6_annotated.pdf</a></li>
 
 </ul>
-
 </details>
 
 
@@ -48,6 +46,7 @@ Below are links to notes used at Lander University:
 <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_3p2_3p3_annotated.pdf">math211Notes_3p2_3p3_annotated.pdf</a></li>
 
 <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_3p4_3p5_annotated.pdf">math211Notes_3p4_3p5_annotated.pdf</a></li>
+
 </ul>
 </details>
 
