@@ -21,6 +21,8 @@ Below are links to notes used at Lander University:
 
 <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121_NoteKeys/annotated_notes/mathApp_harshbarger_1p6_annotated.pdf">mathApp_harshbarger_1p6_annotated.pdf</a></li>
 
+<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121_NoteKeys/annotated_notes/mathApp_harshbarger_4p1_annotated.pdf">mathApp_harshbarger_4p1_annotated.pdf</a></li>
+
 </ul>
 </details>
 

@@ -23,7 +23,7 @@
         axis lines=center,
         axis line style={black,->},
         xmin=xmin, xmax=xmax,
-        ymin=xmin, 
+        ymin=xmin,
         ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=0.5, text opacity=1},
         xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
         ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
@@ -34,19 +34,19 @@
         \addplot[soldot] coordinates{(2,0)} node[above right, fill=white, yshift=2.5pt, inner sep=2.5pt, opacity=0.65, text opacity=1.0, text=black, rounded corners] {$(2,0)$};
         \node[fill=white, inner sep=2.5pt, opacity=0.65, text opacity=1.0, text=black, rounded corners] at (4,-4) {$y<x$};
         \node[fill=white, inner sep=2.5pt, opacity=0.65, text opacity=1.0, text=black, rounded corners] at (-4,4) {$y>x$};
-      
+
       \end{axis}
     \end{tikzpicture}
   \end{center}
   \vspace*{\stretch{1}}
-  
+
   \noindent
   \begin{minipage}[t]{0.5\linewidth}
     \begin{ex*}
       Graph the inequality $3x-2y\leq 6$
     \end{ex*}
   \end{minipage}\hspace*{\stretch{1}}%
-  \begin{minipage}[t]{0.425\linewidth}\ 
+  \begin{minipage}[t]{0.425\linewidth}\
     \begin{flushright}
       \begin{tikzpicture}[declare function={
         f(\x)=\x; xmin=-6.75; xmax=6.75;}]
@@ -67,7 +67,7 @@
     \end{flushright}
   \end{minipage}
   \pagebreak
-  
+
   \begin{defn*}
     A \textbf{system of inequalities} has two or more inequalities in two or more variables. The solution of the system is the intersection of the individual solution sets.
   \end{defn*}
@@ -82,7 +82,7 @@
       \end{alignat*}
     \end{ex*}
   \end{minipage}\hspace*{\stretch{1}}%
-  \begin{minipage}[t]{0.425\linewidth}\ 
+  \begin{minipage}[t]{0.425\linewidth}\
     \begin{flushright}
       \begin{tikzpicture}[declare function={
         xmin=-2.25; xmax=4.5;
@@ -108,7 +108,7 @@
     \end{flushright}
   \end{minipage}
   \vspace*{\stretch{1}}
-  
+
   \noindent
   \begin{minipage}[t]{0.5\linewidth}
     \begin{ex*}
@@ -121,7 +121,7 @@
     \end{alignat*}
   \end{ex*}
   \end{minipage}\hspace*{\stretch{1}}%
-  \begin{minipage}[t]{0.425\linewidth}\ 
+  \begin{minipage}[t]{0.425\linewidth}\
     \begin{flushright}
       \begin{tikzpicture}
         \begin{axis}[
@@ -175,7 +175,7 @@
   \pagebreak
 
   \begin{ex*}
-    A farm co-op has 6000 acres available to plant with corn and soybeans. Each acre of corn requires 9 gallons of fertilizer/herbicide and 3/4 hour of labor to harvest. Each acre of soybeans requires 3 gallons of fertilizer/herbicide and 1 hour of labor to harvest. The co-op has available at most 40,500 gallons of fertilizer/herbicide and at most 5250 hours of labor for harvesting. The number of acres of each crop is limited (constrained) by the available resources: land, fertilizer/herbicide, and labor for harvesting. Write the system of inequalities that describes the constraints and graph the solution region for the system. 
+    A farm co-op has 6000 acres available to plant with corn and soybeans. Each acre of corn requires 9 gallons of fertilizer/herbicide and 3/4 hour of labor to harvest. Each acre of soybeans requires 3 gallons of fertilizer/herbicide and 1 hour of labor to harvest. The co-op has available at most 40,500 gallons of fertilizer/herbicide and at most 5250 hours of labor for harvesting. The number of acres of each crop is limited (constrained) by the available resources: land, fertilizer/herbicide, and labor for harvesting. Write the system of inequalities that describes the constraints and graph the solution region for the system.
   \end{ex*}
   \vspace*{\stretch{1}}
   \begin{flushright}
@@ -196,7 +196,7 @@
     \end{tikzpicture}
   \end{flushright}
   \pagebreak
-  
+
   \begin{ex*}
     Graph the solution region for the system
       \begin{alignat*}{3}
@@ -216,8 +216,8 @@
         major grid style={line width=0.375pt, draw=gray!75},
         axis lines=center,
         axis line style={black,->},
-        xmin=-100, xmax=7750, minor x tick num=1,
-        ymin=-100, ymax=6750, minor y tick num=1,
+        xmin=-4, xmax=33.5, minor x tick num=1,
+        ymin=-4, ymax=33.5, minor y tick num=1,
         ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=0.5, text opacity=1},
         xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
         ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
