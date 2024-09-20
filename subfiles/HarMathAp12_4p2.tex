@@ -188,8 +188,7 @@
     \begin{flushright}
      \begin{tikzpicture}[declare function={
         f(\x)=-3*\x+13500; g(\x)=-0.75*\x+5250; h(\x)=-\x+6000;
-        j(\x)=f(\x)<=h(\x) ? f(\x) : k(\x);
-        k(\x)=h(\x)<=g(\x) ? h(\x) : g(\x);}]
+        j(\x)=f(\x)<=h(\x) ? f(\x) : (h(\x)<=g(\x) ? h(\x) : g(\x));}]
           \begin{axis}[
             grid=both, %major,minor
             grid style={line width=0.3pt, draw=gray!35},
@@ -216,8 +215,72 @@
   \pagebreak
   
   \begin{ex*}
-    
+    Two chemical plants, one at Macon and one at Jonesboro, produce three types of fertilizer: low phosphorus (LP), medium phosphorus (MP), and high phosphorus (HP). At each plant, the fertilizer is produced in a single production run, so the three types are produced in fixed proportions. The Macon plant produces 1 ton of LP, 2 tons of MP, and 3 tons of HP in a single operation and charges \$600 for what is produced in one operation. On the other hand, one operation of the Jonesboro plant produces 1 ton of LP, 5 tons of MP, and 1 ton of HP, and it charges \$1,000 for what it produces in one operation. If a customer needs 100 tons of LP, 260 tons of MP, and 180 tons of HP, how many production runs should be ordered from each plant to minimize costs?
+  \end{ex*}
+  \begin{extasks}[after-item-skip=3\baselineskip](1)
+    \task Organize the information from the problem in the following table:
+
+      \begin{tabularx}{0.8\linewidth}{@{}*{4}{X}@{}}\toprule
+        & Macon& Jonesboro& Requirements\\\midrule
+        Units of LP \\
+        Units of MP \\
+        Units of HP \\\bottomrule
+      \end{tabularx}
+    \task What is the objective function?
+    \task Write the linear program that we aim to solve below:
+  \end{extasks}
+  \pagebreak
+  
+  \begin{ex*}
+    From above, we get the following linear program
+    \begin{alignat*}{4}
+%      r&l&r&l&r&l&r&l\\
+      \min C&=&\,600x&+&1000y\\
+      \textnormal{subject to }&& x&+&y&\geq& 100\\
+        &&2x&+&5y&\leq &\,260\\
+        &&3x&+&y&\leq& 180\\
+        &&&&\mathllap{x\geq 0}, y&\geq\mathrlap{\,0}& 
+    \end{alignat*}
+    Graph the solution region of the constraints and evaluate the objective function at the corners of the feasible region above.
   \end{ex*}
 
+  \vspace*{\stretch{1}}
+  \begin{minipage}{0.45\linewidth}
+    \begin{tabular}{@{}lr@{}}
+      $(x,y)$& $P=600x+1,000y$\\\midrule
+      $(0,180)$& $\$180,000$\\
+      $(40,60)$& $\$84,000$\\
+      $(80,20)$& $\$68,000$\\
+      $(130,0)$& $\$78,000$\\\bottomrule
+    \end{tabular}
+  \end{minipage}\hspace*{\stretch{1}}%
+  \begin{minipage}{0.45\linewidth}
+    \begin{tikzpicture}[declare function={
+      X=200;
+      f(\x)=-3*\x+180;  
+      g(\x)=-\x+100;
+      h(\x)=-0.4*\x+52;
+      j(\x)=f(\x)>=g(\x) ? f(\x) : (h(\x)>=g(\x) ? h(\x) : g(\x));}]
+        \begin{axis}[
+          grid=both, %major,minor
+          grid style={line width=0.3pt, draw=gray!35},
+          major grid style={line width=0.375pt, draw=gray!75},
+          axis lines=center,
+          axis line style={black,->},
+          enlargelimits={value=0.025, auto},
+          ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=0.5, text opacity=1},
+          xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+          ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+          every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}]
+            \draw[fill=lander_blue!50, opacity=0.5] plot[smooth, samples=100, domain=0:130] (\x,{j(\x)}) -- (X,0) -- (X,X) -| cycle;
+            \addplot[<->] expression[domain=0:60]{f(x)}
+              node[pos=0.2, above right, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt, rounded corners=3pt] {$x+y=100$};
+            \addplot[<->] expression[domain=0:100]{g(x)}
+              node[pos=0.475, above right, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt, rounded corners=3pt] {$2x+5y=260$};
+            \addplot[<->] expression[domain=0:130]{h(x)}
+              node[pos=0.64, above right, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt, rounded corners=3pt] {$3x+y=180$};
+      \end{axis}
+    \end{tikzpicture}
+  \end{minipage}
   \pagebreak
 \end{document}

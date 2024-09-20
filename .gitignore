@@ -1,7 +1,6 @@
 *~
 texPreamble.sty
 texShortcutsWesterbaan.tex
-subfiles/*.pdf
 *.autosave.xopp
 ## .gitignore tex template
 ## Core latex/pdflatex auxiliary files:
