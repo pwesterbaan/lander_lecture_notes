@@ -1,6 +1,6 @@
-images/math211Notes-figure8.pdf: scat_plot_data_4p1.csv
-images/math211Notes-figure8.pdf: scat_plot_data_4p1.csv
-images/math211Notes-figure8.pdf: scat_plot_data_4p1.csv
-images/math211Notes-figure8.pdf: scat_plot_data_4p1.csv
-images/math211Notes-figure8.pdf: scat_plot_data_4p1.csv
-images/math211Notes-figure8.pdf: scat_plot_data_4p1.csv
+images/math211Notes-figure8.pdf: ./subfiles/scat_plot_data_4p1.csv
+images/math211Notes-figure8.pdf: ./subfiles/scat_plot_data_4p1.csv
+images/math211Notes-figure8.pdf: ./subfiles/scat_plot_data_4p1.csv
+images/math211Notes-figure8.pdf: ./subfiles/scat_plot_data_4p1.csv
+images/math211Notes-figure8.pdf: ./subfiles/scat_plot_data_4p1.csv
+images/math211Notes-figure8.pdf: ./subfiles/scat_plot_data_4p1.csv

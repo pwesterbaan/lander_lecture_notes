@@ -1,5 +1,6 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
+\providecommand{\subfiles}{.}
 \begin{document}
 %  \relscale{1.4} %TODO
   \section{4.2: Measuring Strength of Association with Correlation}
@@ -19,7 +20,7 @@
     \begin{center}
       Note: \emph{Correlation does not mean causation!}\\[\baselineskip]
       
-      \href{https://www.tylervigen.com/spurious-correlations}{\textcolor{blue}{\underline{Spurious correlations}}}\\[\baselineskip]
+      Take a few minutes to look at the graphs at this link: \href{https://www.tylervigen.com/spurious-correlations}{\textcolor{blue}{\underline{Spurious correlations}}}\\[\baselineskip]
       
       \href{https://xkcd.com/552}{\includegraphics[width=0.85\linewidth]{images/correlation_2x_xkcd_552}}
     \end{center}
@@ -39,9 +40,9 @@
           ylabel style={at={(ticklabel* cs:0.5)},anchor=south, xshift=-27.5pt, rotate=90},
           ]
             \nextgroupplot[xlabel=Height (inches), ylabel=Height (cm)]
-              \addplot[only marks, blue] table [x=Height, y=HTCm, col sep=comma] {scat_plot_data_4p2.csv} node at(62,190) {$r=1.00$};
+              \addplot[only marks, blue] table [x=Height, y=HTCm, col sep=comma] {\subfiles/scat_plot_data_4p2.csv} node at(62,190) {$r=1.00$};
             \nextgroupplot[xlabel=Height (inches) , ylabel=Weight (lbs)]
-              \addplot[only marks, blue] table [x=Height, y=Weight, col sep=comma] {scat_plot_data_4p2.csv} node at(61,230) {$r=0.72$};
+              \addplot[only marks, blue] table [x=Height, y=Weight, col sep=comma] {\subfiles/scat_plot_data_4p2.csv} node at(61,230) {$r=0.72$};
         \end{groupplot}
       \end{tikzpicture}
       \vspace*{\baselineskip}
@@ -58,7 +59,7 @@
           xlabel=Age (years), xlabel style={at={(ticklabel* cs:0.5)},anchor=north, yshift=-30pt},
           ylabel=Time (hours), ylabel style={at={(ticklabel* cs:0.5)},anchor=south, xshift=-20pt, rotate=90},
           ]
-            \addplot[only marks, blue] table [x=x_sim, y=y_sim, col sep=comma] {scat_plot_data_4p2.csv} node at (47.5,3.2) {$r=0$};
+            \addplot[only marks, blue] table [x=x_sim, y=y_sim, col sep=comma] {\subfiles/scat_plot_data_4p2.csv} node at (47.5,3.2) {$r=0$};
         \end{axis}
       \end{tikzpicture}
       \vspace*{\baselineskip}
@@ -76,9 +77,9 @@
           ylabel style={at={(ticklabel* cs:0.5)},anchor=south, xshift=-27.5pt, rotate=90},
           ]
             \nextgroupplot[xlabel=Age, ylabel=Price]
-              \addplot[only marks, blue] table [x=age, y=price, col sep=comma] {scat_plot_data_4p2.csv} node at (33,25000) {$r=-0.50$};
+              \addplot[only marks, blue] table [x=age, y=price, col sep=comma] {\subfiles/scat_plot_data_4p2.csv} node at (33,25000) {$r=-0.50$};
             \nextgroupplot[xlabel=Age, ylabel=Year]
-              \addplot[only marks, blue] table [x=age, y=year, col sep=comma] {scat_plot_data_4p2.csv} node at (33,2005) {$r=-1.00$};
+              \addplot[only marks, blue] table [x=age, y=year, col sep=comma] {\subfiles/scat_plot_data_4p2.csv} node at (33,2005) {$r=-1.00$};
         \end{groupplot}
       \end{tikzpicture}
     \end{center}
@@ -112,7 +113,7 @@
         xlabel=Height (in), xlabel style={at={(ticklabel* cs:0.5)},anchor=north, yshift=-10pt},
         ylabel=Weight (lbs), ylabel style={at={(ticklabel* cs:0.5)},anchor=south, xshift=-20pt, rotate=90},
         ]
-          \addplot[only marks, blue] table [x=women_height, y=women_weight, col sep=comma] {scat_plot_data_4p2.csv};
+          \addplot[only marks, blue] table [x=women_height, y=women_weight, col sep=comma] {\subfiles/scat_plot_data_4p2.csv};
       \end{axis}
     \end{tikzpicture}
   \end{flushright}

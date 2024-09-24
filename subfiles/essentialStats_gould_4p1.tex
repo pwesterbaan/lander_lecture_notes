@@ -1,5 +1,6 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
+\providecommand{\subfiles}{.}
 \begin{document}
 %  \relscale{1.4} %TODO
   \section{4.1: Visualizing Variability with a Scatterplot}
@@ -42,18 +43,18 @@
           ]
             \nextgroupplot[title=Positive trend]
               \addplot[-, line width=1.5pt] expression[domain=60:80]{8.6575+4.9775*x};
-              \addplot[only marks, blue] table [x=x_lin_pos, y=y_lin_pos, col sep=comma] {scat_plot_data_4p1.csv};
+              \addplot[only marks, blue] table [x=x_lin_pos, y=y_lin_pos, col sep=comma] {\subfiles/scat_plot_data_4p1.csv};
             \nextgroupplot[title=Negative trend]
               \addplot[-, line width=1.5pt] expression[domain=4:25]{68.9859-2.6145*x};
-              \addplot[only marks, blue] table [x=x_lin_neg, y=y_lin_neg, col sep=comma] {scat_plot_data_4p1.csv};
+              \addplot[only marks, blue] table [x=x_lin_neg, y=y_lin_neg, col sep=comma] {\subfiles/scat_plot_data_4p1.csv};
             \nextgroupplot[title=Weak association]
-              \addplot[only marks, blue] table [x=x_weak_ass, y=y_weak_ass, col sep=comma] {scat_plot_data_4p1.csv};
+              \addplot[only marks, blue] table [x=x_weak_ass, y=y_weak_ass, col sep=comma] {\subfiles/scat_plot_data_4p1.csv};
             \nextgroupplot[title=Strong association]
-              \addplot[only marks, blue] table [x=x_strong_ass, y=y_strong_ass, col sep=comma] {scat_plot_data_4p1.csv};
+              \addplot[only marks, blue] table [x=x_strong_ass, y=y_strong_ass, col sep=comma] {\subfiles/scat_plot_data_4p1.csv};
             \nextgroupplot[title=No trend, ymin=-125, ymax=125]
-              \addplot[only marks, blue] table [x=x_no_trend, y=y_no_trend, col sep=comma] {scat_plot_data_4p1.csv};
+              \addplot[only marks, blue] table [x=x_no_trend, y=y_no_trend, col sep=comma] {\subfiles/scat_plot_data_4p1.csv};
             \nextgroupplot[title=Quadratic/nonlinear shape]
-              \addplot[only marks, blue] table [x=x_quad, y=y_quad, col sep=comma] {scat_plot_data_4p1.csv};
+              \addplot[only marks, blue] table [x=x_quad, y=y_quad, col sep=comma] {\subfiles/scat_plot_data_4p1.csv};
         \end{groupplot}
       \end{tikzpicture}
     \end{center}
@@ -75,7 +76,7 @@
           ylabel=mileage, ylabel style={at={(ticklabel* cs:0.5)},anchor=south, xshift=-35pt, rotate=90},
           ]
           \addplot[-, line width=1.5pt] expression[domain=0:23]{29100.162+5280.8786*x};
-          \addplot[only marks, blue] table [x=age, y=mileage, col sep=comma] {scat_plot_data_4p1.csv};
+          \addplot[only marks, blue] table [x=age, y=mileage, col sep=comma] {\subfiles/scat_plot_data_4p1.csv};
         \end{axis}
       \end{tikzpicture}
     \end{center}
