@@ -1,27 +1,86 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
+%  \relscale{1.4} %TODO
   \section{4.1: Visualizing Variability with a Scatterplot}
+%    \begin{center}
+%      \begin{tikzpicture}
+%        \begin{axis}[
+%          axis lines=center,
+%          axis line style={black,->},
+%          enlargelimits={value=0.025, auto},
+%          width=0.725\linewidth, height=0.4\linewidth,
+%          ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+%          ]
+%          \addplot[-, line width=1.5pt] expression[domain=4:25]{68.9859-2.6145*x};
+%          \addlegendentry{$68.99-2.61x$};
+%          \addplot[only marks, blue] table [x=x, y=y, col sep=comma] {linear_scat_plot_neg_slope.csv};
+%        \end{axis}
+%      \end{tikzpicture}
+%    \end{center}
+ 
+    \begin{defn*}
+      A \textbf{scatterplot} is used when examining the relationship between two \emph{numerical} variables where each point represents an observation. With scatterplots, we examine the 
+      \TabPositions{30mm}
+      \begin{itemize}
+        \item \textbf{trend}: \tab general tendency of the scatter plot going from left to right
+        \item \textbf{strength}: \tab strong associations have little vertical variation
+        \item \textbf{shape}: \tab is the scatterplot linear or nonlinear?
+      \end{itemize}
+    \end{defn*}
+    \vspace*{\stretch{1}}
+    
     \begin{center}
       \begin{tikzpicture}
-        \begin{axis}[
+        \begin{groupplot}[
+          group style={group size=2 by 3, horizontal sep=2cm, vertical sep=2cm},
           axis lines=center,
           axis line style={black,->},
           enlargelimits={value=0.025, auto},
-          width=0.725\linewidth, height=0.4\linewidth,
+          width=0.475\linewidth, height=0.2\linewidth,
           ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
           ]
-          \addplot[-, line width=1.5pt] expression[domain=4:25]{68.9859-2.6145*x};
-          \addlegendentry{$68.99-2.61x$};
-          \addplot[only marks, blue] table [x=x, y=y, col sep=comma] {linear_scat_plot_neg_slope.csv};
+            \nextgroupplot[title=Positive trend]
+              \addplot[-, line width=1.5pt] expression[domain=60:80]{8.6575+4.9775*x};
+              \addplot[only marks, blue] table [x=x_lin_pos, y=y_lin_pos, col sep=comma] {scat_plot_data_4p1.csv};
+            \nextgroupplot[title=Negative trend]
+              \addplot[-, line width=1.5pt] expression[domain=4:25]{68.9859-2.6145*x};
+              \addplot[only marks, blue] table [x=x_lin_neg, y=y_lin_neg, col sep=comma] {scat_plot_data_4p1.csv};
+            \nextgroupplot[title=Weak association]
+              \addplot[only marks, blue] table [x=x_weak_ass, y=y_weak_ass, col sep=comma] {scat_plot_data_4p1.csv};
+            \nextgroupplot[title=Strong association]
+              \addplot[only marks, blue] table [x=x_strong_ass, y=y_strong_ass, col sep=comma] {scat_plot_data_4p1.csv};
+            \nextgroupplot[title=No trend, ymin=-125, ymax=125]
+              \addplot[only marks, blue] table [x=x_no_trend, y=y_no_trend, col sep=comma] {scat_plot_data_4p1.csv};
+            \nextgroupplot[title=Quadratic/nonlinear shape]
+              \addplot[only marks, blue] table [x=x_quad, y=y_quad, col sep=comma] {scat_plot_data_4p1.csv};
+        \end{groupplot}
+      \end{tikzpicture}
+    \end{center}
+  \pagebreak
+  
+  \begin{ex*}
+    The scatterplot below shows the age and corresponding mileage for a sample of used cars. 
+    \begin{center}
+      \begin{tikzpicture}
+        \begin{axis}[
+          scaled ticks=false,
+          /pgf/number format/.cd, fixed, precision=6, %forces large ytick labels
+          axis lines=center,
+          axis line style={black,->},
+          enlargelimits={value=0.025, auto},
+          width=0.6\linewidth, %height=0.2\linewidth,
+          ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+          xlabel=age, xlabel style={at={(ticklabel* cs:0.5)},anchor=north, yshift=-10pt},
+          ylabel=mileage, ylabel style={at={(ticklabel* cs:0.5)},anchor=south, xshift=-35pt, rotate=90},
+          ]
+          \addplot[-, line width=1.5pt] expression[domain=0:23]{29100.162+5280.8786*x};
+          \addplot[only marks, blue] table [x=age, y=mileage, col sep=comma] {scat_plot_data_4p1.csv};
         \end{axis}
       \end{tikzpicture}
     \end{center}
- 
-    \begin{defn*}
-      
-    \end{defn*}
+    What is the association between the variables? Identify the trend, its shape, and how strong the relationship is.
+  \end{ex*}
 
   \pagebreak
 \end{document}
