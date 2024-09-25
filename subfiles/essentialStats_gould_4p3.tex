@@ -1,8 +1,194 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
+\providecommand{\subfiles}{.}
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{}
+%  \relscale{1.4} %TODO
+  \section{4.3: Modeling Linear Trends}
+    \begin{defn*}
+      The \textbf{regression line} is a model used for making predictions about \emph{future} observed values. The equation of the regression line is 
+        \[y=a+bx\]
+      where $a$ is the \textbf{$y$-intercept} and $b$ is the \textbf{slope}.
+      \begin{center}
+        \begin{tikzpicture}[declare function={
+          f(\x)=4*x+1.5;}]
+          \begin{axis}[
+            axis lines=center,
+            axis line style={black,->},
+            ymin=0,
+            xmajorticks=false,
+            ytick={1.5}, yticklabels={$a$},
+            width=0.75\linewidth, height=0.2\linewidth,
+            enlargelimits={value=0.025, auto},
+            xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+            ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+            every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255},
+            nodes={black, fill=white, opacity=0.8, text opacity=1.0, inner sep=1pt, rounded corners=2.5pt}
+            ]
+              \addplot[->] expression[domain=0:1] {f(x)} coordinate [pos=0.35] (A) coordinate [pos=0.6] (B);
+              \draw (A) -| (B) node [pos=0.55,anchor=north west] {$b$};
+          \end{axis}
+        \end{tikzpicture}
+      \end{center}
+      \begin{itemize}
+        \item The input variable $x$ is also know as the 
+          \begin{itemize}
+            \item Independent variable
+            \item Predictor variable
+            \item Explanatory variable
+          \end{itemize}
+        \item The output variable $y$ is known as the 
+          \begin{itemize}
+            \item Dependent variable
+            \item Predicted variable
+            \item Response variable
+          \end{itemize}
+      \end{itemize}
+    \end{defn*}
+    \pagebreak
+
+    \begin{ex*}
+      Below is a scatterplot comparing number of pages a book has against the width of the book. Interpret the intercept and the slope of the regression line.
+
+      \vspace*{0.5\baselineskip}
+      \begin{flushright}
+        \begin{tikzpicture}[nodes=black]
+          \begin{axis}[
+            axis lines=center,
+            axis line style={black,->},
+            enlargelimits={value=0.025, auto},
+            height=0.35\linewidth,
+            ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+            title={Predicted Width=\pgfmathprintnumber{\pgfplotstableregressionb}\pgfmathprintnumber[print sign, precision=4]{\pgfplotstableregressiona}\,Pages},
+            xlabel=Pages, xlabel style={at={(ticklabel* cs:0.5)},anchor=north, yshift=-10pt},
+            ylabel=Width (mm), ylabel style={at={(ticklabel* cs:0.5)},anchor=south, xshift=-15.5pt, rotate=90},
+            ]
+              \addplot[only marks, blue] table [x=pages, y=width, col sep=comma] {\subfiles/scat_plot_data_4p3.csv};
+              \addplot[-, black, line width=1pt] table [x=pages, y={create col/linear regression={y=width}}, col sep=comma] {\subfiles/scat_plot_data_4p3.csv};
+          \end{axis}
+        \end{tikzpicture}
+      \end{flushright}
+    \end{ex*}
+    \vspace*{\stretch{1}}
+
+    \begin{ex*}
+      Below is a scatterplot comparing the number of home runs and RBIs in the 2016 season. Interpret the intercept and slope of the regression line.
+      \vspace*{0.5\baselineskip}
+      \begin{flushright}
+        \begin{tikzpicture}[nodes=black]
+          \begin{axis}[
+            axis lines=center,
+            axis line style={black,->},
+            enlargelimits={value=0.025, auto},
+            height=0.35\linewidth,
+            ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+            title={Predicted RBI=\pgfmathprintnumber{\pgfplotstableregressionb}\pgfmathprintnumber[print sign]{\pgfplotstableregressiona}\,HR},
+            xlabel=Home Runs, xlabel style={at={(ticklabel* cs:0.5)},anchor=north, yshift=-10pt},
+            ylabel=RBIs, ylabel style={at={(ticklabel* cs:0.5)},anchor=south, xshift=-15.5pt, rotate=90},
+            every axis plot/.append style={color=black, line width=1pt},
+            ]
+              \addplot[-] table [x=HR, y={create col/linear regression={y=RBI}}, col sep=comma] {\subfiles/scat_plot_data_4p3.csv};
+              \addplot[-, domain=8:11]{\pgfplotstableregressiona*x+\pgfplotstableregressionb};
+              \addplot[only marks, blue] table [x=HR, y=RBI, col sep=comma] {\subfiles/scat_plot_data_4p3.csv};
+          \end{axis}
+        \end{tikzpicture}
+        \hspace*{4.75mm}
+      \end{flushright}
+    \end{ex*}
+    \vspace*{\stretch{1}}
+  \pagebreak
+    
+    \begin{defn*}
+      \begin{minipage}{0.575\linewidth}
+        Now we define the formula of the regression line:
+          \[y=a+bx\]
+        Where
+          \[b=r\dfrac{s_y}{s_x} \quad\textnormal{ and }\quad a=\overline{y}-b\overline{x}.\]
+      \end{minipage}\hspace*{\stretch{1}}%
+      \begin{minipage}{0.375\linewidth}
+        \begin{center}
+          \begin{tikzpicture}
+            \begin{axis}[
+              axis lines=center,
+              axis line style={black,->},
+              enlargelimits={value=0.025, auto},
+              width=\linewidth,
+              ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+              every axis plot/.append style={color=black, line width=1pt},
+              ]
+                \addplot[-] table [x=women_height, y={create col/linear regression={y=women_weight}}, col sep=comma] {\subfiles/scat_plot_data_4p2.csv};
+                \addplot[only marks, blue] table [x=women_height, y=women_weight, col sep=comma] {\subfiles/scat_plot_data_4p2.csv};
+                \addplot[
+                  no markers, draw=none,
+                  error bars/y dir=plus,
+                  error bars/y explicit,
+                  error bars/error mark=none,
+                  error bars/error bar style=red, very thick
+                ] table [
+                  col sep=comma,
+                  x=women_height, 
+                  y=women_weight,
+                  y error expr=-\thisrow{women_weight}+\pgfplotstableregressiona*\thisrow{women_height}+\pgfplotstableregressionb, 
+                ] {\subfiles/scat_plot_data_4p2.csv};
+            \end{axis}
+          \end{tikzpicture}
+        \end{center}
+      \end{minipage}%
+      
+      These formulae minimize the residual error: \href{https://www.desmos.com/calculator/n1fvvayq5q}{\textcolor{blue}{\underline{Try this!}}}
+    \end{defn*}
+    
+    \begin{ex*}
+      Below are the heights and weights of six women:
+        \begin{center}
+          \begin{tabular}{@{}l*{6}{c}@{}}\toprule
+            Heights& 61& 62& 63& 64& 66& 68\\
+            Weights& 104& 110& 141& 125& 170& 160\\\bottomrule
+          \end{tabular}
+        \end{center}
+      From this we get 
+        \begin{align*}
+          \overline{x}&=64 & s_x&=2.608 \\
+          \overline{y}&=135 & s_y&=26.728 \\
+          r&=0.881
+        \end{align*}
+    \end{ex*}
+    \vspace*{\stretch{1}}
+    
+    \noindent
+    \begin{minipage}[t]{0.45\linewidth}\vspace*{0pt}
+      Find the equation of the regression line.
+    \end{minipage}\hspace*{\stretch{1}}%
+    \begin{minipage}[t]{0.525\linewidth}\vspace*{0pt}
+      \begin{flushright}
+        \begin{tikzpicture}
+          \begin{axis}[
+            axis lines=center,
+            axis line style={black,->},
+            enlargelimits={value=0.025, auto},
+            ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+            every axis plot/.append style={color=black, line width=1pt},
+            xlabel=Height (in), xlabel style={at={(ticklabel* cs:0.5)},anchor=north, yshift=-10pt},
+            ylabel=Weight (lbs), ylabel style={at={(ticklabel* cs:0.5)},anchor=south, xshift=-20pt, rotate=90},
+            ]
+              \addplot[-] table [x=women_height, y={create col/linear regression={y=women_weight}}, col sep=comma] {\subfiles/scat_plot_data_4p2.csv};
+              \addplot[only marks, blue] table [x=women_height, y=women_weight, col sep=comma] {\subfiles/scat_plot_data_4p2.csv};
+          \end{axis}
+        \end{tikzpicture}
+      \end{flushright}
+    \end{minipage}
+  \pagebreak
+  \begin{ex*}
+    Open the \texttt{popdensity\_and\_crime} dataset in StatCrunch, use the ``Simple Linear'' tool under the \texttt{Stat\textrangle Regression} menu to find the regression line for the following columns. Interpret the slope and intercept where appropriate.
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task the \texttt{pop1990} and \texttt{pop2000} columns,
+    \task the \texttt{pop2000} and \texttt{totcrimerate} columns, and
+    \task the \texttt{pop2000} and \texttt{Rank Pop} columns.
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+
 
   \pagebreak
 \end{document}

@@ -1,0 +1,31 @@
+\documentclass{standalone}
+\usepackage{tikz,pgfplots,pgfplotstable}
+
+\providecommand{\subfiles}{.}
+\begin{document}
+  \begin{tikzpicture}
+    \begin{axis}[
+      axis lines=center,
+      axis line style={black,->},
+      enlargelimits={value=0.025, auto},
+      width=\linewidth,
+      ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+      every axis plot/.append style={color=black, line width=1pt},
+      ]
+        \addplot[-] table [x=women_height, y={create col/linear regression={y=women_weight}}, col sep=comma] {\subfiles/scat_plot_data_4p2.csv};
+        \addplot[only marks, blue] table [x=women_height, y=women_weight, col sep=comma] {\subfiles/scat_plot_data_4p2.csv};
+        \addplot[
+          no markers, draw=none,
+          error bars/y dir=plus,
+          error bars/y explicit,
+          error bars/error mark=none,
+          error bars/error bar style=very thick
+        ] table [
+          col sep=comma,
+          x=women_height, 
+          y=women_weight
+          y error expr=-\thisrow{women_weight}+\pgfplotstableregressiona*\thisrow{women_height}+\pgfplotstableregressionb, 
+        ] {\subfiles/scat_plot_data_4p2.csv};
+    \end{axis}
+  \end{tikzpicture}
+\end{document}
