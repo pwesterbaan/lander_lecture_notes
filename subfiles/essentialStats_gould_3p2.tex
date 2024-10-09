@@ -78,18 +78,18 @@
           \addplot[<->,lander_blue!30!black,thick]
             coordinates {({mu-3*sig},{.15*gauss(mu,mu,sig)}) ({mu+3*sig},{.15*gauss(mu,mu,sig)})};
           \node[lander_blue!30!black,fill=lander_blue!10,inner xsep=3,inner ysep=1,scale=1]
-            at (mu,{.55*gauss(mu,mu,sig)}) {68.3\%};
+            at (mu,{.55*gauss(mu,mu,sig)}) {68\%};
           \node[lander_blue!30!black,fill=lander_blue!10,inner xsep=3,inner ysep=2,scale=1]
-            at (mu,{.35*gauss(mu,mu,sig)}) {95.5\%};
+            at (mu,{.35*gauss(mu,mu,sig)}) {95\%};
           \node[lander_blue!30!black,fill=lander_blue!10,inner xsep=3,inner ysep=2,scale=1]
             at (mu,{.15*gauss(mu,mu,sig)}) {99.7\%};
         \end{axis}
       \end{tikzpicture}
     \end{center}
   \end{defn*}
-  
+
   \begin{ex*}
-    Recall the data set of gas prices from before.     
+    Recall the data set of gas prices from before.
   \begin{center}
     \begin{tabular}{@{}*{4}{c}@{}}\toprule
       \$2.19 & \$2.19 & \$2.39 & \$2.19 \\
@@ -106,9 +106,9 @@
     \item nearly all of the prices would fall between $\$2.04$ and $\$2.49$.
   \end{itemize}
   \pagebreak
-  
+
   \begin{ex*}
-    The mean daily high temperature in San Francisco is $65^\circ F$ with a standard deviation of $8^\circ F$. 
+    The mean daily high temperature in San Francisco is $65^\circ F$ with a standard deviation of $8^\circ F$.
     \begin{tasks}[after-item-skip=\stretch{1}, label=\textbullet](1)
       \task Find the temperature ranges for $68\%$, $95\%$, and $99.7\%$ of the data.
       \task By the Empirical rule, observations $2$ or more standard deviations away from the mean are considered unusual. Is it unusual to have a day when the maximum temperature is colder than $49^\circ F$ in San Francisco?
@@ -133,7 +133,7 @@
       z=\frac{x-\overline{x}}{s}
     \end{align*}
   \end{defn*}
-  
+
   \begin{ex*}
     The dotplot below shows the heights (in inches) of 247 men. The average height is 70 inches, and the standard deviation is 3 inches. How many men have $z$-scores\dots
     \begin{tasks}[after-item-skip=\baselineskip, label=\textbullet](2)
@@ -147,10 +147,10 @@
     \includegraphics[width=0.6\linewidth]{images/math211_figure_3p12}
   \end{center}
   \pagebreak
-  
+
   \begin{ex*}
     Maria scored 80 out of 100 on her first stats exam in a course and 85 out of 100 on her second stats exam. On the first exam, the mean was 70 and the standard deviation was 10. On the second exam, the mean was 80 and the standard deviation was 5.
-    
+
     On which exam did Maria perform better when compared to the whole class?
   \end{ex*}
 
