@@ -5,7 +5,7 @@
 %  \relscale{1.4} %TODO
   \section{4.3: Modeling Linear Trends}
     \begin{defn*}
-      The \textbf{regression line} is a model used for making predictions about \emph{future} observed values. The equation of the regression line is 
+      The \textbf{regression line} is a model used for making predictions about \emph{future} observed values. The equation of the regression line is
         \[y=a+bx\]
       where $a$ is the \textbf{$y$-intercept} and $b$ is the \textbf{slope}.
       \begin{center}
@@ -30,13 +30,13 @@
         \end{tikzpicture}
       \end{center}
       \begin{itemize}
-        \item The input variable $x$ is also know as the 
+        \item The input variable $x$ is also know as the
           \begin{itemize}
             \item Independent variable
             \item Predictor variable
             \item Explanatory variable
           \end{itemize}
-        \item The output variable $y$ is known as the 
+        \item The output variable $y$ is known as the
           \begin{itemize}
             \item Dependent variable
             \item Predicted variable
@@ -96,8 +96,9 @@
     \end{ex*}
     \vspace*{\stretch{1}}
   \pagebreak
-    
-    \begin{defn*}
+
+    \begin{defn*}\vspace{0.5\baselineskip}
+
       \begin{minipage}{0.575\linewidth}
         Now we define the formula of the regression line:
           \[y=a+bx\]
@@ -125,18 +126,18 @@
                   error bars/error bar style=red, very thick
                 ] table [
                   col sep=comma,
-                  x=women_height, 
+                  x=women_height,
                   y=women_weight,
-                  y error expr=-\thisrow{women_weight}+\pgfplotstableregressiona*\thisrow{women_height}+\pgfplotstableregressionb, 
+                  y error expr=-\thisrow{women_weight}+\pgfplotstableregressiona*\thisrow{women_height}+\pgfplotstableregressionb,
                 ] {\subfiles/scat_plot_data_4p2.csv};
             \end{axis}
           \end{tikzpicture}
         \end{center}
       \end{minipage}%
-      
+
       These formulae minimize the residual error: \href{https://www.desmos.com/calculator/n1fvvayq5q}{\textcolor{blue}{\underline{Try this!}}}
     \end{defn*}
-    
+
     \begin{ex*}
       Below are the heights and weights of six women:
         \begin{center}
@@ -145,7 +146,7 @@
             Weights& 104& 110& 141& 125& 170& 160\\\bottomrule
           \end{tabular}
         \end{center}
-      From this we get 
+      From this we get
         \begin{align*}
           \overline{x}&=64 & s_x&=2.608 \\
           \overline{y}&=135 & s_y&=26.728 \\
@@ -153,7 +154,7 @@
         \end{align*}
     \end{ex*}
     \vspace*{\stretch{1}}
-    
+
     \noindent
     \begin{minipage}[t]{0.45\linewidth}\vspace*{0pt}
       Find the equation of the regression line.

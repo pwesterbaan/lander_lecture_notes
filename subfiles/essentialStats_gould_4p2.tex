@@ -19,18 +19,18 @@
 
     \begin{center}
       Note: \emph{Correlation does not mean causation!}\\[\baselineskip]
-      
+
       Take a few minutes to look at the graphs at this link: \href{https://www.tylervigen.com/spurious-correlations}{\textcolor{blue}{\underline{Spurious correlations}}}\\[\baselineskip]
-      
+
       \href{https://xkcd.com/552}{\includegraphics[width=0.85\linewidth]{images/correlation_2x_xkcd_552}}
     \end{center}
     \pagebreak
-    
-    \vspace*{\stretch{1}}
+
+    \vspace*{\stretch{0.5}}
     \begin{center}
       \begin{tikzpicture}[nodes=black]
         \begin{groupplot}[
-          group style={group size=2 by 2, horizontal sep=2cm},
+          group style={group size=2 by 1, horizontal sep=4cm},
           axis lines=center,
           axis line style={black,->},
           enlargelimits={value=0.025, auto},
@@ -45,8 +45,8 @@
               \addplot[only marks, blue] table [x=Height, y=Weight, col sep=comma] {\subfiles/scat_plot_data_4p2.csv} node at(61,230) {$r=0.72$};
         \end{groupplot}
       \end{tikzpicture}
-      \vspace*{\baselineskip}
-      
+      \vspace*{\stretch{1}}
+
       \begin{tikzpicture}[nodes=black]
         \begin{axis}[
           axis lines=center,
@@ -62,12 +62,12 @@
             \addplot[only marks, blue] table [x=x_sim, y=y_sim, col sep=comma] {\subfiles/scat_plot_data_4p2.csv} node at (47.5,3.2) {$r=0$};
         \end{axis}
       \end{tikzpicture}
-      \vspace*{\baselineskip}
-      
+      \vspace*{\stretch{1}}
+
       \begin{tikzpicture}[nodes=black]
         \begin{groupplot}[
           scaled ticks=false,
-          group style={group size=2 by 2, horizontal sep=2cm},
+          group style={group size=2 by 1, horizontal sep=4cm},
           axis lines=center,
           axis line style={black,->},
           enlargelimits={value=0.025, auto},
@@ -83,9 +83,9 @@
         \end{groupplot}
       \end{tikzpicture}
     \end{center}
-  \vspace*{\stretch{1}}
+  \vspace*{\stretch{0.5}}
   \pagebreak
-  
+
   \begin{defn*}
     The formula for the correlation coefficient between two variables $x$ and $y$ is
       \[r=\dfrac{\sum z_xz_y}{n-1}\]
@@ -118,7 +118,7 @@
     \end{tikzpicture}
   \end{flushright}
   \pagebreak
-  
+
   \noindent\textbf{Understanding the Correlation Coefficient:}
   \begin{itemize}
     \item Changing the order of the variables does not change $r$
