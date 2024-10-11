@@ -79,7 +79,7 @@
             \nextgroupplot[xlabel=Age, ylabel=Price]
               \addplot[only marks, blue] table [x=age, y=price, col sep=comma] {\subfiles/scat_plot_data_4p2.csv} node at (33,25000) {$r=-0.50$};
             \nextgroupplot[xlabel=Age, ylabel=Year]
-              \addplot[only marks, blue] table [x=age, y=year, col sep=comma] {\subfiles/scat_plot_data_4p2.csv} node at (33,2005) {$r=-1.00$};
+              \addplot[only marks, blue] table [x expr=\thisrow{age}, y expr=\the\year-\thisrow{age}, col sep=comma] {\subfiles/scat_plot_data_4p2_year_and_age.csv} node at (33,2005) {$r=-1.00$};
         \end{groupplot}
       \end{tikzpicture}
     \end{center}
