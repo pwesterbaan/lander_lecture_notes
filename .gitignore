@@ -2,6 +2,7 @@
 texPreamble.sty
 texShortcutsWesterbaan.tex
 *.autosave.xopp
+.dropboxignore
 \#*\#
 
 ## .gitignore tex template
