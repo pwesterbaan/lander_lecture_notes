@@ -1,8 +1,229 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{}
+%  \relscale{1.4} %TODO
+  \section{7.2: Measuring the Quality of a Survey}
+    The true population proportion can be estimated by the sample proportion. How accurate can we expect our estimate to be?
+    \begin{itemize}
+      \item The \emph{accuracy} of an estimation method is measured in terms of \emph{bias}
+      \item The \emph{precision} of an estimation method is measured in terms of \emph{standard error}
+    \end{itemize}
+    \vspace*{2\baselineskip}
+
+    \begin{ex*}
+      Consider a group of 8 people, where 2 identify as female, and 6 identify as male. What is the true population proportion of females? When using a sample size of $n=4$, what are possible sample proportions?
+    \end{ex*}
+    \vspace*{\stretch{1}}
+    \begin{flushright}
+      \begin{tikzpicture}
+        \begin{axis}[
+          axis x line=center,
+          axis y line=left,
+          axis line style={black,->},
+          xmin=-0.05,
+          ymin=0,
+          enlargelimits={value=0.075, auto},
+          xlabel=Sample Proportion $\hat{p}$, xlabel style={at={(axis description cs:0.5,-0.05)},anchor=north},
+          ylabel=Probability, ylabel style={at={(axis description cs:-0.1, 0.5)}, anchor=south},
+          ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1}]
+          \foreach \star/\freq in {
+            0/{15/70},
+            0.25/{40/70},
+            0.5/{15/70}
+            }{
+              \addplot[draw=lander_blue, line width=0.95pt] coordinates{(\star,0) (\star,\freq)};
+              \addplot[soldot, mark size=2pt, lander_blue] coordinates{(\star,\freq)};
+            }
+        \end{axis}
+      \end{tikzpicture}
+    \end{flushright}
+    \pagebreak
+    
+    \begin{ex*}
+      Now, consider a group of 1000 people where 25\% identify as female ($p=0.25$). When using a sample size of $n=10$, what are possible sample proportions?
+    \end{ex*}
+    \vspace*{\stretch{1}}
+    \begin{flushright}
+      \begin{tikzpicture}
+        \begin{axis}[
+          axis x line=center,
+          axis y line=left,
+          axis line style={black,->},
+          xmin=-0.1,
+          ymin=0,
+          enlargelimits={value=0.075, auto},
+          xlabel=Sample Proportion $\hat{p}$, xlabel style={at={(axis description cs:0.5,-0.05)},anchor=north},
+          ylabel=Probability, ylabel style={at={(axis description cs:-0.1, 0.5)}, anchor=south},
+          ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1}]
+          \foreach \star/\freq in {
+            0/0.0554689157775412,
+            0.1/0.187142091017345,
+            0.2/0.282604734481045,
+            0.3/0.251542302920769,
+            0.4/0.146141344674062,
+            0.5/0.0579072818091049,
+            0.6/0.0158481725237162,
+            0.7/0.00295808307193478,
+            0.8/0.000360368074772804,
+            0.9/0.0000258742246239485,
+            1/0.00000083142508458288
+            }{
+              \addplot[draw=lander_blue, line width=0.95pt] coordinates{(\star,0) (\star,\freq)};
+              \addplot[soldot, mark size=2pt, lander_blue] coordinates{(\star,\freq)};
+            }
+        \end{axis}
+      \end{tikzpicture}
+    \end{flushright}
+    \vspace*{\stretch{1}}
+
+    \noindent
+    Finally, consider a group of 1000 people where 25\% identify as female ($p=0.25$). When using a sample size of $n=100$, what are possible sample proportions?
+    \vspace*{\stretch{1}}
+    \begin{flushright}
+      \begin{tikzpicture}
+        \begin{axis}[
+          scaled ticks=false,
+          /pgf/number format/.cd, fixed, precision=6, %forces large ytick labels
+          axis x line=center,
+          axis y line=left,
+          axis line style={black,->},
+          ymin=0,
+          enlargelimits={value=0.075, auto},
+          xlabel=Sample Proportion $\hat{p}$, xlabel style={at={(axis description cs:0.5,-0.05)},anchor=north},
+          ylabel=Probability, ylabel style={at={(axis description cs:-0.1, 0.5)}, anchor=south},
+          ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1}]
+          %the following was generated using python:
+          % from scipy.special import comb
+          % for i in range(101):
+          %     print(f"""{i/100}/{comb(250,i)*comb(750,100-i)/comb(1000,100)},""")
+          \foreach \star/\freq in {
+0.0/5.354464293688157e-14,
+0.01/2.0562458885112173e-12,
+0.02/3.887156242156614e-11,
+0.03/4.82253421691469e-10,
+0.04/4.416785065100699e-09,
+0.05/3.184940338852979e-08,
+0.06/1.8833710972266445e-07,
+0.07/9.392693952156758e-07,
+0.08/4.0323991380068734e-06,
+0.09/1.5136964155900303e-05,
+0.1/5.029829710653921e-05,
+0.11/0.00014942142999597245,
+0.12/0.00040009355959788725,
+0.13/0.0009722194584309997,
+0.14/0.0021564321227820074,
+0.15/0.004387663795888279,
+0.16/0.008224810841113003,
+0.17/0.014257596074870909,
+0.18/0.022931441324986427,
+0.19/0.034320489321603066,
+0.2/0.04792318475343966,
+0.21/0.06257800010387081,
+0.22/0.076575933433404,
+0.23/0.08797896506102307,
+0.24/0.09506579687811512,
+0.25/0.09676148901801435,
+0.26/0.09290226030839627,
+0.27/0.08424683335364443,
+0.28/0.07224263591257024,
+0.29/0.05864233875511893,
+0.3/0.04510573222577011,
+0.31/0.032903617842652395,
+0.32/0.022782559073526696,
+0.33/0.014984189880029827,
+0.34/0.00936769593506021,
+0.35/0.005570213691360771,
+0.36/0.003152078730834223,
+0.37/0.0016983701285461182,
+0.38/0.0008717269260618604,
+0.39/0.0004264068592966938,
+0.4/0.00019885082195658839,
+0.41/8.84374133160243e-05,
+0.42/3.7521392224014344e-05,
+0.43/1.519037805935954e-05,
+0.44/5.8695071627719196e-06,
+0.45/2.1650083015099866e-06,
+0.46/7.624459207742268e-07,
+0.47/2.563907403537759e-07,
+0.48/8.233369076727608e-08,
+0.49/2.5249863881939202e-08,
+0.5/7.395324418671383e-09,
+0.51/2.068564353073617e-09,
+0.52/5.525578294659768e-10,
+0.53/1.4094606970781903e-10,
+0.54/3.432816865069962e-11,
+0.55/7.982018531387024e-12,
+0.56/1.7716059442766619e-12,
+0.57/3.752556723580026e-13,
+0.58/7.583885702551988e-14,
+0.59/1.461988819425456e-14,
+0.6/2.687519822753178e-15,
+0.61/4.709402746750783e-16,
+0.62/7.8635845519779e-17,
+0.63/1.250638884200339e-17,
+0.64/1.893638489097993e-18,
+0.65/2.7283062556218837e-19,
+0.66/3.7383153472891014e-20,
+0.67/4.8683154962925716e-21,
+0.68/6.021578994363819e-22,
+0.69/7.068931499704923e-23,
+0.7/7.869796556512385e-24,
+0.71/8.301635327541362e-25,
+0.72/8.289817825724309e-26,
+0.73/7.828199102562291e-27,
+0.74/6.982783991182631e-28,
+0.75/5.876454168947451e-29,
+0.76/4.659541646575609e-30,
+0.77/3.4759902670792874e-31,
+0.78/2.4357152142699488e-32,
+0.79/1.600379637583501e-33,
+0.8/9.840690545478456e-35,
+0.81/5.6506979876388725e-36,
+0.82/3.02285606395955e-37,
+0.83/1.5025093669214723e-38,
+0.84/6.9184249589496916e-40,
+0.85/2.9412303627005353e-41,
+0.86/1.150079807204868e-42,
+0.87/4.1182539299461755e-44,
+0.88/1.3437084376625606e-45,
+0.89/3.9716124170476665e-47,
+0.9/1.0561149535421369e-48,
+0.91/2.505945226479389e-50,
+0.92/5.253146049297284e-52,
+0.93/9.609367149034548e-54,
+0.94/1.5100512606941688e-55,
+0.95/1.9970441257641486e-57,
+0.96/2.161122092084223e-59,
+0.97/1.837247558928331e-61,
+0.98/1.1504101134293209e-63,
+0.99/4.716385139545823e-66,
+1.0/9.495655414286151e-69
+            }{
+              \addplot[draw=lander_blue, line width=0.95pt] coordinates{(\star,0) (\star,\freq)};
+              \addplot[soldot, mark size=2pt, lander_blue] coordinates{(\star,\freq)};
+            }
+        \end{axis}
+      \end{tikzpicture}
+    \end{flushright}
+    \pagebreak
+
+    \begin{defn*}
+      \begin{itemize}
+        \item The \textbf{sampling distribution} is the probability distribution of $\hat{p}$.
+        \item The \textbf{standard error} for $\hat{p}$ is given by
+          \[SE=\sqrt{\frac{p(1-p)}{n}}\]
+          provided that
+          \begin{itemize}
+            \item The sample is randomly selected from the population of interest.
+            \item If sampling without replacement, the population needs to be much larger than the sample size (e.g. at least 10 times bigger)
+          \end{itemize}
+          Since the true population proportion is typically unknown, we can estimate the standard error:
+          \[SE_{est}=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\]
+      \end{itemize}
+    \end{defn*}
+    
+    \noindent
+    \emph{Note}: Larger sample sizes have smaller standard error!
 
   \pagebreak
 \end{document}

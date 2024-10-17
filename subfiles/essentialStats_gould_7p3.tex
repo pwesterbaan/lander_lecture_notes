@@ -1,8 +1,106 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{}
+%  \relscale{1.4} %TODO
+  \section{7.3: The Central Limit Theorem for Sample Proportions}
+  \begin{defn*}[Central Limit Theorem (CLT)]\mbox{}\\
+    When estimating a population proportion, $p$, if
+    \begin{enumerate}
+      \item \emph{Random and Independent}: The sample is collected randomly from the population, and observations are independent of each other.
+      \item \emph{Large Sample}: The sample size, $n$, is large enough that the sample can have at least 10 successes or failures.
+      \item \emph{Big population}: If the sample is collected without replacement, then the population size must be at least 10 times bigger than the sample size.
+    \end{enumerate}
+    then the sampling distribution for $\hat{p}$ is approximately Normal, with mean $p$ and standard deviation
+      \[SE=\sqrt{\frac{p(1-p)}{n}}.\]
+    This distribution is denoted as
+      \[N\parens{p,\sqrt{\frac{p(1-p)}{n}}}.\]
+  \end{defn*}
+  \pagebreak
+  
+  \begin{ex*}
+    Consider the groups from the previous section where $p=0.25$ of the group identified as female. Suppose that $\hat{p}=0.25$. If $N$ represents the population size, and $n$ the sample size, identify if the CLT can be applied.
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task $N=8, n=4$
+    \task $N=1000, n=10$
+    \task $N=1000, n=100$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{ex*}
+    Consider the group of 1000 people where $p=0.25$ identified as female. In a sample of $n=100$ people, what is the probability that $\hat{p}$ is at least 29\%?
+  \end{ex*}
+  \begin{flushright}
+    \begin{tikzpicture}[scale=1.0, declare function={
+      N=50;
+      mu=0.25; sig=0.0433;
+      xmin=mu-3.2*sig;
+      xmax=mu+3.2*sig;
+      ymin=-0.1*gauss(mu,mu,sig);
+      h=0.08*gauss(mu,mu,sig);}]
+
+      \begin{axis}[
+        every axis plot post/.append style={
+        mark=none, domain={xmin}:{xmax},samples=N,smooth},
+        axis lines=center,
+        ymin=ymin,
+        axis line style={black,->},
+        every axis x label/.style={at={(current axis.right of origin)},anchor=north},
+        xlabel=$\hat{p}$, xlabel style={at={(axis description cs:0.5,-0.0625)},anchor=north},
+        clip=false,
+        ]
+
+        % PLOTS
+        \addplot[lander_blue,thick, name path=B] {gauss(x,mu,sig)};
+            
+        % FILL
+        \path[name path=xaxis]
+          (\pgfkeysvalueof{/pgfplots/xmin},0) -- (\pgfkeysvalueof{/pgfplots/xmax},0);
+        \addplot[lander_blue!50] fill between[of=xaxis and B, soft clip={domain=0.29:{mu+3*sig}}];
+        \addplot[draw=black] (0.29,0) -- (0.29,{gauss(0.29,mu,sig)});
+      \end{axis}
+    \end{tikzpicture}
+  \end{flushright}
+  \vspace*{\stretch{1}}
+  
+  \begin{ex*}
+    Samuel Morse claimed that the true proportion of E's used in the English language is $0.12$. Suppose we take a sample of $876$ letters, and find a sample proportion of $0.1347$. If we took another sample, what is the probability that the new sample proportion would be greater than $0.1347$?
+  \end{ex*}
+  \begin{flushright}
+    \begin{tikzpicture}[scale=1.0, declare function={
+      N=50;
+      mu=0.12; sig=0.010979;
+      xmin=mu-3.2*sig;
+      xmax=mu+3.2*sig;
+      ymin=-0.1*gauss(mu,mu,sig);
+      h=0.08*gauss(mu,mu,sig);}]
+
+      \begin{axis}[
+        scaled ticks=false,
+        /pgf/number format/.cd, fixed, precision=2, %forces large ytick labels
+        every axis plot post/.append style={
+        mark=none, domain={xmin}:{xmax},samples=N,smooth},
+        axis lines=center,
+        ymin=ymin,
+        axis line style={black,->},
+        every axis x label/.style={at={(current axis.right of origin)},anchor=north},
+        xlabel=$\hat{p}$, xlabel style={at={(axis description cs:0.5,-0.0625)},anchor=north},
+        clip=false,
+        ]
+
+        % PLOTS
+        \addplot[lander_blue,thick, name path=B] {gauss(x,mu,sig)};
+            
+        % FILL
+        \path[name path=xaxis]
+          (\pgfkeysvalueof{/pgfplots/xmin},0) -- (\pgfkeysvalueof{/pgfplots/xmax},0);
+        \addplot[lander_blue!50] fill between[of=xaxis and B, soft clip={domain=0.1347:{mu+3*sig}}];
+        \addplot[draw=black] (0.1347,0) -- (0.1347,{gauss(0.1347,mu,sig)});
+      \end{axis}
+    \end{tikzpicture}
+  \end{flushright}
+  \pagebreak
 
   \pagebreak
 \end{document}
