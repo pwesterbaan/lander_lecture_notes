@@ -55,6 +55,8 @@ Below are links to notes used at Lander University:
 
 <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_4p1_4p2_annotated.pdf">math211Notes_4p1_4p2_annotated.pdf</a></li>
 
+<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_4p3_4p4_annotated.pdf">math211Notes_4p3_4p4_annotated.pdf</a></li>
+
 <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_6p1_6p2_annotated.pdf">math211Notes_6p1_6p2_annotated.pdf</a></li>
 
 <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_7p1_7p2_7p3_annotated.pdf">math211Notes_7p1_7p2_7p3_annotated.pdf</a></li>
