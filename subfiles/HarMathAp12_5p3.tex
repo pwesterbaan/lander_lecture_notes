@@ -1,8 +1,81 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{}
+%  \relscale{1.4} %TODO
+  \section{5.3: Equations and Applications with Exponential and Logarithmic Functions}
+    \begin{center}
+      \fbox{\parbox{0.9875\linewidth}{
+        \noindent\textbf{Solving exponential equations:}
+        \begin{ex*}
+          Solve $\displaystyle4\parens{25^{2x}}=312,500$
+          \begin{align*}
+            &\textnormal{\parbox{0.58\linewidth}{1. Isolate the exponential by rewriting the equation with a base raised to a power on one side:}}& \frac{4\parens{25^{2x}}}{4}&=\frac{312,500}{4}\\[5mm]
+            &\textnormal{\parbox{0.58\linewidth}{2. Take the logarithm of both sides:}}& \ln\parens{25^{2x}}&=\ln\parens{78,125}\\[5mm]
+            &\textnormal{\parbox{0.58\linewidth}{3. Use a property of logarithms to remove the\newline variable from the exponent:}}& 2x\ln\parens{25}&=\ln\parens{78,125}\\[5mm]
+            &\textnormal{\parbox{0.58\linewidth}{4. Solve for the variable:}}& x&=\frac{\ln\parens{78,125}}{2\ln\parens{25}}\approx 1.75
+          \end{align*}
+        \end{ex*}
+      }}
+    \end{center}
+    \begin{ex*}
+      Unless the exponential function uses base $e$ or base $10$, \emph{it does not matter which logarithm we use}. Solve the following exponential equation first using base $10$, then using base $e$:
+        \[6\parens{4^{3x-2}}=20\]
+    \end{ex*}
+    \pagebreak
+
+    \begin{ex*}
+      Suppose the demand function for $q$ thousand units of a certain commodity is given by
+        \[p=30\parens{3^{-q/2}}\]
+    \end{ex*}
+    \begin{extasks}[after-item-skip=\stretch{0.5}](1)
+      \task At what price per unit will the demand equal 4000 units?
+      \task How many units, to the nearest thousand units, will be demanded if the price is $\$17.31$?
+    \end{extasks}
+    \vspace*{\stretch{1}}
+    \begin{ex*}
+      Solve the following for $x$:
+        \[6^{x-2}=2^{-3x}\]
+    \end{ex*}
+    \vspace*{\stretch{1}}
+    \pagebreak
+    
+    \begin{ex*}
+      A company finds that its daily sales begin to fall after the end of an advertising campaign, and the decline is such that the number of sales is $S=2000\parens{2^{-0.1x}}$, where $x$ is the number of days after the campaign ends.
+    \end{ex*}
+    \begin{extasks}[after-item-skip=\stretch{0.5}](1)
+      \task How many sales will be made after 10 days after the end of the campaign?
+      \task If the company does not want sales to drop below 350 per day, when should it start a new campaign?
+    \end{extasks}
+    \vspace*{\stretch{1}}
+    \pagebreak
+    
+    \begin{ex*}
+      The population of a certain city was 30,000 in 2000, and 40,500 in 2010. If the formula $P=P_0e^{ht}$ applies to the growth of the city's population, what population is predicted for the year 2030?
+    \end{ex*}
+    \pagebreak
+    
+    \begin{ex*}
+      The Gompertz equation
+        \[N=100\parens{0.03}^{0.2^t}\]
+      predicts the size of a deer herd on a small island $t$ decades from now. 
+    \end{ex*}
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task What is the size of the deer population
+      \task During what year will the deer population reach or exceed 70?
+    \end{extasks}
+    \vspace*{\stretch{1}}
+    \pagebreak
+    
+    \begin{ex*}
+      One company's revenue from the sales of computer tablets from 2015 to 2020 can be modeled by the logistic function
+        \[y=\frac{9.46}{1+53.08e^{-1.28x}}\]
+      where $x$ is the number of years past 2014 and $y$ is in millions of dollars.
+    \end{ex*}
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task Estimate the sales revenue for 2020
+      \task During what year will the sales revenue exceed $\$4$ million?
+    \end{extasks}
+    \vspace*{\stretch{1}}
 
   \pagebreak
 \end{document}
