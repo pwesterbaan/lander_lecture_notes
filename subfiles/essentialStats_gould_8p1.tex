@@ -1,8 +1,68 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{}
+%  \relscale{1.4} %TODO
+  \section{8.1: The Essential Ingredients of Hypothesis Testing}
+    \begin{defn*}
+      \begin{itemize}
+        \item A \textbf{hypothesis test} is a procedure that enables us to choose between two claims. 
+        \item The \textbf{null hypothesis}, $H_0$, represents the current belief, or status quo.
+        \item The \textbf{alternative hypothesis}, $H_a$, is what we wish to test.
+      \end{itemize}
+      A hypothesis test has 4 steps:
+      \begin{enumerate}
+        \item Formulate your null and alternative hypotheses
+        \item Examine or collect data
+        \item Compare data to our expectations; is the result significant?
+        \item Interpret the results
+      \end{enumerate}
+    \end{defn*}
+    \begin{center}
+      \begin{tabular}{@{}ccc@{}}\toprule
+        Two-Sided& One-Sided (Left)& One-Sided (Right)\\\midrule
+        $H_0: p=p_0$& $H_0: p=p_0$& $H_0: p=p_0$\\
+        $H_a: p\neq p_0$& $H_a: p< p_0$& $H_a: p> p_0$\\\bottomrule
+      \end{tabular}
+    \end{center}
+    
+    \begin{ex*}
+      When flipping a coin, it is considered fair if both sides of the coin have an equally likely chance of appearing face up. Suppose we have a coin that we believe might be unfair. Let $p$ be the proportion of times where heads appears face up. Formulate the null and alternative hypotheses.
+    \end{ex*}
+    \vspace*{\stretch{1}}
+    \hrulefill
+    \pagebreak
+    
+    \begin{ex*}
+      Historically, about 70\% of all U.S. adults were married. A sociologist who asks whether marriage rates in the United States have declined will take a random sample of U.S. adults and record whether or not they are married. 
+      
+      Write the null and alternative hypotheses.
+    \end{ex*}
+    \vspace*{\stretch{1}}
+    
+    \begin{ex*}
+      An Internet retail business is trying to decide whether to pay a search engine company to upgrade its advertising. In the past 15\% of customers who visited the company's web page by clicking on the advertisement bought something. %If the business decides to purchase premium advertising, then the search engine company will make that company's ad more prominent. 
+      The search engine company offers to do an experiment: for one day a random sample of customers will see the retail business's ad in a more prominent position to try and increase the proportion of customers who make a purchase. 
+      
+      Write the null and alternative hypotheses.
+    \end{ex*}
+    \vspace*{\stretch{1}}
+    \pagebreak
+    
+    \begin{defn*}
+      \begin{itemize}
+        \item The \textbf{significance level}, denoted by $\alpha$, is the probability of rejecting the null hypothesis when it is actually true (false positive).
+        \item A \textbf{test statistic} is similar to a $z$ score comparing the alternative hypothesis to the null hypothesis:
+          \[z=\frac{\hat{p}-p_0}{SE},\ \textnormal{ where }\  SE=\sqrt{\frac{p_0(1-p_0)}{n}}\]
+        \item The \textbf{$p$-value} is the probability that the null hypothesis is true. When the $p$-value is
+          \begin{itemize}
+            \item greater than $\alpha$, we fail to reject the null hypothesis
+            \item less than or equal to $\alpha$, we reject the null hypothesis
+          \end{itemize}
+      \end{itemize}
+      \emph{Note}: Hypothesis tests don't prove the null hypothesis!
+    \end{defn*}
+    
+    
 
   \pagebreak
 \end{document}

@@ -1,8 +1,56 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{}
+%  \relscale{1.4} %TODO
+  \section{7.4: Estimating the Population Proportion with Confidence Intervals}
+    \begin{defn*}
+      Suppose that we wish to estimate a population proportion $p$ based on a sample proportion $\hat{p}$.
+      \begin{itemize}
+        \item A \textbf{confidence interval} is an interval about the point estimate $\hat{p}$ that we can be confident contains the true population proportion $p$:
+          \[\hat{p}\pm m\]
+        \item The \textbf{margin of error (ME)} is half the width of the confidence interval. When estimating a population proportion, the margin of error is
+          \[m=z^* SE\]
+        \item The \textbf{confidence level} measures how often the estimation method is successful. A larger confidence level results in a larger margin of error.
+      \end{itemize}
+    \end{defn*}
+    \vspace*{\stretch{1}}
+    
+    Recall the standard error (SE) for population proportions is
+      \[SE=\sqrt{\frac{p(1-p)}{n}}\]    
+    \vspace*{\stretch{1}}
+    
+    \noindent
+    Some common values for the margin of error:
+    \begin{center}
+      \begin{tabular}{@{}rr@{}}\toprule
+        Confidence Level& Margin of Error\\\midrule
+        99.7\%& $3.0\cdot SE$\\
+        99\%& $2.58\cdot SE$\\
+        95\%& $1.96\cdot SE$\\
+        90\%& $1.645\cdot SE$\\
+        80\%& $1.28\cdot SE$\\\bottomrule
+      \end{tabular}
+    \end{center}
+    \vspace*{\stretch{1}}
+    \pagebreak
+    
+    \begin{ex*}
+      In 2018, Gallup took a poll of 497 randomly selected adults who teach K--12 students and 42\% of them said that such digital devices (smartphones, tablets, computers) had ``mostly helpful'' effects on students' education.
+    \end{ex*}
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task Check that the conditions of the CLT apply.
+      \task Estimate the standard error.
+      \task Give the 95\% confidence interval and interpret the result.
+    \end{extasks}
+    \vspace*{\stretch{1}}
+    \pagebreak
+    
+    \begin{ex*}
+      After the Great Recession, the Pew Research Center noted there seemed to be a decline in households that rented their homes and were looking to purchase homes. However, Pew reported that in 2016 ``a solid 72\%'' of renters reported that they wished to buy their own home. Pew reports that the ``margin of error at 95\% confidence level is plus-or-minus 5.4 points.''
+      
+      State the confidence interval in interval form and interpret the result.
+    \end{ex*}
+    \pagebreak
 
   \pagebreak
 \end{document}

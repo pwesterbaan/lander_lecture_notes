@@ -1,8 +1,47 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{}
+%  \relscale{1.4} %TODO
+  \section{8.2: Hypothesis Testing in Four Steps}
+  \fbox{\parbox{0.9875\linewidth}{
+    \begin{enumerate}
+      \item \textbf{Hypothesize:} formulate your hypotheses
+      \item \textbf{Check conditions:} similar the CLT, we require
+        \begin{itemize}
+          \item \textbf{Random Sample:} The sample must be randomly collected from the population.
+          \item \textbf{Large Sample:} The sample size must be large enough for at least 10 successes, $np\geq 10$, and 10 failures, $n(1-p)\geq 10$.
+          \item \textbf{Large Population:} If the sample is collected without replacement, the population of size $N$ must be at least 10 times bigger than the sample: $N\geq 10 n$
+          \item \textbf{Independence:} Each observation or measurement must have no influence on any others.
+        \end{itemize}
+      \item \textbf{Compute:} Stating a significance level, compute the observed test statistic $z$ and/or $p$-value.
+      \item \textbf{Interpret:} Decided whether to reject or fail to reject the null hypothesis.
+    \end{enumerate}
+  }}
+  \pagebreak
+  
+  \begin{ex*}
+    Unlike flipping a coin, spinning a coin leads to a biased outcome. Suppose we spun a coin 60 times, and saw a sample proportion of $\hat{p}=0.35$. 
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task Formulate the null and alternative hypotheses
+    \task Check the conditions required to perform a hypothesis test.
+    \task Find the test statistic and $p$-value
+    \task Using a significance level of $\alpha=0.05$, decide whether to reject or fail to reject the null hypothesis.
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{ex*}
+    A group of medical researchers knew from pervious studies that in the past, about 39\% of all men between the ages of 45 and 59 were regularly active. Researchers were concerned that this percentage had declined over time. For this reason, they did selected a random sample, without replacement, of 1927 men in this age group and interviewed them. Out of this sample, 680 said they were regularly active.
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task Formulate the null and alternative hypotheses
+    \task Check the conditions required to perform a hypothesis test.
+    \task Find the test statistic and $p$-value
+    \task Using a significance level of $\alpha=0.05$, decide whether to reject or fail to reject the null hypothesis.
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
 
   \pagebreak
 \end{document}
