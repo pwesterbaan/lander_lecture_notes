@@ -5,7 +5,7 @@ Below are links to notes used at Lander University:
 <ul>
 <h1> math121 </h1>
 
-<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121Notes.pdf">math121Notes.pdf</a></li>
+<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121Notes.pdf" target="_blank">math121Notes.pdf</a></li>
 
 <details name="annotated_notes">
   <summary>math121 Annotated Notes</summary>
@@ -35,7 +35,7 @@ Below are links to notes used at Lander University:
 
 <h1> math211 </h1>
 
-<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211Notes.pdf">math211Notes.pdf</a></li>
+<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211Notes.pdf" target="_blank">math211Notes.pdf</a></li>
 
 <details name="annotated_notes">
   <summary>math211 Annotated Notes</summary>
