@@ -7,8 +7,19 @@
     When estimating a population proportion, $p$, if
     \begin{enumerate}
       \item \emph{Random and Independent}: The sample is collected randomly from the population, and observations are independent of each other.
-      \item \emph{Large Sample}: The sample size, $n$, is large enough that the sample can have at least 10 successes or failures.
-      \item \emph{Big population}: If the sample is collected without replacement, then the population size must be at least 10 times bigger than the sample size.
+      \item \emph{Large Sample}: The sample size, $n$, is large
+        enough that the sample can have at least 10 successes or
+        failures.
+        \begin{align*}
+          n\hat{p}&\geq 10\\
+          n\parens{1-\hat{p}}&\geq 10
+        \end{align*}
+      \item \emph{Big population}: If the sample is collected
+        without replacement, then the population size must be at
+        least 10 times bigger than the sample size.
+        \begin{align*}
+          N&\geq 10n
+        \end{align*}
     \end{enumerate}
     then the sampling distribution for $\hat{p}$ is approximately Normal, with mean $p$ and standard deviation
       \[SE=\sqrt{\frac{p(1-p)}{n}}.\]
@@ -16,7 +27,7 @@
       \[N\parens{p,\sqrt{\frac{p(1-p)}{n}}}.\]
   \end{defn*}
   \pagebreak
-  
+
   \begin{ex*}
     Consider the groups from the previous section where $p=0.25$ of the group identified as female. Suppose that $\hat{p}=0.25$. If $N$ represents the population size, and $n$ the sample size, identify if the CLT can be applied.
   \end{ex*}
@@ -27,7 +38,7 @@
   \end{extasks}
   \vspace*{\stretch{1}}
   \pagebreak
-  
+
   \begin{ex*}
     Consider the group of 1000 people where $p=0.25$ identified as female. In a sample of $n=100$ people, what is the probability that $\hat{p}$ is at least 29\%?
   \end{ex*}
@@ -53,7 +64,7 @@
 
         % PLOTS
         \addplot[lander_blue,thick, name path=B] {gauss(x,mu,sig)};
-            
+
         % FILL
         \path[name path=xaxis]
           (\pgfkeysvalueof{/pgfplots/xmin},0) -- (\pgfkeysvalueof{/pgfplots/xmax},0);
@@ -63,7 +74,7 @@
     \end{tikzpicture}
   \end{flushright}
   \vspace*{\stretch{1}}
-  
+
   \begin{ex*}
     Samuel Morse claimed that the true proportion of E's used in the English language is $0.12$. Suppose we take a sample of $876$ letters, and find a sample proportion of $0.1347$. If we took another sample, what is the probability that the new sample proportion would be greater than $0.1347$?
   \end{ex*}
@@ -91,7 +102,7 @@
 
         % PLOTS
         \addplot[lander_blue,thick, name path=B] {gauss(x,mu,sig)};
-            
+
         % FILL
         \path[name path=xaxis]
           (\pgfkeysvalueof{/pgfplots/xmin},0) -- (\pgfkeysvalueof{/pgfplots/xmax},0);
