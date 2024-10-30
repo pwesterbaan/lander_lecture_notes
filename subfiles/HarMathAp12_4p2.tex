@@ -12,11 +12,11 @@
           &&2x&+&y&\leq& 28\\
           &&&&\mathllap{x\geq 0}, y&\geq& 0
       \end{alignat*}
-      
+
       The \textbf{constraints} of a linear program (LP) may be limitations or requirements of the variables. The \textbf{objective function} is the function that we wish to optimize (e.g. maximize profit \emph{or} minimize cost).
     \end{defn*}
     \vspace*{\stretch{1}}
-    
+
     \begin{center}
       \begin{tikzpicture}[declare function={
         f(\x)=-\x/5+10; g(\x)=-2*\x+28;
@@ -46,9 +46,9 @@
       \end{tikzpicture}
     \end{center}
   \pagebreak
-  
+
   \noindent \textbf{Linear programming (graphical method)}
-  
+
   \begin{center}
     \fbox{\parbox{0.95\linewidth}{
       \begin{enumerate}
@@ -71,7 +71,7 @@
     \end{center}
     Setup the system of inequalities that represents the constraints.
   \end{ex*}
-  
+
   \vspace*{\stretch{1}}
   \begin{flushright}
     \begin{tikzpicture}[declare function={
@@ -101,7 +101,7 @@
       \end{tikzpicture}
   \end{flushright}
   \pagebreak
-  
+
   \begin{ex*}
     Using the linear constraints from above, suppose the co-ops profits per acre are \$240 for corn and \$160 for soybeans. This gives us the following linear program:
       \begin{alignat*}{4}
@@ -110,14 +110,14 @@
         \textnormal{subject to }&& x&+&y&\leq& 6,000\\
           &&9x&+&3y&\leq &\,40,500\\
           &&\frac{3}{4}x&+&y&\leq& 5,250\\
-          &&&&\mathllap{x\geq 0}, y&\geq\mathrlap{\,0}& 
+          &&&&\mathllap{x\geq 0}, y&\geq\mathrlap{\,0}&
       \end{alignat*}
     \begin{enumerate}
       \item Find the ``corners'' of the feasible region
       \item Evaluate the profit function at the corners
     \end{enumerate}
   \end{ex*}
-  
+
   \vspace*{\stretch{1}}
   \begin{minipage}{0.45\linewidth}
     \begin{tabular}{@{}lr@{}}
@@ -159,7 +159,7 @@
     \end{flushright}
   \end{minipage}
   \pagebreak
-  
+
   \begin{ex*}
     Suppose the profits per acre are instead \$300 for corn, and \$100 for soybeans. This gives us the following linear program:
       \begin{alignat*}{4}
@@ -168,11 +168,11 @@
         \textnormal{subject to }&& x&+&y&\leq& 6,000\\
           &&9x&+&3y&\leq &\,40,500\\
           &&\frac{3}{4}x&+&y&\leq& 5,250\\
-          &&&&\mathllap{x\geq 0}, y&\geq\mathrlap{\,0}& 
+          &&&&\mathllap{x\geq 0}, y&\geq\mathrlap{\,0}&
       \end{alignat*}
     Evaluate the profit function at the corners. What combination of corn and soy-beans maximizes the profit?
   \end{ex*}
-  
+
   \vspace*{\stretch{1}}
   \begin{minipage}{0.45\linewidth}
     \begin{tabular}{@{}lr@{}}
@@ -213,7 +213,7 @@
     \end{flushright}
   \end{minipage}
   \pagebreak
-  
+
   \begin{ex*}
     Two chemical plants, one at Macon and one at Jonesboro, produce three types of fertilizer: low phosphorus (LP), medium phosphorus (MP), and high phosphorus (HP). At each plant, the fertilizer is produced in a single production run, so the three types are produced in fixed proportions. The Macon plant produces 1 ton of LP, 2 tons of MP, and 3 tons of HP in a single operation and charges \$600 for what is produced in one operation. On the other hand, one operation of the Jonesboro plant produces 1 ton of LP, 5 tons of MP, and 1 ton of HP, and it charges \$1,000 for what it produces in one operation. If a customer needs 100 tons of LP, 260 tons of MP, and 180 tons of HP, how many production runs should be ordered from each plant to minimize costs?
   \end{ex*}
@@ -230,7 +230,7 @@
     \task Write the linear program that we aim to solve below:
   \end{extasks}
   \pagebreak
-  
+
   \begin{ex*}
     From above, we get the following linear program
     \begin{alignat*}{4}
@@ -239,7 +239,7 @@
       \textnormal{subject to }&& x&+&y&\geq& 100\\
         &&2x&+&5y&\geq &\,260\\
         &&3x&+&y&\geq& 180\\
-        &&&&\mathllap{x\geq 0}, y&\geq\mathrlap{\,0}& 
+        &&&&\mathllap{x\geq 0}, y&\geq\mathrlap{\,0}&
     \end{alignat*}
     Graph the solution region of the constraints and evaluate the objective function at the corners of the feasible region above.
   \end{ex*}
@@ -257,7 +257,7 @@
   \begin{minipage}{0.45\linewidth}
     \begin{tikzpicture}[declare function={
       X=200;
-      f(\x)=-3*\x+180;  
+      f(\x)=-3*\x+180;
       g(\x)=-\x+100;
       h(\x)=-0.4*\x+52;
       j(\x)=f(\x)>=g(\x) ? f(\x) : (h(\x)>=g(\x) ? h(\x) : g(\x));}]
@@ -282,5 +282,6 @@
       \end{axis}
     \end{tikzpicture}
   \end{minipage}
+
   \pagebreak
 \end{document}
