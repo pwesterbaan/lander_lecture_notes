@@ -1,8 +1,98 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{}
+%  \relscale{1.4} %TODO
+  \section{9.2: The Central Limit Theorem for Sample Means}
+  
+  \begin{defn*}[Central Limit Theorem (CLT)]\mbox{}\\
+    When estimating a population mean, $\mu$, if
+    \begin{enumerate}
+      \item \emph{Random and Independent}: Each observation is collected randomly from the population, and observations are independent of each other.
+      \item \emph{Large Sample}: Either the population distribution is Normal, or the sample size is large ($n\geq 25$).
+      \item \emph{Big population}: If the sample is collected without replacement (e.g. SRS), then the population size must be at least 10 times bigger than the sample size.
+        \begin{align*}
+          N&\geq 10n
+        \end{align*}
+    \end{enumerate}
+    then the sampling distribution for $\overline{x}$ is approximately Normal, with mean $\mu$ and standard deviation
+      \[SE=\frac{\sigma}{\sqrt{n}}.\]
+    This distribution is denoted as
+      \[N\parens{\mu,\frac{\sigma}{\sqrt{n}}}.\]
+  \end{defn*}
+  \pagebreak
+
+  \begin{ex*}
+    The population distribution of \emph{all} emergency response times from the LA Fire Department is right-skewed. Suppose we repeatedly take random samples of a certain size from this population and calculate the mean response time. We know that the population has mean $\mu=6.3$ and standard deviation $\sigma=2.8$ minutes.
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task Describe the sampling distribution if the sample size is $n=9$, and again when $n=81$.
+  \end{extasks}
+  \begin{center}
+    \begin{tikzpicture}[scale=1.0, declare function={
+      N=101;
+      mu=6.3; sig=2.8; 
+      xmin=mu-3.2*sig;
+      xmax=mu+3.2*sig;
+      ymin=-0.1*gauss(mu,mu,sig);
+      h=0.08*gauss(mu,mu,sig);}]
+
+      \begin{axis}[
+        every axis plot post/.append style={
+        mark=none, domain={xmin}:{xmax},samples=N,smooth},
+        axis lines=center,
+%        ymin=ymin,
+        axis line style={black,->},
+        every axis x label/.style={at={(current axis.right of origin)},anchor=north},
+        width=0.75*\textwidth, height=0.325*\textwidth,
+        ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+        clip=false,
+        ]
+
+        % PLOTS
+        \addplot[lander_blue,thick] {gauss(x,mu,sig)} 
+          node[pos=0.675, above right, black, fill=white, opacity=0.0, text opacity=1.0, font=\normalsize, align=left] {$\sigma$};
+        \addplot[red,thick] {gauss(x,mu,sig/3)} 
+          node[pos=0.55, right, black, fill=white, opacity=0.0, text opacity=1.0, font=\normalsize, align=left] {$\frac{\sigma}{\sqrt{9}}$};
+        \addplot[purple,thick] {gauss(x,mu,sig/9)} 
+          node[pos=0.5, right, black, fill=white, opacity=0.0, text opacity=1.0, font=\normalsize, align=left] {$\frac{\sigma}{\sqrt{81}}$};
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \vspace*{\stretch{1}}
+  
+  \begin{center}
+    \fbox{\parbox{0.75\linewidth}{
+      \textbf{Note:} Even if the population distribution has an unusual shape, the sampling distribution is fairly symmetric and unimodal.
+    }}
+  \end{center}
+  \pagebreak
+  
+  \begin{ex*}
+    According to one very large study done in the US, the mean resting pulse rate of adult women is about $\mu=74$ BPM, with standard deviation $\sigma=13$ BPM, where the distribution is known to be skewed right. Suppose we take a random sample of 36 women from this population.
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task What is the approximate probability that the average pulse rate of this sample will be below 71 or above 77?
+    \task Can we find the probability that a single adult woman, randomly selected from this population, will have a resting pulse rate more than 3 BPM away from the mean value, $\mu=74$?
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{defn*}[The $t$-Distribution]
+    The hypothesis tests and confidence intervals we will use for estimating and testing the mean are based on the \textbf{$t$-statistic}:
+    \begin{align*}
+      t&=\frac{\overline{x}-\mu}{SE_{est}}\\[5pt]
+      SE_{est}&=\frac{s}{\sqrt{n}}
+    \end{align*}
+    The $t$-statistic follows the \textbf{$t$-distribution}. With the $t$-distribution, we do not need to check conditions for the CLT, but the distribution's shape is dependent on the \textbf{degrees of freedom (df)}.
+  \end{defn*}
+  \vspace*{1\baselineskip}
+  
+  \begin{center}
+    \fbox{\parbox{0.65\linewidth}{
+      If we know the population standard deviation $\sigma$, then we have the familiar $z$-statistic:
+      \[z=\frac{\overline{x}-\mu}{\parens{\frac{\sigma}{\sqrt{n}}}}\]
+    }}
+  \end{center}
 
   \pagebreak
 \end{document}
