@@ -3,7 +3,7 @@
 \begin{document}
 %  \relscale{1.4} %TODO
   \section{9.2: The Central Limit Theorem for Sample Means}
-  
+
   \begin{defn*}[Central Limit Theorem (CLT)]\mbox{}\\
     When estimating a population mean, $\mu$, if
     \begin{enumerate}
@@ -30,7 +30,7 @@
   \begin{center}
     \begin{tikzpicture}[scale=1.0, declare function={
       N=101;
-      mu=6.3; sig=2.8; 
+      mu=6.3; sig=2.8;
       xmin=mu-3.2*sig;
       xmax=mu+3.2*sig;
       ymin=-0.1*gauss(mu,mu,sig);
@@ -49,24 +49,24 @@
         ]
 
         % PLOTS
-        \addplot[lander_blue,thick] {gauss(x,mu,sig)} 
+        \addplot[lander_blue,thick] {gauss(x,mu,sig)}
           node[pos=0.675, above right, black, fill=white, opacity=0.0, text opacity=1.0, font=\normalsize, align=left] {$\sigma$};
-        \addplot[red,thick] {gauss(x,mu,sig/3)} 
+        \addplot[red,thick] {gauss(x,mu,sig/3)}
           node[pos=0.55, right, black, fill=white, opacity=0.0, text opacity=1.0, font=\normalsize, align=left] {$\frac{\sigma}{\sqrt{9}}$};
-        \addplot[purple,thick] {gauss(x,mu,sig/9)} 
+        \addplot[purple,thick] {gauss(x,mu,sig/9)}
           node[pos=0.5, right, black, fill=white, opacity=0.0, text opacity=1.0, font=\normalsize, align=left] {$\frac{\sigma}{\sqrt{81}}$};
       \end{axis}
     \end{tikzpicture}
   \end{center}
   \vspace*{\stretch{1}}
-  
+
   \begin{center}
     \fbox{\parbox{0.75\linewidth}{
       \textbf{Note:} Even if the population distribution has an unusual shape, the sampling distribution is fairly symmetric and unimodal.
     }}
   \end{center}
   \pagebreak
-  
+
   \begin{ex*}
     According to one very large study done in the US, the mean resting pulse rate of adult women is about $\mu=74$ BPM, with standard deviation $\sigma=13$ BPM, where the distribution is known to be skewed right. Suppose we take a random sample of 36 women from this population.
   \end{ex*}
@@ -74,9 +74,9 @@
     \task What is the approximate probability that the average pulse rate of this sample will be below 71 or above 77?
     \task Can we find the probability that a single adult woman, randomly selected from this population, will have a resting pulse rate more than 3 BPM away from the mean value, $\mu=74$?
   \end{extasks}
-  \vspace*{\stretch{1}}
+  \vspace*{\stretch{0.5}}
   \pagebreak
-  
+
   \begin{defn*}[The $t$-Distribution]
     The hypothesis tests and confidence intervals we will use for estimating and testing the mean are based on the \textbf{$t$-statistic}:
     \begin{align*}
@@ -86,7 +86,7 @@
     The $t$-statistic follows the \textbf{$t$-distribution}. With the $t$-distribution, we do not need to check conditions for the CLT, but the distribution's shape is dependent on the \textbf{degrees of freedom (df)}.
   \end{defn*}
   \vspace*{1\baselineskip}
-  
+
   \begin{center}
     \fbox{\parbox{0.65\linewidth}{
       If we know the population standard deviation $\sigma$, then we have the familiar $z$-statistic:
