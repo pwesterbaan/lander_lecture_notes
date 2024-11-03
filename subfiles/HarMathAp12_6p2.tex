@@ -1,8 +1,175 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{}
+%  \relscale{1.4} %TODO
+  \section{6.2: Compound Interest}
+    \begin{ex*}
+      Suppose you invest \$1,000 at 5\% annual interest. With simple interest, you can take 2 approaches:
+      \begin{enumerate}
+        \item Gain interest on \emph{only} your initial investment
+        \item Reinvest the interest gained
+      \end{enumerate}
+    \end{ex*}
+    
+    \noindent
+    \begin{minipage}{0.4975\linewidth}
+      \begin{center}
+        \begin{tabular}{@{}l*{2}{M{35mm}}@{}}\toprule
+          Year & Simple interest & Simple interest reinvested \\\midrule
+          1 & \$1,050.00 & \$1,050.00 \\
+          2 & \$1,100.00 & \$1,102.50 \\
+          3 & \$1,150.00 & \$1,157.63 \\
+          4 & \$1,200.00 & \$1,215.51 \\
+          5 & \$1,250.00 & \$1,276.28 \\\bottomrule
+        \end{tabular}
+      \end{center}
+      \vspace*{\baselineskip}
+    \end{minipage}\hspace*{\stretch{1}}%
+    \begin{minipage}{0.5\linewidth}
+      \begin{center}
+        \begin{tikzpicture}[scale=1.0, declare function={
+          P=1000; r=0.05;
+          si(\x) = 1000*((1+r*\x)-1);
+          ci(\x) = 1000*((1+r)^\x-1);}]
+          \begin{axis}[
+            axis lines=center,
+            axis line style={black,->},
+            enlargelimits={value=0.025, auto},
+            ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+            xlabel=years, xlabel style={at={(axis description cs:0.5,-0.0625)},anchor=north},
+            title=Interest earned,
+            width=\linewidth,
+            height=0.9*\axisdefaultheight,
+            every axis plot/.append style={domain=xmin:xmax, line width=0.95pt, color=lander_blue, samples=255}]
+            \addplot[color=lander_blue] expression[domain=0:5]{si(x)};
+            \addplot[soldot, color=lander_blue] expression[domain=0:5, samples=6]{si(x)};
+
+            \addplot[color=red] expression[domain=0:5]{ci(x)};
+            \addplot[soldot, color=red] expression[domain=0:5, samples=6]{ci(x)};
+          \end{axis}
+        \end{tikzpicture}
+      \end{center}
+    \end{minipage}
+
+    \begin{defn*}
+      \textbf{Compound interest} is a method where the interest for each period is added to the principal before interest is calculated for the next period.
+    \end{defn*}
+    \vspace*{0.5\baselineskip}
+
+    \begin{ex*}
+      Using the example above, derive a formula for the future value of an investment compounded annually.
+    \end{ex*}
+    \pagebreak
+    
+    \begin{defn*}
+      When interest is compounded multiple times a year (e.g. quarterly, monthly, etc.), the \textbf{nominal interest rate} is the interest rate \emph{per year}.\newline
+
+      If $\$P$ is invested for $t$ years at a nominal interest rate $r$ compounded $m$ times per year, then the \textbf{total number of compounding periods} is
+        \[n=mt\]
+      the interest rate per compounding period (\textbf{periodic interest rate}) is
+        \[i=\frac{r}{m}\]
+      and the future value is
+        \[S=P\parens{1+i}^n=P\parens{1+\frac{r}{m}}^{mt}\]
+    \end{defn*}
+    
+    \begin{ex*}
+      If $\$3,000$ is invested for $5$ years at $9\%$ compounded $4$ times a year, how
+much interest is earned?
+    \end{ex*}
+    \pagebreak
+    
+    \noindent
+    \begin{minipage}{0.74\linewidth}
+      \begin{ex*}
+        For the following, identify the annual interest rate, the length in years, the periodic interest rate, and the number of periods:
+      \end{ex*}
+      \begin{extasks}[after-item-skip=2\baselineskip](1)
+        \task 12\% compounded monthly for 7 years
+        \task 7.2\% compounded quarterly for 11 quarters
+      \end{extasks}
+      \vspace*{2\baselineskip}
+    \end{minipage}\hspace*{\stretch{1}}%
+    \begin{minipage}{0.225\linewidth}%\mbox{}
+      \begin{tabular}{@{}lr@{}}\toprule
+        Frequency& $m$\\\midrule
+        Annually& 1\\
+        Semi-annually& 2\\
+        Quarterly& 4\\
+        Monthly& 12\\
+        Weekly& 52\\
+        Daily& 365\\\bottomrule
+      \end{tabular}
+    \end{minipage}
+  
+  \begin{ex*}
+    Ben and Taylor want to have $\$200,000$ in Arthur’s college fund on his
+$18$th birthday, and they want to know the impact on this goal of
+having $\$10,000$ invested at $9.8\%$, compounded quarterly, on his $1$st
+birthday. To advise Ben and Taylor regarding this, find 
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task the future value of the $\$10,000$ investment,
+      \task the amount of compound interest that the investment earns,
+      \task the impact this would have on their goal.
+    \end{extasks}
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{ex*}
+    What amount must be invested now to have $\$12,000$ after $3$ years with an interest rate of $6\%$, compounded semi-annually?
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  
+  \begin{ex*}
+    Three years after Google stock was first sold publicly, its share price had risen $500\%$. Google’s $500\%$ increase means that $\$10,000$ invested in Google stock at its initial public offering (I.P.O) was worth $\$60,000$ three years later. What interest rate compounded annually does this represent?
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{ex*}
+    Suppose we invest $\$1$ at a $100\%$ interest rate for $1$ year:
+      \[S=\parens{1+\frac{1.00}{m}}^m\]
+    Compute the future value 
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](2)
+    \task Annually
+    \task Semi-annually
+    \task Monthly
+    \task Weekly
+    \task Daily
+    \task Each minute ($m=525,600$)
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{defn*}
+    If $\$P$ is invested for $t$ years at a nominal rate $r$ compounded continuously, then the future value is given by the exponential function
+      \[S=Pe^{rt}\]
+  \end{defn*}
+  
+  \begin{ex*}
+    Which investment strategy is worth more: $\$3,000$ for $8$ years at
+      \begin{extasks}[after-item-skip=\stretch{1}](2)
+        \task $9\%$, compounded annually
+        \task $8\%$, compounded continuously
+      \end{extasks}
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  
+  \begin{ex*}
+    Suppose you invest $\$900$ at $11.5\%$, compounded continuously. How long will it take to gain $\$700$ in interest?
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  \begin{defn*}
+    Let $r$ represent the annual (nominal) interest rate for an investment. Then the \textbf{annual percentage yield (APY)} is:
+    \begin{description}
+      \item[Periodic compounding:] 
+        \[\textnormal{APY }=\parens{1+\frac{r}{m}}^m-1\]
+      \item[Continuous compounding:]
+        \[\textnormal{APY }=e^r-1\]
+    \end{description}
+  \end{defn*}
 
   \pagebreak
 \end{document}
