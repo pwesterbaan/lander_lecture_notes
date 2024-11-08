@@ -76,6 +76,8 @@ Below are links to notes used at Lander University:
 
 <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_8p3_9p1_9p2_annotated.pdf">math211Notes_8p3_9p1_9p2_annotated.pdf</a></li>
 
+<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_9p3_annotated.pdf">math211Notes_9p3_annotated.pdf</a></li>
+
 </ul>
 </details>
 

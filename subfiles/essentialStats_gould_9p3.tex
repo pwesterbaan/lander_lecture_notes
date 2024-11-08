@@ -31,7 +31,7 @@
 
     \begin{center}
       \begin{tikzpicture}[scale=1.0, declare function={
-        N=50;
+        N=100;
         mu=0; sig=1;
         xmin=mu-3.2*sig;
         xmax=mu+3.2*sig;
@@ -52,6 +52,7 @@
           %This plot needs to be compiled using 
           %"pdflatex --shell-escape" in order to utilize gnuplots
           \foreach \n in {1,2,4,30}{
+          %TODO color coded legend?
 %          \pgfplotsinvokeforeach {1,2,4,30}{
 %            \def\n{#1} %explicitly define \n
             \addplot gnuplot [black,thick,smooth,no marks]{\students};
