@@ -1,8 +1,59 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{}
+%  \relscale{1.4} %TODO
+  \section{6.3: Future Values of Annuities}
+    \begin{defn*}
+      \begin{itemize}
+        \item An \textbf{annuity} is a financial plan characterized by regular payments (e.g. mortgages, student loans, etc.).
+        \item The sum of all the payments and the interest earned is called the \textbf{future value of the annuity} or its \textbf{future value}.
+        \item An \textbf{ordinary annuity} or (\textbf{annuity immediate}) is an annuity in which payments are made at the \emph{end of each of the equal payment intervals}.
+      \end{itemize}
+       
+    \end{defn*}
+    \begin{ex*}
+      Suppose that we invest $\$100$ at the end of each year for $5$ years in an account that pays $10\%$ compounded annually. How much money will you have at the end of the $5$ years?
+    \end{ex*}
+    \vspace*{\stretch{1}}
+
+    \begin{defn*}      
+      If $\$R$ is deposited at the \emph{end of each period} for $n$ periods in an annuity that earns interest at a rate of $i$ per period, the \textbf{future value of the annuity} will be
+        \[S=R\cdot S_{\angln_i}=R\sbrkt{\frac{(1+i)^n-1}{i}}\]
+      The notation $S\angln_i$ represents the future value of an ordinary annuity of $\$1$ per period for $n$ periods with an interest rate of $i$ per period.
+    \end{defn*}
+    \pagebreak
+    
+    \begin{ex*}
+      %twins example
+      Suppose a pair of twins take different steps to save for retirement. Both regularly make investments of $\$2,000$ into accounts that earn $10\%$, compounded annually. Starting at age 21:
+    \end{ex*}
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task Find the future value if twin A makes his payments for 8 years, and then lets his investment accrue compound interest every year for 36 years.
+      \task Find the future value if twin B waits 8 years before making regular payments for the following 36 years.
+    \end{extasks}
+    \vspace*{\stretch{1}}
+    \pagebreak
+    
+    \begin{ex*}
+      Suppose that you wish to have $\$50,000$ saved up in $5$ years. To do this, you want to make regularly monthly payments. What is the amount of the monthly payments if the interest rate is $5\%$? What if the interest rate is $15\%$?
+    \end{ex*}
+    \vspace*{\stretch{1}}
+    
+    \begin{ex*}
+      A small business invests $\$1,000$ at the end of each month in an account that earns $6\%$ compounded monthly. How long will it take until the business has $\$100,000$ toward the purchase of its own office building?
+    \end{ex*}
+    \vspace*{\stretch{1}}
+    \pagebreak
+
+    \begin{defn*}
+      An \textbf{annuity due} differs from an ordinary annuity in that the payments are made at the \emph{beginning of each period}. \newline
+    
+      If $\$R$ is deposited at the \emph{beginning of each period} for $n$ periods in an annuity that earns interest at a rate of $i$ per period, the \textbf{future value of the annuity} will be
+        \[S=R\cdot S_{\angln_i}(1+i)=R\sbrkt{\frac{(1+i)^n-1}{i}}\parens{1+i}\]
+    \end{defn*}
+    \begin{ex*}
+      Find the future value of an investment if $\$150$ is deposited at the beginning of each month for $9$ years at an interest rate of $7.2\%$ compounded monthly.
+    \end{ex*}
 
   \pagebreak
 \end{document}
