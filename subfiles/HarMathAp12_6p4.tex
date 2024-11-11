@@ -1,8 +1,49 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{}
+%  \relscale{1.4} %TODO
+  \section{6.4: Present Values of Annuities}
+%    \begin{ex*}
+%      Suppose that we invest $\$100$ at the end of each year for $5$ years in an account that pays $10\%$ compounded annually. How much money will you have at the end of the $5$ years?
+%    \end{ex*}
+%
+    \begin{ex*}
+      Suppose we wish to invest a lump sum of money, $A_n$, into an annuity that earns interest at a rate of $10\%$ per year, so that we may receive payments of $\$100$ for $5$ years. What is the amount of the lump sum?
+    \end{ex*}
+    \vspace*{\stretch{1}}
+    \begin{defn*}
+      If a payment of $\$R$ is to be withdrawn at the \emph{end of each period} for $n$ periods from an account that earns interest at a rate of $i$ per period, then the account is an \textbf{ordinary annuity} and the \textbf{present value} is
+        \[A_n=R\cdot a_{\angln i}=R\sbrkt{\frac{1-\parens{1+i}^{-n}}{i}}\]
+      The notation $a_{\angln i}$ represents the present value of an ordinary annuity of $\$1$ per period for $n$ periods with an interest rate of $i$ per period.
+    \end{defn*}
+    \pagebreak
+
+    \begin{ex*}
+      Find the lump sum that one must invest in an annuity to receive $\$1000$ at the end of each month for the next 16 years, if the annuity pays $9\%$ compounded monthly.
+    \end{ex*}
+    \vspace*{\stretch{1}}
+    
+    \begin{ex*}
+      Suppose that a couple plans to set up an ordinary annuity with a $\$100,000$ inheritance they received. What is the size of the quarterly payments they will receive for the next $6$ years if the account pays $7\%$ compounded quarterly?
+    \end{ex*}
+    \vspace*{\stretch{1}}
+    \pagebreak
+    
+    \begin{ex*}
+      An inheritance of $\$250,000$ is invested at $9\%$ compounded monthly. If $\$2500$ is withdrawn at the end of each month, how long will it be until the account balance is $\$0$?
+    \end{ex*}
+    \vspace*{\stretch{1}}
+    \pagebreak
+
+    \begin{defn*}
+      If a payment of $\$R$ is to be withdrawn at the \emph{beginning of each period} for $n$ periods from an account that earns interest at a rate of $i$ per period, then the account is an \textbf{annuity due} and the \textbf{present value} is
+        \[A_{(n,\textnormal{due})}=R\cdot a_{\angln i}(1+i)=R\sbrkt{\frac{1-\parens{1+i}^{-n}}{i}}(1+i)\]
+      The notation $a_{\angln i}$ represents the present value of an ordinary annuity of $\$1$ per period for $n$ periods with an interest rate of $i$ per period.
+    \end{defn*}
+    \begin{ex*}
+      Suppose that a court settlement results in a $\$750,000$ award. If this is invested at $9\%$ compounded semiannually, how much will it provide at the \emph{beginning} of each half-year for a period of $7$ years?
+    \end{ex*}
+    \vspace*{\stretch{1}}
 
   \pagebreak
 \end{document}
