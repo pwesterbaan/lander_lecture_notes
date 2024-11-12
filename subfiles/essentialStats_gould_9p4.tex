@@ -1,8 +1,62 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{}
+  % \relscale{1.4} %TODO
+  \section{9.4: Hypothesis Testing for Means}
+  Similar to hypothesis testing for proportions, we have the following four steps:
+  \vspace*{0.5\baselineskip}
+
+  \noindent
+  \fbox{\parbox{0.9875\linewidth}{
+    \begin{enumerate}
+      \item \textbf{Hypothesize:} formulate your hypotheses
+      \item \textbf{Check conditions:}
+        \begin{itemize}
+          \item \textbf{Random and Independent:} The sample must be randomly collected from the population, and observations are independent of each other.
+          \item \textbf{Large Sample:} Either the population is Normal, \emph{or} the sample size is large ($n\geq 25$).
+          \item \textbf{Large Population:} If the sample is collected without replacement, the population of size $N$ must be at least 10 times bigger than the sample: $N\geq 10 n$
+%          \item \textbf{Independence:} Each observation or measurement must have no influence on any others.
+        \end{itemize}
+        If these conditions are met, we compute the test statistic for the One-Sample $t$-Test which follows a $t$-distribution with $n-1$ degrees of freedom:
+          \[t=\frac{\overline{x}-\mu_0}{SE_{\textnormal{est}}}, \qquad \textnormal{where} \qquad SE_{\textnormal{est}}=\frac{s}{\sqrt{n}}\]
+      \item \textbf{Compute:} Stating a significance level, compute the observed test statistic $t$ and/or $p$-value.
+      \item \textbf{Interpret:} Decide whether to reject or fail to reject the null hypothesis.
+    \end{enumerate}
+  }}
+
+  \begin{center}
+    \begin{tabular}{@{}ccc@{}}\toprule
+      Two-Sided& One-Sided (Left)& One-Sided (Right)\\\midrule
+      $H_0: \mu=\mu_0$& $H_0: \mu=\mu_0$& $H_0: \mu=\mu_0$\\
+      $H_a: \mu\neq \mu_0$& $H_a: \mu< \mu_0$& $H_a: \mu> \mu_0$\\\bottomrule
+    \end{tabular}
+  \end{center}
+  \pagebreak
+
+  \begin{ex*}
+    McDonald's advertises that its ice cream cones have a mean weight of 3.2 ounces. To test this, we find the weights of a sample of $5$ cones:
+      \[4.2, 3.6, 3.9, 3.4, 3.3\]
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task Formulate the null and alternative hypotheses
+    \task Check the conditions required to perform a hypothesis test.
+    \task Find the test statistic and $p$-value
+    \task Using a significance level of $\alpha=0.05$, decide whether to reject or fail to reject the null hypothesis.
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{ex*}
+    In the 2011-2012 academic year, the mean cost of attending two-year colleges in the United Stats was $\$3,831$. Has this increase over time? A random sample of 35 two-year colleges in 2014-2015 had a mean tuition of $\$4,173$, with a standard deviation of $\$2,590$.
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task Formulate the null and alternative hypotheses
+    \task Check the conditions required to perform a hypothesis test.
+    \task Find the test statistic and $p$-value
+    \task Using a significance level of $\alpha=0.05$, decide whether to reject or fail to reject the null hypothesis.
+    \task Repeat this hypothesis test with a sample size of $n=175$. What happens to the standard error when the sample size increases?
+  \end{extasks}
+  \vspace*{\stretch{1}}
 
   \pagebreak
 \end{document}
