@@ -3,6 +3,8 @@ texPreamble.sty
 texShortcutsWesterbaan.tex
 *.autosave.xopp
 .dropboxignore
+subfiles/demo_lecture.tex
+subfiles/demo_lecture.pdf
 \#*\#
 
 ## .gitignore tex template
