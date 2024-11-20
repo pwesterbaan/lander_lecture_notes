@@ -1,7 +1,7 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
-\relscale{1.4}
 \begin{document}
+% \relscale{1.4} %TODO
   \section{1.2: Classifying and Storing Data}
   \begin{itemize}
     \item The collection of data is called a \textbf{data set} or a \textbf{sample}. The \textbf{population} refers to the set or group that contains everything relevant to the data.
@@ -13,10 +13,10 @@
         \item Categorical variables
       \end{itemize}
   \end{itemize}
-  
+
   \vspace*{\stretch{1}}
   \begin{ex*}
-    The following table contains data crash-test dummy studies. 
+    The following table contains data crash-test dummy studies.
     \begin{itemize}
       \item How many variables does this table have?
       \item How many observations does this table have?
@@ -44,7 +44,7 @@
     \end{center}
   \end{ex*}
   \pagebreak
-  
+
   \textbf{Coding} categorical data using numbers:
   \begin{center}
     \begin{tabular}{@{}ccc@{}}\toprule
@@ -68,16 +68,16 @@
     \end{tabular}
   \end{center}
   \vspace*{\stretch{1}}
-  
+
   We can further break down variables into five types:
   \begin{center}
-    \tikzstyle{label} = [rectangle, 
+    \tikzstyle{label} = [rectangle,
       fill=white,
-      rounded corners, 
-      minimum width=85pt, 
+      rounded corners,
+      minimum width=85pt,
       minimum height=20pt,
       align=left,
-      text centered, 
+      text centered,
       draw=black]
     \tikzstyle{arrow} = [thick,->,>=stealth, shorten >=5pt]
     \begin{tikzpicture}
@@ -89,7 +89,7 @@
       \node (ordi) [label] at (12,0) {Ordinal};
       \node (disc) [label] at (12,-2) {Discrete};
       \node (cont) [label] at (12,-4) {Continuous};
-      
+
       \draw [arrow] (type) -- (cate.west);
       \draw [arrow] (type) -- (quan.west);
       \draw [arrow] (cate) -- (bina.west);
