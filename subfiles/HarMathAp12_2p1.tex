@@ -1,8 +1,106 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{}
+%  \relscale{1.4} %TODO
+  \section{2.1: Quadratic Equations}
+    \begin{defn*}
+      A \textbf{quadratic equation} in one variable is an equation of second degree that can be written in the \emph{general form} as
+        \[ax^2+bx+c=0 \quad (a\neq 0)\]
+      where $a$, $b$, and $c$ represent constants.
+      \vspace*{\baselineskip}
+      
+      The \textbf{zero product property} states that for real numbers $a$ and $b$, $ab=0$ if and only if $a=0$ or $b=0$ or both.
+    \end{defn*}
+    
+    \begin{ex*}
+      Solve the following for $x$:
+    \end{ex*}
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $x(x+3)=0$
+      \task $(x-4)(3x+1)=0$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+    
+    \pagebreak
+    \begin{center}
+      \fbox{\parbox{0.9875\linewidth}{
+        \noindent\textbf{Solving quadratic equations via factoring:}
+        \begin{ex*}
+          Solve $2x^2+x=3x+12$
+          \begin{align*}
+            &\textnormal{\parbox{0.5\linewidth}{1. Rewrite the equation in the general form:}}&
+              2x^2-2x-12&=0\\[5mm]
+            &\textnormal{\parbox{0.5\linewidth}{2. Rewrite $bx$ using factors of $ac$:}}&
+              2x^2\textcolor{red}{-6x+4x}-12&=0 \\[5mm]
+            &\textnormal{\parbox{0.5\linewidth}{3. Factor out like terms:}}&
+              2x(x-3)+4(x-3)&=0 \\[5mm]
+            &\textnormal{\parbox{0.5\linewidth}{4. Factor by grouping:}}&
+              (x-3)(2x+4)&=0 \\[5mm]
+            &\textnormal{\parbox{0.5\linewidth}{5. Solve for the roots:}}&
+              x=3 \textnormal{ and } x=-2
+          \end{align*}
+        \end{ex*}
+      }}
+    \end{center}
+    
+    \begin{ex*}
+      Solve the following for $x$ via factoring:
+    \end{ex*}
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $(x+3)(x-1)=5$
+      \task $-4x^2+8x-3=0$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+    \pagebreak
+
+    \begin{center}
+      \fbox{\parbox{0.5\linewidth}{ \centering
+        Solutions to $x^2=C$ are $x=\pm \sqrt{C}$
+      }}
+    \end{center}
+    
+    \begin{ex*}
+      Solve the following:
+    \end{ex*}
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $(x-1)^2=9$
+      \task $4x^2-1=0$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+
+    \begin{defn*}
+      The \textbf{quadratic formula} 
+        \[x=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}\]
+      gives the solutions to $ax^2+bx+c=0$.\\[\baselineskip]
+      Quadratic equations can have one, two, or no solutions. The \textbf{discriminant} is $b^2-4ac$:
+      \begin{itemize}
+        \item $b^2-4ac>0$: The equation has \emph{exactly} two distinct real solutions.
+        \item $b^2-4ac=0$: The equation has \emph{exactly} one real solution.
+        \item $b^2-4ac<0$: The equation has no real solutions.
+      \end{itemize}
+    \end{defn*}
+    \pagebreak
+
+    \begin{ex*}
+      Suppose some hooligans kick a ball up in the air off the roof of the library. Assuming the height, in $ft$, of the ball $t$ seconds after kicking it is given by 
+        \[h(t)=-32t^2+64t+40\]
+      Solve for $t$ when 
+    \end{ex*}
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task the ball is $80$ feet off of the ground
+      \task the ball is $72$ feet off of the ground
+      \task the ball is $40$ feet off of the ground
+      \task the ball hits the ground
+    \end{extasks}
+    \vspace{\stretch{1}}
+    \pagebreak
+    
+    \begin{ex*}
+      The Social Security Trust Fund balance $B$, in billions of dollars, can be described by the function
+        $B=-7.97t^2+312t-356$
+      where $t$ is the number of years past the year 1995. For planning purposes, it is important to know when the trust fund balance will be $0$. Solve
+        \[0=-7.97t^2+312t-356.\]
+    \end{ex*}
 
   \pagebreak
 \end{document}
