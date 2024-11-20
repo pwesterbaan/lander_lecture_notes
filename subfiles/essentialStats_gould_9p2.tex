@@ -43,18 +43,22 @@
 %        ymin=ymin,
         axis line style={black,->},
         every axis x label/.style={at={(current axis.right of origin)},anchor=north},
-        width=0.75*\textwidth, height=0.325*\textwidth,
+        width=0.95*\textwidth, height=0.4*\textwidth,
         ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
         clip=false,
         ]
 
         % PLOTS
         \addplot[lander_blue,thick] {gauss(x,mu,sig)}
-          node[pos=0.675, above right, black, fill=white, opacity=0.0, text opacity=1.0, font=\normalsize, align=left] {$\sigma$};
+          node[pos=0.675, above right, black, fill=white,
+          opacity=0.0, text opacity=1.0, font=\normalsize,
+          align=left] {\Large $\sigma$};
         \addplot[red,thick] {gauss(x,mu,sig/3)}
-          node[pos=0.55, right, black, fill=white, opacity=0.0, text opacity=1.0, font=\normalsize, align=left] {$\frac{\sigma}{\sqrt{9}}$};
+          node[pos=0.55, right, black, fill=white, opacity=0.0, text
+          opacity=1.0, font=\normalsize, align=left] {\Large $\frac{\sigma}{\sqrt{9}}$};
         \addplot[purple,thick] {gauss(x,mu,sig/9)}
-          node[pos=0.5, right, black, fill=white, opacity=0.0, text opacity=1.0, font=\normalsize, align=left] {$\frac{\sigma}{\sqrt{81}}$};
+          node[pos=0.5, right, black, fill=white, opacity=0.0, text
+          opacity=1.0, font=\normalsize, align=left] {\Large $\frac{\sigma}{\sqrt{81}}$};
       \end{axis}
     \end{tikzpicture}
   \end{center}
