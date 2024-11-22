@@ -1,8 +1,121 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{}
+%  \relscale{1.4} %TODO
+  \section{2.2: Quadratic Functions: Parabolas}
+  \begin{defn*}
+    A \textbf{quadratic function} has the form
+      \[y=f(x)=ax^2+bx+c \quad (a\neq 0)\]
+      where $a$, $b$, and $c$ represent constants. A \textbf{parabola} is the shape of the graph of a quadratic function.
+  \end{defn*}
+  \vspace*{\stretch{1}}
+  
+  \begin{center}
+    \begin{tikzpicture}[declare function={
+      f(\x)=(\x)^2+0;
+      g(\x)=-(\x)^2+0;
+      h(\x)=(\x-2)^2-1;
+      j(\x)=-0.5*(\x+1)^2+3;}]
+      \begin{groupplot}[
+        group style={group size=2 by 2, horizontal sep=20mm, vertical sep=20mm},
+        grid=both, %major,minor
+        grid style={line width=0.375pt, draw=gray!75},
+        minor grid style={draw=gray!25},
+        axis lines=center,
+        axis line style={black,->},
+        minor x tick num=1,
+        minor y tick num=1,
+        enlargelimits={value=0.05, auto},
+        ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+        every axis plot/.append style={domain=xmin:xmax, line width=0.95pt, color=lander_blue, samples=255},
+        ]
+        \nextgroupplot[ymin=-2.5]
+          \addplot[<->] expression[domain={-3:3}]{f(x)}
+            node[pos=0.92, above left, black, fill=white, opacity=0.8, text opacity=1.0, inner sep=1pt, rounded corners=2.5pt, xshift=-5pt] {$y=x^2$};
+          \addplot[soldot, mark size=1.5pt] coordinates{(0,0)};
+        \nextgroupplot[ymax=2.5]
+          \addplot[<->] expression[domain={-3:3}]{g(x)}
+            node[pos=0.91, below left, black, fill=white, opacity=0.8, text opacity=1.0, inner sep=1pt, rounded corners=2.5pt, xshift=-5pt] {$y=-x^2$};
+          \addplot[soldot, mark size=1.5pt] coordinates{(0,0)};
+        \nextgroupplot
+          \addplot[<->] expression[domain={-1:5}]{h(x)}
+            node[pos=0.925, above left, black, fill=white, opacity=0.8, text opacity=1.0, inner sep=1pt, rounded corners=2.5pt, xshift=-5pt] {$y=(x-2)^2-1$};
+          \addplot[soldot, mark size=1.5pt] coordinates{(1,0)(2,{h(2)})(3,0)};
+        \nextgroupplot
+          \addplot[<->] expression[domain={-4:2}]{j(x)}
+            node[pos=0.925, below left, black, fill=white, opacity=0.8, text opacity=1.0, inner sep=1pt, rounded corners=2.5pt, xshift=-5pt] {$y=-\frac{1}{2}(x+1)^2+3$};
+          \addplot[soldot, mark size=1.5pt] coordinates{(-1-sqrt(6),0)(-1,{j(-1)})(-1+sqrt(6),0)};
+      \end{groupplot}
+    \end{tikzpicture}
+  \end{center}
+  \pagebreak
+  
+  \begin{defn*}
+    The quadratic function $y=f(x)=ax^2+bx+c$ has its \textbf{vertex} at 
+      \[\parens{-\frac{b}{2a},\ f\parens{-\frac{b}{2a}}}.\]
+    The optimal value occurs at the vertex of a parabola:
+    \begin{itemize}
+      \item A maximum if $a<0$
+      \item A minimum if $a>0$
+    \end{itemize}
+  \end{defn*}
+  \begin{ex*}
+    Consider the function
+      \[2x+\frac{x^2}{2}\]
+    Is the vertex a maximum or minimum? Locate the vertex, $x$-intercepts, $y$-intercept, and then sketch the graph.
+  \end{ex*}
+  
+  \vspace*{\stretch{1}}
+  \hspace*{\stretch{1}}
+  \begin{tikzpicture}
+    \begin{axis}[
+      group style={group size=2 by 2, horizontal sep=20mm, vertical sep=20mm},
+      grid=both, %major,minor
+      grid style={line width=0.375pt, draw=gray!75},
+      minor grid style={draw=gray!25},
+      axis lines=center,
+      axis line style={black,->},
+      minor x tick num=1,
+      minor y tick num=1,
+      xmin=-6.5, xmax=6.5,
+      ymin=-6.5, ymax=6.5,
+      xticklabels={},
+      yticklabels={},
+      ]
+    \end{axis}
+  \end{tikzpicture}
+  \pagebreak
+  
+  \begin{ex*}
+    Consider the function
+      \[x^2+5-4x\]
+    Is the vertex a maximum or minimum? Locate the vertex, $x$-intercepts, $y$-intercept, and then sketch the graph.
+  \end{ex*}
+  
+  \vspace*{\stretch{1}}
+  \hspace*{\stretch{1}}
+  \begin{tikzpicture}
+    \begin{axis}[
+      group style={group size=2 by 2, horizontal sep=20mm, vertical sep=20mm},
+      grid=both, %major,minor
+      grid style={line width=0.375pt, draw=gray!75},
+      minor grid style={draw=gray!25},
+      axis lines=center,
+      axis line style={black,->},
+      minor x tick num=1,
+      minor y tick num=1,
+      xmin=-6.5, xmax=6.5,
+      ymin=-6.5, ymax=6.5,
+      xticklabels={},
+      yticklabels={},
+      ]
+    \end{axis}
+  \end{tikzpicture}
+  \pagebreak
+  
+  \begin{ex*}
+    Ace Cruises offers a sunset cruise to a group of $50$ people for a price of $\$30$ per person, but it reduces the price per person by $\$0.50$ for each additional person above $50$. Find the revenue function. What price maximizes the revenue? What is this maximal value?
+  \end{ex*}
 
   \pagebreak
 \end{document}
