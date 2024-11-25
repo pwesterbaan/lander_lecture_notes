@@ -51,12 +51,19 @@
   \pagebreak
   
   \begin{defn*}
+    \TabPositions{47.5mm}
     The quadratic function $y=f(x)=ax^2+bx+c$ has its \textbf{vertex} at 
       \[\parens{-\frac{b}{2a},\ f\parens{-\frac{b}{2a}}}.\]
     The optimal value occurs at the vertex of a parabola:
     \begin{itemize}
       \item A maximum if $a<0$
+        \tab\tikz{\begin{axis}[axis lines=none,height=20mm]
+            \addplot[<->, lander_blue] expression[domain=-1:1]{-x^2};
+          \end{axis}}
       \item A minimum if $a>0$
+        \tab\tikz{\begin{axis}[axis lines=none,height=20mm]
+            \addplot[<->, lander_blue] expression[domain=-1:1]{x^2};
+          \end{axis}}
     \end{itemize}
   \end{defn*}
   \begin{ex*}
