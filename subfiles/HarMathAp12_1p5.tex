@@ -40,8 +40,8 @@
     \begin{minipage}{0.45\linewidth}
       \begin{flushright}
         \begin{tikzpicture}[scale=0.8, declare function={
-          f(\x)=2*\x/3+1;
-          g(\x)=2*\x/3-1;}]
+          f(\x)=1*\x/3+1;
+          g(\x)=1*\x/3-1;}]
           \begin{axis}[
             axis lines=center,
             axis line style={black,->},
@@ -52,10 +52,10 @@
             ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
             every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}
             ]
-            \addplot[<->] expression[domain=-1.5:5.5]{f(x)}
-              node[pos=0.8, above left, black] {$2x-6y=-6$};
-            \addplot[<->] expression[red, domain=-1.5:5.5]{g(x)}
-              node[pos=0.25, below right, black] {$-x+3y=-3$};
+            \addplot[<->] expression[domain=-3:5.5]{f(x)}
+              node[pos=0.75, above left, xshift=15pt, black] {$2x-6y=-6$};
+            \addplot[<->] expression[red, domain=-3:5.5]{g(x)}
+              node[pos=0.4, below right, black] {$-x+3y=-3$};
           \end{axis}
         \end{tikzpicture}
       \end{flushright}
