@@ -1,0 +1,84 @@
+\documentclass[mathNotesPreamble]{subfiles}
+%% Externalize graphics and save in ./images/ folder
+%% pdflatex --shell-escape <tex file>
+%% The document can be compiled with the two following
+%% lines commented out, but will recompile all figures
+%% each time.
+\usetikzlibrary{external}
+\tikzexternalize[prefix=images/]
+
+%https://tex.stackexchange.com/a/216321/190910
+% define subfiles directory depending on file
+\providecommand{\subfiles}{./subfiles}
+\begin{document}
+  \makeatletter
+  \title{Math 123 Class notes\\[0.25\baselineskip]\semester\the\year}
+  \author{Peter Westerbaan}
+
+  \pagestyle{headandfoot}
+
+  %\firstpageheader{\@title\\\@date}{}{Math 1040}
+  %\firstpageheadrule
+
+  \newcommand{\currentname}{\@currentlabelname}
+
+  \runningfootrule
+  \runningfooter{\parbox{0.45\linewidth}{\currentname}}{\thepage}{\@title}
+  \makeatother
+
+  %% Title
+  \pagenumbering{roman}
+  \vspace*{\stretch{1}}
+  \begin{center}
+    \makeatletter
+    {\huge
+      \@title}\\[\baselineskip]
+      To accompany \emph{Applied Calculus} by \emph{Tan} \\[\baselineskip]
+      \@author\\[\baselineskip]
+      Last updated:
+      \@date\\
+    \makeatother
+    \end{center}
+  \vspace*{\stretch{1}}
+  \thispagestyle{empty}
+  \pagebreak
+  \pagestyle{headandfoot}
+
+  \renewcommand{\contentsname}{Table Of Contents}
+  \renewcommand\thesection{}
+  \tableofcontents
+  \newpage
+
+  \makeatletter
+  \firstpageheader{}{}{}
+  \firstpagefooter{\parbox{0.45\linewidth}{\currentname}}{\thepage}{\@title}
+  \firstpagefootrule
+  \makeatother
+  \pagenumbering{arabic}
+  \setcounter{page}{1}
+  %% everything else
+
+  \relscale{1.4}
+
+%   \subfile{subfiles/HarMathAp12_1p1.tex}
+%   \subfile{subfiles/HarMathAp12_1p3.tex}
+%   \subfile{subfiles/HarMathAp12_1p4.tex}
+%   \subfile{subfiles/HarMathAp12_1p5.tex}
+%   \subfile{subfiles/HarMathAp12_1p6.tex}
+%   \subfile{subfiles/HarMathAp12_4p1.tex}
+%   \subfile{subfiles/HarMathAp12_4p2.tex}
+% %  \subfile{subfiles/HarMathAp12_2p1.tex} %orig
+% %  \subfile{subfiles/HarMathAp12_2p2.tex} %orig
+% %  \subfile{subfiles/HarMathAp12_2p3.tex} %orig
+%   \subfile{subfiles/HarMathAp12_5p1.tex}
+%   \subfile{subfiles/HarMathAp12_5p2.tex}
+%   \subfile{subfiles/HarMathAp12_5p3.tex}
+%   \subfile{subfiles/HarMathAp12_6p1.tex}
+%   \subfile{subfiles/HarMathAp12_6p2.tex}
+%   \subfile{subfiles/HarMathAp12_6p3.tex}
+%   \subfile{subfiles/HarMathAp12_6p4.tex}
+%   \subfile{subfiles/HarMathAp12_2p1.tex}
+%   \subfile{subfiles/HarMathAp12_2p2.tex}
+%   \subfile{subfiles/HarMathAp12_2p3.tex}
+
+\end{document}
