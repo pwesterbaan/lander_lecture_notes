@@ -5,6 +5,7 @@ texShortcutsWesterbaan.tex
 .dropboxignore
 subfiles/demo_lecture.tex
 subfiles/demo_lecture.pdf
+subfiles/*.pdf
 \#*\#
 
 ## .gitignore tex template
