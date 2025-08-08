@@ -1,7 +1,7 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-%  \relscale{1.4} %TODO
+  % \relscale{1.4} %TODO
   \section{2.3: Business Applications Using Quadratics}
   Recall the following:
   \begin{defn*}
@@ -42,11 +42,11 @@
   \begin{center}
   % https://www.desmos.com/calculator/ig3ctztdys
     \begin{tikzpicture}[declare function={
-      ro=10; rt=120; c=rt+ro; mp=(ro+rt)/2; s=0.2; t=0.25;
-      R(\x)=((1+s)*(ro+rt)-(1-t)*\x)*\x;
-      C(\x)=ro*rt+\x*(t*\x+s*(ro+rt));
+      ro=10; rt=120; c=rt+ro; mp=c/2; s=0.2; t=0.25;
+      R(\x)=((1+s)*c-(1-t)*\x)*\x;
+      C(\x)=ro*rt+\x*(t*\x+s*c);
       P(\x)=R(\x)-C(\x);
-      Rvx=((1+s)*(ro+rt))/(2*(1-t)); Rvy=R(Rvx);},
+      Rvx=((1+s)*c)/(2*(1-t)); Rvy=R(Rvx);},
       every node/.append style={black, align=left, font=\small}]
       \begin{groupplot}[
         group style={group size=2 by 1, horizontal sep=30mm},
@@ -78,7 +78,7 @@
           \addplot[soldot, black] coordinates{(Rvx,Rvy)};
           \draw[dashed, black!75] (Rvx,0) -- (Rvx,Rvy);
 
-        \nextgroupplot
+        \nextgroupplot[ymax={1.05*P(mp)}]
           \addplot[draw=none, name path=Z] expression[domain=0:ro]{0};
           \addplot[<-, name path=P] expression[domain=0:ro]{P(x)};
           \addplot[red!50,opacity=0.6] fill between[of=P and Z];
