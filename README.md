@@ -4,6 +4,7 @@ This repository contains notes to be used while lecturing at Lander University.
 The main files are `math???Notes.{pdf,tex}` which inherit their styling from `mathNotesPreamble.tex`. The `subfile` package is used to import each section's source file, contained in the `subfiles` directory, into the main `math???Notes.tex` file.
 
 * [math121Notes.pdf](https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121Notes.pdf)
+* [math123Notes.pdf](https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123Notes.pdf)
 * [math211Notes.pdf](https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211Notes.pdf)
 
 The included preamble files contain packages and macros needed to compile:

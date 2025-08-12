@@ -51,6 +51,12 @@ Below are links to notes used at Lander University:
 
 
 
+<h1> math123 </h1>
+
+<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123Notes.pdf" target="_blank">math123Notes.pdf</a></li>
+
+
+
 <h1> math211 </h1>
 
 <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211Notes.pdf" target="_blank">math211Notes.pdf</a></li>

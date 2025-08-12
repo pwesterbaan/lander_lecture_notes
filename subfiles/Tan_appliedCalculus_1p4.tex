@@ -1,8 +1,107 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
+%  \relscale{1.4} %TODO
   \section{1.4: Straight Lines}
+    \begin{defn*}[Slope of a Nonvertical Line]
+      If $(x_1,y_1)$ and $(x_2,y_2)$ are any two distinct points on a nonvertical line $L$, then the slope $m$ of $L$ is given by
+        \[m=\frac{\Delta y}{\Delta x}=\frac{y_2-y_1}{x_2-x_1}\]
+    \end{defn*}
+
+    \begin{flushright}
+      \smash{\raisebox{-\height}{
+      \begin{tikzpicture}[scale=1.0, declare function={
+        f(\x)=\x/3+2/3;
+        a=2; b=5;
+        fa=f(a); fb=f(b);}]
+        \begin{axis}[
+          axis lines=center,
+          axis line style={black,->},
+          xmin=-2, xmax=8,
+          enlargelimits={abs=0.75},
+          ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+          xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+          ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+          every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}
+          ]
+          \coordinate (MP) at ({(a,fa)}-|{(b,fb)});
+          \addplot[<->,domain=-2.5:8] {f(x)} node[pos=0.9, above left, black] {$L$};
+          \addplot[soldot] coordinates{(a,fa)} 
+            node [black, above left, font=\normalsize, inner sep=1pt]
+            {$(x_1,y_1)$};
+          \addplot[soldot] coordinates{(b,fb)} 
+            node [black, above left, font=\normalsize, inner sep=1pt]
+            {$(x_2,y_2)$};
+          \draw[dashed] (a,fa) -| (b,fb);
+          \node[below, font=\normalsize] at ($(a,fa)!0.5!(MP)$) {$\Delta x=x_2-x_1$};
+          \node[right, font=\normalsize] at ($(b,fb)!0.5!(MP)$) {$\Delta y=y_2-y_1$};
+        \end{axis}
+      \end{tikzpicture}
+      }}
+    \end{flushright}
+
+    \begin{minipage}{0.5\linewidth}
+      \begin{ex*}
+        Compute the slope of the line passing through the points
+      \end{ex*}
+    \end{minipage}
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task $(x_1,y_1)=(1,1)$ and $(x_2,y_2)=(4,2)$
+      \task $(x_1,y_1)=(3,2)$ and $(x_2,y_2)=(-1,2)$
+      \task $(x_1,y_1)=(4,1)$ and $(x_2,y_2)=(4,4)$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+    \pagebreak
+    
+    \begin{defn*}[Point-Slope Form of an Equation of a Line]
+      An equation of the line that has slope $m$ and passes through the point $(x_1,y_1)$ is given by
+        \[y-y_1=m(x-x_1)\]
+    \end{defn*}
+    
+    \begin{ex*}
+      Find the equation of the line going through the points
+    \end{ex*}
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task $(x_1,y_1)=(-2,1)$ and $(x_2,y_2)=(3,-2)$
+      \task $(x_1,y_1)=(3,4)$ and $(x_2,y_2)=(-1,4)$
+      \task $(x_1,y_1)=(2,0)$ and $(x_2,y_2)=(2,1)$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+    \pagebreak
+    
+    \begin{defn*}[Slope-Intercept Form of an Equation of a Line]
+      An equation of the line that has slope $m$ and intersects the $y$-axis at the point $(0,b)$ is given by
+        \[y=mx+b\]
+    \end{defn*}
+    \begin{ex*}
+      Rewrite the equations in the previous example in slope-intercept form.
+    \end{ex*}
+    \pagebreak
+    
+    \begin{defn*}[Parallel and Perpendicular lines]
+      Let $L_1$ and $L_2$ be lines with slopes $m_1$ and $m_2$ respectively. If $L_1$ and $L_2$ are \emph{parallel}, then
+        \[m_1=m_2.\]
+      If $L_1$ and $L_2$ are \emph{perpendicular}, then
+        \[m_1=-\frac{1}{m_2}.\]
+    \end{defn*}
+    
+    \begin{ex*}\mbox{}
+      \begin{extasks}[after-item-skip=\stretch{1}](1)
+        \task Find the line \emph{parallel} to $y=\frac{3}{2}x+1$ that passes through the point $(-4,10)$.
+        \task Find the line \emph{perpendicular} to $y=\frac{3}{2}x+1$ that passes through the point $(-3,4)$.
+      \end{extasks}
+    \end{ex*}
+    \vspace*{\stretch{1}}
+    \pagebreak
+
+    \textbf{Forms of Linear Equations}\\
+      \begin{align*}
+        \textnormal{General form: }& Ax+By=C\\
+        \textnormal{Point-slope form: }& y-y_1=m(x-x_1)\\
+        \textnormal{Slope-intercept form: }& y=mx+b\\
+        \textnormal{Vertical line: }& x=a\\
+        \textnormal{Horizontal line: }& y=b
+      \end{align*}
 
   \pagebreak
 \end{document}
