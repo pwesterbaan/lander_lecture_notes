@@ -5,7 +5,7 @@
   \section{2.1: Functions and Their Graphs}
   \begin{defn*}
     A \textbf{function} is a rule that assigns to each element in a set $A$ one and only one element in a set $B$.
-    
+
     In the context above, the set $A$ is called the \textbf{domain}, and the set $B$ is called the \textbf{range}.
   \end{defn*}
 
@@ -20,13 +20,13 @@
     %vert is the height of straight parts of "funnel"
     %paths start at top left (on "funnel")
     \begin{tikzpicture}[declare function={
-      a=1.25; b=1.25; c=5.5; 
-      dx=0.9*a; dy=0.6*a; 
+      a=1.25; b=1.25; c=5.5;
+      dx=0.9*a; dy=0.6*a;
       h=1.75; vert=0.6;}]
-      \path[fill=lander_blue!25, rounded corners=8pt] 
+      \path[fill=lander_blue!25, rounded corners=8pt]
         (a-dx,h+2*vert+dy) --++(0,-vert) --++(dx,-dy) |-(0,h)
         --(0,0) -| (c,-vert) --++(-dx, -dy) [sharp corners] --++(0,-vert) %bottom left portion
-        --++(b+2*dx,0) [rounded corners=8pt] -- ++(0,vert) --++ (-dx,dy) |- (a+b+c,0) 
+        --++(b+2*dx,0) [rounded corners=8pt] -- ++(0,vert) --++ (-dx,dy) |- (a+b+c,0)
         --++(0,h) -| (a+b,h+vert) --++(dx,dy) [sharp corners]--++(0,vert) --cycle; %top right portion
       \draw[line width=1pt, rounded corners=8pt]
         (a-dx,h+2*vert+dy) --++(0,-vert) --++(dx,-dy) |-(0,h)
@@ -60,7 +60,7 @@
       \end{tikzpicture}
     \end{center}
   \end{minipage}
-  
+
   \begin{ex*}
     Let $f(x)=2x^2-2x+1$. Evaluate the following
   \end{ex*}
@@ -72,7 +72,7 @@
   \end{extasks}
   \vspace*{\stretch{1}}
   \pagebreak
-  
+
   \begin{ex*}
     Find the domain and range of the following functions:
   \end{ex*}
@@ -91,7 +91,7 @@
   \begin{ex*}
     Use the vertical line test on the following graphs to determine which graphs may represent an explicit function:
   \end{ex*}
-  
+
   \begin{center}
     \begin{tabular}{c@{\hspace*{40pt}}c}
       \begin{tikzpicture}[declare function={
@@ -101,7 +101,7 @@
           axis line style={black,->},
           xmajorticks=false,
           ymajorticks=false,
-          xmin=-3, xmax=3,
+          xmin=-3.25, xmax=3.25,
           enlargelimits={value=0.025, auto},
           ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
           xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
@@ -166,6 +166,6 @@
       \end{tikzpicture}
     \end{tabular}
   \end{center}
-  
+
   \pagebreak
 \end{document}
