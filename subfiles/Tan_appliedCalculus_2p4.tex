@@ -1,8 +1,218 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{ }
+%  \relscale{1.4} %TODO
+  \section{2.4: Limits}
+  \begin{ex*}
+    Suppose that the position function of a maglev train (in feet) is given by 
+    \begin{align*}
+      s(t)=4t^2,\qquad (0\leq t\leq 30)
+    \end{align*}
+    Using the position function, compute the \emph{average} velocity of the train
+  \end{ex*}
+  \vspace*{6\baselineskip}
+  \begin{extasks}[after-item-skip=2\baselineskip](1)
+    \task on the interval $[t,2]$
+      \begin{center}
+        \begin{tabularx}{0.9\linewidth}{@{}*{6}{X}@{}}\toprule
+          $t$ & 1.5& 1.9& 1.99& 1.999& 1.9999\\\midrule
+          \\[\baselineskip]\bottomrule
+        \end{tabularx}
+      \end{center}
+    \task on the interval $[2,t]$
+      \begin{center}
+        \begin{tabularx}{0.9\linewidth}{@{}*{6}{X}@{}}\toprule
+          $t$ & 2.5& 2.1& 2.01& 2.001& 2.0001\\\midrule
+          \\[\baselineskip]\bottomrule
+        \end{tabularx}
+      \end{center}
+  \end{extasks}
+  What do the tables above suggest about \emph{instantaneous} velocity of the train at $t=2$?
+  \pagebreak
+  
+  \begin{defn*}[Limit of a Function]
+    The function $f$ has the \textbf{limit} $L$ as $x$ approaches $a$, written
+    \begin{align*}
+      \lim_{x\to a} f(x)=L
+    \end{align*}
+    if the value of $f(x)$ can be made as close to the number $L$ as we please by taking $x$ sufficiently close to (but not equal to) $a$.
+  \end{defn*}
+    
+  \begin{ex*}
+    Using the graph of $f$, determine the following values:
+    \vspace*{-\baselineskip}
+  \end{ex*}
+  \begin{flushright}
+    \smash{\raisebox{-\height}{
+      \begin{tikzpicture}
+        \begin{axis}[
+          grid=both,
+          grid style={line width=0.35pt, draw=gray!75},
+          axis lines=center,
+          axis line style={->},
+          xmin=-1, xmax=6.5,
+          ymin=-1, ymax=6.5,
+          xtick={0,1,...,6},
+          ytick={0,1,...,6},
+          ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+          xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+          ylabel=$f(x)$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+          every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}
+          ]
+          \addplot[<->] expression[domain=0:6.25] {(x-2)/abs(x-2)*abs(x-2)^(1/3)+3};
+          \addplot[holdot] coordinates{(2,3)(3,4)};
+          \addplot[soldot] coordinates{(2,5)};
+        \end{axis}
+      \end{tikzpicture}
+    }}
+  \end{flushright}
+
+  \noindent
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task $f(1)$ and $\ds\lim_{x\to 1}f(x)$
+    \task $f(2)$ and $\ds\lim_{x\to 2}f(x)$
+    \task $f(3)$ and $\ds\lim_{x\to 3}f(x)$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{ex*}
+    Find the limit of the following functions at the value specified: \hfill \href{https://www.desmos.com/calculator/tqrhikiclr}{\textcolor{blue}{\underline{Graphs}}}
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](2)
+    \task $f(x)=x^3\quad$ at $x=2$
+    \task $g(x)=\begin{cases}
+      x+2, & x\neq 1\\
+      1,& x=1
+    \end{cases}\quad$ at $x=1$
+    \task $h(x)=\begin{cases}
+      -1,& x<0\\
+      1,& x\geq 0
+    \end{cases}\quad$ at $x=0$
+    \task $j(x)=\dfrac{1}{(x-1)^2}\quad$ at $x=1$
+    \task $k(x)=4\quad$ at $x=0$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{thmBox*}[Theorem 1: Properties of Limits]
+    Suppose
+    \begin{align*}
+      \lim_{x\to a} f(x)=L\quad \textnormal{ and }\quad \lim_{x\to a} g(x)=M
+    \end{align*}
+    Then
+    \TabPositions{80mm}
+    \begin{enumerate}
+      \item $\displaystyle\lim_{x\to a} \sbrkt{f(x)}^r=\sbrkt{\lim_{x\to a} f(x)}^r$ \tab where $r$ is a positive constant
+      \item $\displaystyle \lim_{x\to a} cf(x)=c \lim_{x\to a} f(x)$ \tab where $c$ is a real number
+      \item $\displaystyle \lim_{x\to a}\sbrkt{f(x)\pm g(x)}=\lim_{x\to a} f(x)\pm \lim_{x\to a} g(x)=L\pm M$
+      \item $\displaystyle \lim_{x\to a} \sbrkt{f(x)g(x)}=\sbrkt{\lim_{x\to a} f(x)}\sbrkt{\lim_{x\to a} g(x)}=LM$
+      \item $\displaystyle \lim_{x\to a} \frac{f(x)}{g(x)}=\frac{\displaystyle\lim_{x\to a}f(x)}{\displaystyle\lim_{x\to a}g(x)}=\frac{L}{M}$ \tab provided $M\neq 0$
+    \end{enumerate}
+  \end{thmBox*}
+  \begin{ex*}
+    Use the above theorem to evaluate the following limits:
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+%    \task $\displaystyle\lim_{x\to 2} x^3$
+%    \task $\displaystyle\lim_{x\to 4} 5x^{3/2}$
+    \task $\displaystyle\lim_{x\to 1} \parens{5x^{3/2}-2}$
+    \task $\displaystyle\lim_{x\to 3} \dfrac{2x^3 \sqrt{x^2+7}}{x+1}$
+%    \task 
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  Suppose that $\displaystyle \lim_{x\to a} f(x)=0$ and $\displaystyle \lim_{x\to a} g(x)=0$. Then
+  \begin{align*}
+    \lim_{x\to a} \dfrac{f(x)}{g(x)}
+  \end{align*}
+  has an \textbf{indeterminate form} of $\dfrac{0}{0}$. To evaluate such a limit, we replace the given function with a function that's equivalent everywhere except at $x=a$, and then evaluate the limit.
+  \begin{ex*}
+    Evaluate the following
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task $\displaystyle \lim_{t\to 2} \dfrac{4t^2-16}{t-2}$
+    \task $\displaystyle \lim_{h\to 0} \dfrac{\sqrt{4+h}-2}{h}$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{thmBox*}[Limit of a Function at Infinity]
+    The function $f$ has the limit $L$ as $x$ increases without bound, written
+    \begin{align*}
+      \lim_{x\to \infty} f(x)=L
+    \end{align*}
+    if $f(x)$ can be made arbitrarily close to $L$ by taking $x$ large enough.
+    
+    The function $f$ has the limit $M$ as $x$ decreases without bound, written
+    \begin{align*}
+      \lim_{x\to -\infty} f(x)=M
+    \end{align*}
+    if $f(x)$ can be made arbitrarily close to $M$ by taking $x$ to be negative and sufficiently large enough in absolute value.
+    
+    When the above limits exist, the equations $y=L$ and/or $y=M$ are called \textbf{horizontal asymptotes}.
+  \end{thmBox*}
+  \begin{ex*}
+    Evaluate the following infinite limits
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task $\displaystyle \lim_{x\to \infty} \dfrac{2x^2+3x-4}{x^2-7x+1}$
+    \task $\displaystyle \lim_{x\to -\infty} \dfrac{3x+4}{2x^2}$
+    \task $\displaystyle \lim_{x\to \pm\infty} \dfrac{3x^3+2x-4}{x^2+4x-1}$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{center}
+%    \smash{\raisebox{-\height}{
+      \begin{tikzpicture}[declare function={
+        f(\x)=(7*\x^3-2)/(-x^3+sqrt(25*x^6+4));}]
+        \begin{axis}[
+          grid=both,
+          grid style={line width=0.35pt, draw=gray!75},
+          axis lines=center,
+          axis line style={->},
+          xmin=-6, xmax=6,
+          ymin=-1.75, ymax=1.75,
+          enlargelimits={abs=0.5},
+          ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+          width=0.75\linewidth,
+          height=\axisdefaultheight,
+          xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+          ylabel= {\href{https://www.desmos.com/calculator/izlmkakqnp}{\textcolor{blue}{\underline{Graph}}}\\$f(x)$}, ylabel style={align=left, at={(ticklabel* cs:1)},anchor=south west},
+          every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}
+          ]
+          \addplot[<->] expression[domain=-6:6] {f(x)};
+        \end{axis}
+      \end{tikzpicture}
+%    }}
+  \end{center}
+  \begin{extasks}[after-item-skip=\stretch{1}](2)
+    \task $\displaystyle \lim_{x\to \infty} \frac{7x^3-2}{-x^3+\sqrt{25x^6-4}}$
+    \task $\displaystyle \lim_{x\to -\infty} \frac{7x^3-2}{-x^3+\sqrt{25x^6-4}}$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{ex*}
+    The company \emph{Custom Office} makes a line of executive desks. It is estimated that the total cost of making $x$ \emph{Senior Executive Model} desks is 
+    \begin{align*}
+      C(x)=100x+200,000
+    \end{align*}
+    dollars per year. The average cost of making $x$ desks is given by
+    \begin{align*}
+      \overline{C}(x)=\frac{C(x)}{x}
+    \end{align*}
+    Compute $\displaystyle \lim_{x\to \infty} \overline{C}(x)$ and interpret the result.
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  \begin{thmBox*}[Theorem 2]
+    For all $n>0$,
+    \begin{align*}
+      \lim_{x\to \pm\infty} \frac{1}{x^n}=0
+    \end{align*}
+    provided that $\dfrac{1}{x^n}$ is defined.
+  \end{thmBox*}
 
   \pagebreak
 \end{document}

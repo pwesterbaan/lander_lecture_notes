@@ -1,8 +1,360 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{ }
+%  \relscale{1.4} %TODO
+  \section{2.5: One-Sided Limits and Continuity}
+  Consider the function
+  
+  \noindent
+  \begin{minipage}{0.5\linewidth}
+    \begin{align*}
+      f(x)=\begin{cases}
+        x-1,& x<0\\
+        x+1,& x\geq 0
+      \end{cases}
+    \end{align*}
+  \end{minipage}\hfill%
+  \begin{minipage}{0.45\linewidth}
+    \begin{flushright}
+      \smash{\raisebox{-0.65\height}{
+      \begin{tikzpicture}[scale=1.0, declare function={
+        f(\x)=\x<0 ? \x-1 : (\x>0 ? \x+1: inf);}]
+        \begin{axis}[
+          unbounded coords=jump,
+          axis lines=center,
+          axis line style={black,->},
+          xmin=-2, xmax=2,
+          ymin=-4, ymax=4,
+          enlargelimits={abs=0.75},
+          ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+          xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+          ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+          every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}
+          ]
+          \addplot[->,samples at={-2.5,-10e-4,0,10e-4,2.5}] {f(x)};
+          \addplot[holdot] coordinates{(0,-1)};
+          \addplot[soldot] coordinates{(0,1)};
+        \end{axis}
+      \end{tikzpicture}
+      }}
+    \end{flushright}
+  \end{minipage}
+  \vspace*{\baselineskip}
+
+  \noindent What is $\displaystyle\lim_{x\to 0} f(x)$?
+  \vspace*{\stretch{1}}
+  \begin{defn*}[One-Sided Limits]
+    The function $f$ has a \textbf{right-hand limit} $L$ as $x$ approaches $a$ from the right, written
+    \begin{align*}
+      \lim_{x\to a^+} f(x)=L
+    \end{align*}
+    if the values of $f(x)$ can be made as close to $L$ as we please by taking $x$ sufficiently close to (but not equal to) $a$ and to the right of $a$.
+    
+    The function $f$ has a \textbf{left-hand limit} $L$ as $x$ approaches $a$ from the left, written
+    \begin{align*}
+      \lim_{x\to a^-} f(x)=M
+    \end{align*}
+    if the values of $f(x)$ can be made as close to $L$ as we please by taking $x$ sufficiently close to (but not equal to) $a$ and to the left of $a$.
+  \end{defn*}
+  \pagebreak
+  
+  \begin{thmBox*}[Theorem 3]
+    Let $f$ be a function that is defined for all values of $x$ close to $x=a$ with the possible exception of $a$ itself. Then
+    \begin{align*}
+      \lim_{x\to a} f(x)=L \quad \textnormal{ if and only if } \quad \lim_{x\to a^-} f(x)=\lim_{x\to a^+} f(x)=L
+    \end{align*}
+  \end{thmBox*}
+  \vspace*{-1.5\baselineskip}
+  
+  \begin{flushright}
+    \smash{\raisebox{-\height}{
+    \begin{tikzpicture}[declare function={
+      g(\x)=\x<-2 ? 1/(2*(\x+2))+3 : 
+        (\x==-2 ? inf :
+        (\x< -1 ? 1/(\x+2)-2:
+        (\x==-1 ? inf : 
+        (\x<  1 ? -\x^2+1: 
+        (\x<  3 ? 2*(\x-2)^2-2: -0.5*exp(-\x+3.7)+1))));}]
+      \begin{axis}[
+        unbounded coords=jump,
+        grid=both, 
+        grid style={line width=0.35pt, draw=gray!75},
+        axis lines=center,
+        axis line style={black,-},
+        xmin=-5, xmax=5,
+        ymin=-5, ymax=5,
+        xtick={-6,-5,...,6},
+        ytick={-6,-5,...,6},
+        enlargelimits={abs=0.75},
+        ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+        every axis plot/.append style={line width=0.95pt, color=lander_blue},
+        ]
+          %% Using 'samples at' instead of domain to control plotting discontinuities
+          \addplot[->,samples at={-6,-5.95,...,-2.005,-2,-1.95,...,-1.05,-1.005,-1,-0.95,...,5.5}] {g(x)};
+          \addplot[holdot] coordinates{(-1,0)(2,-2)};
+          \addplot[soldot] coordinates{(-1,-1)(2,-1)};
+      \end{axis}
+    \end{tikzpicture}
+    }}
+  \end{flushright}
+  
+  \noindent
+  \begin{minipage}{0.5\linewidth}
+    \begin{ex*}
+      Using the graph to the right, evaluate the following limits:
+    \end{ex*}
+  \end{minipage}
+  \begin{extasks}[after-item-skip=\stretch{1}](2)
+    \task* $\displaystyle \lim_{x\to -2} f(x)$
+    \task $\displaystyle \lim_{x\to -1} f(x)$
+    \task $\displaystyle \lim_{x\to 1} f(x)$
+    \task $\displaystyle \lim_{x\to 2} f(x)$
+    \task $\displaystyle \lim_{x\to \infty} f(x)$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{defn*}[Continuity of a Function at a Number]
+    A function $f$ is \textbf{continuous} at $a$ if $\ds\lim_{x \to a}f(x)=f(a)$.
+  \end{defn*}
+
+  \begin{center}
+    \fbox{\parbox{0.9\linewidth}{\textbf{Continuity Checklist:}
+    
+    In order for $f$ to be continuous at $a$, the following three conditions must hold:
+    \begin{enumerate}
+      \item $f(a)$ is defined ($a$ is in the domain of $f$),
+      \item $\ds\lim_{x \to a} f(x)$ exists,
+      \item $\ds\lim_{x \to a} f(x)=f(a)$ (the value of $f$ equals the limit of $f$ at $a$).
+    \end{enumerate}
+    }}
+  \end{center}
+  \begin{ex*}
+    Determine the values of $x$ for which the following functions are continuous:
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task $f(x)=3x^3+2x^2-x+10$
+    \task $g(x)=\dfrac{8x^{10}-4x+1}{x^2+1}$
+    \task $h(x)=\dfrac{4x^3-3x^2+1}{x^2-3x+1}$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{ex*}
+    Determine whether the following are continuous at $a$:
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](2)
+    \task $f(x)=x^2+\sqrt{7-x},\ a=4$
+    \task $g(x)=\dfrac{1}{x-3},\ a=3$
+    \task 
+      $h(x)=\begin{cases}
+        \dfrac{x^2+x}{x+1}, &x\neq -1\\
+        0,& x=-1
+      \end{cases},\ a=-1$
+    \task 
+      $j(x)=\abs{x}=\begin{cases}
+        x,& x\geq 0\\
+        -x& x<0
+      \end{cases},\ a=0$
+    \task 
+      $k(x)=\begin{cases}
+        \dfrac{x^2+x-6}{x^2-x},& x\neq 2\\
+        -1,& x=2
+      \end{cases},\ a=2$
+    \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  \begin{thmBox*}[Properties of Continuous Functions]
+    \begin{enumerate}
+      \item The constant function $f(x)=c$ is continuous everywhere.
+      \item The identify function $f(x)=x$ is continuous everywhere.
+    \end{enumerate}
+    If $f$ and $g$ are continuous at $x=a$, then
+    \begin{enumerate}[resume*]
+      \item $\sbrkt{f(x)}^n$, where $n$ is a real number, is continuous at $x=a$ whenever it is defined at that number
+      \item $f\pm g$ is continuous at $x=a$
+      \item $fg$ is continuous at $x=a$
+      \item $f/g$ is continuous at $x=a$ provided that $g(a)\neq 0$
+    \end{enumerate}
+  \end{thmBox*}
+  
+  \begin{thmBox*}[Polynomial and Rational Functions]
+    \begin{enumerate}
+      \item A polynomial function is continuous for all $x$.
+      \item A rational function (a function of the form $\frac{p}{q}$, where $p$ and $q$ are polynomials) is continuous for all $x$ for which $q(x)\neq 0$.
+    \end{enumerate}
+  \end{thmBox*}
+  \pagebreak
+
+  \begin{defn*}\ 
+    \begin{enumerate}[label=,itemsep=\stretch{1}]
+      \item A \textbf{removable discontinuity} at $x=a$ is one that disappears when the function becomes continuous after defining $f(a)=\ds\lim_{x \to a} f(x)$.
+      \item A \textbf{jump discontinuity} is one that occurs whenever $\ds\lim_{x \to a^-} f(x)$ and $\ds\lim_{x \to a^+} f(x)$ both exist, but $\ds\lim_{x \to a^-} f(x)\neq\lim_{x \to a^+} f(x)$.
+      \item A \textbf{vertical discontinuity} occurs whenever $f(x)$ has a vertical asymptote.
+    \end{enumerate}
+  \end{defn*}
+  \vspace*{\stretch{1}}
+
+  \uplevel{\centering
+  \begin{tikzpicture}
+    \begin{groupplot}[
+      group style={group size=2 by 2, horizontal sep=2cm, vertical sep=1cm},
+      axis lines=center,
+      axis line style={->},
+      xmin=-0.5, xmax=5.5,
+      ymin=-0.5, ymax=2.5,
+      xmajorticks=false,
+      ymajorticks=false,
+%      xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+%      ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+      every axis plot/.append style={line width=0.95pt, color=lander_blue},
+      ]
+    \nextgroupplot
+      \addplot[<->] expression[domain=-0.45:4.85, samples=101] {-(x-0.5)^2/8+2};
+      \addplot[holdot] coordinates{(2.5,1.5)} node[above right, black, yshift=-5pt] {$\parens{\frac{5}{2},\frac{3}{2}}$};
+      \node[align=left, anchor=south west] at (axis cs: 0.25,0.25) [draw, rectangle, rounded corners, font=\large] {Removable\\ discontinuity};
+    \nextgroupplot
+      \addplot[<->] expression[domain=-0.45:4.85, samples=101] {-(x-0.5)^2/8+2};
+      \addplot[holdot] coordinates{(2.5,1.5)} node[above right, black, yshift=-5pt] {$\parens{\frac{5}{2},\frac{3}{2}}$};
+      \addplot[soldot] coordinates{(2.5,2)} node[above right, black] {$\parens{\frac{5}{2},2}$};
+      \node[align=left, anchor=south west] at (axis cs: 0.25,0.25) [draw, rectangle, rounded corners, font=\large] {Removable\\ discontinuity};
+    \nextgroupplot
+      \addplot[<-] expression[domain=-0.45:2.5, samples=101] {-(x-0.5)^2/8+2};
+      \addplot[->] expression[domain=2.5:4.85, samples=101] {-(x-0.5)^2/8+2.5};
+      \addplot[holdot] coordinates{(2.5,1.5)} node[below left, black, yshift=5pt] {$\parens{\frac{5}{2},\frac{3}{2}}$};
+      \addplot[soldot] coordinates{(2.5,2)} node[above right, black] {$\parens{\frac{5}{2},2}$};
+      \node[align=left, anchor=south west] at (axis cs: 0.25,0.25) [draw, rectangle, rounded corners, font=\large] {Jump\\ discontinuity};
+    \nextgroupplot[
+      xmin=-0.5, xmax=3.5,
+      ymin=-7, ymax=35,
+      ]
+      \addplot[<->] expression[unbounded coords=jump, domain=-0.5:3.5, samples=99] {(x-2.5)^-2};
+      \node[align=left, anchor=south west] at (axis cs: 3.5/22,3.5) [draw, rectangle, rounded corners, font=\large] {Infinite\\ discontinuity};
+    \end{groupplot}
+  \end{tikzpicture}}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{thmBox*}[Theorem 4: Intermediate Value Theorem]
+    Suppose $f$ is continuous on the interval $\sbrkt{a,b}$ and $L$ is a number strictly between $f(a)$ and $f(b)$. Then there exists at least one number $c$ in $(a,b)$ satisfying $f(c)=L$.
+  \end{thmBox*}
+  
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{groupplot}[
+        group style={group size=2 by 1, horizontal sep=2.75cm},
+        axis lines=center,
+        axis line style={->},
+        xmin=-0.0625, xmax=3,
+        ymin=-0.0625, ymax=2, 
+        enlargelimits={abs=0.75},
+        width=\axisdefaultwidth, height=0.9*\axisdefaultheight,
+        xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+        ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+        every axis plot/.append style={line width=0.95pt, color=lander_blue},
+        ]
+      \nextgroupplot[
+        xtick={1,2.414,3},
+        xticklabels={$a$,$c$,$b$},
+        ytick={0.5,1.5,2.5},
+        yticklabels={$f(a)$,$L$,$f(b)$},
+        ]
+          \addplot[-] expression[domain=1:3] {(x-1)^2/2+0.5};
+          \addplot[soldot] coordinates{(1,0.5)};
+          \addplot[soldot] coordinates{(3,2.5)};
+          \draw[dashed] (axis cs:0,1.5) to (axis cs:4,1.5);
+          \draw[dashed] (axis cs:2.414,0) to (axis cs:2.414, 1.5);
+      \nextgroupplot[
+        xtick={0.5,1,2,3,3.5},
+        xticklabels={$a$,$c_1$,$c_2$,$c_3$,$b$},
+        ytick={0.5625,1.5,2.4375},
+        yticklabels={$f(b)$,$L$,$f(a)$},
+        ]
+          \addplot[-] expression[domain=0.5:3.5, samples=50] {-0.5*(x-1)*(x-2)*(x-3)+1.5};
+          \addplot[soldot] coordinates{(0.5,2.4375)};
+          \addplot[soldot] coordinates{(3.5,0.5625)};
+          \draw[dashed] (axis cs:0,1.5) to (axis cs:4,1.5);
+          \draw[dashed] (axis cs:1,0) to (axis cs:1, 1.5);
+          \draw[dashed] (axis cs:2,0) to (axis cs:2, 1.5);
+          \draw[dashed] (axis cs:3,0) to (axis cs:3, 1.5);
+      \end{groupplot}
+    \end{tikzpicture}
+  \end{center}
+  
+%  \vspace*{\stretch{1}}
+  \textit{Note:} It is important that the function be continuous on the interval $[a,b]$:
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[
+        axis lines=center,
+        axis line style={->},
+        xmin=-0.5, xmax=3.5,
+        ymin=-0.5, ymax=3.5,
+        xtick={0.5,4},
+        xticklabels={$a$,$b$},
+        ytick={0.53125,1.5,3.5},
+        yticklabels={$f(a)$,$L$,$f(b)$},
+        enlargelimits={abs=0.75},
+        width=\axisdefaultwidth, height=0.9*\axisdefaultheight,
+        xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+        ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+        every axis plot/.append style={line width=0.95pt, color=lander_blue},
+        ]
+        \addplot[-] expression[domain=0.5:2] {x^2/8+0.5};
+        \addplot[-] expression[domain=2:4] {x^2/8+1.5};
+        \addplot[soldot] coordinates{(0.5,0.53125)(2,2)(4,3.5)};
+        \addplot[holdot] coordinates{(2,1)};
+        \draw[dashed] (axis cs:0,1.5) to (axis cs: 5,1.5);
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \begin{thmBox*}[Theorem 5: Existence of Zeros of a Continuous Function]
+    If $f$ is a continuous function on a closed interval $\sbrkt{a,b}$, and if $f(a)$ and $f(b)$ have opposite signs, then there is at least one solution of the equation $f(x)=0$ in the interval $(a,b)$.
+  \end{thmBox*}
+  \pagebreak
+  
+  
+  \begin{ex*}
+    Check the conditions of the Intermediate Value Theorem to see if there exists a value $c$ on the interval $(a,b)$ such that the following equations hold: \hfill\href{https://www.desmos.com/calculator/lqbkapgcee}{\textcolor{blue}{\underline{Graph}}}
+  \end{ex*}
+  %TODO IVT examples. Include at least one root problem
+  \begin{extasks}[after-item-skip=\stretch{1}](2)
+    \task $x^x-\sqrt{x}=\frac{1}{2}$ \hfill on $[0,1]$\hspace*{15mm}
+    \task $\sqrt{x^4+25x^3+10}=5$ \hfill on $[0,1]$\hspace*{15mm}
+    \task $x+\sqrt{1-x^2}=0$ \hfill on $[-1,0]$\hspace*{15mm}
+    \task $\dfrac{x^2}{x^2+1}=0$ \hfill on $[-1,1]$\hspace*{15mm}
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{ex*}
+    Consider the function
+    \begin{align*}
+      f(x)=\dfrac{x+1}{x-1}
+    \end{align*}
+    on the interval $\sbrkt{0,2}$. Does there exist a $c$ on the interval $\sbrkt{0,2}$ such that $f(c)=1$?
+  \end{ex*}
+  \begin{flushright}
+    \begin{tikzpicture}[declare function={
+      f(\x)=2/(\x-1)+1;}]
+      \begin{axis}[
+        unbounded coords=jump,
+        axis lines=center,
+        axis line style={->},
+        xmin=-2, xmax=3,
+        ymin=-5, ymax=6,
+        enlargelimits={abs=0.75},
+        xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+        ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+        every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255},
+        ]
+        \addplot[<->] expression[domain=-2.5:0.68]{f(x)};
+        \addplot[<->] expression[domain=1.35:3.5]{f(x)};
+        \draw[dotted] (axis cs:1,-6) to (axis cs:1, 7);
+        \draw[dotted] (axis cs:-3,1) to (axis cs:4, 1);
+      \end{axis}
+    \end{tikzpicture}
+  \end{flushright}
 
   \pagebreak
 \end{document}

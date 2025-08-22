@@ -1,8 +1,103 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{ }
+%  \relscale{1.4} %TODO
+  \section{2.2: The Algebra of Functions}
+  
+    \begin{defn*}
+      Let $f$ and $g$ be functions with domains $A$ and $B$, respectively. Then the \textbf{sum} $f+g$, \textbf{difference} $f-g$, and \textbf{product} $fg$ of $f$ and $g$ are functions with domain $A\cap B$.
+      \begin{align*}
+        (f+g)(x)&=f(x)+g(x)\\
+        (f-g)(x)&=f(x)-g(x)\\
+        (fg)(x)&=f(x)g(x)
+        \intertext{The \textbf{quotient} $f/g$ of $f$ and $g$ has domain $A\cap B$ excluding all numbers $x$ such that $g(x)=0$ and rule given by}
+        \parens{\frac{f}{g}}(x)&=\frac{f(x)}{g(x)}
+      \end{align*}
+    \end{defn*}
+    \begin{ex*}
+      Let $f(x)=\sqrt{x+1}$ and $g(x)=4-x$. Find the domain of the following:
+    \end{ex*}
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $f(x)+g(x)=$
+      \task $f(x)-g(x)=$
+      \task $f(x)g(x)=$
+      \task $\dfrac{f(x)}{g(x)}=$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+    \pagebreak
+    
+    \begin{defn*}[The Composition of Two Functions]
+      Let $f$ and $g$ be functions. Then the composition of $g$ and $f$ is the function $g\circ f$ defined by
+      \begin{align*}
+        \parens{g\circ f}(x)=g\parens{f(x)}
+      \end{align*}
+      The domain of $g\circ f$ is the set of all $x$ is the domain of $f$ such that $f(x)$ lies in the domain of $g$.
+    \end{defn*}
+    
+    \begin{ex*}
+      Let $f(x)=\sqrt{x+1}$ and $g(x)=4-x$. Find the domain of the following:
+    \end{ex*}    
+    \begin{flushright}
+      \smash{\raisebox{-\height}{
+      %bottom left corner is (0,0)
+      %a,b,c are widths representing left wall to chute, width of chute, chute to right wall
+      %h is height of rectangle
+      %dx, dy control slope of "funnel"
+      %vert is the height of straight parts of "funnel"
+      %vgap is space between function diagrams
+      %paths start at top left (on "funnel")
+      \begin{tikzpicture}[scale=0.7,
+      declare function={
+        a=1.25; b=1.25; c=5;
+        dx=0.9*a; dy=0.5*a;
+        h=1.75; vert=0.6; vgap=0.2;}]
+        \path[fill=lander_blue!25, rounded corners=6pt]
+          (a-dx,h+2*vert+dy) --++(0,-vert) --++(dx,-dy) |- ++(-a,-vert) |- ++(c,-h)
+          -- ++(0,-vert) --++(-dx, -dy)[sharp corners] --++(0,-vert) %bottom left portion
+          --++(b+2*dx,0)[rounded corners=6pt] --++(0,vert) --++(-dx,dy) |- ++(a,vert)
+          -- ++(0,h) -| ++(-c,vert) --++(dx,dy)[sharp corners] --++(0,vert); %top right portion
+%
+        \draw[line width=1pt, rounded corners=6pt] %f(x)
+          (a-dx,h+2*vert+dy) --++(0,-vert) --++(dx,-dy) |- ++(-a,-vert) |- ++(c,-h)
+          -- ++(0,-vert) --++(-dx, -dy) --++(0,-vert) %bottom left portion
+          ++(b+2*dx,0) --++(0,vert) --++(-dx,dy) |- ++(a,vert)
+          -- ++(0,h) -| ++(-c,vert) --++(dx,dy) --++(0,vert); %top right portion
+%
+        \node (Input_f) [align=center] at ({a+b/2},{h+vert+dy}) {$x$};
+        \node[align=center] at ({(a+b+c)/2},{h/2}) {$f$};
+        \node (Output_f) [align=center] at ({c+b/2},{-vert-dy}) {$f(x)$};
+%      
+        \draw[->] (Input_f) -- ++(0,-vert-dy);
+        \draw[<-] (Output_f) -- ++(0,vert+dy);
+%
+        \path[fill=lander_gold!75, rounded corners=6pt] %g(x)
+          (c-dx,-2*vert-dy-vgap) --++(0,-vert) --++(dx,-dy) |- ++(-a,-vert) |- ++(c,-h)
+          -- ++(0,-vert) --++(-dx, -dy)[sharp corners] --++(0,-vert) %bottom left portion
+          --++(b+2*dx,0)[rounded corners=6pt] --++(0,vert) --++(-dx,dy) |- ++(a,vert)
+          -- ++(0,h) -| ++(-c,vert) --++(dx,dy)[sharp corners] --++(0,vert); %top right portion
+%
+        \draw[line width=1pt, rounded corners=6pt] %g(x)
+          (c-dx,-2*vert-dy-vgap) --++(0,-vert) --++(dx,-dy) |- ++(-a,-vert) |- ++(c,-h)
+           -- ++(0,-vert) --++(-dx, -dy) --++(0,-vert) %bottom left portion
+          ++(b+2*dx,0) --++(0,vert) --++(-dx,dy) |- ++(a,vert)
+          -- ++(0,h) -| ++(-c,vert) --++(dx,dy) --++(0,vert); %top right portion
+%
+        \node (Input_g) [align=center] at ({c+b/2},{-2*vert-dy-vgap}) {};
+        \node[align=center] at ({c-a+(a+b+c)/2},{-4*vert-2*dy-vgap-h/2}) {$g$};
+        \node (Output_g) [align=center] at ({2*c-a+b/2},{-h-5.25*vert-3*dy-vgap}) {$g\parens{f(x)}$};
+        \draw[->] (Input_g) -- ++(0,-vert-dy);
+        \draw[<-] (Output_g) -- ++(0,vert+dy);
+%
+      \end{tikzpicture}
+      }}
+    \end{flushright}
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task $g\parens{f(x)}=$
+      \task $f\parens{g(x)}=$
+      \task $f\parens{f(x)}=$
+%      \task $g\parens{g(x)}=$
+    \end{extasks}
+    \vspace*{\stretch{1}}
 
   \pagebreak
 \end{document}
