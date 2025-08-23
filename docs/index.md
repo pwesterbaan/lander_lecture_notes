@@ -64,6 +64,12 @@ Below are links to notes used at Lander University:
 
 <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_2p1_annotated.pdf" target="_blank">math123Notes_2p1_annotated.pdf</a></li>
 
+<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_2p2_annotated.pdf" target="_blank">math123Notes_2p2_annotated.pdf</a></li>
+
+<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_2p4_annotated.pdf" target="_blank">math123Notes_2p4_annotated.pdf</a></li>
+
+<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_2p5_annotated.pdf" target="_blank">math123Notes_2p5_annotated.pdf</a></li>
+
 </ul>
 </details>
 

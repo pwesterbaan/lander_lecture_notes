@@ -4,7 +4,7 @@
 %  \relscale{1.4} %TODO
   \section{2.5: One-Sided Limits and Continuity}
   Consider the function
-  
+
   \noindent
   \begin{minipage}{0.5\linewidth}
     \begin{align*}
@@ -49,7 +49,7 @@
       \lim_{x\to a^+} f(x)=L
     \end{align*}
     if the values of $f(x)$ can be made as close to $L$ as we please by taking $x$ sufficiently close to (but not equal to) $a$ and to the right of $a$.
-    
+
     The function $f$ has a \textbf{left-hand limit} $L$ as $x$ approaches $a$ from the left, written
     \begin{align*}
       \lim_{x\to a^-} f(x)=M
@@ -57,70 +57,78 @@
     if the values of $f(x)$ can be made as close to $L$ as we please by taking $x$ sufficiently close to (but not equal to) $a$ and to the left of $a$.
   \end{defn*}
   \pagebreak
-  
+
   \begin{thmBox*}[Theorem 3]
     Let $f$ be a function that is defined for all values of $x$ close to $x=a$ with the possible exception of $a$ itself. Then
     \begin{align*}
       \lim_{x\to a} f(x)=L \quad \textnormal{ if and only if } \quad \lim_{x\to a^-} f(x)=\lim_{x\to a^+} f(x)=L
     \end{align*}
   \end{thmBox*}
-  \vspace*{-1.5\baselineskip}
-  
-  \begin{flushright}
-    \smash{\raisebox{-\height}{
+  % \vspace*{-1.5\baselineskip}
+
+  \begin{ex*}
+    Using the graph below, evaluate the following limits:
+  \end{ex*}
+  \begin{center}
+    % \smash{\raisebox{-\height}{
     \begin{tikzpicture}[declare function={
-      g(\x)=\x<-2 ? 1/(2*(\x+2))+3 : 
+      g(\x)=\x<-2 ? 1/(2*(\x+2))+3 :
         (\x==-2 ? inf :
         (\x< -1 ? 1/(\x+2)-2:
-        (\x==-1 ? inf : 
-        (\x<  1 ? -\x^2+1: 
-        (\x<  3 ? 2*(\x-2)^2-2: -0.5*exp(-\x+3.7)+1))));}]
+        (\x==-1 ? inf :
+        (\x<  1 ? -\x^2+1:
+        (\x<  3 ? 2*(\x-2)^2-2: -exp(-\x+3)+1))));}]
       \begin{axis}[
         unbounded coords=jump,
-        grid=both, 
+        grid=both,
         grid style={line width=0.35pt, draw=gray!75},
         axis lines=center,
         axis line style={black,-},
-        xmin=-5, xmax=5,
+        xmin=-5, xmax=7,
         ymin=-5, ymax=5,
-        xtick={-6,-5,...,6},
+        xtick={-6,-5,...,7},
         ytick={-6,-5,...,6},
         enlargelimits={abs=0.75},
+        width=0.8*\linewidth, height=\axisdefaultheight,
         ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
         every axis plot/.append style={line width=0.95pt, color=lander_blue},
         ]
           %% Using 'samples at' instead of domain to control plotting discontinuities
-          \addplot[->,samples at={-6,-5.95,...,-2.005,-2,-1.95,...,-1.05,-1.005,-1,-0.95,...,5.5}] {g(x)};
+          \addplot[->,samples at={-6,-5.975,...,-2.005,-2,-1.95,...,-1.05,-1.005,-1,-0.95,...,7.5}] {g(x)};
           \addplot[holdot] coordinates{(-1,0)(2,-2)};
           \addplot[soldot] coordinates{(-1,-1)(2,-1)};
       \end{axis}
     \end{tikzpicture}
-    }}
-  \end{flushright}
-  
+    % }}
+  \end{center}
+
   \noindent
-  \begin{minipage}{0.5\linewidth}
-    \begin{ex*}
-      Using the graph to the right, evaluate the following limits:
-    \end{ex*}
-  \end{minipage}
-  \begin{extasks}[after-item-skip=\stretch{1}](2)
-    \task* $\displaystyle \lim_{x\to -2} f(x)$
+  % \begin{minipage}{0.5\linewidth}
+  %   \begin{ex*}
+  %     Using the graph to the right, evaluate the following limits:
+  %   \end{ex*}
+  % \end{minipage}
+  \begin{extasks}[after-item-skip=\stretch{1}](3)
+    \task $\displaystyle \lim_{x\to -2^-} f(x)$
+    \task $\displaystyle \lim_{x\to -2^+} f(x)$
+    \task $\displaystyle \lim_{x\to -2} f(x)$
+    \task $\displaystyle \lim_{x\to -1^-} f(x)$
+    \task $\displaystyle \lim_{x\to -1^+} f(x)$
     \task $\displaystyle \lim_{x\to -1} f(x)$
-    \task $\displaystyle \lim_{x\to 1} f(x)$
-    \task $\displaystyle \lim_{x\to 2} f(x)$
+    \task $\displaystyle \lim_{\phantom{-}x\to 1\phantom{^-}} f(x)$
+    \task $\displaystyle \lim_{\phantom{-}x\to 2\phantom{^-}} f(x)$
     \task $\displaystyle \lim_{x\to \infty} f(x)$
   \end{extasks}
   \vspace*{\stretch{1}}
   \pagebreak
-  
+
   \begin{defn*}[Continuity of a Function at a Number]
     A function $f$ is \textbf{continuous} at $a$ if $\ds\lim_{x \to a}f(x)=f(a)$.
   \end{defn*}
 
   \begin{center}
     \fbox{\parbox{0.9\linewidth}{\textbf{Continuity Checklist:}
-    
+
     In order for $f$ to be continuous at $a$, the following three conditions must hold:
     \begin{enumerate}
       \item $f(a)$ is defined ($a$ is in the domain of $f$),
@@ -139,24 +147,24 @@
   \end{extasks}
   \vspace*{\stretch{1}}
   \pagebreak
-  
+
   \begin{ex*}
     Determine whether the following are continuous at $a$:
   \end{ex*}
   \begin{extasks}[after-item-skip=\stretch{1}](2)
     \task $f(x)=x^2+\sqrt{7-x},\ a=4$
     \task $g(x)=\dfrac{1}{x-3},\ a=3$
-    \task 
+    \task
       $h(x)=\begin{cases}
         \dfrac{x^2+x}{x+1}, &x\neq -1\\
         0,& x=-1
       \end{cases},\ a=-1$
-    \task 
+    \task
       $j(x)=\abs{x}=\begin{cases}
         x,& x\geq 0\\
         -x& x<0
       \end{cases},\ a=0$
-    \task 
+    \task
       $k(x)=\begin{cases}
         \dfrac{x^2+x-6}{x^2-x},& x\neq 2\\
         -1,& x=2
@@ -177,7 +185,7 @@
       \item $f/g$ is continuous at $x=a$ provided that $g(a)\neq 0$
     \end{enumerate}
   \end{thmBox*}
-  
+
   \begin{thmBox*}[Polynomial and Rational Functions]
     \begin{enumerate}
       \item A polynomial function is continuous for all $x$.
@@ -186,7 +194,7 @@
   \end{thmBox*}
   \pagebreak
 
-  \begin{defn*}\ 
+  \begin{defn*}\
     \begin{enumerate}[label=,itemsep=\stretch{1}]
       \item A \textbf{removable discontinuity} at $x=a$ is one that disappears when the function becomes continuous after defining $f(a)=\ds\lim_{x \to a} f(x)$.
       \item A \textbf{jump discontinuity} is one that occurs whenever $\ds\lim_{x \to a^-} f(x)$ and $\ds\lim_{x \to a^+} f(x)$ both exist, but $\ds\lim_{x \to a^-} f(x)\neq\lim_{x \to a^+} f(x)$.
@@ -234,11 +242,11 @@
   \end{tikzpicture}}
   \vspace*{\stretch{1}}
   \pagebreak
-  
+
   \begin{thmBox*}[Theorem 4: Intermediate Value Theorem]
     Suppose $f$ is continuous on the interval $\sbrkt{a,b}$ and $L$ is a number strictly between $f(a)$ and $f(b)$. Then there exists at least one number $c$ in $(a,b)$ satisfying $f(c)=L$.
   \end{thmBox*}
-  
+
   \begin{center}
     \begin{tikzpicture}
       \begin{groupplot}[
@@ -246,7 +254,7 @@
         axis lines=center,
         axis line style={->},
         xmin=-0.0625, xmax=3,
-        ymin=-0.0625, ymax=2, 
+        ymin=-0.0625, ymax=2,
         enlargelimits={abs=0.75},
         width=\axisdefaultwidth, height=0.9*\axisdefaultheight,
         xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
@@ -280,7 +288,7 @@
       \end{groupplot}
     \end{tikzpicture}
   \end{center}
-  
+
 %  \vspace*{\stretch{1}}
   \textit{Note:} It is important that the function be continuous on the interval $[a,b]$:
   \begin{center}
@@ -312,21 +320,21 @@
     If $f$ is a continuous function on a closed interval $\sbrkt{a,b}$, and if $f(a)$ and $f(b)$ have opposite signs, then there is at least one solution of the equation $f(x)=0$ in the interval $(a,b)$.
   \end{thmBox*}
   \pagebreak
-  
-  
+
+
   \begin{ex*}
     Check the conditions of the Intermediate Value Theorem to see if there exists a value $c$ on the interval $(a,b)$ such that the following equations hold: \hfill\href{https://www.desmos.com/calculator/lqbkapgcee}{\textcolor{blue}{\underline{Graph}}}
   \end{ex*}
   %TODO IVT examples. Include at least one root problem
   \begin{extasks}[after-item-skip=\stretch{1}](2)
-    \task $x^x-\sqrt{x}=\frac{1}{2}$ \hfill on $[0,1]$\hspace*{15mm}
+    \task $x^x-x^2=\frac{1}{2}$ \hfill on $[0,2]$\hspace*{15mm}
     \task $\sqrt{x^4+25x^3+10}=5$ \hfill on $[0,1]$\hspace*{15mm}
     \task $x+\sqrt{1-x^2}=0$ \hfill on $[-1,0]$\hspace*{15mm}
     \task $\dfrac{x^2}{x^2+1}=0$ \hfill on $[-1,1]$\hspace*{15mm}
   \end{extasks}
   \vspace*{\stretch{1}}
   \pagebreak
-  
+
   \begin{ex*}
     Consider the function
     \begin{align*}
