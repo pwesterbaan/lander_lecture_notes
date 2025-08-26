@@ -11,10 +11,10 @@ Below are links to notes used at Lander University:
 <details name="annotated_notes">
   <summary>{{ class_dict.get('name') }} Annotated Notes</summary>
 
-<ul>{% for file in class_dict.get('list_of_pdfs') %}
-<li><a href="{{ class_dict.get('base_url') }}{{ file }}" target="_blank">{{ file }}</a></li>
+  <ul>{% for file in class_dict.get('list_of_pdfs') %}
+    <li><a href="{{ class_dict.get('base_url') }}{{ file }}" target="_blank">{{ file }}</a></li>
 {% endfor %}
-</ul>
+  </ul>
 </details>
 
 {% endif %}
