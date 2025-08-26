@@ -3,6 +3,7 @@ texPreamble.sty
 texShortcutsWesterbaan.tex
 *.autosave.xopp
 .dropboxignore
+printouts/
 subfiles/demo_lecture.tex
 subfiles/demo_lecture.pdf
 \#*\#
