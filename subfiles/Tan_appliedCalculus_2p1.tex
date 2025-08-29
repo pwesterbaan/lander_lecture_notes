@@ -1,7 +1,7 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-%  \relscale{1.4} %TODO
+% \relscale{1.4} %TODO
   \section{2.1: Functions and Their Graphs}
   \begin{defn*}
     A \textbf{function} is a rule that assigns to each element in a set $A$ one and only one element in a set $B$.
@@ -9,9 +9,13 @@
     In the context above, the set $A$ is called the \textbf{domain}, and the set $B$ is called the \textbf{range}.
   \end{defn*}
 
-
   \noindent
   \begin{minipage}{0.495\linewidth}
+    \newcommand{\funcMachine}{--++(0,-vert) --++(dx,-dy) |- ++(-a,-vert) |- ++(c,-h)
+      -- ++(0,-vert) --++(-dx, -dy)[sharp corners] --++(0,-vert-vgap) %bottom left portion
+      --++(b+2*dx,0)[rounded corners] --++(0,vert+vgap) --++(-dx,dy) |- ++(a,vert)
+      -- ++(0,h) -| ++(-c,vert) --++(dx,dy) --++(0,vert); %top right portion
+    }
     \centering
     %bottom left corner is (0,0)
     %a,b,c are widths representing left wall to chute, width of chute, chute to right wall
@@ -22,17 +26,12 @@
     \begin{tikzpicture}[declare function={
       a=1.25; b=1.25; c=5.5;
       dx=0.9*a; dy=0.6*a;
-      h=1.75; vert=0.6;}]
-      \path[fill=lander_blue!25, rounded corners=6pt]
-        (a-dx,h+2*vert+dy) --++(0,-vert) --++(dx,-dy) |-(0,h)
-        --(0,0) -| (c,-vert) --++(-dx, -dy) [sharp corners] --++(0,-vert) %bottom left portion
-        --++(b+2*dx,0) [rounded corners=6pt] -- ++(0,vert) --++ (-dx,dy) |- (a+b+c,0)
-        --++(0,h) -| (a+b,h+vert) --++(dx,dy) [sharp corners]--++(0,vert) --cycle; %top right portion
-      \draw[line width=1pt, rounded corners=6pt]
-        (a-dx,h+2*vert+dy) --++(0,-vert) --++(dx,-dy) |-(0,h)
-        --(0,0) -| (c,-vert) --++(-dx, -dy) --++(0,-vert) %bottom left portion
-        ++(b+2*dx,0) --++(0,vert) --++(-dx,dy) |- (a+b+c,0)
-        --++(0,h) -| (a+b,h+vert) --++(dx,dy) --++(0,vert); %top right portion
+      h=1.75; vert=0.6; vgap=0.2;}]
+      \begin{scope}
+        \clip (-0.1+0,h+2*vert+dy) rectangle ++(0.2+a+b+c,-4*vert-2*dy-h);
+        \draw[line width=1pt, fill=lander_blue!25, rounded corners=6pt]
+          (a-dx,h+2*vert+dy) \funcMachine
+      \end{scope}
       \node (Input) [align=center] at ({a+b/2},{h+vert+dy}) {Input\\$x$};
       \node[align=center] at ({(a+b+c)/2},{h/2}) {$f$};
       \node (Output) [align=center] at ({c+b/2},{-vert-dy}) {$f(x)$\\Output};
@@ -48,11 +47,11 @@
         \node at (-2,2.5) {Domain};
         \draw (2,0) circle [x radius=1, y radius=1.75];
         \node at (2,2.25) {Range};
-        \node[circle, fill, inner sep=1pt] (xo) at (-2,1) {}; %, label=above:$x_1$
-        \node[circle, fill, inner sep=1pt] (fxo) at (2,0.5) {}; %, label=above:$f(x_1)$
-        \node[circle, fill, inner sep=1pt] (xt) at (-2,0) {}; %, label=above:$x_2$
-        \node[circle, fill, inner sep=1pt] (xr) at (-2,-1) {}; %, label=above:$x_3$
-        \node[circle, fill, inner sep=1pt] (fxt) at (2,-0.5) {}; %, label=above:$f(x_2)$
+        \node[circle, fill, inner sep=1pt] (xo) at (-2,1) {};
+        \node[circle, fill, inner sep=1pt] (fxo) at (2,0.5) {};
+        \node[circle, fill, inner sep=1pt] (xt) at (-2,0) {};
+        \node[circle, fill, inner sep=1pt] (xr) at (-2,-1) {};
+        \node[circle, fill, inner sep=1pt] (fxt) at (2,-0.5) {};
         \node at (0,1.6) {$f$};
         \draw[->, shorten >=5pt, shorten <=5pt] (xo) to [bend left=10] (fxo);
         \draw[->, shorten >=5pt, shorten <=5pt] (xt) to [bend left=10] (fxt);
@@ -125,7 +124,7 @@
     \begin{tikzpicture}[scale=0.9,
       declare function={
       wdth=4.35; hgt=2;
-      x_offset=2.75; y_offset=2.75; brace_spacing=0.15;}, 
+      x_offset=2.75; y_offset=2.75; brace_spacing=0.15;},
       draw=black, text=black]]
         \coordinate (A) at (0,0);
         \coordinate (B) at (wdth,0);

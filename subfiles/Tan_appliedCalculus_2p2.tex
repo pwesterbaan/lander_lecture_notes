@@ -39,54 +39,44 @@
     \end{ex*}    
     \begin{flushright}
       \smash{\raisebox{-\height}{
-      %bottom left corner is (0,0)
-      %a,b,c are widths representing left wall to chute, width of chute, chute to right wall
-      %h is height of rectangle
-      %dx, dy control slope of "funnel"
-      %vert is the height of straight parts of "funnel"
-      %vgap is space between function diagrams
-      %paths start at top left (on "funnel")
-      \begin{tikzpicture}[scale=0.7,
-      declare function={
-        a=1.25; b=1.25; c=5;
-        dx=0.9*a; dy=0.5*a;
-        h=1.75; vert=0.6; vgap=0.2;}]
-        \path[fill=lander_blue!25, rounded corners=6pt]
-          (a-dx,h+2*vert+dy) --++(0,-vert) --++(dx,-dy) |- ++(-a,-vert) |- ++(c,-h)
-          -- ++(0,-vert) --++(-dx, -dy)[sharp corners] --++(0,-vert) %bottom left portion
-          --++(b+2*dx,0)[rounded corners=6pt] --++(0,vert) --++(-dx,dy) |- ++(a,vert)
-          -- ++(0,h) -| ++(-c,vert) --++(dx,dy)[sharp corners] --++(0,vert); %top right portion
-%
-        \draw[line width=1pt, rounded corners=6pt] %f(x)
-          (a-dx,h+2*vert+dy) --++(0,-vert) --++(dx,-dy) |- ++(-a,-vert) |- ++(c,-h)
-          -- ++(0,-vert) --++(-dx, -dy) --++(0,-vert) %bottom left portion
-          ++(b+2*dx,0) --++(0,vert) --++(-dx,dy) |- ++(a,vert)
+        \newcommand{\funcMachine}{--++(0,-vert) --++(dx,-dy) |- ++(-a,-vert) |- ++(c,-h)
+           -- ++(0,-vert) --++(-dx, -dy)[sharp corners] --++(0,-vert-vgap) %bottom left portion
+          --++(b+2*dx,0)[rounded corners] --++(0,vert+vgap) --++(-dx,dy) |- ++(a,vert)
           -- ++(0,h) -| ++(-c,vert) --++(dx,dy) --++(0,vert); %top right portion
+          }
+        %bottom left corner is (0,0)
+        %a,b,c are widths representing left wall to chute, width of chute, chute to right wall
+        %h is height of rectangle
+        %dx, dy control slope of "funnel"
+        %vert is the height of straight parts of "funnel"
+        %vgap is space between function diagrams
+        %paths start at top left (on "funnel")
+        \begin{tikzpicture}[scale=0.7,
+        declare function={
+          a=1.25; b=1.25; c=5;
+          dx=0.9*a; dy=0.5*a;
+          h=1.75; vert=0.6; vgap=0.2;}]
+          \begin{scope}
+            \clip (-0.1+0,h+2*vert+dy) rectangle ++(0.2+a+b+c,-4*vert-2*dy-h);
+            \draw[line width=1pt, fill=lander_blue!25, rounded corners=6pt] 
+              (a-dx,h+2*vert+dy) \funcMachine %f(x)
+          \end{scope}
+          \node (Input_f) [align=center] at ({a+b/2},{h+vert+dy}) {$x$};
+          \node[align=center] at ({(a+b+c)/2},{h/2}) {$f$};
+          \node (Output_f) [align=center] at ({c+b/2},{-vert-dy}) {$f(x)$};
+          \draw[->] (Input_f) -- ++(0,-vert-dy);
+          \draw[<-] (Output_f) -- ++(0,vert+dy);
 %
-        \node (Input_f) [align=center] at ({a+b/2},{h+vert+dy}) {$x$};
-        \node[align=center] at ({(a+b+c)/2},{h/2}) {$f$};
-        \node (Output_f) [align=center] at ({c+b/2},{-vert-dy}) {$f(x)$};
-%      
-        \draw[->] (Input_f) -- ++(0,-vert-dy);
-        \draw[<-] (Output_f) -- ++(0,vert+dy);
-%
-        \path[fill=lander_gold!75, rounded corners=6pt] %g(x)
-          (c-dx,-2*vert-dy-vgap) --++(0,-vert) --++(dx,-dy) |- ++(-a,-vert) |- ++(c,-h)
-          -- ++(0,-vert) --++(-dx, -dy)[sharp corners] --++(0,-vert) %bottom left portion
-          --++(b+2*dx,0)[rounded corners=6pt] --++(0,vert) --++(-dx,dy) |- ++(a,vert)
-          -- ++(0,h) -| ++(-c,vert) --++(dx,dy)[sharp corners] --++(0,vert); %top right portion
-%
-        \draw[line width=1pt, rounded corners=6pt] %g(x)
-          (c-dx,-2*vert-dy-vgap) --++(0,-vert) --++(dx,-dy) |- ++(-a,-vert) |- ++(c,-h)
-           -- ++(0,-vert) --++(-dx, -dy) --++(0,-vert) %bottom left portion
-          ++(b+2*dx,0) --++(0,vert) --++(-dx,dy) |- ++(a,vert)
-          -- ++(0,h) -| ++(-c,vert) --++(dx,dy) --++(0,vert); %top right portion
-%
-        \node (Input_g) [align=center] at ({c+b/2},{-2*vert-dy-vgap}) {};
-        \node[align=center] at ({c-a+(a+b+c)/2},{-4*vert-2*dy-vgap-h/2}) {$g$};
-        \node (Output_g) [align=center] at ({2*c-a+b/2},{-h-5.25*vert-3*dy-vgap}) {$g\parens{f(x)}$};
-        \draw[->] (Input_g) -- ++(0,-vert-dy);
-        \draw[<-] (Output_g) -- ++(0,vert+dy);
+          \begin{scope}
+            \clip (-0.1+c-a,-2*vert-dy-vgap) rectangle ++(0.2+a+b+c,-4*vert-2*dy-h);
+            \draw[line width=1pt, fill=lander_gold!75, rounded corners=6pt] 
+              (c-dx,-2*vert-dy-vgap) \funcMachine %g(x)
+          \end{scope}
+          \node (Input_g) [align=center] at ({c+b/2},{-2*vert-dy-vgap}) {};
+          \node[align=center] at ({c-a+(a+b+c)/2},{-4*vert-2*dy-vgap-h/2}) {$g$};
+          \node (Output_g) [align=center] at ({2*c-a+b/2},{-h-5.25*vert-3*dy-vgap}) {$g\parens{f(x)}$};
+          \draw[->] (Input_g) -- ++(0,-vert-dy);
+          \draw[<-] (Output_g) -- ++(0,vert+dy);
 %
       \end{tikzpicture}
       }}
