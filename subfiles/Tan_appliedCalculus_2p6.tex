@@ -1,8 +1,145 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{ }
+%  \relscale{1.4} %TODO
+  \section{2.6: The Derivative}
+
+  \begin{defn*}
+    Given a function $f(x)$:
+    \begin{itemize}
+      \item the \textbf{secant line} is the line that passes through two \emph{distinct} points lying on the graph of $f(x)$,
+      \item the \textbf{tangent line} is the line that intersects $f(x)$ in exactly one place (locally) and matches the slope of the graph at that point.
+    \end{itemize}
+  \end{defn*}
+
+  \hfill\smash{\raisebox{-\height}{\href{https://www.desmos.com/calculator/zn9l7ssfc0}{\textcolor{blue}{\underline{Graph}}}}}
+  \begin{center}
+    \begin{tikzpicture}[declare function={
+      xo=2; h=1.5; alfa=0.25; bta=1.25; del=1e-6;
+      f(\x)=-0.5*(\x-1)*(\x-2.5)*(\x-8)+5;
+      fp(\x)=(f(\x+del)-f(\x))/del;}]
+      \begin{axis}[
+        axis lines=center,
+        axis line style={->},
+        ymin=0,
+        xtick={xo,xo+h},
+        xticklabels={$a\vphantom{h}$,$a+h$},
+        ymajorticks=false,
+        width=0.8*\linewidth, height=\axisdefaultheight,
+        ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+        xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+        ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+        every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255},
+        ]
+          \draw[dashed] (axis cs:xo,0) to (axis cs:xo, {f(xo)});
+          \draw[dashed] (axis cs:xo+h,0) to (axis cs:xo+h, {f(xo+h)});
+          \addplot[soldot,red] coordinates{(xo,{f(xo)})} node[below right, black, font=\large] {$(a,f(a))$};
+          \addplot[soldot,red] coordinates{(xo+h,{f(xo+h)})} node[below right, black, font=\large] {$(a+h,f(a+h))$};
+          \addplot[-] expression[domain=1:6] {f(x)};
+          \addplot[-,black] expression[domain={xo-bta}:{xo+bta}] {fp(xo)*(x-xo)+f(xo)};
+          \addplot[-,red, line width=1.5pt] expression[domain={xo-alfa*h}:{xo+(1+alfa)*h}] {(f(xo+h)-f(xo))/h*(x-xo)+f(xo)};
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \vspace*{\stretch{1}}
+  
+  \begin{defn*}[Slope of a Tangent Line]
+    The slope of the tangent line to the graph of $f$ at the point $P(x,f(x))$ is given by
+    \begin{align*}
+      \lim_{h\to 0} \frac{f(x+h)-f(x)}{h}
+    \end{align*}
+    if it exists.
+  \end{defn*}
+  \pagebreak
+  
+  \begin{defn*}[Average and Instantaneous Rates of Change]
+    The \textbf{average rate of change} of $f$ over the interval $[x,x+h]$ or \textbf{slope of the secant line} to the graph of $f$ through the points $\parens{x,f(x)}$ and $\parens{x+h, f(x+h)}$ is
+    \begin{align*}
+      \frac{f(x+h)-f(x)}{h}&
+      \intertext{The above fraction is referred to as the \textbf{difference quotient}.}
+      \intertext{The \textbf{instantaneous rate of change} of $f$ at $x$ or \textbf{slope of the tangent line} to the graph of $f$ at $\parens{x,f(x)}$ is}
+      \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}&
+    \end{align*}
+  \end{defn*}
+  
+  \begin{defn*}[Derivative of a Function]
+    The derivative of a function $f$ with respect to $x$ is the function $f'$ (read ``$f$ prime''),
+    \begin{align*}
+      f'(x)&=\lim_{h\to 0}\frac{f(x+h)-f(x)}{h}
+    \end{align*}
+    The domain of $f'$ is the set of all $x$ for which the limit exists.
+    \vspace*{\baselineskip}
+    
+    Some other notations for the derivative are
+    \begin{align*}
+      D_xf(x)&& \dfrac{dy}{dx}&& y'
+    \end{align*}
+  \end{defn*}
+  \pagebreak
+  \begin{ex*}
+    Find the slope of the line tangent to the graph $f(x)=3x+5$ at any point $\parens{x,f(x)}$
+  \end{ex*}
+  \vspace*{\stretch{1}}
+
+  \begin{ex*}
+    Let $f(x)=x^2$.
+    \begin{itemize}
+      \item Find $f'(x)$.
+      \item Compute $f'(2)$ and interpret your result.
+    \end{itemize}
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  \begin{ex*}
+    Let $f(x)=x^2-4x$. Find the point on the graph where the tangent line is horizontal.
+  \end{ex*}
+  \vspace*{\stretch{1}}
+
+  \begin{ex*}
+    Let $f(x)=\dfrac{1}{x}$. Find the equation of the tangent line at $x=1$.
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{thmBox*}[Differentiability and Continuity]
+    If a function is differentiable at $x=a$, then it is continuous at $x=a$.  
+  \end{thmBox*}
+  
+  \begin{ex*}
+    For the graph below, identify each point where the derivative is undefined.
+  \end{ex*}
+  \begin{center}
+    \begin{tikzpicture}[declare function={
+      cubeRoot(\x)=\x/abs(\x)*abs(\x)^(1/3);
+      fifthRoot(\x)=\x/abs(\x)*abs(\x)^(1/5);
+      hyperbole(\x)=3/(4-\x)+2.5;
+      f(\x)=\x<-3 ? cubeRoot(\x+1)^2+1 :
+        (\x==-3 ? inf :
+        (\x< 0 ? 2*fifthRoot(\x+1)^2-2 :
+        (\x< 2 ? 2*cubeRoot(\x-1)+2 : 
+        (\x<4 ? hyperbole(\x) :
+        (\x==4 ? inf: hyperbole(\x))))));}]
+      \begin{axis}[
+        unbounded coords=jump,
+        axis lines=center,
+        axis line style={->},
+        xmin=-4, xmax=8,
+        ymin=-4, ymax=8,
+        ymajorticks=false,
+        width=0.9\linewidth, height=1.25*\axisdefaultheight,
+        enlargelimits={abs=0.75},
+        ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+        xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+        ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+        every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}
+        ]
+        \addplot[-] expression[samples at={-5,-4.99,...,-3.01,-3,-2.99,...,3.99,4,4.01,...,9}] {f(x)};
+        \addplot[soldot] coordinates{(-3,{cubeRoot(-2)^2+1})};
+        \addplot[holdot] coordinates{(-3,{2*fifthRoot(-2)^2-2})};
+        \draw[dotted] (axis cs:4,-6) to (axis cs:4, 10);
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
 
   \pagebreak
 \end{document}
