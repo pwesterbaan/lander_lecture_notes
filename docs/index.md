@@ -9,7 +9,7 @@ Below are links to notes used at Lander University:
 
 
 <details name="annotated_notes">
-  <summary>math121 Annotated Notes</summary>
+  <summary>math121 Annotated Notes (click to expand)</summary>
 
   <ul>
     <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121_NoteKeys/annotated_notes/mathApp_harshbarger_1p1_annotated.pdf" target="_blank">mathApp_harshbarger_1p1_annotated.pdf</a></li>
@@ -57,7 +57,7 @@ Below are links to notes used at Lander University:
 
 
 <details name="annotated_notes">
-  <summary>math123 Annotated Notes</summary>
+  <summary>math123 Annotated Notes (click to expand)</summary>
 
   <ul>
     <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_1p4_annotated.pdf" target="_blank">math123Notes_1p4_annotated.pdf</a></li>
@@ -81,7 +81,7 @@ Below are links to notes used at Lander University:
 
 
 <details name="annotated_notes">
-  <summary>math211 Annotated Notes</summary>
+  <summary>math211 Annotated Notes (click to expand)</summary>
 
   <ul>
     <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_1p1_annotated.pdf" target="_blank">math211Notes_1p1_annotated.pdf</a></li>
