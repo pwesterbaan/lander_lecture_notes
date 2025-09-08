@@ -164,29 +164,30 @@
   \vspace*{\stretch{1}}
   \pagebreak
 
+  % \smash{\raisebox{-\height}{\href{https://www.desmos.com/calculator/izlmkakqnp}{\textcolor{blue}{\underline{Graph}}}}}
   \begin{center}
-%    \smash{\raisebox{-\height}{
-      \begin{tikzpicture}[declare function={
-        f(\x)=(7*\x^3-2)/(-x^3+sqrt(25*x^6+4));}]
-        \begin{axis}[
-          grid=both,
-          grid style={line width=0.35pt, draw=gray!75},
-          axis lines=center,
-          axis line style={->},
-          xmin=-6, xmax=6,
-          ymin=-1.75, ymax=1.75,
-          enlargelimits={abs=0.5},
-          ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
-          width=0.75\linewidth,
-          height=\axisdefaultheight,
-          xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
-          ylabel= {\href{https://www.desmos.com/calculator/izlmkakqnp}{\textcolor{blue}{\underline{Graph}}}\\$f(x)$}, ylabel style={align=left, at={(ticklabel* cs:1)},anchor=south west},
-          every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}
-          ]
-          \addplot[<->] expression[domain=-6:6] {f(x)};
-        \end{axis}
-      \end{tikzpicture}
-%    }}
+    \href{https://www.desmos.com/calculator/izlmkakqnp}{\textcolor{blue}{\underline{Graph}}}
+
+    \begin{tikzpicture}[declare function={
+      f(\x)=(7*\x^3-2)/(-x^3+sqrt(25*x^6+4));}]
+      \begin{axis}[
+        grid=both,
+        grid style={line width=0.35pt, draw=gray!75},
+        axis lines=center,
+        axis line style={->},
+        % xmin=-6, xmax=6,
+        ymin=-2.5, ymax=2.5,
+        enlargelimits={value=0.05, auto},
+        ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+        width=0.95\linewidth,
+        height=\axisdefaultheight,
+        % xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+        % ylabel= $f(x)$, ylabel style={align=left, at={(ticklabel* cs:1)},anchor=south west},
+        every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}
+        ]
+        \addplot[<->] expression[domain=-6:6] {f(x)};
+      \end{axis}
+    \end{tikzpicture}
   \end{center}
   \begin{extasks}[after-item-skip=\stretch{1}](2)
     \task $\displaystyle \lim_{x\to -\infty} \frac{7x^3-2}{-x^3+\sqrt{25x^6-4}}$
