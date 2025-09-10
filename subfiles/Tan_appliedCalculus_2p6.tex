@@ -26,6 +26,7 @@
         xticklabels={$a\vphantom{h}$,$a+h$},
         ymajorticks=false,
         width=0.8*\linewidth, height=\axisdefaultheight,
+        enlargelimits={abs=0.5pt},
         ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
         xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
         ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
@@ -42,7 +43,7 @@
     \end{tikzpicture}
   \end{center}
   \vspace*{\stretch{1}}
-  
+
   \begin{defn*}[Slope of a Tangent Line]
     The slope of the tangent line to the graph of $f$ at the point $P(x,f(x))$ is given by
     \begin{align*}
@@ -51,7 +52,7 @@
     if it exists.
   \end{defn*}
   \pagebreak
-  
+
   \begin{defn*}[Average and Instantaneous Rates of Change]
     The \textbf{average rate of change} of $f$ over the interval $[x,x+h]$ or \textbf{slope of the secant line} to the graph of $f$ through the points $\parens{x,f(x)}$ and $\parens{x+h, f(x+h)}$ is
     \begin{align*}
@@ -61,7 +62,7 @@
       \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}&
     \end{align*}
   \end{defn*}
-  
+
   \begin{defn*}[Derivative of a Function]
     The derivative of a function $f$ with respect to $x$ is the function $f'$ (read ``$f$ prime''),
     \begin{align*}
@@ -69,7 +70,7 @@
     \end{align*}
     The domain of $f'$ is the set of all $x$ for which the limit exists.
     \vspace*{\baselineskip}
-    
+
     Some other notations for the derivative are
     \begin{align*}
       D_xf(x)&& \dfrac{dy}{dx}&& y'
@@ -100,11 +101,11 @@
   \end{ex*}
   \vspace*{\stretch{1}}
   \pagebreak
-  
+
   \begin{thmBox*}[Differentiability and Continuity]
-    If a function is differentiable at $x=a$, then it is continuous at $x=a$.  
+    If a function is differentiable at $x=a$, then it is continuous at $x=a$.
   \end{thmBox*}
-  
+
   \begin{ex*}
     For the graph below, identify each point where the derivative is undefined.
   \end{ex*}
@@ -116,7 +117,7 @@
       f(\x)=\x<-3 ? cubeRoot(\x+1)^2+1 :
         (\x==-3 ? inf :
         (\x< 0 ? 2*fifthRoot(\x+1)^2-2 :
-        (\x< 2 ? 2*cubeRoot(\x-1)+2 : 
+        (\x< 2 ? 2*cubeRoot(\x-1)+2 :
         (\x<4 ? hyperbole(\x) :
         (\x==4 ? inf: hyperbole(\x))))));}]
       \begin{axis}[

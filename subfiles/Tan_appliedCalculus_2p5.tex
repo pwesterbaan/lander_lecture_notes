@@ -76,8 +76,8 @@
         (\x==-2 ? inf :
         (\x< -1 ? 1/(\x+2)-2:
         (\x==-1 ? inf :
-        (\x<  1 ? -\x^2+1:
-        (\x<  3 ? 2*(\x-2)^2-2: -exp(-\x+3)+1))));}]
+        (\x<  1 ? 2*(-\x^2+1):
+        (\x<  3 ? 2*(\x-2)^2-2: -exp(4*(3-\x))+1))));}]
       \begin{axis}[
         unbounded coords=jump,
         grid=both,
@@ -96,7 +96,7 @@
           %% Using 'samples at' instead of domain to control plotting discontinuities
           \addplot[->,samples at={-6,-5.975,...,-2.005,-2,-1.95,...,-1.05,-1.005,-1,-0.95,...,7.5}] {g(x)};
           \addplot[holdot] coordinates{(-1,0)(2,-2)};
-          \addplot[soldot] coordinates{(-1,-1)(2,-1)};
+          \addplot[soldot] coordinates{(-1,-1)(2,1)};
       \end{axis}
     \end{tikzpicture}
     % }}
