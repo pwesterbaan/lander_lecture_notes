@@ -118,31 +118,35 @@
   \pagebreak
 
   % Add cases where limit does not exist
-  Below are examples where the limit does not exist: \hfill\href{https://www.desmos.com/calculator/fe5vr8ozyd}{\textcolor{blue}{\underline{Graph}}} 
+  Below are examples where the limit does not exist: \hfill\href{https://www.desmos.com/calculator/fe5vr8ozyd}{\textcolor{blue}{\underline{Graph}}}
 
   \begin{center}
     \begin{tikzpicture}
       \begin{groupplot}[
-        group style={group size=2 by 2, horizontal sep=2cm, vertical sep=2cm},
+        group style={group size=2 by 2, horizontal sep=2cm, vertical sep=4cm},
         axis lines=center,
         axis line style={->},
         xmin=-0.5, xmax=5.5,
         ymin=-0.5, ymax=2.5,
         enlargelimits={value=0.05, auto},
-        xmajorticks=false,
         ymajorticks=false,
         every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255},
         ]
-        \nextgroupplot
+        \nextgroupplot[title=$\displaystyle \lim_{x\to a} f(x)$,
+        xtick=2.5, xticklabels={$a$}]
           \addplot[<-] expression[domain=-0.45:2.5, samples=101] {-(x-0.5)^2/8+2};
-          \addplot[->] expression[domain=2.5:4.85, samples=101] {-(x-0.5)^2/8+2.5};
+          \addplot[->] expression[domain=2.5:4.85, samples=101]
+          {-(x-0.5)^2/8+2.5};
+          \draw[dashed] (axis cs: 2.5,0) -- (axis cs: 2.5,35);
           \addplot[holdot] coordinates{(2.5,1.5)};
           \addplot[soldot] coordinates{(2.5,2)};
 %          \node[align=left, anchor=south west] at (axis cs: 0.25,0.25) [draw, rectangle, rounded corners, font=\large] {Jump\\ discontinuity};
-        \nextgroupplot[xmin=-0.5, xmax=3.5,ymin=-7, ymax=35]
+        \nextgroupplot[xmin=-0.5, xmax=3.5,ymin=-7,
+        ymax=35,title=$\displaystyle \lim_{x\to a} f(x)$, xtick=2.5, xticklabels={$a$}]
           \addplot[<->] expression[unbounded coords=jump, domain=-0.5:3.5, samples=99] {(x-2.5)^-2};
-          \draw[dashed] (axis cs: 2.5,-7) -- (axis cs: 2.5,35);
-        \nextgroupplot[xmin=-0.75, xmax=0.75, ymin=-1.25, ymax=1.25]
+          \draw[dashed] (axis cs: 2.5,0) -- (axis cs: 2.5,35);
+        \nextgroupplot[xmin=-0.75, xmax=0.75, ymin=-1.25,
+        ymax=1.25,title=$\displaystyle \lim_{x\to 0} f(x)$, xmajorticks=false,]
           \def\n{10}
           \addplot[-] expression[samples at={-4,-4+0.01/pi,...,-2/pi}] {cos(deg 1/x)};
           \addplot[-] expression[samples at={2/pi,2.01/pi,...,4}] {cos(deg 1/x)};
@@ -153,7 +157,7 @@
           }
           %% Fudge the middle because resolution
           \addplot[-] expression[domain=-1/(\n*pi):1/(\n*pi), samples=1000] {cos(deg 1/x)};
-        \nextgroupplot[xmin=-6*pi, xmax=6*pi, ymin=-1.25, ymax=1.25]
+        \nextgroupplot[xmin=-6*pi, xmax=6*pi, ymin=-1.25, ymax=1.25, title=$\displaystyle \lim_{x\to \infty} f(x)$, xmajorticks=false,]
           \addplot[-] expression[domain=-6.25*pi:6.25*pi]{cos(deg x)};
       \end{groupplot}
     \end{tikzpicture}
