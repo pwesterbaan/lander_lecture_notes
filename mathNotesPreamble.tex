@@ -14,16 +14,7 @@
 %\subfile{<file>}                             pulls content from <file> ignoring its preamble
 \usepackage{subfiles}
 % ----------------------------------------------------------------
-
-% used for t-distribution
-\newcommand{\students}{
-    gamma((\n+1)/2.)/(sqrt(\n*pi)*gamma(\n/2.))*((1+x^2/\n)^(-(\n+1)/2.))
-}
-
 \usepgfplotslibrary{statistics}
-\pgfmathdeclarefunction{gauss}{3}{%
-  \pgfmathparse{1/(#3*sqrt(2*pi))*exp(-((#1-#2)^2)/(2*#3^2))}%
-  }
 
 \begin{document}
 \end{document}
