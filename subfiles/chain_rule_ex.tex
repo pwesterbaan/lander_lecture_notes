@@ -1,0 +1,66 @@
+\documentclass[../mathNotesPreamble]{subfiles}
+
+% Imported in subfiles/Tan_appliedCalculus_3p3.tex
+% This example () doesn't play well with "--shell-escape"
+% There's probably a way to fix this without importing a 
+% separate page, but it's Friday afternoon
+\begin{document}
+\relscale{1.4}
+\newcommand{\tikzmark}[2]{%
+  \tikz[baseline=(#1.base), remember picture]%
+  \node[inner sep=0pt] (#1)%
+  {\ensuremath{#2}};%
+}
+
+  \emph{Note:}
+  % f black              \bigg
+  % g lander_blue        \Big
+  % h red                \big
+  % j lander_FrontLawn
+  \begin{align*}
+    \ddx\sbrkt{
+      \textcolor{black}{f\bigg(}
+        \textcolor{lander_blue}{g\Big(}
+          \textcolor{red}{h\big(}
+            \textcolor{lander_FrontLawn}{j(}
+              x
+            \textcolor{lander_FrontLawn}{)}
+          \textcolor{red}{\big)}
+        \textcolor{lander_blue}{\Big)}
+      \textcolor{black}{\bigg)}
+      }
+      &=\textcolor{black}{f'\bigg(}
+        \textcolor{lander_blue}{\tikzmark{g}{g}\Big(}
+          \textcolor{red}{h\big(}
+            \textcolor{lander_FrontLawn}{j(}
+              x
+            \textcolor{lander_FrontLawn}{)}
+          \textcolor{red}{\big)}
+        \textcolor{lander_blue}{\Big)}
+      \textcolor{black}{\bigg)}
+      \cdot
+      \textcolor{lander_blue}{\tikzmark{gp}{g}'\Big(}
+        \textcolor{red}{\tikzmark{h}{h}\big(}
+          \textcolor{lander_FrontLawn}{j(}
+            x
+          \textcolor{lander_FrontLawn}{)}
+        \textcolor{red}{\big)}
+      \textcolor{lander_blue}{\Big)}
+      \cdot
+      \textcolor{red}{\tikzmark{hp}{h}'\big(}
+        \textcolor{lander_FrontLawn}{\tikzmark{j}{j}(}
+          x
+        \textcolor{lander_FrontLawn}{)}
+      \textcolor{red}{\big)}
+      \cdot
+      \textcolor{lander_FrontLawn}{\tikzmark{jp}{j}'(}
+        x
+      \textcolor{lander_FrontLawn}{)}
+  \end{align*}
+  \begin{tikzpicture}[overlay, remember picture,
+    myArrow/.style={->, in=-120, out=-60, shorten >=1pt, shorten <=1pt}]
+    \draw[myArrow] (g.south) to (gp.south west);
+    \draw[myArrow] (h.south) to (hp.south west);
+    \draw[myArrow] (j.south) to (jp.south west);
+  \end{tikzpicture}
+\end{document}

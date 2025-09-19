@@ -1,8 +1,61 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{ }
+%  \relscale{1.4} %TODO
+  \section{3.2: The Product and Quotient Rules}
+  
+  \begin{thmBox*}[Rule 5: The Product Rule]
+    \begin{align*}
+      \ddx\sbrkt{f(x)\cdot g(x)}&=f'(x)\cdot g(x)+f(x)\cdot g'(x)
+    \end{align*}
+  \end{thmBox*}
+  \emph{Note:} 
+  \begin{align*}
+    \ddx\sbrkt{f(x)\cdot g(x)}\neq f'(x)\cdot g'(x)
+  \end{align*}
+  \begin{ex*}
+    Find the derivative of the following functions
+    \begin{itemize}
+      \item by expanding 
+      \item by using the product rule
+    \end{itemize}
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](2)
+    \task $f(x)=\parens{2x^2-1}\parens{x+3}$
+    \task $g(x)=x^3\parens{\sqrt{x}+1}$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \begin{thmBox*}
+    \emph{Note:}
+    \begin{align*}
+      \ddx\sbrkt{fghj}=f'ghj+fg'hj+fgh'j+fghj'
+    \end{align*}
+  \end{thmBox*}
+  \pagebreak
+  
+  \begin{thmBox*}[Rule 6: The Quotient Rule]
+    \begin{align*}
+      \ddx\sbrkt{\dfrac{f(x)}{g(x)}}&= \dfrac{g(x)f'(x)-f(x)g'(x)}{\sbrkt{g(x)}^2}
+    \end{align*}
+    \begin{center}
+      ``Lo De Hi, minus Hi De Lo, over the square of what's below''
+    \end{center}
+  \end{thmBox*}
+  \begin{ex*}
+    Find the derivative of the following functions
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task $f(x)=\dfrac{3x^2-4x+7}{x}$
+    \task $g(x)=\dfrac{x}{2x-4}$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task $h(x)=\dfrac{x^2+1}{x^2-1}$
+    \task $j(x)=\dfrac{\sqrt{x}}{x^2+1}$
+  \end{extasks}
+  \vspace*{\stretch{1}}
 
   \pagebreak
 \end{document}
