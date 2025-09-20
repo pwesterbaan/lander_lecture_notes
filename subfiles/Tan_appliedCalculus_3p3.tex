@@ -1,4 +1,5 @@
 \documentclass[../mathNotesPreamble]{subfiles}
+\usetikzlibrary{external}
 
 \begin{document}
 %  \relscale{1.4} %TODO
@@ -45,71 +46,59 @@
     \end{align*}
   \end{thmBox*}
   
-  \noindent
-  {\centering\includegraphics[width=\textwidth, clip, trim=0.5in 220mm 0.5in 20mm]{chain_rule_ex}}
-  
-%\newcommand{\tikzmark}[2]{%
-%  \tikz[baseline=(#1.base), remember picture]%
-%  \node[inner sep=0pt] (#1)%
-%  {\ensuremath{#2}};%
-%}
-%
-%  \emph{Note:}
-%  % f black              \bigg
-%  % g lander_blue        \Big
-%  % h red                \big
-%  % j lander_FrontLawn
-%  \begin{align*}
-%    \ddx\sbrkt{
-%      \textcolor{black}{f\bigg(}
-%        \textcolor{lander_blue}{g\Big(}
-%          \textcolor{red}{h\big(}
-%            \textcolor{lander_FrontLawn}{j(}
-%              x
-%            \textcolor{lander_FrontLawn}{)}
-%          \textcolor{red}{\big)}
-%        \textcolor{lander_blue}{\Big)}
-%      \textcolor{black}{\bigg)}
-%      }
-%      &=\textcolor{black}{f'\bigg(}
-%        \textcolor{lander_blue}{\tikzmark{g}{g}\Big(}
-%          \textcolor{red}{h\big(}
-%            \textcolor{lander_FrontLawn}{j(}
-%              x
-%            \textcolor{lander_FrontLawn}{)}
-%          \textcolor{red}{\big)}
-%        \textcolor{lander_blue}{\Big)}
-%      \textcolor{black}{\bigg)}
-%      \cdot
-%      \textcolor{lander_blue}{\tikzmark{gp}{g}'\Big(}
-%        \textcolor{red}{\tikzmark{h}{h}\big(}
-%          \textcolor{lander_FrontLawn}{j(}
-%            x
-%          \textcolor{lander_FrontLawn}{)}
-%        \textcolor{red}{\big)}
-%      \textcolor{lander_blue}{\Big)}
-%      \cdot
-%      \textcolor{red}{\tikzmark{hp}{h}'\big(}
-%        \textcolor{lander_FrontLawn}{\tikzmark{j}{j}(}
-%          x
-%        \textcolor{lander_FrontLawn}{)}
-%      \textcolor{red}{\big)}
-%      \cdot
-%      \textcolor{lander_FrontLawn}{\tikzmark{jp}{j}'(}
-%        x
-%      \textcolor{lander_FrontLawn}{)}
-%  \end{align*}
-%  \begin{tikzpicture}[overlay, remember picture,
-%    myArrow/.style={->, in=-120, out=-60, shorten >=1pt, shorten <=1pt}]
-%    \draw[myArrow] (g.south) to (gp.south west);
-%    \draw[myArrow] (h.south) to (hp.south west);
-%    \draw[myArrow] (j.south) to (jp.south west);
-%  \end{tikzpicture}
+  \tikzset{external/export=false}
+  \newcommand{\tikzmark}[2]{%
+    \tikz[baseline=(#1.base), remember picture]%
+    \node[inner sep=0pt] (#1)%
+    {\ensuremath{#2}};%
+  }
+
+  \newcommand{\coloredParens}[4]{
+    \textcolor{#1}{#2 #3(}
+    #4
+    \textcolor{#1}{#3)}
+  }
+  \emph{Note:}
+  % f black              \bigg
+  % g lander_blue        \Big
+  % h red                \big
+  % j lander_FrontLawn
+  \begin{align*}
+    \ddx\sbrkt{
+      \coloredParens{black}{f}{\bigg}{
+        \coloredParens{lander_blue}{g}{\Big}{
+          \coloredParens{red}{h}{\big}{
+            \coloredParens{lander_FrontLawn}{j}{}{x}}}}}
+    &=\coloredParens{black}{f'}{\bigg}{
+        \coloredParens{lander_blue}{\tikzmark{g}{g}}{\Big}{
+          \coloredParens{red}{h}{\big}{
+            \coloredParens{lander_FrontLawn}{j}{}{x}}}}\cdot
+      \coloredParens{lander_blue}{\tikzmark{gp}{g}'}{\Big}{
+        \coloredParens{red}{\tikzmark{h}{h}}{\big}{
+          \coloredParens{lander_FrontLawn}{j}{}{x}}}\cdot
+      \coloredParens{red}{\tikzmark{hp}{h}'}{\big}{
+        \coloredParens{lander_FrontLawn}{\tikzmark{j}{j}}{}{x}}\cdot
+      \coloredParens{lander_FrontLawn}{\tikzmark{jp}{j}'}{}{x}
+  \end{align*}
+  \begin{tikzpicture}[overlay, remember picture,
+    myArrow/.style={->, in=-120, out=-60, shorten >=1pt, shorten <=1pt}]
+    \draw[myArrow] (g.south) to (gp.south west);
+    \draw[myArrow] (h.south) to (hp.south west);
+    \draw[myArrow] (j.south) to (jp.south west);
+  \end{tikzpicture}
+  \tikzset{external/export=true}
+
   \begin{thmBox*}[The General Power Rule]
     \begin{align*}
       \ddx\sbrkt{\parens{f(x)}^n}&=n\parens{f(x)}^\nmo f'(x)
     \end{align*}
   \end{thmBox*}
+  \begin{ex*}
+    Use the chain rule to show
+    \begin{align*}
+      \ddx\sbrkt{\dfrac{f(x)}{g(x)}}&=\dfrac{g(x)f'(x)-f(x)g'(x)}{\sbrkt{g(x)}^2}
+    \end{align*}
+  \end{ex*}
   \pagebreak
   
   \begin{ex*}
