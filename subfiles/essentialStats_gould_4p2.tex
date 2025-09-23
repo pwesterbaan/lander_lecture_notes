@@ -30,11 +30,11 @@
     \begin{center}
       \begin{tikzpicture}[nodes=black]
         \begin{groupplot}[
-          group style={group size=2 by 1, horizontal sep=4cm},
+          group style={group size=2 by 1, horizontal sep=3cm},
           axis lines=center,
           axis line style={black,->},
           enlargelimits={value=0.025, auto},
-          width=0.45\linewidth, height=0.3\linewidth,
+          width=0.45\linewidth, height=0.8*\axisdefaultheight, %height=0.3\linewidth,
           ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
           xlabel style={at={(ticklabel* cs:0.5)},anchor=north, yshift=-10pt},
           ylabel style={at={(ticklabel* cs:0.5)},anchor=south, xshift=-27.5pt, rotate=90},
@@ -51,15 +51,16 @@
         \begin{axis}[
           axis lines=center,
           axis line style={black,->},
-          xmin=15, xmax=65,
-          ymin=-4.25, ymax=4.25,
-          enlargelimits={value=0.025, auto},
-          width=0.55\linewidth, height=0.3\linewidth,
+          xmin=15, xmax=66,
+%          ymin=-4.25, ymax=4.25,
+          enlargelimits={value=0.05, auto},
+          width=0.55\linewidth, height=0.8*\axisdefaultheight, %height=0.3\linewidth,
           ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
-          xlabel=Age (years), xlabel style={at={(ticklabel* cs:0.5)},anchor=north, yshift=-30pt},
+          xlabel=Age (years), xlabel style={at={(ticklabel* cs:0.5)},anchor=north, yshift=-10pt},
           ylabel=Time (hours), ylabel style={at={(ticklabel* cs:0.5)},anchor=south, xshift=-20pt, rotate=90},
+          clip=false,
           ]
-            \addplot[only marks, blue] table [x=x_sim, y=y_sim, col sep=comma] {\subfiles/scat_plot_data_4p2.csv} node at (47.5,3.2) {$r=0$};
+            \addplot[only marks, blue] table [x=x_sim, y=y_sim, col sep=comma] {\subfiles/scat_plot_data_4p2.csv} node at (62.5,3.75) {$r=0$};
         \end{axis}
       \end{tikzpicture}
       \vspace*{\stretch{1}}
@@ -67,11 +68,11 @@
       \begin{tikzpicture}[nodes=black]
         \begin{groupplot}[
           scaled ticks=false,
-          group style={group size=2 by 1, horizontal sep=4cm},
+          group style={group size=2 by 1, horizontal sep=3cm},
           axis lines=center,
           axis line style={black,->},
           enlargelimits={value=0.025, auto},
-          width=0.45\linewidth, height=0.3\linewidth,
+          width=0.45\linewidth, height=0.8*\axisdefaultheight, %height=0.3\linewidth,
           ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
           xlabel style={at={(ticklabel* cs:0.5)},anchor=north, yshift=-10pt},
           ylabel style={at={(ticklabel* cs:0.5)},anchor=south, xshift=-27.5pt, rotate=90},
