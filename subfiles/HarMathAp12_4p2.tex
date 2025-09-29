@@ -1,7 +1,7 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-%  \relscale{1.4} %TODO
+ % \relscale{1.4} %TODO
   \section{4.2: Linear Programming: Graphical Methods}
     \begin{defn*}
       Linear programming is an optimization technique that can be used to solve linearly constrained problems:
@@ -271,14 +271,14 @@
           ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=0.5, text opacity=1},
           xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
           ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
-          every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}]
-            \draw[fill=lander_blue!50, opacity=0.5] plot[smooth, samples=100, domain=0:130] (\x,{j(\x)}) -- (X,0) -- (X,X) -| cycle;
+          every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255},
+          ]
+            \draw[fill=lander_blue!50, opacity=0.5,draw=none] plot[smooth, samples=100, domain=0:130] (\x,{j(\x)}) -- (X,0) -- (X,X) -| cycle;
             \addplot[<->] expression[domain=0:60]{f(x)}
-              node[pos=0.2, above right, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt, rounded corners=3pt] {$x+y=100$};
+              node[pos=0.2, above right, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt, rounded corners=3pt] {$3x+y=180$};
             \addplot[<->] expression[domain=0:100]{g(x)}
-              node[pos=0.475, above right, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt, rounded corners=3pt] {$2x+5y=260$};
-            \addplot[<->] expression[domain=0:130]{h(x)}
-              node[pos=0.64, above right, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt, rounded corners=3pt] {$3x+y=180$};
+              node[pos=0.475, above right, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt, rounded corners=3pt] {$x+y=100$};
+            \addplot[<->] expression[domain=0:130]{h(x)} node[pos=0.225, below, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt, rounded corners=3pt, sloped] {$2x+5y=260$};
       \end{axis}
     \end{tikzpicture}
   \end{minipage}
