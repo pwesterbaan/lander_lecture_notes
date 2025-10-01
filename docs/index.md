@@ -80,23 +80,23 @@ Below are links to notes used at Lander University:
   <summary>math123 Annotated Notes (click to expand)</summary>
 
   <ul id="math123Notes_list">
-    <script> add_link_by_date("math123Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_1p4_annotated.pdf")</script>
+    <script> add_link_by_date("math123Notes_list","2025-08-23","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_1p4_annotated.pdf")</script>
 
-    <script> add_link_by_date("math123Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_2p1_annotated.pdf")</script>
+    <script> add_link_by_date("math123Notes_list","2025-08-26","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_2p1_annotated.pdf")</script>
 
-    <script> add_link_by_date("math123Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_2p2_annotated.pdf")</script>
+    <script> add_link_by_date("math123Notes_list","2025-08-28","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_2p2_annotated.pdf")</script>
 
-    <script> add_link_by_date("math123Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_2p4_annotated.pdf")</script>
+    <script> add_link_by_date("math123Notes_list","2025-09-06","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_2p4_annotated.pdf")</script>
 
-    <script> add_link_by_date("math123Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_2p5_annotated.pdf")</script>
+    <script> add_link_by_date("math123Notes_list","2025-08-11","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_2p5_annotated.pdf")</script>
 
-    <script> add_link_by_date("math123Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_2p6_annotated.pdf")</script>
+    <script> add_link_by_date("math123Notes_list","2025-08-16","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_2p6_annotated.pdf")</script>
 
-    <script> add_link_by_date("math123Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_3p1_annotated.pdf")</script>
+    <script> add_link_by_date("math123Notes_list","2025-09-25","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_3p1_annotated.pdf")</script>
 
-    <script> add_link_by_date("math123Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_3p2_annotated.pdf")</script>
+    <script> add_link_by_date("math123Notes_list","2025-09-27","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_3p2_annotated.pdf")</script>
 
-    <script> add_link_by_date("math123Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_3p3_annotated.pdf")</script>
+    <script> add_link_by_date("math123Notes_list","2025-09-30","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_3p3_annotated.pdf")</script>
 
   </ul>
 </details>
@@ -112,35 +112,35 @@ Below are links to notes used at Lander University:
   <summary>math211 Annotated Notes (click to expand)</summary>
 
   <ul id="math211Notes_list">
-    <script> add_link_by_date("math211Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_1p1_annotated.pdf")</script>
+    <script> add_link_by_date("math211Notes_list","2025-08-20","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_1p1_annotated.pdf")</script>
 
-    <script> add_link_by_date("math211Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_1p2_1p4_1p5_annotated.pdf")</script>
+    <script> add_link_by_date("math211Notes_list","2025-08-22","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_1p2_1p4_1p5_annotated.pdf")</script>
 
-    <script> add_link_by_date("math211Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_2p1_2p2_2p3_annotated.pdf")</script>
+    <script> add_link_by_date("math211Notes_list","2025-08-27","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_2p1_2p2_2p3_annotated.pdf")</script>
 
-    <script> add_link_by_date("math211Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_2p4_2p5_annotated.pdf")</script>
+    <script> add_link_by_date("math211Notes_list","2025-08-29","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_2p4_2p5_annotated.pdf")</script>
 
-    <script> add_link_by_date("math211Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_3p1_annotated.pdf")</script>
+    <script> add_link_by_date("math211Notes_list","2025-09-05","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_3p1_annotated.pdf")</script>
 
-    <script> add_link_by_date("math211Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_3p2_3p3_annotated.pdf")</script>
+    <script> add_link_by_date("math211Notes_list","2025-09-10","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_3p2_3p3_annotated.pdf")</script>
 
-    <script> add_link_by_date("math211Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_3p4_3p5_annotated.pdf")</script>
+    <script> add_link_by_date("math211Notes_list","2025-09-12","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_3p4_3p5_annotated.pdf")</script>
 
-    <script> add_link_by_date("math211Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_4p1_4p2_annotated.pdf")</script>
+    <script> add_link_by_date("math211Notes_list","2025-09-24","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_4p1_4p2_annotated.pdf")</script>
 
-    <script> add_link_by_date("math211Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_4p3_4p4_annotated.pdf")</script>
+    <script> add_link_by_date("math211Notes_list","2025-09-26","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_4p3_4p4_annotated.pdf")</script>
 
-    <script> add_link_by_date("math211Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_6p1_6p2_annotated.pdf")</script>
+    <script> add_link_by_date("math211Notes_list","2025-10-01","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_6p1_6p2_annotated.pdf")</script>
 
-    <script> add_link_by_date("math211Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_7p1_7p2_7p3_annotated.pdf")</script>
+    <script> add_link_by_date("math211Notes_list","2025-10-08","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_7p1_7p2_7p3_annotated.pdf")</script>
 
-    <script> add_link_by_date("math211Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_7p4_8p1_8p2_annotated.pdf")</script>
+    <script> add_link_by_date("math211Notes_list","2025-10-29","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_7p4_8p1_8p2_annotated.pdf")</script>
 
-    <script> add_link_by_date("math211Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_8p3_9p1_9p2_annotated.pdf")</script>
+    <script> add_link_by_date("math211Notes_list","2025-11-01","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_8p3_9p1_9p2_annotated.pdf")</script>
 
-    <script> add_link_by_date("math211Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_9p3_annotated.pdf")</script>
+    <script> add_link_by_date("math211Notes_list","2025-11-05","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_9p3_annotated.pdf")</script>
 
-    <script> add_link_by_date("math211Notes_list","","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_9p4_annotated.pdf")</script>
+    <script> add_link_by_date("math211Notes_list","2025-11-07","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211_NoteKeys/annotated_notes/math211Notes_9p4_annotated.pdf")</script>
 
   </ul>
 </details>

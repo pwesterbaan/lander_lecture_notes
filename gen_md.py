@@ -40,10 +40,11 @@ for dir_title in directories:
     info_dict['base_url']=f'''{github_url}/{noteKeys_dir}/annotated_notes/'''
 
     # Create dictionary from csv with release dates for each section
-    df = pd.read_csv("math121_NoteKeys/math121_releaseDates.csv")
+    df = pd.read_csv(f'''{noteKeys_dir}/{class_name}_releaseDates.csv''')
     info_dict['release_date']=dict(zip(df['filename'],df['release date']))
 
     list_of_class_dicts.append(info_dict)
+    # print(info_dict)
 
 # use template to write file
 content=template.render(list_of_class_dicts=list_of_class_dicts)
