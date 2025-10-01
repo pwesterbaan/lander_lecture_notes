@@ -3,6 +3,7 @@
 from glob import glob
 from jinja2 import Environment, FileSystemLoader
 import os
+import pandas as pd
 from pathlib import Path
 
 github_url="https://github.com/pwesterbaan/lander_lecture_notes/raw/main"
@@ -26,6 +27,7 @@ for dir_title in directories:
     class_name=noteKeys_dir.split('_')[0]
     info_dict['name']=class_name
     info_dict['file_name']=class_name+"Notes.pdf"
+    info_dict['list_id']=class_name+"Notes_list"
 
     # create annotated_notes directory if non-existent
     if not os.path.isdir(annotated_notes_dir):
@@ -36,6 +38,10 @@ for dir_title in directories:
     list_of_pdfs.sort()
     info_dict['list_of_pdfs']=list_of_pdfs
     info_dict['base_url']=f'''{github_url}/{noteKeys_dir}/annotated_notes/'''
+
+    # Create dictionary from csv with release dates for each section
+    df = pd.read_csv("math121_NoteKeys/math121_releaseDates.csv")
+    info_dict['release_date']=dict(zip(df['filename'],df['release date']))
 
     list_of_class_dicts.append(info_dict)
 

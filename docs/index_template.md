@@ -11,8 +11,8 @@ Below are links to notes used at Lander University:
 <details name="annotated_notes">
   <summary>{{ class_dict.get('name') }} Annotated Notes (click to expand)</summary>
 
-  <ul>{% for file in class_dict.get('list_of_pdfs') %}
-    <li><a href="{{ class_dict.get('base_url') }}{{ file }}" target="_blank">{{ file }}</a></li>
+  <ul id="{{class_dict.get('list_id')}}">{% for file in class_dict.get('list_of_pdfs') %}
+    <script> add_link_by_date("{{class_dict.get('list_id')}}","{{class_dict.get('release_date').get(file,'')}}","{{class_dict.get('base_url')}}{{file}}")</script>
 {% endfor %}
   </ul>
 </details>
