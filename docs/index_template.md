@@ -1,3 +1,23 @@
+<script>
+    function add_link_by_date(listId,dispDate,urlString){
+        if (new Date() >= new Date(dispDate)){
+            // TODO: Clean up this Javascript. This works for now, but creating "myItem" might be excessive?
+
+            const segments = new URL(urlString).pathname.split('/');
+            const fileName = segments.pop() || segments.pop(); // Handle potential trailing slash
+
+            const myLink=document.createElement('a');
+            myLink.href = urlString;
+            myLink.text = fileName;
+            myLink.target = "_blank"
+
+            const myItem=document.createElement('li');
+            myItem.append(myLink);
+            document.getElementById(listId).append(myItem);
+        }
+    }
+</script>
+
 <h1>Dr. Westerbaan's Lecture Notes</h1>
 
 Below are links to notes used at Lander University:
