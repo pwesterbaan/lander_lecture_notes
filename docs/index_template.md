@@ -1,4 +1,8 @@
 <script>
+    // For anyone looking at this:
+    // Obviously this is not a secure way to hide links
+    // I'm hiding these links to encourage my students
+    // to actually take notes and pay attention during class
     function add_link_by_date(listId,dispDate,urlString){
         if (new Date() >= new Date(dispDate)){
             // TODO: Clean up this Javascript. This works for now, but creating "myItem" might be excessive?
