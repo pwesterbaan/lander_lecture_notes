@@ -27,7 +27,7 @@ for dir_title in directories:
     class_name=noteKeys_dir.split('_')[0]
     info_dict['name']=class_name
     info_dict['file_name']=class_name+"Notes.pdf"
-    info_dict['list_id']=class_name+"_NotesKeys"
+    info_dict['list_id']=class_name+"_NoteKeys"
 
     # create annotated_notes directory if non-existent
     if not os.path.isdir(annotated_notes_dir):
