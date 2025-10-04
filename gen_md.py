@@ -27,7 +27,7 @@ for dir_title in directories:
     class_name=noteKeys_dir.split('_')[0]
     info_dict['name']=class_name
     info_dict['file_name']=class_name+"Notes.pdf"
-    info_dict['list_id']=class_name+"Notes_list"
+    info_dict['list_id']=class_name+"_NotesKeys"
 
     # create annotated_notes directory if non-existent
     if not os.path.isdir(annotated_notes_dir):
@@ -44,7 +44,6 @@ for dir_title in directories:
     info_dict['release_date']=dict(zip(df['filename'],df['release date']))
 
     list_of_class_dicts.append(info_dict)
-    # print(info_dict)
 
 # use template to write file
 content=template.render(list_of_class_dicts=list_of_class_dicts)
