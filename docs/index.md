@@ -102,6 +102,8 @@ Below are links to notes used at Lander University:
 
     <script> add_link_by_date("math123Notes_list","2025-09-30T09:00:00","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_3p3_annotated.pdf")</script>
 
+    <script> add_link_by_date("math123Notes_list","2025-10-07T09:00:00","https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123_NoteKeys/annotated_notes/math123Notes_3p6_annotated.pdf")</script>
+
   </ul>
 </details>
 
