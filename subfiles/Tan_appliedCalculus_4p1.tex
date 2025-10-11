@@ -1,8 +1,186 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{ }
+%  \relscale{1.4} %TODO
+  \section{4.1: Applications of the First Derivative}
+  \begin{defn*}
+    Consider the function $f(x)$ on the interval $(a,b)$. Given \emph{any} two numbers $x_1$ and $x_2$ in $(a,b)$ where $x_1<x_2$, we say $f$ is
+    \begin{center}
+      \begin{tikzpicture}[declare function={
+        a=1; b=2; c=3.4; d=1; ell=0.25; t=0.725; eps=0.05;
+        f(\x)=(\x-a)*(\x-b)*(\x-c);
+        lc(\x,\y,\ell)=(1-\ell)*\x+\ell*\y;
+        quad_form(\a,\b,\c,\s)=(-\b+\s*sqrt(\b^2-4*\a*\c))/(2*\a);
+        ap=quad_form(3,-2*(a+b+c), a*b+b*c+a*c,-1);
+        bp=quad_form(3,-2*(a+b+c), a*b+b*c+a*c,1);
+        xo=lc(a,b,t);     xt=lc(c,b,t);
+        fo=f(xo);         ft=f(xt);
+        xmin=lc(a,b,ell); xmax=lc(c,b,ell);
+        ymin=d+f(bp)-eps; ymax=d-f(bp)+eps;
+        }]
+        \begin{groupplot}[
+          group style={group size=2 by 1, horizontal sep=20mm, vertical sep=0cm},
+          axis lines=center,
+          axis line style={black,->},
+          ymin=ymin, ymax=ymax,
+          xtick={ap,xo,xt,bp}, xticklabels={$\vphantom{b}a$,$\vphantom{b}x_1$, $\vphantom{b}x_2$,$b$},
+          yticklabels={$f(x_1)$, $f(x_2)$},
+          enlargelimits={value=0.05, auto},
+          ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+          every axis plot/.append style={domain=xmin:xmax,line width=0.95pt, color=lander_blue, samples=255},
+          ]
+            \nextgroupplot[ytick={d-fo,d-ft}, title=increasing if $f(x_1)<f(x_2)$]
+              \addplot[<->] {d-f(x)};
+              \addplot[soldot] coordinates{(xo,{d-f(xo)})(xt,{d-f(xt)})};
+              \draw[dashed] (axis cs: xo,0) |- (axis cs: 0,d-fo)
+                            (axis cs: xt,0) |- (axis cs: 0,d-ft);
+            \nextgroupplot[ytick={d+fo,d+ft}, title=decreasing if $f(x_1)>f(x_2)$]
+              \addplot[<->] {d+f(x)};
+              \addplot[soldot] coordinates{(xo,{d+f(xo)})(xt,{d+f(xt)})};
+              \draw[dashed] (axis cs: xo,0) |- (axis cs: 0,d+fo)
+                            (axis cs: xt,0) |- (axis cs: 0,d+ft);
+        \end{groupplot}
+      \end{tikzpicture}
+    \end{center}
+    Thus, for every value of $x$ on the interval $(a,b)$, if
+    \begin{enumerate}[--]
+      \item $f'(x)>0$, then $f$ is increasing on $(a,b)$.
+      \item $f'(x)<0$, then $f$ is decreasing on $(a,b)$.
+      \item $f'(x)=0$, then $f$ is constant on $(a,b)$.
+    \end{enumerate}
+  \end{defn*}
+  \begin{ex*}
+    Find the intervals where $f(x)=x^2$ is increasing and decreasing.
+  \end{ex*}
+  \pagebreak
+
+  \begin{thmBox*}[Determining intervals where a function is increasing or decreasing.]
+    \begin{enumerate}
+      \item Find all values of $x$ such that $f'(x)=0$ or $f'(x)$ is undefined.
+      \item Determine the sign of $f'(x)$ on each open interval.
+    \end{enumerate}
+  \end{thmBox*}
+  \begin{ex*}
+    Find the intervals where the following functions are increasing and decreasing:
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task $f(x)=x^3-3x^2-24x+32$ \hfill \href[pdfnewwindow]{https://www.desmos.com/calculator/re1imdb5c4}{\textcolor{blue}{\underline{Graph}}}
+    \task $g(x)=(x+1)^{2/3}$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task $h(x)=x+\dfrac{1}{x}$
+    \task $j(x)=\dfrac{x^2}{1-x^2}$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{defn*}[Relative Extrema]
+    A function $f$ has a
+    \begin{itemize}
+%      \item
+%        \textbf{relative maximum} at $x=c$ if there exists an open interval $(a,b)$ containing $c$ such that $f(x)\leq f(c)$ for all $x$ in $(a,b)$.
+%      \item
+%        \textbf{relative minimum} at $x=c$ if there exists an open interval $(a,b)$ containing $c$ such that $f(x)\geq f(c)$ for all $x$ in $(a,b)$.
+      \item
+        \textbf{relative maximum} at $x=c$ if $f(c)\geq f(x)$ for every $x$ in $(a,b)$
+      \item
+%        $f(c)\leq f(x)$ for every $x$ in $(a,b)$, then $f(c)$ is a \textbf{relative minimum} value of $f$.
+        \textbf{relative minimum} at $x=c$ if $f(c)\leq f(x)$ for every $x$ in $(a,b)$
+    \end{itemize}
+  \end{defn*}
+
+  \begin{center}
+    \begin{tikzpicture}[
+      declare function={
+        cubeRoot(\x)=\x/abs(\x)*abs(\x)^(1/3);
+        f(\x)=\x<=7.81901? -(\x-6.81901)^7+1: 1.5*cubeRoot(\x-7.81901);},
+      custNode/.style={
+        align=center,
+        color=black,
+        inner sep=0.25pt,
+        fill=white,
+        opacity=0.7,
+        text opacity=1}]
+      \begin{axis}[
+        axis lines=center,
+        axis line style={black,->},
+        xmajorticks=false,
+        ymajorticks=false,
+        height=\axisdefaultheight, width=0.9\linewidth,
+        enlargelimits={value=0.025, auto},
+        ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+        every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255},
+        clip=false,
+        ]
+        \addplot[<->, smooth, tension=0.85] coordinates{(-0.25,-1)(0.25,0.75)(1,4)(2.5,1)(4,2)(5,-1)(5.5,5)};
+        \addplot[<->] expression[domain=5.6:9] {f(x};
+        \draw[black, dashed] (axis cs: 5.55,-1.4) -- (axis cs: 5.55,5);
+        \node[custNode, above, yshift= 5pt] at (1,4)       {relative\\max};
+        \node[custNode, below, yshift=-5pt] at (2.7,1)     {relative\\min};
+        \node[custNode, above, yshift= 5pt] at (3.8,2)     {relative\\max};
+        \node[custNode, below, yshift=-5pt] at (4.9,-1)    {relative\\min};
+        \node[custNode, below, yshift=-5pt] at (7.81901,0) {relative\\min};
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \begin{defn*}
+    A \textbf{critical point} of a function $f$ is any number $x$ in the domain of $f$ such that $f'(x)=0$ or $f'(x)$ does not exist.
+  \end{defn*}
+  \pagebreak
+
+  %TODO After 1st derive test defined
+  \begin{thmBox*}[Procedure for Finding the Relative Extrema of a Continuous Function $f$]
+    \newcommand{\minMaxPlot}{
+
+    }
+    \begin{enumerate}
+      \item Determine the critical points of $f$.
+      \item Determine the sign change of $f'(x)$ to the left and right of each critical point:\\
+        If, at $x=c$, $f'(x)$ \dots
+        \begin{enumerate}
+          \item changes sign from \emph{positive} to \emph{negative}, then $f$ has a \emph{relative maximum} \hfill
+            \tikz{\begin{axis}[axis lines=none, width=27.5mm, height=20mm]
+              \addplot[<->, lander_blue] expression[domain=-1:1]{-x^2};
+            \end{axis}}
+          \item changes sign from \emph{negative} to \emph{positive}, then $f$ has a \emph{relative minimum} \hfill
+            \tikz{\begin{axis}[axis lines=none, width=27.5mm, height=20mm]
+              \addplot[<->, lander_blue] expression[domain=-1:1]{x^2};
+            \end{axis}}
+          \item does not change sign, then $f$ does \emph{not} have a relative extremum
+        \end{enumerate}
+        at $x=c$.
+    \end{enumerate}
+  \end{thmBox*}
+
+  \begin{ex*}
+    Consider the function $f(x)=6x-x^3$. \hfill \textcolor{blue}{\underline{\href[pdfnewwindow]{https://www.desmos.com/calculator/ayiubdaov9}{Graph}}}
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task Use $f'(x)$ to find the intervals on which the function is increasing and decreasing.
+    \task Identify the function's local extreme values \hfill
+      (e.g. ``local max of \underline{\hspace*{15pt}} at $x=\underline{\hspace*{15pt}}$'')
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{ex*}
+    Find the relative maximums/relative minimums of the following:
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task $f(x)=x^3-3x^2-24x+32$ \hfill \href[pdfnewwindow]{https://www.desmos.com/calculator/re1imdb5c4}{\textcolor{blue}{\underline{Graph}}}
+    \task $g(x)=(x+1)^{2/3}$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task $h(x)=x+\dfrac{1}{x}$
+    \task $j(x)=\dfrac{x^2}{1-x^2}$
+  \end{extasks}
+  \vspace*{\stretch{1}}
 
   \pagebreak
 \end{document}

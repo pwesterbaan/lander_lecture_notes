@@ -1,8 +1,41 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
 \begin{document}
-  \relscale{1.4} %TODO
-  \section{ }
+%  \relscale{1.4} %TODO
+  \section{3.5: Higher--Order Derivatives}
+  \begin{defn*}
+    The \textbf{second derivative} of $f$ is
+      \[f''(x)=\ddx\sbrkt{f'(x)}=\lim_{h\to 0} \dfrac{f'(x+h)-f'(x)}{h}\]
+    We can repeatedly take the derivative of $f(x)$:
+      \[f'(x), f''(x), f'''(x), \dots, f^{(n)}(x)\]
+  \end{defn*}
+  \begin{ex*}
+    Find all derivatives of 
+      \[f(x)=x^5-7x^4-5x^3-2x^2+6x-6\]
+  \end{ex*}
+  \pagebreak
 
+  \begin{ex*}
+    Let $f(x)=x^{2/3}$. Find $f'''(x)$.
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  
+  \begin{ex*}
+    Find the second derivative of $y=\parens{2x^2+3}^{3/2}$
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{ex*}
+    The position function of a maglev train (in feet) is given by
+      \[s(t)=4t^2, \qquad (0\leq t\leq 30).\]
+    Find the velocity and the acceleration of the maglev train at time $t$
+  \end{ex*}
+  \pagebreak
+
+  %TODO Move this example into 3.6 after teaching these sections in order
+  \begin{ex*}
+    Find $\displaystyle\dydx[2]$ if $x^2+y^2=4$.
+  \end{ex*}
   \pagebreak
 \end{document}
