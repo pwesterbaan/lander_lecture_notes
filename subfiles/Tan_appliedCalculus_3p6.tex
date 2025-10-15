@@ -1,9 +1,10 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
+\providecommand{\relscalefact}{1.4}
 \begin{document}
-%  \relscale{1.4} %TODO
+\relscale{\relscalefact}
   \section{3.6: Implicit Differentiation and Related Rates}
-  
+
   \begin{tabularx}{\linewidth}{
     >{\hsize=1.25\hsize}Z
     >{\hsize=0.50\hsize}X
@@ -37,14 +38,14 @@
     \[y^3-y+2x^3-x=8\]
   \end{ex*}
   \pagebreak
-  
+
   \begin{ex*}
     Consider the equation $x^2+y^2=4$.
   \end{ex*}
   \begin{extasks}[after-item-skip=\stretch{1}](1)
     \task Find $\displaystyle\dydx$ by implicit differentiation.
     \task Find the slope of the tangent line to the graph of the function $y=f(x)$ at the point $(1,\sqrt{3})$.
-    \task Find an equation of the tangent line. 
+    \task Find an equation of the tangent line.
   \end{extasks}
   \vspace*{\stretch{1}}
   \pagebreak
@@ -53,8 +54,8 @@
   \begin{thmBox*}[Related Rates:]
     Related rates are problems that use a mathematical relationship between two or more objects under specific constraints. From this, we can differentiate this relationship and examine how each variable changes with respect to time.
   \end{thmBox*}
-  
-  The volume of a cone with radius $r$ and height $h$ is given by 
+
+  The volume of a cone with radius $r$ and height $h$ is given by
     \[V=\frac{1}{3}\pi r^2h\]
   \begin{extasks}[after-item-skip=\stretch{1}](1)
     \task Find $dV/dt$ when $r$ and $h$ are changing.
@@ -63,33 +64,33 @@
   \end{extasks}
   \vspace*{\stretch{1}}
   \pagebreak
-  
+
   \begin{ex*}
     The altitude of a triangle is increasing at a rate of $1\,cm/min$ while the area of the triangle is increasing at a rate of $2\,cm^2/min$. How fast is the base of the triangle changing when the altitude is $10\,cm$ and the area is $100\,cm^2$.
   \end{ex*}
   \begin{flushright}
-    \begin{tikzpicture}[scale=1.4] %%Used to match text scaling
+    \begin{tikzpicture}[scale=\relscalefact]
       \coordinate (A) at (-1.5,0);
       \coordinate (B) at (2.,0);
       \coordinate (C) at (-0.5,1.75);
       \draw[-] (A)--(B)--(C)--cycle;
       \draw[dashed] (C) -- (C |- A);
       \draw node[below] at ($(A)!0.5!(B)$) {$b$};
-      \draw node[right] at ($(C)!0.5!(C |- A)$) {$h$};  
+      \draw node[right] at ($(C)!0.5!(C |- A)$) {$h$};
     \end{tikzpicture}
   \end{flushright}
   \pagebreak
-  
+
   \begin{ex*}
     The base of a 13-ft ladder leaning against a wall begins to slide away from the wall. At the instant of time when the base is 12 ft from the wall, the base is moving at a rate of 8 ft/sec. How fast is the top of the ladder sliding down the wall at that instant of time?
   \end{ex*}
   \pagebreak
-  
+
   \begin{ex*}
     At noon, ship A is 100 km west of ship B. Ship A is sailing south at 35 km/h and ship B is sailing north at 25 km/h. How fast is the distance between the ships changing at 4pm?
   \end{ex*}
   \begin{flushright}
-    \begin{tikzpicture}[scale=1.4, %%Used to match text scaling
+    \begin{tikzpicture}[scale=\relscalefact,
       declare function={X=2; Y=X*1.4; Xp=2*X;}] %%X/100=Y/140
       \node (A) at (0,0) {A};
       \node (B) at (X,0) {B};
@@ -103,7 +104,7 @@
       \draw node[right of = B] {(noon)};
       \draw node[right of = C] {(4pm)};
       \draw node[left  of = D] {(4pm)};
-    
+
       \node (Cp) at ($(C)+(Xp,0)$) {\faShip};
       \node (Dp) at ($(D)+(Xp,0)$) {\faShip};
       \coordinate (MP) at (Cp|-Dp);

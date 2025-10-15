@@ -1,7 +1,8 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
+\providecommand{\relscalefact}{1.4}
 \begin{document}
-%  \relscale{1.4} %TODO
+\relscale{\relscalefact}
   \section{6.1: Probability Distributions Are Models of Random Experiments}
     \begin{defn*}
       The \textbf{probability distribution} describes
@@ -11,11 +12,11 @@
       \end{itemize}
       This is sometimes also referred to as the \textbf{probability distribution function (pdf)}.
     \end{defn*}
-    
+
     \begin{ex*}
       Suppose we are reading Amazon reviews of a particular product. In total, the product has $3,901$ reviews, distributed as shown below.
     \end{ex*}
-    
+
     \begin{center}
       \begin{minipage}{0.2\linewidth}
         \begin{tabular}{@{}cc@{}}\toprule
@@ -51,7 +52,7 @@
         \end{tikzpicture}
       \end{minipage}
     \end{center}
-    
+
     \noindent
     \begin{extasks}[after-item-skip=\stretch{1}](1)
       \task If we pick a reviewer at random, what is the probability that they give a 5 star review? What about a 1 star review?
@@ -59,7 +60,7 @@
     \end{extasks}
   \vspace*{\stretch{1}}
   \pagebreak
-  
+
   \begin{center}
     \fbox{\parbox{0.5\linewidth}{
       \emph{Note}: Valid probability distributions:
@@ -70,7 +71,7 @@
     }}
   \end{center}
   \vspace*{1\baselineskip}
-  
+
   \begin{ex*}
     Suppose a couple decides they will keep having children until they have a girl. Assuming that the likelihood of having a boy or girl is equally likely, the probability of having $x$ children can be given by $\parens{1/2}^x$, and is represented by the graph below.
   \end{ex*}
@@ -92,7 +93,7 @@
       \end{axis}
     \end{tikzpicture}
   \end{center}
-  
+
   \begin{extasks}[after-item-skip=\stretch{1}](1)
     \task What is the maximum number of children possible?
     \task Do the probabilities sum to 1?
@@ -111,7 +112,7 @@
     }}
   \end{center}
   \vspace*{2\baselineskip}
-  
+
   \begin{ex*}
     Suppose a coffee shop has done extensive research and knows each customer is helped in under 5 minutes. The shaded area of the graph represents the probability that a customer will wait less than 2 minutes.
   \end{ex*}
@@ -143,7 +144,7 @@
       \end{axis}
     \end{tikzpicture}
   \end{center}
-  
+
   \begin{extasks}[after-item-skip=\stretch{1}](1)
     \task Find the probability that you will have to wait less than 5 minutes.
     \task Find the probability that you will have to wait between 4 and 10 minutes.

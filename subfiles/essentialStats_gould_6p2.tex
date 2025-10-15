@@ -1,7 +1,8 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
+\providecommand{\relscalefact}{1.4}
 \begin{document}
-%  \relscale{1.4} %TODO
+\relscale{\relscalefact}
   \section{6.2: The Normal Model}
     \begin{defn*}
       The \textbf{Normal Distribution} is a symmetric, unimodal model that provides a very close fit for many numerical variables:
@@ -60,7 +61,7 @@
       \end{tikzpicture}
     \end{center}
     \vspace*{\stretch{1}}
-    
+
     \begin{ex*}
       Below is the graph of two Normal Distributions with equal standard deviations, but different means.
     \end{ex*}
@@ -131,7 +132,7 @@
 
           % PLOTS
           \addplot[lander_blue,thick, name path=B] {gauss(x,mu,sig)};
-            
+
           % FILL
           \path[name path=xaxis]
             (\pgfkeysvalueof{/pgfplots/xmin},0) -- (\pgfkeysvalueof{/pgfplots/xmax},0);
@@ -166,7 +167,7 @@
 
           % PLOTS
           \addplot[lander_blue,thick, name path=B] {gauss(x,mu,sig)};
-            
+
           % FILL
           \path[name path=xaxis]
             (\pgfkeysvalueof{/pgfplots/xmin},0) -- (\pgfkeysvalueof{/pgfplots/xmax},0);
@@ -205,7 +206,7 @@
 
           % PLOTS
           \addplot[lander_blue,thick, name path=B] {gauss(x,mu,sig)};
-            
+
           % FILL
           \path[name path=xaxis]
             (\pgfkeysvalueof{/pgfplots/xmin},0) -- (\pgfkeysvalueof{/pgfplots/xmax},0);
@@ -215,7 +216,7 @@
       \end{tikzpicture}
   \end{extasks}
   \vspace*{\stretch{1}}
-  
+
   \begin{ex*}
     ``Verify'' the emperical rule by using technology to find the probability that an observation lies within 1, 2, and 3 standard deviations.
   \end{ex*}
@@ -298,7 +299,7 @@
   \pagebreak
 
   \begin{defn*}
-    The \textbf{Standard Normal Distribution} is a $N(0,1)$: 
+    The \textbf{Standard Normal Distribution} is a $N(0,1)$:
       \[\frac{1}{\sqrt{2\pi}} e^{-\frac{z^2}{2}}\]
     We use the Standard Normal Distribution in conjunction with $z$-scores to compute probabilities:
       \[z=\frac{X-\mu}{\sigma}\]
@@ -313,9 +314,9 @@
   \end{extasks}
   \vspace*{\stretch{1}}
   \pagebreak
-  
+
   \begin{ex*}
-    Assume that women's heights follow a Normal distribution with mean 64'' and standard deviation 3''. Find the 25th and 75th percentile using 
+    Assume that women's heights follow a Normal distribution with mean 64'' and standard deviation 3''. Find the 25th and 75th percentile using
   \end{ex*}
   \begin{extasks}[after-item-skip=\stretch{1}](1)
     \task technology and

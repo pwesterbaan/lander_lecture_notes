@@ -1,7 +1,8 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
+\providecommand{\relscalefact}{1.4}
 \begin{document}
-%  \relscale{1.4} %TODO
+\relscale{\relscalefact}
   \section{7.2: Measuring the Quality of a Survey}
     The true population proportion can be estimated by the sample proportion. How accurate can we expect our estimate to be?
     \begin{itemize}
@@ -38,7 +39,7 @@
       \end{tikzpicture}
     \end{flushright}
     \pagebreak
-    
+
     \begin{ex*}
       Now, consider a group of 1000 people where 25\% identify as female ($p=0.25$). When using a sample size of $n=10$, what are possible sample proportions?
     \end{ex*}
@@ -221,7 +222,7 @@
           \[SE_{est}=\sqrt{\frac{\hat{p}(1-\hat{p})}{n}}\]
       \end{itemize}
     \end{defn*}
-    
+
     \noindent
     \emph{Note}: Larger sample sizes have smaller standard error!
 

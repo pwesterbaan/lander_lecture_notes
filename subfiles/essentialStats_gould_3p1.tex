@@ -1,14 +1,15 @@
 \documentclass[../mathNotesPreamble]{subfiles}
 
+\providecommand{\relscalefact}{1.4}
 \begin{document}
-%  \relscale{1.4} %TODO
+\relscale{\relscalefact}
   \section{3.1: Summaries for Symmetric Distributions}
   \begin{defn*}
     Given a collection of data $\set{x_1,x_2,\dots,x_n}$, the \textbf{mean} of the data is the arithmetic mean:
       \[\bar{x}=\frac{x_1}{n}+\frac{x_2}{n}+\dots+\frac{x_n}{n}=\frac{1}{n}\sum_{i=1}^n x_i\]
   \end{defn*}
   \vspace*{0.5\baselineskip}
-  
+
   \begin{ex*}
     An instructor at Peoria Junior College in Illinois collected data from two classes, including the students’ ACT scores. Below is the distribution of self-reported ACT scores for one statistics class:
   \end{ex*}
@@ -17,7 +18,7 @@
     \includegraphics[width=0.6\linewidth]{images/math211_figure_3p2}
   \end{center}
   \vspace*{\stretch{1}}
-  
+
   \begin{ex*}
     The winnings of the top-ranked professional tennis players in the 2018 season are given in the graph below:
   \end{ex*}
@@ -27,7 +28,7 @@
   \end{center}
 %  \vspace*{\stretch{1}}
   \pagebreak
-  
+
   \noindent
   \fbox{\parbox{0.9875\linewidth}{\emph{Note}:
   \begin{itemize}
@@ -37,7 +38,7 @@
   \begin{ex*}
     According to GasBuddy.com (a website that invites people to submit prices at local gas stations), the prices of 1 gallon of regular gas at 12 service stations near the downtown area of Austin, TX, were as follows one winter day in 2018:
     \vspace*{\baselineskip}
-    
+
     \noindent
     \begin{minipage}{0.4\linewidth}
       \begin{center}
@@ -80,13 +81,13 @@
     Find the mean price of a gallon of regular gas at these service stations, and interpret the result.
   \end{ex*}
   \pagebreak
-  
+
   \begin{defn*}
     The \textbf{standard deviation} is a number that measures how far the typical observation is from the mean. For symmetric, unimodal distributions, a majority of the data is within one standard deviation of the mean. The standard deviation is given by
       \[s=\sqrt{\frac{\sum \parens{x_i-\bar{x}}^2}{\nmo}}\]
     \vspace*{-0.75\baselineskip}
   \end{defn*}
-  
+
   \begin{ex*}
     The histograms below show daily high temperatures in degrees Fahrenheit recorded over one year in Provo, Utah (left), and San Francisco, California (right). Which city do we expect to have a higher standard deviation?
   \end{ex*}
@@ -94,7 +95,7 @@
     \includegraphics[width=0.8\linewidth]{images/math211_figure_3p7}
   \end{center}
   \vspace*{\stretch{1}}
-  
+
   \begin{ex*}
     Below are three histograms representing distributions with the same mean. Which distribution has the largest standard deviation? Which has the smallest?
   \end{ex*}
@@ -107,7 +108,7 @@
   \begin{ex*}
     Recall the data set of gas prices from before. Use StatCrunch to compute the standard deviation of this data set and interpret the result:
     \hspace*{\stretch{1}}\href[pdfnewwindow]{https://www.statcrunch.com/}{\textcolor{blue}{\underline{statcrunch.com}}}
-    
+
   \end{ex*}
   \begin{center}
     \begin{tabular}{@{}*{4}{c}@{}}\toprule
