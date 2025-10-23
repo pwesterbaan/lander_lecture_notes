@@ -78,6 +78,8 @@ Below are links to notes used at Lander University:
       ["2025-09-30T09:00:00","math123Notes_3p3_annotated.pdf"],
       ["2025-10-15T09:00:00","math123Notes_3p5_annotated.pdf"],
       ["2025-10-07T09:00:00","math123Notes_3p6_annotated.pdf"],
+      ["2025-10-24T09:00:00","math123Notes_4p1_annotated.pdf"],
+      ["2025-10-27T09:00:00","math123Notes_4p2_annotated.pdf"],
       ])</script>
     </ul>
 </details>
