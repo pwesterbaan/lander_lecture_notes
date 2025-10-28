@@ -114,18 +114,12 @@
         \coordinate (G) at (0,x+hgt);
         \coordinate (H) at (0,x);
 
-       \shade[shading=radial, inner color= white, outer color=gray!10] (0,0) rectangle (2*x+wdth,2*x+hgt);
-       \draw[densely dotted,line width=0.65pt]
-         ($(A)+(0,x)$)--($(F)+(0,-x)$)
-         ($(B)+(0,x)$)--($(E)+(0,-x)$)
-         ($(C)-(x,0)$)--($(H)+(x,0)$)
-         ($(D)-(x,0)$)--($(G)+(x,0)$);
-       \draw[densely dashed, line width=0.65pt]
-         (H)|-(A) (B)-|(C) (D)|-(E) (F)-|(G);
-       \draw[line width=1.0pt, fill=white] (A)--(B)|-(C)--(D)-|(E)--(F)|-node[right, pos=0.25] {$x$} node[below, pos=0.75] {$x$} (G)--(H)-|cycle;
-       \draw[decorate, decoration={brace, amplitude=15pt}] ($(H)-(10pt,x)$)--($(G)-(10pt,-x)$) node[pos=0.5, left, xshift=-15pt] {$10$};
-       \draw[decorate, decoration={brace, amplitude=15pt}] ($(B)-(-x,10pt)$)--($(A)-(x,10pt)$) node[pos=0.5, below, yshift=-15pt] {$16$};
-       \draw[dotted] ($(H)+(x,0)$) -| ($(E)-(0,x)$) -| cycle;
+        \shade[shading=radial, inner color= white, outer color=gray!10] (0,0) rectangle (2*x+wdth,2*x+hgt);
+        \draw[densely dashed, line width=0.65pt] (H)|-(A) (B)-|(C) (D)|-(E) (F)-|(G);
+        \draw[line width=1.0pt, fill=white] (A)--(B)|-(C)--(D)-|(E)--(F)|-node[right, pos=0.25] {$x$} node[below, pos=0.75] {$x$} (G)--(H)-|cycle;
+        \draw[densely dotted, line width=0.65pt] ($(A)+(0,x)$) rectangle ($(E)+(0,-x)$);
+        \draw[decorate, decoration={brace, amplitude=15pt}] ($(H)-(10pt,x)$)--($(G)-(10pt,-x)$) node[pos=0.5, left, xshift=-15pt] {$10$};
+        \draw[decorate, decoration={brace, amplitude=15pt}] ($(B)-(-x,10pt)$)--($(A)-(x,10pt)$) node[pos=0.5, below, yshift=-15pt] {$16$};
     \end{tikzpicture}
   \end{minipage}\hfill%
   \begin{minipage}{0.45\linewidth}
