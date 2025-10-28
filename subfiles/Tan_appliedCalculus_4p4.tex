@@ -3,7 +3,162 @@
 \providecommand{\relscalefact}{1.4}
 \begin{document}
 \relscale{\relscalefact}
-  \section{ }
+  \section{4.4: Optimization I}
+
+  \begin{defn*}[Absolute Extrema]
+    Let $f$ be defined on a set $D$ containing $c$. If
+    \begin{itemize}
+      \item $f(c)\geq f(x)$ for every $x$ in $D$, then $f(c)$ is an \textbf{absolute maximum} value of $f$
+      \item $f(c)\leq f(x)$ for every $x$ in $D$, then $f(c)$ is an \textbf{absolute minimum} value of $f$
+%      \item An \textbf{absolute extreme value} is either an absolute maximum value or an absolute minimum value.
+    \end{itemize}
+  \end{defn*}
+  \vspace*{\stretch{1}}
+
+  \begin{center}
+    \begin{tikzpicture}[declare function={
+      cubeRoot(\x)=\x/abs(\x)*abs(\x)^(1/3);
+      f(\x)=\x^2;
+      g(\x)=4-\x^2;
+      h(\x)=\x*sqrt(1-\x^2);
+      j(\x)=\x^3;},
+      ]
+      \begin{groupplot}[
+        group style={group size=2 by 2, horizontal sep=30mm, vertical sep=30mm},
+        axis lines=center,
+        axis line style={black,->},
+        height=0.85*\axisdefaultheight,
+        enlargelimits={value=0.125, auto},
+        title style={align=center},
+        ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+        every axis plot/.append style={domain=-2.5:2.5, line width=0.95pt, color=lander_blue, samples=255},
+        ]
+        \nextgroupplot[title={$f(0)=0$ is the absolute minimum;\\No absolute maximum}]
+          \addplot[<->] {f(x)};
+        \nextgroupplot[title={No absolute minimum;\\$f(0)=4$ is the absolute maximum}]
+          \addplot[<->] {g(x)};
+        \nextgroupplot[title={$f(-\sqrt{2})=-\frac{1}{2}$ is the absolute minimum;\\$f(\sqrt{2})=\frac{1}{2}$ is the absolute maximum}, xtick={-1,1}]
+          \addplot[-] expression[domain=-1:1, samples=511] {h(x)};
+        \nextgroupplot[title={No absolute minimum;\\No absolute maximum}]
+          \addplot[<->] {j(x)};
+      \end{groupplot}
+    \end{tikzpicture}
+  \end{center}
+  \pagebreak
+  
+  \begin{thmBox*}[Theorem 3]
+    A function that is continuous on a closed interval $\sbrkt{a,b}$ has an absolute maximum value and an absolute minimum value on that interval.
+  \end{thmBox*}
+
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{groupplot}[
+        group style={group size=3 by 1, horizontal sep=15mm},
+        axis lines=center,
+        width=0.35\linewidth,
+        axis line style={->},
+        enlargelimits={value=0.125, auto},
+        ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+        every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}
+        ]
+        \nextgroupplot[
+          xmin=-2.5, xmax=3.5,
+          ymin=-4.75, ymax=6.25,
+          ] 
+          \addplot[-] expression[domain=-1.075:3]{(x-1)*(x-2)*(x+1)*x*(x-3)+2};
+        \nextgroupplot[
+          xmin=-2.5, xmax=3.5,
+          ymin=-4.5, ymax=6.25,
+          ] 
+          \addplot[-] expression[domain=-1.075:3]{(x-0.5)^2-3};
+          \addplot[soldot] coordinates{(-1.075,-0.519375)(3,3.25)};
+        \nextgroupplot[
+          xmin=-2.5, xmax=3.5,
+          ymin=-4.75, ymax=6.25,
+          ] 
+          \addplot[-] expression[samples=2] {2};
+          \addplot[soldot] coordinates{(-2.5,2)(3.5,2)};
+      \end{groupplot}
+    \end{tikzpicture}
+  \end{center}
+  \vspace*{2\baselineskip}
+  \textit{Note:} It is important that the function is both continuous \textit{and} the interval is closed:
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{groupplot}[
+        group style={group size=2 by 1, horizontal sep=15mm},
+        axis lines=center,
+        width=0.4\linewidth,
+        axis line style={->},
+        enlargelimits={value=0.125, auto},
+        ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+        every axis plot/.append style={line width=0.95pt, color=lander_blue}
+        ]
+        \nextgroupplot[
+          xmin=0, xmax=3.75,
+          ymin=0, ymax=3.75,
+          ]
+          \addplot[-] expression[domain=1:2]{(x-1)^2+1};
+          \addplot[-] expression[domain=2:3]{sqrt(3-x)+1.25};
+          \addplot[soldot] coordinates{(1,1)(2,2)(3,1.25)};
+          \addplot[holdot] coordinates{(2,2.25)};
+        \nextgroupplot[
+          xmin=0, xmax=2.5,
+          ymin=0, ymax=10,
+          ymajorticks=false,
+          ]
+          \addplot[-] expression[domain=0:1.9]{1/(2-x)+1/2};
+          \draw[densely dashed] (2,-0.5)--(2,10);
+          \addplot[holdot] coordinates{(0,1)};
+      \end{groupplot}
+    \end{tikzpicture}
+  \end{center}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{thmBox*}[Finding the Absolute Extrema of $f$ on a Closed Interval]
+    \begin{enumerate}
+      \item Find the critical points of $f$ within the interval $(a,b)$.
+      \item Compute $f(x)$ at $x=a$, $x=b$, and at each of the critical points found above.
+      \item The absolute maximum and absolute minimum will correspond to the largest and smallest values found above.
+    \end{enumerate}
+  \end{thmBox*}
+  
+  \begin{ex*}
+    Find the absolute extrema of the following functions on the intervals indicated
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task $f(x)=x^2$ on $\sbrkt{-1,2}$
+    \hspace*{\stretch{1}}
+    \href[pdfnewwindow]{https://www.desmos.com/calculator/qaitoqeohl}{\textcolor{blue}{\underline{Graphs}}}
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task $g(x)=x^3-2x^2-4x+4$ on $\sbrkt{0,3}$
+    \task $h(x)=x^{2/3}$ on $\sbrkt{-1,8}$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{ex*}
+    The daily average cost function (in dollars per unit) of Elektra Electronics is given by
+      \[\overline{C}(x)=0.0001x^2-0.08x+40+\dfrac{5000}{x} \qquad (x>0)\]
+    where $x$ stands for the number of graphing calculators that Elektra produces. Show that a production level of $500$ units per day results in a minimum average cost for the company.
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    The altitude (in feet) of a rocket $t$ seconds into flight is given by
+      \[s=f(t)=-t^3+96t^2+5 \qquad (t\geq 0)\]
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task Find the maximum altitude attained by the rocket.
+    \task Find the maximum velocity attained by the rocket.
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
 
   \pagebreak
 \end{document}
