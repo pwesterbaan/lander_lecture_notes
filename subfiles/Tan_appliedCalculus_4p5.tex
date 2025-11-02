@@ -5,5 +5,120 @@
 \relscale{\relscalefact}
   \section{4.5: Optimization II}
 
+  \begin{thmBox*}[Guidelines for Solving Optimization Problems]
+    \begin{enumerate}
+      \item Assign a letter to each variable mentioned in the problem. If appropriate, draw and label a figure.
+      \item Find an expression for the quantity to be optimized.
+      \item use the conditions given in the problem to write the quantity to be optimized as a function $f$ of \emph{one} variable. Note any restrictions to be placed on the domain of $f$ from physical considerations of the problem.
+      \item Optimize the function $f$ over its domain.
+    \end{enumerate}
+  \end{thmBox*}
+  
+  \begin{ex*}
+    Show among all rectangles with an $8$ meter perimeter, the one with the \emph{largest} area is a square.
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    A man wishes to have a rectangular-shaped garden in his backyard. He has $50$ feet of fencing with which to enclose his garden. Find the dimensions for the largest garden he can have if he uses all of his fencing.
+  \end{ex*}
+  \pagebreak
+  
+  \begin{ex*}
+    By cutting away identical squares from each corner of a rectangular piece of cardboard and folding up the resulting flaps, the cardboard may be turned into an open box. If the cardboard is 16'' long and 10'' wide, find the dimensions of the box that will yield the maximum volume.
+  \end{ex*}
+
+  \noindent
+  \begin{minipage}{0.525\linewidth}
+    %     F----------E
+    %     |          |
+    %  G--┘          └--D
+    %  |                |
+    %  |                |
+    %  H--┐          ┌--C
+    %     |          |
+    %     A----------B
+    \begin{tikzpicture}[scale=0.5,
+      declare function={
+      x=10/3.75;
+      hgt=10-2*x;
+      wdth=16-2*x;}]
+        \coordinate (A) at (x,0);
+        \coordinate (B) at (x+wdth,0);
+        \coordinate (C) at (2*x+wdth,x);
+        \coordinate (D) at (2*x+wdth,x+hgt);
+        \coordinate (E) at (x+wdth,2*x+hgt);
+        \coordinate (F) at (x,2*x+hgt);
+        \coordinate (G) at (0,x+hgt);
+        \coordinate (H) at (0,x);
+
+        \shade[shading=radial, inner color= white, outer color=gray!10] (0,0) rectangle (2*x+wdth,2*x+hgt);
+        \draw[densely dashed, line width=0.65pt] (H)|-(A) (B)-|(C) (D)|-(E) (F)-|(G);
+        \draw[line width=1.0pt, fill=white] (A)--(B)|-(C)--(D)-|(E)--(F)|-node[right, pos=0.25] {$x$} node[below, pos=0.75] {$x$} (G)--(H)-|cycle;
+        \draw[densely dotted, line width=0.65pt] ($(A)+(0,x)$) rectangle ($(E)+(0,-x)$);
+        \draw[decorate, decoration={brace, amplitude=15pt}] 
+          ($(H)-(10pt,x)$)--($(G)-(10pt,-x)$) node[pos=0.5, left, xshift=-15pt] {$10$};
+        \draw[decorate, decoration={brace, amplitude=15pt}] 
+          ($(B)-(-x,10pt)$)--($(A)-(x,10pt)$) node[pos=0.5, below, yshift=-15pt] {$16$};
+    \end{tikzpicture}
+  \end{minipage}\hfill%
+  \begin{minipage}{0.45\linewidth}
+    \raggedleft
+    %      H-------G
+    %     /|      /|
+    %    / |     / |
+    %   /  E----/--F
+    %  /  /    /  /
+    % D-------C  /
+    % | /     | /
+    % |/      |/
+    % A-------B
+    \begin{tikzpicture}[scale=0.9,
+      declare function={
+      wdth=4.35; hgt=2;
+      x_offset=2.75; y_offset=2.75; brace_spacing=0.15;},
+      draw=black, text=black]]
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (wdth,0);
+        \coordinate (C) at (wdth,hgt);
+        \coordinate (D) at (0,hgt);
+        \coordinate (E) at ($(A)+(x_offset, y_offset)$);
+        \coordinate (F) at ($(B)+(x_offset, y_offset)$);
+        \coordinate (G) at ($(C)+(x_offset, y_offset)$);
+        \coordinate (H) at ($(D)+(x_offset, y_offset)$);
+
+        \draw[line width=1pt] (E)-- (F) -- (G) -- (H) -- cycle;
+        \draw[fill=white, line width=1pt] (D) -- (H) -- (E) -- (A) -- cycle;
+        \draw[fill=white, line width=1pt] (B) -- (C) -- (G) -- (F) -- cycle;
+        \draw[fill=white, line width=1pt] (A) -- (B) -- (C) -- (D) -- cycle;
+        \draw[dotted] (A) -- (E) -- (F);% (E) -- ($(C)!(H)!(D)$);
+
+        \draw[decorate, decoration={brace, amplitude=5pt}] ($(A)-(brace_spacing,0)$)--($(D)-(brace_spacing,0)$) node[pos=0.5, left, xshift=-7.5pt, inner sep=0pt] {$x$};
+        \draw[decorate, decoration={brace, amplitude=5pt}] ($(B)-(0,brace_spacing)$)--($(A)-(0,brace_spacing)$) node[pos=0.5, below, yshift=-7.5pt, inner sep=0pt] {$10-2x$};
+        \draw[decorate, decoration={brace, amplitude=5pt}] ($(F)+(brace_spacing,-brace_spacing)$)--($(B)+(brace_spacing,-brace_spacing)$) node[pos=0.5, below right, yshift=-5pt] {$16-2x$};
+    \end{tikzpicture}
+  \end{minipage}
+  \pagebreak
+
+  \begin{ex*}
+    A cylindrical can is to be made to hold $1\,L$ ($1000\,cm^3$) of oil. Find the dimensions of the can that will minimize the cost of the metal to manufacture the can.
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Of all boxes with a square base and a volume of $8$\,m$^3$, which one has the minimum surface area?
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  
+  \begin{ex*}
+    Find the point on the line $y=2x+3$ that is closest to the origin.
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{ex*}
+    A pencil cup with a capacity of $36$\,in$^3$ is to be constructed in the shape of a rectangular box with a square base and an open top. If the material for the sides cost \$$0.15$/in$^2$ and the material for the base costs \$$0.40$/in$^2$, what should the dimensions of the cup be to minimize the construction cost?
+  \end{ex*}
+
   \pagebreak
 \end{document}
