@@ -42,8 +42,8 @@ Below are links to notes used at Lander University:
       ["2025-08-29T13:00:00","mathApp_harshbarger_1p4_annotated.pdf"],
       ["2025-09-05T13:00:00","mathApp_harshbarger_1p5_annotated.pdf"],
       ["2025-09-12T13:00:00","mathApp_harshbarger_1p6_annotated.pdf"],
-      ["2025-11-21T13:00:00","mathApp_harshbarger_2p1_annotated.pdf"],
-      ["2025-11-24T13:00:00","mathApp_harshbarger_2p2_annotated.pdf"],
+      ["2025-11-19T13:00:00","mathApp_harshbarger_2p1_annotated.pdf"],
+      ["2025-11-21T13:00:00","mathApp_harshbarger_2p2_annotated.pdf"],
       ["2025-12-03T13:00:00","mathApp_harshbarger_2p3_annotated.pdf"],
       ["2025-09-24T13:00:00","mathApp_harshbarger_4p1_annotated.pdf"],
       ["2025-09-29T13:00:00","mathApp_harshbarger_4p2_annotated.pdf"],
@@ -54,6 +54,7 @@ Below are links to notes used at Lander University:
       ["2025-10-29T13:00:00","mathApp_harshbarger_6p2_annotated.pdf"],
       ["2025-11-03T13:00:00","mathApp_harshbarger_6p3_annotated.pdf"],
       ["3000-11-12T13:00:00","mathApp_harshbarger_6p4_annotated.pdf"],
+      ["2025-11-08T13:00:00","mathApp_harshbarger_6p5_annotated.pdf"],
       ])</script>
     </ul>
 </details>
