@@ -77,7 +77,7 @@
       declare function={
       wdth=4.35; hgt=2;
       x_offset=2.75; y_offset=2.75; brace_spacing=0.15;},
-      draw=black, text=black]]
+      draw=black, text=black]
         \coordinate (A) at (0,0);
         \coordinate (B) at (wdth,0);
         \coordinate (C) at (wdth,hgt);
@@ -87,10 +87,14 @@
         \coordinate (G) at ($(C)+(x_offset, y_offset)$);
         \coordinate (H) at ($(D)+(x_offset, y_offset)$);
 
+
+        \draw[line width=1pt] (A) -- (B) -- (F) -- (E) -- cycle;
         \draw[line width=1pt] (E)-- (F) -- (G) -- (H) -- cycle;
-        \draw[fill=white, line width=1pt] (D) -- (H) -- (E) -- (A) -- cycle;
-        \draw[fill=white, line width=1pt] (B) -- (C) -- (G) -- (F) -- cycle;
+        \draw[fill=black!15, line width=1pt] (A) -- (B) -- (F) -- (E) -- cycle;
+        \draw[fill=white, line width=1pt] (A) -- (E) -- (H) -- (D) -- cycle;
+        \draw[fill=white, line width=1pt] (B) -- (F) -- (G) -- (C) -- cycle;
         \draw[fill=white, line width=1pt] (A) -- (B) -- (C) -- (D) -- cycle;
+        \draw[line width=1pt] (D) -- (C) -- (G) -- (H) -- cycle;
         \draw[dotted] (A) -- (E) -- (F);% (E) -- ($(C)!(H)!(D)$);
 
         \draw[decorate, decoration={brace, amplitude=5pt}] ($(A)-(brace_spacing,0)$)--($(D)-(brace_spacing,0)$) node[pos=0.5, left, xshift=-7.5pt, inner sep=0pt] {$x$};
@@ -109,6 +113,7 @@
     Of all boxes with a square base and a volume of $8$\,m$^3$, which one has the minimum surface area?
   \end{ex*}
   \vspace*{\stretch{1}}
+  \pagebreak
 
   \begin{ex*}
     Find the point on the line $y=2x+3$ that is closest to the origin.

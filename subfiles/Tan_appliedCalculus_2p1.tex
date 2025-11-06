@@ -137,7 +137,7 @@
       declare function={
       wdth=4.35; hgt=2;
       x_offset=2.75; y_offset=2.75; brace_spacing=0.15;},
-      draw=black, text=black]]
+      draw=black, text=black]
         \coordinate (A) at (0,0);
         \coordinate (B) at (wdth,0);
         \coordinate (C) at (wdth,hgt);
@@ -147,6 +147,7 @@
         \coordinate (G) at ($(C)+(x_offset, y_offset)$);
         \coordinate (H) at ($(D)+(x_offset, y_offset)$);
 
+        \draw[fill=black!15, line width=1pt] (A) -- (B) -- (F) -- (E) -- cycle;
         \draw[line width=1pt] (E)-- (F) -- (G) -- (H) -- cycle;
         \draw[fill=white, line width=1pt] (D) -- (H) -- (E) -- (A) -- cycle;
         \draw[fill=white, line width=1pt] (B) -- (C) -- (G) -- (F) -- cycle;
