@@ -8,6 +8,9 @@
 \usetikzlibrary{external}
 \tikzexternalize[prefix=images/]
 
+\newcount\examUnit
+\examUnit=-1
+
 %https://tex.stackexchange.com/a/216321/190910
 % define subfiles directory depending on file
 \providecommand{\subfiles}{./subfiles}
@@ -58,6 +61,7 @@
 
   \providecommand{\relscalefact}{1.4}
 
+  \subfile{subfiles/math121_formula_sheet.tex}
   \subfile{subfiles/HarMathAp12_1p1.tex}
   \subfile{subfiles/HarMathAp12_1p3.tex}
   \subfile{subfiles/HarMathAp12_1p4.tex}

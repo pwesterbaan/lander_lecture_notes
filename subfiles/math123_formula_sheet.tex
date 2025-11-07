@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{tabto}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{tabularx}
+
+\newcount\examUnit
+\examUnit=2
+\begin{document}
+  \TabPositions{25mm,60mm}
+  \newcommand{\lineEqns}{
+    Slope of a Line: & $\mathllap{m}=\displaystyle\frac{y_2-y_1}{x_2-x_1}$\\
+    Point-Slope form: & $\mathllap{y-y_1}=m(x-x_1)$\\
+    Slope-Intercept form: & $\mathllap{y}=mx+b$\\
+  }
+  \newcommand{\expoRules}{
+    Fractional exponents: & $\mathllap{x^{a/b}}=\sqrt[b]{x^a}$\\
+    Subtracting exponents: & $\mathllap{x^{a-b}}=\dfrac{x^a}{x^b}$\\
+  }
+  \newcommand{\derivShortcuts}{
+    Product rule: & $\mathllap{\dfrac{d}{dx}\left[f(x)\cdot g(x)\right]}=f'(x)g(x)+f(x)g'(x)$\\
+    Quotient rule: & $\mathllap{\dfrac{d}{dx}\left[\dfrac{f(x)}{g(x)}\right]}=\dfrac{g(x)f'(x)-f(x)g'(x)}{\left[g(x)\right]^2}$\\
+    Chain rule: & $\mathllap{\dfrac{d}{dx}\left[f\left(g(x)\right)\right]}=f'\left(g(x)\right)\cdot g'(x)$\\
+  }
+  \newcommand{\examOne}{
+    \lineEqns
+    Quadratic formula: & $\mathllap{x}=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$\\
+    Derivative: & $\displaystyle\mathllap{f'(x)}=\lim_{h\to 0} \dfrac{f(x+h)-f(x)}{h}$\\
+  }
+  \newcommand{\examTwo}{
+    \expoRules
+    \derivShortcuts
+  }
+  \newcommand{\examThree}{
+    \multicolumn{2}{c}{TBD}
+  }
+  \begin{center}
+    \section*{Math 123 Formula Sheet}
+
+    \renewcommand{\arraystretch}{2.05}
+    \begin{tabularx}{0.95\linewidth}{@{}>{\bfseries\hsize=0.95\hsize}X>{\hsize=1.05\hsize}X@{}}
+      \ifnum\examUnit=1  \examOne    \fi
+      \ifnum\examUnit=2  \lineEqns \examTwo    \fi
+      \ifnum\examUnit=3  \examThree  \fi
+      \ifnum\examUnit=-1
+        \multicolumn{2}{c}{\hrulefill\textbf{ Unit 1 }\hrulefill}\\ \examOne
+        \multicolumn{2}{c}{\hrulefill\textbf{ Unit 2 }\hrulefill}\\ \examTwo
+        \multicolumn{2}{c}{\hrulefill\textbf{ Unit 3 }\hrulefill}\\ \examThree
+      \fi
+    \end{tabularx}
+  \end{center}
+
+  \pagebreak
+\end{document}
