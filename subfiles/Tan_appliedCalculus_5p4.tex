@@ -3,7 +3,51 @@
 \providecommand{\relscalefact}{1.4}
 \begin{document}
 \relscale{\relscalefact}
-  \section{ }
+  \section{5.4: Differentiation of Exponential Functions}
+
+  \begin{thmBox*}[Rule 1: Derivative of the Exponential Function]
+    \begin{align*}
+      \ddx\sbrkt{e^x}&=e^x
+    \end{align*}
+  \end{thmBox*}
+
+  \begin{ex*}
+    Find the derivative of the following functions
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task $f(x)=x^2e^x$
+    \task $g(t)=\parens{e^t+2}^{\sfrac{3}{2}}$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{thmBox*}[Rule 2: The Chain Rule for Exponential Functions]
+    If $f(x)$ is a differentiable function, then
+    \begin{align*}
+      \ddx\sbrkt{e^{f(x)}}&=e^{f(x)}\,f'(x)
+    \end{align*}
+  \end{thmBox*}
+  \begin{ex*}
+    Find the derivative of the following functions
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task $f(x)=e^{2x}$
+    \task $y=e^{-3x}$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task $g(t)=e^{2t^2+t}$
+    \task $y=xe^{-2x}$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{ex*}
+    Find the inflection points of the function $f(x)=e^{-x^2}$.
+  \end{ex*}
+  \vspace*{\stretch{1}}
 
   \pagebreak
 \end{document}
