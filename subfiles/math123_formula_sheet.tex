@@ -4,10 +4,12 @@
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{tabularx}
+\usepackage{xcolor}
 
 \newcount\examUnit
-\examUnit=2
+\examUnit=3
 \begin{document}
+  \definecolor{greenish}{rgb}{0,0.5,0}
   \TabPositions{25mm,60mm}
   \newcommand{\lineEqns}{
     Slope of a Line: & $\mathllap{m}=\displaystyle\frac{y_2-y_1}{x_2-x_1}$\\
@@ -19,9 +21,9 @@
     Subtracting exponents: & $\mathllap{x^{a-b}}=\dfrac{x^a}{x^b}$\\
   }
   \newcommand{\derivShortcuts}{
-    Product rule: & $\mathllap{\dfrac{d}{dx}\left[f(x)\cdot g(x)\right]}=f'(x)g(x)+f(x)g'(x)$\\
+    Product rule: & $\mathllap{\dfrac{d}{dx}\Big[f(x)\cdot g(x)\Big]}=f'(x)g(x)+f(x)g'(x)$\\
     Quotient rule: & $\mathllap{\dfrac{d}{dx}\left[\dfrac{f(x)}{g(x)}\right]}=\dfrac{g(x)f'(x)-f(x)g'(x)}{\left[g(x)\right]^2}$\\
-    Chain rule: & $\mathllap{\dfrac{d}{dx}\left[f\left(g(x)\right)\right]}=f'\left(g(x)\right)\cdot g'(x)$\\
+    Chain rule: & $\mathllap{\dfrac{d}{dx}\Big[f\big(g(x)\big)\Big]}=f'\big(g(x)\big)\cdot g'(x)$\\
   }
   \newcommand{\examOne}{
     \lineEqns
@@ -33,7 +35,12 @@
     \derivShortcuts
   }
   \newcommand{\examThree}{
-    \multicolumn{2}{c}{TBD}
+    Natural Log: & $\mathllap{e^y}=x\ \longleftrightarrow\  \ln\left(x\right)=y, \qquad x>0$\\
+    Log of a product: & $\mathllap{\ln(xy)}=\ln(x)+\ln(y)$\\
+    Exponent inside of log: & $\mathllap{\ln(x^y)}= y\ln(x)$\\
+    Exponential Rule: & $\mathllap{\dfrac{d}{dx}\Big[e^{f(x)}\Big]}=e^{f(x)}\cdot f'(x)$\\
+    Logarithm Rule: & $\mathllap{\dfrac{d}{dx}\Big[\ln\big(f(x)\big)\Big]}=\dfrac{f'(x)}{f(x)}$\\
+
   }
   \begin{center}
     \section*{Math 123 Formula Sheet}
@@ -42,7 +49,7 @@
     \begin{tabularx}{0.95\linewidth}{@{}>{\bfseries\hsize=0.95\hsize}X>{\hsize=1.05\hsize}X@{}}
       \ifnum\examUnit=1  \examOne    \fi
       \ifnum\examUnit=2  \lineEqns \examTwo    \fi
-      \ifnum\examUnit=3  \examThree  \fi
+      \ifnum\examUnit=3  \expoRules \\\derivShortcuts \\\examThree  \fi
       \ifnum\examUnit=-1
         \multicolumn{2}{c}{\hrulefill\textbf{ Unit 1 }\hrulefill}\\ \examOne
         \multicolumn{2}{c}{\hrulefill\textbf{ Unit 2 }\hrulefill}\\ \examTwo
