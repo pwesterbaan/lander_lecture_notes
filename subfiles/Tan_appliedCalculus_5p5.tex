@@ -3,7 +3,91 @@
 \providecommand{\relscalefact}{1.4}
 \begin{document}
 \relscale{\relscalefact}
-  \section{ }
+  \section{5.5: Differentiation of Logarithmic Functions}
+  
+  \definecolor{greenish}{rgb}{0,0.5,0}
+  \begin{defn*}[Natural log]
+    The inverse of the exponential function is the logarithm:
+      \[e^{\textcolor{greenish}{y}}=\textcolor{red}{x}\ \longleftrightarrow\  \ln\parens{\textcolor{red}{x}}=\textcolor{greenish}{y}, \qquad \textcolor{red}{x}>0\]
+    We may also denote this as $\log_e(x)$
+  \end{defn*}
+  \begin{ex*}
+    Solve the following exponential equations
+    \hfill\href{https://www.desmos.com/calculator/q6r9i4pepf}{\textcolor{blue}{\underline{Graphs}}}
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](2)
+    \task $y=e^{-3}$
+    \task $e^{x^2-x}=e^2$
+    \task $e^x=10$
+    \task $4e^{1-x^2}=6$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \begin{defn*}[Other logarithms]
+    Logarithms are defined for any base $a>0$:
+      \[\mathllap{\textcolor{lander_blue}{a}^{\textcolor{greenish}{y}}}=\textcolor{red}{x} \quad\longleftrightarrow\quad \log_{\textcolor{lander_blue}{a}}(\textcolor{red}{x})=\textcolor{greenish}{y}, \qquad \textcolor{red}{x}>0\]
+  \end{defn*}
+  \pagebreak
 
+  \begin{thmBox*}[Rule 3: Derivative of $\ln(x)$]
+    \begin{align*}
+      \ddx \Big[\ln\abs{x}\Big]= \dfrac{1}{x}, \qquad x\neq 0
+    \end{align*}
+    \textbf{Rule 4: Derivative of $\ln\parens{f(x)}$}
+    \begin{align*}
+      \ddx\Big[\ln\parens{f(x)}\Big]=\dfrac{f'(x)}{f(x)}
+    \end{align*}
+  \end{thmBox*}
+  \begin{ex*}
+    Find the derivative of the following functions
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](2)
+    \task $y=\ln\parens{\sqrt[3]{x}}$
+    \task $f(x)=\sqrt{x}\ln(x)$
+    \task $g(x)=\ln\parens{x^2+1}$
+    \task $h(t)=\dfrac{1+\ln(t)}{1-\ln(t)}$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{thmBox*}[Additional properties of logarithms]
+    \begin{align*}
+      e^y&=x& \hspace*{20mm}\ln(x)&=y\\[5mm]
+      e^1&=a& \ln(a)&=1\\[5mm]
+      e^0&=1& \ln(1)&=0\\[5mm]
+      e^xe^y&=e^{x+y}& \ln(xy)&=\ln(x)+\ln(y)\\[5mm]
+      \dfrac{e^x}{e^y}&=e^{x-y}& \ln\parens{\frac{x}{y}}&=\ln(x)-\ln(y)\\[5mm]
+      e^{xy}&=\parens{e^x}^y& \ln(x^y)&=y\ln(x)\\[5mm]
+      e^{\ln(x)}&=x& \ln(e^x)&=x
+    \end{align*}
+  \end{thmBox*}
+  \pagebreak
+  
+  \begin{ex*}
+    Find the derivative of the following functions
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](2)
+    \task $y=\ln\parens{\sqrt[3]{x}}$
+    \task $f(x)=\ln\parens{\parens{x^2+1}\parens{x^3+2}^6}$
+    \task $g(x)=\ln\parens{\dfrac{1-x}{1+x}}$
+    \task $h(x)=\ln\parens{x+\sqrt{x^2-1}}$
+    \task $j(t)=2\parens{\ln(5t)}^{3/2}$
+    \task $k(u)=\ln\parens{\sqrt{u^2-4}}$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{thmBox*}[Logarithmic Differentiation]
+    Using properties of logs, we can transform a function before taking it's derivative:
+    \begin{enumerate}
+      \item Take the natural log of both sides rewriting products and quotients as sums and differences.
+      \item Differentiate both sides.
+      \item Solve for $\dydx$
+    \end{enumerate}
+  \end{thmBox*}
+  \begin{ex*}
+    Differentiate 
+      \[y=x^2\parens{x-1}\parens{x^2+4}^3\]
+  \end{ex*}
+  
   \pagebreak
 \end{document}
