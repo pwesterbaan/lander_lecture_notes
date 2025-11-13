@@ -1,4 +1,5 @@
 \documentclass[../mathNotesPreamble]{subfiles}
+\usetikzlibrary{patterns}
 
 \providecommand{\relscalefact}{1.4}
 \begin{document}
@@ -28,7 +29,8 @@
     \end{itemize}
     As the sample size $n$ (and degrees of freedom, $\nmo$) increases, the $t$-distribution gets closer to the Standard Normal Distribution.
 
-    The graph below shows the $t$-distribution in black where the degrees of freedom are $1$, $2$, $4$, and $30$, and the Standard Normal Distribution in blue.
+%    The graph below shows the $t$-distribution in black where the degrees of freedom are $1$, $2$, $4$, and $30$, and the Standard Normal Distribution in blue.
+    \vspace*{\baselineskip}
 
     \begin{center}
       \begin{tikzpicture}[scale=1.0, declare function={
@@ -39,6 +41,10 @@
         ymin=-0.1*gauss(mu,mu,sig);
         h=0.08*gauss(mu,mu,sig);}]
         \begin{axis}[
+          cycle list={lander_blue,blue,green!50!black,purple!80!black,red!50!orange},
+          line legend,
+          legend pos=north east,
+          legend cell align={left},
           every axis plot post/.append style={
           mark=none, domain={-3.2:3.2},samples=N,smooth},
           axis line style={black,->},
@@ -46,21 +52,21 @@
 %          ymin=ymin, ymax={1.1*gauss(mu,mu,sig)},
           axis y line=none,
           every axis x label/.style={at={(current axis.right of origin)},anchor=north},
-          width=0.8\linewidth, height=1.1*\axisdefaultheight,
+          width=\linewidth, height=1.5*\axisdefaultheight,
           ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+          dfNode/.style={inner sep=0pt, fill=white, opacity=0.15, text opacity=1.0}
           clip=false,
           ]
+          \addplot[-, line width=1pt, legend] expression[domain=-3.5:3.5]
+            {gauss(x,0,1)} node [pos=0.5, above right] {$N(0,1)$};
+          \addlegendentry{\ $N(0,1)$};
           %This plot needs to be compiled using
           %"pdflatex --shell-escape" in order to utilize gnuplots
-          \foreach \n in {1,2,4,30}{
-          %TODO color coded legend?
-%          \pgfplotsinvokeforeach {1,2,4,30}{
-%            \def\n{#1} %explicitly define \n
-            \addplot gnuplot [black,thick,smooth,no marks]{\students};
-%              node [pos=0.5, anchor=west, xshift=3em] {$n=#1$};
+          \pgfplotsinvokeforeach {25,4,2,1}{
+            \def\n{#1} %explicitly define \n for gnuplots
+            \addplot gnuplot [thick,smooth, no marks, line width=1pt]{\students};
+            \addlegendentry{\ $t (\textnormal{df}=\pgfmathprintnumber{#1})$};
             }
-            \addplot[-, blue] expression[domain=-3.5:3.5]
-            {gauss(x,0,1)} node [pos=0.55, right] {$N(0,1)$};
         \end{axis}
       \end{tikzpicture}
     \end{center}
