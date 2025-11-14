@@ -36,26 +36,19 @@
       \begin{tikzpicture}[scale=1.0, declare function={
         N=100;
         mu=0; sig=1;
-        xmin=mu-3.2*sig;
-        xmax=mu+3.2*sig;
         ymin=-0.1*gauss(mu,mu,sig);
         h=0.08*gauss(mu,mu,sig);}]
         \begin{axis}[
-          cycle list={lander_blue,blue,green!50!black,purple!80!black,red!50!orange},
+          cycle list={lander_blue,blue,green!50!black,purple!80!black,red!70!orange},
           line legend,
           legend pos=north east,
           legend cell align={left},
           every axis plot post/.append style={
-          mark=none, domain={-3.2:3.2},samples=N,smooth},
-          axis line style={black,->},
+            domain={-3.2:3.2},samples=N,smooth},
           axis x line=middle,
-%          ymin=ymin, ymax={1.1*gauss(mu,mu,sig)},
           axis y line=none,
-          every axis x label/.style={at={(current axis.right of origin)},anchor=north},
           width=\linewidth, height=1.5*\axisdefaultheight,
-          ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
-          dfNode/.style={inner sep=0pt, fill=white, opacity=0.15, text opacity=1.0}
-          clip=false,
+          ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
           ]
           \addplot[-, line width=1pt, legend] expression[domain=-3.5:3.5]
             {gauss(x,0,1)} node [pos=0.5, above right] {$N(0,1)$};
