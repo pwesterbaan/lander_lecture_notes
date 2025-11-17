@@ -32,6 +32,15 @@
 %    The graph below shows the $t$-distribution in black where the degrees of freedom are $1$, $2$, $4$, and $30$, and the Standard Normal Distribution in blue.
     \vspace*{\baselineskip}
 
+    %TODO: Settle on a color-blind friendly color scheme
+    %TODO: https://colorbrewer2.org/?#type=diverging&scheme=RdBu&n=5
+
+    \definecolor{projred}{HTML}{FF0000}      % Bright Red
+    \definecolor{projorange}{HTML}{FF7F00}   % Orange
+    \definecolor{projblue}{HTML}{00BFFF}     % Deep Sky Blue
+    \definecolor{projgreen}{HTML}{008000}    % Bright Green
+    \definecolor{projdarkblue}{HTML}{0000FF} % Bright Blue
+
     \begin{center}
       \begin{tikzpicture}[scale=1.0, declare function={
         N=100;
@@ -39,7 +48,12 @@
         ymin=-0.1*gauss(mu,mu,sig);
         h=0.08*gauss(mu,mu,sig);}]
         \begin{axis}[
-          cycle list={lander_blue,blue,green!50!black,purple!80!black,red!70!orange},
+          % cycle list={lander_blue,
+          %   blue,
+          %   green!50!black,
+          %   purple!80!black,
+          %   red!70!orange},
+          cycle list={black, projgreen, projdarkblue, projorange, projred},
           line legend,
           legend pos=north east,
           legend cell align={left},
@@ -57,7 +71,7 @@
           %"pdflatex --shell-escape" in order to utilize gnuplots
           \pgfplotsinvokeforeach {25,4,2,1}{
             \def\n{#1} %explicitly define \n for gnuplots
-            \addplot gnuplot [thick,smooth, no marks, line width=1pt]{\students};
+            \addplot gnuplot [smooth, no marks, line width=1pt]{\students};
             \addlegendentry{\ $t (\textnormal{df}=\pgfmathprintnumber{#1})$};
             }
         \end{axis}

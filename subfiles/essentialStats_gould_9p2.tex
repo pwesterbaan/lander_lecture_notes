@@ -32,8 +32,8 @@
     \begin{tikzpicture}[scale=1.0, declare function={
       N=101;
       mu=6.3; sig=2.8;
-      xmin=mu-3.2*sig;
-      xmax=mu+3.2*sig;
+      xmin=mu-3*sig;
+      xmax=mu+3*sig;
       ymin=-0.1*gauss(mu,mu,sig);
       h=0.08*gauss(mu,mu,sig);}]
 
@@ -44,20 +44,20 @@
 %        ymin=ymin,
         axis line style={black,->},
         every axis x label/.style={at={(current axis.right of origin)},anchor=north},
-        width=0.95*\textwidth, height=0.4*\textwidth,
+        width=0.95*\textwidth, height=1.5*\axisdefaultheight,
         ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
         clip=false,
         ]
 
         % PLOTS
-        \addplot[lander_blue,thick] {gauss(x,mu,sig)}
+        \addplot[lander_blue,line width=1.5pt] {gauss(x,mu,sig)}
           node[pos=0.675, above right, black, fill=white,
           opacity=0.0, text opacity=1.0, font=\normalsize,
           align=left] {\Large $\sigma$};
-        \addplot[red,thick] {gauss(x,mu,sig/3)}
+        \addplot[red,line width=1.5pt] {gauss(x,mu,sig/3)}
           node[pos=0.55, right, black, fill=white, opacity=0.0, text
           opacity=1.0, font=\normalsize, align=left] {\Large $\frac{\sigma}{\sqrt{9}}$};
-        \addplot[purple,thick] {gauss(x,mu,sig/9)}
+        \addplot[lander_FrontLawn,line width=1.5pt] {gauss(x,mu,sig/9)}
           node[pos=0.5, right, black, fill=white, opacity=0.0, text
           opacity=1.0, font=\normalsize, align=left] {\Large $\frac{\sigma}{\sqrt{81}}$};
       \end{axis}
