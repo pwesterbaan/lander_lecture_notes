@@ -5,6 +5,8 @@
 \usepackage{mathtools}
 \usepackage{tabularx}
 \usepackage{xcolor}
+\newcommand*{\sbrkt}[1]{{\left[#1\right]}}
+\newcommand*{\parens}[1]{{\left(#1\right)}}
 
 \newcount\examUnit
 \examUnit=3
@@ -37,13 +39,14 @@
   \newcommand{\examThree}{
     Natural Log: & $\mathllap{e^y}=x\ \longleftrightarrow\  \ln\left(x\right)=y, \qquad x>0$\\
     Log of a product: & $\mathllap{\ln(xy)}=\ln(x)+\ln(y)$\\
+    Log of a quotient: & $\mathllap{\ln\parens{\dfrac{x}{y}}}=\ln(x)-\ln(y)$\\
     Exponent inside of log: & $\mathllap{\ln(x^y)}= y\ln(x)$\\
     Exponential Rule: & $\mathllap{\dfrac{d}{dx}\Big[e^{f(x)}\Big]}=e^{f(x)}\cdot f'(x)$\\
     Logarithm Rule: & $\mathllap{\dfrac{d}{dx}\Big[\ln\big(f(x)\big)\Big]}=\dfrac{f'(x)}{f(x)}$\\
 
   }
   \begin{center}
-    \section*{Math 123 Formula Sheet}
+    {\Large \textbf{Math 123 Formula Sheet}}
 
     \renewcommand{\arraystretch}{2.05}
     \begin{tabularx}{0.95\linewidth}{@{}>{\bfseries\hsize=0.95\hsize}X>{\hsize=1.05\hsize}X@{}}
