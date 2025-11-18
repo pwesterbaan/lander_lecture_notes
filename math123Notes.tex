@@ -1,67 +1,9 @@
 \documentclass[mathNotesPreamble]{subfiles}
-%% Externalize graphics and save in ./images/ folder
-%% pdflatex --shell-escape <tex file>
-%% latexmk -pdf -e '$latex=q/latex %O -shell-escape %S/'
-%% The document can be compiled with the two following
-%% lines commented out, but will recompile all figures
-%% each time.
-\usetikzlibrary{external}
-\tikzexternalize[prefix=images/]
 
-\newcount\examUnit
-\examUnit=-1
-
-%https://tex.stackexchange.com/a/216321/190910
-% define subfiles directory depending on file
-\providecommand{\subfiles}{./subfiles}
 \begin{document}
-  \makeatletter
-  \title{Math 123 Class notes\\[0.25\baselineskip]\TheSemester}
-  \author{Peter Westerbaan}
-
-  \pagestyle{headandfoot}
-  \newcommand{\currentname}{\@currentlabelname}
-
-  \runningfootrule
-  \runningfooter{\parbox{0.45\linewidth}{\currentname}}{\thepage}{\@title}
-  \makeatother
-
-  %% Title
-  \pagenumbering{roman}
-  \vspace*{\stretch{1}}
-  \begin{center}
-    \makeatletter
-    {\huge
-      \@title}\\[\baselineskip]
-      To accompany\\
-      \emph{Applied Calculus}\\
-      by \emph{Tan} \\[\baselineskip]
-      \@author\\[\baselineskip]
-      Last updated:
-      \@date\\
-    \makeatother
-    \end{center}
-  \vspace*{\stretch{1}}
-  \thispagestyle{empty}
-  \pagebreak
-  \pagestyle{headandfoot}
-
-  \renewcommand{\contentsname}{Table Of Contents}
-  \renewcommand\thesection{}
-  \tableofcontents
-
-  \makeatletter
-  \footer{\parbox{0.45\linewidth}{Math 123 Formula Sheet}}{\thepage}{\@title}
-  \makeatother
-  \subfile{subfiles/math123_formula_sheet.tex}
-
-  \makeatletter
-  \firstpageheader{}{}{}
-  \firstpagefooter{\parbox{0.45\linewidth}{\currentname}}{\thepage}{\@title}
-  \firstpagefootrule
-  \makeatother
-  \pagenumbering{arabic}
-  \setcounter{page}{1}
+  \defineFrontMatter{Math 123}
+    {\emph{Applied Calculus}\\ by \emph{Tan}}
+    {math123}
   %% everything else
 
   \providecommand{\relscalefact}{1.4}

@@ -1,5 +1,8 @@
 \documentclass[answers]{exam}
 \usepackage{texPreamble} %Local version of my generic preamble file
+%TODO: move package imports here instead of generic preamble and input
+%texShortcutswesterbaan here
+% \input{texShortcutsWesterbaan}
 \hypersetup{hidelinks}
 \usepackage{relsize}
 \usepackage{tkz-euclide}
@@ -10,11 +13,82 @@
 \extraheadheight{0.25in}
 \extrafootheight{1.0in}
 \extrawidth{1in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Start each subfiles/*.tex with the following:
 %\documentclass[mathNotesPreamble]{subfiles}  used to inherit this preamble
+
+%Import each subfile with the following:
 %\subfile{<file>}                             pulls content from <file> ignoring its preamble
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \usepackage{subfiles}
 % ----------------------------------------------------------------
 \usepgfplotslibrary{statistics}
+
+%% Externalize graphics and save in ./images/ folder
+%% pdflatex --shell-escape <tex file>
+%% latexmk -pdf -e '$latex=q/latex %O -shell-escape %S/'
+%% The document can be compiled with the two following
+%% lines commented out, but will recompile all figures
+%% each time.
+\usetikzlibrary{external}
+\tikzexternalize[prefix=images/]
+
+\newcount\examUnit
+\examUnit=-1
+
+%https://tex.stackexchange.com/a/216321/190910
+% define main directory depending on file
+\providecommand{\subfiles}{./subfiles}
+
+% Macro to define title page, TOC, formula sheet and formatting
+\newcommand{\defineFrontMatter}[3]{%
+  \makeatletter
+  \title{#1 Class notes\\[0.25\baselineskip]\TheSemester}
+  \author{Peter Westerbaan}
+
+  \pagestyle{headandfoot}
+  \newcommand{\currentname}{\@currentlabelname}
+
+  \runningfootrule
+  \runningfooter{\parbox{0.45\linewidth}{\currentname}}{\thepage}{\@title}
+  \makeatother
+
+  %% Title
+  \pagenumbering{roman}
+  \vspace*{\stretch{1}}
+  \begin{center}
+    \makeatletter
+    {\huge \@title}\\[\baselineskip]
+    To accompany\\ #2 \\[\baselineskip]
+    \@author\\[\baselineskip]
+    Last updated: \@date\\
+    \makeatother
+  \end{center}
+  \vspace*{\stretch{1}}
+  \thispagestyle{empty}
+  \pagebreak
+  \pagestyle{headandfoot}
+
+  \renewcommand{\contentsname}{Table Of Contents}
+  \renewcommand\thesection{}
+  \tableofcontents
+
+  \newpage
+  \makeatletter
+  \footer{\parbox{0.45\linewidth}{#1 Formula Sheet}}{\thepage}{\@title}
+  \makeatother
+  \subfile{subfiles/#3_formula_sheet.tex}
+
+  \makeatletter
+  \firstpageheader{}{}{}
+  \firstpagefooter{\parbox{0.45\linewidth}{\currentname}}{\thepage}{\@title}
+  \firstpagefootrule
+  \makeatother
+  \pagenumbering{arabic}
+  \setcounter{page}{1}
+}
 
 \begin{document}
 \end{document}
