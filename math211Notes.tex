@@ -49,7 +49,10 @@
   \renewcommand{\contentsname}{Table Of Contents}
   \renewcommand\thesection{}
   \tableofcontents
-  \newpage
+
+  \makeatletter
+  \footer{\parbox{0.45\linewidth}{Math 211 Formula Sheet}}{\thepage}{\@title}
+  \makeatother
   \subfile{subfiles/math211_formula_sheet.tex}
 
   \makeatletter
