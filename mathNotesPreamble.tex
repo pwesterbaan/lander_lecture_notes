@@ -50,9 +50,6 @@
 
   \pagestyle{headandfoot}
   \newcommand{\currentname}{\@currentlabelname}
-
-  \runningfootrule
-  \runningfooter{\parbox{0.45\linewidth}{\currentname}}{\thepage}{\@title}
   \makeatother
 
   %% Title
@@ -77,14 +74,14 @@
 
   \newpage
   \makeatletter
+  \runningfootrule
   \footer{\parbox{0.45\linewidth}{#1 Formula Sheet}}{\thepage}{\@title}
-  \makeatother
   \subfile{subfiles/#3_formula_sheet.tex}
 
-  \makeatletter
   \firstpageheader{}{}{}
   \firstpagefooter{\parbox{0.45\linewidth}{\currentname}}{\thepage}{\@title}
   \firstpagefootrule
+  \runningfooter{\parbox{0.45\linewidth}{\currentname}}{\thepage}{\@title}
   \makeatother
   \pagenumbering{arabic}
   \setcounter{page}{1}
