@@ -61,8 +61,36 @@
       \end{itemize}
       \emph{Note}: Hypothesis tests don't prove the null hypothesis!
     \end{defn*}
+  \vspace*{\stretch{1}}
 
-
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[
+        domain=-4:4,
+        samples=255,
+        axis x line=middle,
+        axis y line=none,
+        axis line style={black,-},
+        xtick={-1.96,0,1.96},
+        xticklabels={$-t^*$,$\mu_0$,$t^*$},
+        ytick=\empty,
+        clip=false,
+        width=\linewidth, height=\axisdefaultheight
+        ]
+        \addplot[thick,lander_blue] {gauss(x,0,1)};
+        % Shade rejection regions
+        \addplot[domain=-4:-1.96, fill=red!30] {gauss(x,0,1)} \closedcycle;
+        \addplot[domain=1.96:4, fill=red!30] {gauss(x,0,1)} \closedcycle;
+        % Curly braces for regions
+        \draw [decorate,decoration={brace,amplitude=10pt,mirror}] (axis cs:-4,-0.06) -- (axis cs:-1.98,-0.06)
+          node[midway, yshift=-30pt, align=center] {$p$-value $<\alpha$ \\ Reject $H_0$};
+        \draw [decorate,decoration={brace,amplitude=10pt,mirror}] (axis cs:-1.94,-0.06) -- (axis cs:1.94,-0.06)
+          node[midway,yshift=-30pt, align=center] {$p$-value $>\alpha$ \\ Fail to reject $H_0$};
+        \draw [decorate,decoration={brace,amplitude=10pt,mirror}] (axis cs:1.98,-0.06) -- (axis cs:4,-0.06)
+          node[midway,yshift=-30pt, align=center] {$p$-value $<\alpha$ \\ Reject $H_0$};
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
 
   \pagebreak
 \end{document}
