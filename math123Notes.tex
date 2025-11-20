@@ -1,4 +1,12 @@
 \documentclass[mathNotesPreamble]{subfiles}
+%% Externalize graphics and save in ./images/ folder
+%% pdflatex --shell-escape <tex file>
+%% latexmk -pdf -e '$latex=q/latex %O -shell-escape %S/'
+%% The document can be compiled with the two following
+%% lines commented out, but will recompile all figures
+%% each time.
+\usetikzlibrary{external}
+\tikzexternalize[prefix=images/]
 
 \begin{document}
   \defineFrontMatter{Math 123}
