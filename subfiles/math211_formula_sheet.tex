@@ -22,8 +22,8 @@
     Standard Error: & $SE=\sqrt{\dfrac{p(1-p)}{n}}$\\
   }
   \newcommand{\examThree}{
-    Standard error (proportions)& $SE=\sqrt{\dfrac{p_0(1-p_0)}{n}}$\\
-    Confidence intervals (proportions)& $\hat{p}\pm m$ \tab where $m=z^*SE$,\tab  $SE=\sqrt{\dfrac{p(1-p)}{n}}$\\
+    Standard error (proportions)& $SE=\sqrt{\dfrac{p(1-p)}{n}}$\\
+    Confidence intervals (proportions)& $\hat{p}\pm m$ \tab where $m=z^*SE_{\textnormal{est}}$,\tab  $SE_{\textnormal{est}}=\sqrt{\dfrac{\hat{p}(1-\hat{p})}{n}}$\\
     $z$ test statistic (proportions)& $z=\dfrac{\hat{p}-p_0}{SE}$ \tab where $SE=\sqrt{\dfrac{p_0(1-p_0)}{n}}$\\[10pt]
     Standard error (means)& $SE=\dfrac{\sigma}{\sqrt{n}}$\\
     Confidence intervals (means)& $\overline{x}\pm m$ \tab where $m=t^*SE_{\textnormal{est}}$,\tab  $SE_{\textnormal{est}}=\dfrac{s}{\sqrt{n}}$\\
@@ -34,7 +34,7 @@
     {\Large \textbf{Math 211 Formula Sheet}}
 
     \renewcommand{\arraystretch}{2.45}
-    \begin{tabularx}{0.95\linewidth}{@{}>{\bfseries\hsize=0.85\hsize}X>{\hsize=1.15\hsize}X@{}}
+    \begin{tabularx}{0.975\linewidth}{@{}>{\bfseries\hsize=0.85\hsize}X>{\hsize=1.15\hsize}X@{}}
       \ifnum\examUnit=1  \examOne    \fi
       \ifnum\examUnit=2  \examTwo    \fi
       \ifnum\examUnit=3  \examThree  \fi
