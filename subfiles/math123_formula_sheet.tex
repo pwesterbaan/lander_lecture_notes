@@ -9,7 +9,7 @@
 \newcommand*{\parens}[1]{{\left(#1\right)}}
 
 \newcount\examUnit
-\examUnit=3
+\examUnit=-1
 \begin{document}
   \definecolor{greenish}{rgb}{0,0.5,0}
   \TabPositions{25mm,60mm}
@@ -27,16 +27,16 @@
     Quotient rule: & $\mathllap{\dfrac{d}{dx}\left[\dfrac{f(x)}{g(x)}\right]}=\dfrac{g(x)f'(x)-f(x)g'(x)}{\left[g(x)\right]^2}$\\
     Chain rule: & $\mathllap{\dfrac{d}{dx}\Big[f\big(g(x)\big)\Big]}=f'\big(g(x)\big)\cdot g'(x)$\\
   }
-  \newcommand{\examOne}{
+  \newcommand{\unitOne}{
     \lineEqns
     Quadratic formula: & $\mathllap{x}=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$\\
     Derivative: & $\displaystyle\mathllap{f'(x)}=\lim_{h\to 0} \dfrac{f(x+h)-f(x)}{h}$\\
   }
-  \newcommand{\examTwo}{
+  \newcommand{\unitTwo}{
     \expoRules
     \derivShortcuts
   }
-  \newcommand{\examThree}{
+  \newcommand{\unitThree}{
     Natural Log: & $\mathllap{e^y}=x\ \longleftrightarrow\  \ln\left(x\right)=y, \qquad x>0$\\
     Log of a product: & $\mathllap{\ln(xy)}=\ln(x)+\ln(y)$\\
     Log of a quotient: & $\mathllap{\ln\parens{\dfrac{x}{y}}}=\ln(x)-\ln(y)$\\
@@ -45,19 +45,23 @@
     Logarithm Rule: & $\mathllap{\dfrac{d}{dx}\Big[\ln\big(f(x)\big)\Big]}=\dfrac{f'(x)}{f(x)}$\\
 
   }
+  \newcommand{\unitFour}{
+    Integral Power Rule: & $\displaystyle\mathllap{\int x^n\,dx}=\dfrac{1}{n+1}\,x^{n+1}+C \qquad (n\neq -1)$\\
+  }
   \begin{center}
     {\Large \textbf{Math 123 Formula Sheet}}
 
     \renewcommand{\arraystretch}{2.05}
     \begin{tabularx}{0.95\linewidth}{@{}>{\bfseries\hsize=0.95\hsize}X>{\hsize=1.05\hsize}X@{}}
-      \ifnum\examUnit=1  \examOne    \fi
-      \ifnum\examUnit=2  \lineEqns \examTwo    \fi
-      \ifnum\examUnit=3  \expoRules \\\derivShortcuts \\\examThree  \fi
+      \ifnum\examUnit=1  \unitOne    \fi
+      \ifnum\examUnit=2  \lineEqns \unitTwo    \fi
+      \ifnum\examUnit=3  \expoRules \\\derivShortcuts \\\unitThree  \fi
       \ifnum\examUnit=-1
-        \multicolumn{2}{c}{\hrulefill\textbf{ Unit 1 }\hrulefill}\\ \examOne
-        \multicolumn{2}{c}{\hrulefill\textbf{ Unit 2 }\hrulefill}\\ \examTwo
-        \multicolumn{2}{c}{\hrulefill\textbf{ Unit 3 }\hrulefill}\\ \examThree
-      \fi
+        \multicolumn{2}{c}{\hrulefill\textbf{ Unit 1 }\hrulefill}\\ \unitOne
+        \multicolumn{2}{c}{\hrulefill\textbf{ Unit 2 }\hrulefill}\\ \unitTwo
+        \multicolumn{2}{c}{\hrulefill\textbf{ Unit 3 }\hrulefill}\\ \unitThree
+        \multicolumn{2}{c}{\hrulefill\textbf{ Unit 4 }\hrulefill}\\ \unitFour
+     \fi
     \end{tabularx}
   \end{center}
 
