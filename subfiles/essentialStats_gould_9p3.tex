@@ -64,7 +64,7 @@
           width=\linewidth, height=1.5*\axisdefaultheight,
           ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
           ]
-          \addplot[-, line width=1pt, legend] expression[domain=-3.5:3.5]
+          \addplot+[-, line width=1pt, legend] expression[domain=-3.5:3.5]
             {gauss(x,0,1)} node [pos=0.5, above right] {$N(0,1)$};
           \addlegendentry{\ $N(0,1)$};
           %This plot needs to be compiled using
