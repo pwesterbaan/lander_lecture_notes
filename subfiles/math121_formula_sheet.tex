@@ -10,6 +10,7 @@
 \newcount\examUnit
 \examUnit=-1 %TODO (based on chapter number)
 \begin{document}
+  \providecommand{\formulaSheetTitle}[1]{{\Large \textbf{#1}}}
   \definecolor{greenish}{rgb}{0,0.5,0}
   \newcommand{\chOne}{%
     Slope of a Line: & $\mathllap{m}=\displaystyle\frac{y_2-y_1}{x_2-x_1}$\\
@@ -57,7 +58,7 @@
     Amortization:& $\mathllap{R}=A_n\sbrkt{\dfrac{i}{1-(1+i)^{-n}}}$
   }
   \begin{center}
-    {\Large \textbf{Math 121 Formula Sheet}}
+    \formulaSheetTitle{Math 121 Formula Sheet}
 
     %TODO Why does the following affect section name printing?
     \renewcommand{\arraystretch}{1.95}

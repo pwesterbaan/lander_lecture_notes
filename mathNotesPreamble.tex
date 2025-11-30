@@ -41,34 +41,37 @@
 
   \pagestyle{headandfoot}
   \newcommand{\currentname}{\@currentlabelname}
-  \makeatother
 
   %% Title
   \pagenumbering{roman}
   \vspace*{\stretch{1}}
   \begin{center}
-    \makeatletter
     {\huge \@title}\\[\baselineskip]
     To accompany\\ #2 \\[\baselineskip]
     \@author\\[\baselineskip]
     Last updated: \@date\\
-    \makeatother
   \end{center}
   \vspace*{\stretch{1}}
   \thispagestyle{empty}
   \pagebreak
   \pagestyle{headandfoot}
 
+  %% TOC
   \renewcommand{\contentsname}{Table Of Contents}
   \renewcommand\thesection{}
   \tableofcontents
 
   \newpage
-  \makeatletter
+  %% Formula sheet
   \runningfootrule
   \footer{\parbox{0.45\linewidth}{#1 Formula Sheet}}{\thepage}{\@title}
+  \providecommand{\formulaSheetTitle}[1]{
+    \vspace*{-3\baselineskip}
+    \smash{\raisebox{\height}{\Large \textbf{#1}}}
+  }
   \subfile{subfiles/#3_formula_sheet.tex}
 
+  %% everything else
   \firstpageheader{}{}{}
   \firstpagefooter{\parbox{0.45\linewidth}{\currentname}}{\thepage}{\@title}
   \firstpagefootrule

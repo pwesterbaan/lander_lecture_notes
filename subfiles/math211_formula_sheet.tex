@@ -7,6 +7,7 @@
 \newcount\examUnit
 \examUnit=-1
 \begin{document}
+  \providecommand{\formulaSheetTitle}[1]{{\Large \textbf{#1}}}
   \TabPositions{20mm,55mm}
   \newcommand{\examOne}{
     Mean: & $\overline{x}=\dfrac{x_1+x_2+\dots+x_n}{n}=\displaystyle\dfrac{1}{n}\sum_{i=1}^n x_i$\\
@@ -31,7 +32,7 @@
 
   }
   \begin{center}
-    {\Large \textbf{Math 211 Formula Sheet}}
+    \formulaSheetTitle{Math 211 Formula Sheet}
 
     \renewcommand{\arraystretch}{2.45}
     \begin{tabularx}{0.95\linewidth}{@{}>{\bfseries\hsize=0.85\hsize}X>{\hsize=1.15\hsize}X@{}}
