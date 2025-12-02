@@ -3,7 +3,86 @@
 \providecommand{\relscalefact}{1.4}
 \begin{document}
 \relscale{\relscalefact}
-  \section{ }
+  \section{6.5: Evaluating Definite Integrals}
+
+  \begin{thmBox*}[The Fundamental Theorem of Calculus]
+    Let $f$ be continuous on $[a,b]$. Then, 
+      \[\int_a^b f(x)\,dx = F(b)-F(a)\]
+    where $F$ is any antiderivative of $f$; that is, $F'(x)=f(x)$.
+  \end{thmBox*}
+  \begin{ex*}
+    Let $R$ be the region under the graph of $f(x)=x$ on the interval $[1,3]$. Find the area of $R$ 
+    \hspace*{\stretch{1}} \href{https://www.desmos.com/calculator/311quwg74p}{\textcolor{blue}{\underline{Graph}}}
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task using geometry 
+    \task using the Fundamental Theorem of Calculus
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{thmBox*}[Properties of the Definite Integral]
+    Let $f$ and $g$ be integrable functions; then,
+    \TabPositions{100mm}
+    \begin{enumerate}[itemsep=0.5\baselineskip]
+      \item $\displaystyle \int_a^a f(x)\,dx=0$
+      \item $\displaystyle \int_a^b f(x)\,dx=-\int_b^a f(x)\,dx$
+      \item $\displaystyle \int_a^b cf(x)\,dx=c\int_a^b f(x)\,dx$ \tab $(c \textnormal{ constant})$
+      \item $\displaystyle \int_a^b \sbrkt{f(x)\pm g(x)}\,dx=\int_a^b f(x)\, dx\pm \int_a^b g(x)\,dx$
+      \item $\displaystyle \int_a^b f(x)\,dx=\int_a^c f(x)\,dx+\int_c^b f(x)\,dx$ \tab $(a<c<b)$
+    \end{enumerate}
+  \end{thmBox*}
+  \vspace*{0.5\baselineskip}
+
+  \begin{center}
+    %TODO Reference figure on p 457
+    \begin{tikzpicture}[declare function={
+      a=0.8; c=2.15; b=4;
+      f(\x)=(\x-0.25)*(\x-2)*(\x-4.25)+5;}]
+      \begin{axis}[
+        axis on top,
+        axis lines=center,
+        axis line style={->},
+        xtick={a,c,b},
+        xticklabels={$a\vphantom{b}$,$c\vphantom{b}$,$b$},
+        ymin=0,
+        ymajorticks=false,
+        width=0.65\linewidth, height=\axisdefaultheight,
+        enlargelimits={value=0.025, auto},
+        every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=100}
+        ]
+        \addplot[name path = func, -] expression[domain=0:4.25]{f(x)};
+        \addplot[name path = floor, draw=none] expression[domain=0:4.25]{0};
+        \addplot[fill=lander_blue!35] fill between[of=func and floor, soft clip={domain=a:c}];
+        \addplot[fill=lander_blue!35] fill between[of=func and floor, soft clip={domain=c:b}];
+        \draw (axis cs: a,0) -- (axis cs: a,{f(a)}) 
+              (axis cs: c,0) -- (axis cs: c,{f(c)})
+              (axis cs: b,0) -- (axis cs: b,{f(b)});
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \pagebreak
+
+  \begin{ex*}
+    Evaluate the following definite integrals
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task $\displaystyle \int_0^4 x\sqrt{9+x^2}\,dx$
+    \task $\displaystyle \int_0^2 xe^{2x^2}\,dx$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{ex*}
+    Find the area of each region $R$ described below:
+    \hspace*{\stretch{1}}
+    \href{https://www.desmos.com/calculator/y7iriyka30}{\textcolor{blue}{\underline{Graphs}}}
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task Under $f(x)=\sqrt{x}$ from $x=1$ to $x=4$
+    \task Under $f(x)=e^{x/2}$ from $x=-1$ to $x=1$
+  \end{extasks}
+  \vspace*{\stretch{1}}
 
   \pagebreak
 \end{document}
