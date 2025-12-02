@@ -7,6 +7,8 @@ import pandas as pd
 from pathlib import Path
 
 github_url="https://github.com/pwesterbaan/lander_lecture_notes/raw/main"
+#Default future date when no release date given
+future_date='2500-01-01T13:00:00'
 
 # change to directory containing this file
 file_dir=os.path.dirname(os.path.realpath(__file__))
@@ -33,15 +35,18 @@ for dir_title in directories:
     if not os.path.isdir(annotated_notes_dir):
         os.makedirs(annotated_notes_dir)
 
-    print(f'''Generating {noteKeys_dir} list''')
-    list_of_pdfs=os.listdir(annotated_notes_dir)
-    list_of_pdfs.sort()
-    info_dict['list_of_pdfs']=list_of_pdfs
-    info_dict['base_url']=f'''{github_url}/{noteKeys_dir}/annotated_notes/'''
-
     # Create dictionary from csv with release dates for each section
     df = pd.read_csv(f'''{noteKeys_dir}/{class_name}_releaseDates.csv''')
     info_dict['release_date']=dict(zip(df['filename'],df['release date']))
+
+    print(f'''Generating {noteKeys_dir} list''')
+    list_of_pdfs=os.listdir(annotated_notes_dir)
+    # Sort alphabetically
+    ### list_of_pdfs.sort()
+    # Sort by release date
+    list_of_pdfs=sorted(list_of_pdfs,key=lambda x: info_dict.get('release_date').get(x,future_date))
+    info_dict['list_of_pdfs']=list_of_pdfs
+    info_dict['base_url']=f'''{github_url}/{noteKeys_dir}/annotated_notes/'''
 
     list_of_class_dicts.append(info_dict)
 
