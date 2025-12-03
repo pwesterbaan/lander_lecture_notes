@@ -9,15 +9,15 @@
 \begin{document}
   \providecommand{\formulaSheetTitle}[1]{{\Large \textbf{#1}}}
   \TabPositions{20mm,55mm}
+  \newcommand{\zScore}{$z$-Score: & $\displaystyle z=\dfrac{x-\overline{x}}{s}$\\}
   \newcommand{\examOne}{
     Mean: & $\overline{x}=\dfrac{x_1+x_2+\dots+x_n}{n}=\displaystyle\dfrac{1}{n}\sum_{i=1}^n x_i$\\
     Standard Deviation: & $\displaystyle s=\sqrt{\dfrac{\displaystyle\sum \left(x_i-\overline{x}\right)^2}{n-1}}$\\
     Variance: & $\displaystyle s^2=\dfrac{\displaystyle\sum \left(x_i-\overline{x}\right)^2}{n-1}$\\
-    $z$-Score: & $\displaystyle z=\dfrac{x-\overline{x}}{s}$\\
+    \zScore
     Interquartile Range: & $IQR=Q_3-Q_1$\\
   }
   \newcommand{\examTwo}{
-    $z$-Score: & $\displaystyle z=\dfrac{x-\overline{x}}{s}$\\
     Correlation Coefficient: & $r=\dfrac{\sum z_x z_y}{n-1}$\\
     Regression line: & $y=a+bx$, where $b=r\dfrac{s_y}{s_x}$ and $a=\overline{y}-b\overline{x}$\\
     Standard Error: & $SE=\sqrt{\dfrac{p(1-p)}{n}}$\\
@@ -37,7 +37,7 @@
     \renewcommand{\arraystretch}{2.45}
     \begin{tabularx}{0.95\linewidth}{@{}>{\bfseries\hsize=0.85\hsize}X>{\hsize=1.15\hsize}X@{}}
       \ifnum\examUnit=1  \examOne    \fi
-      \ifnum\examUnit=2  \examTwo    \fi
+      \ifnum\examUnit=2  \zScore \examTwo \fi
       \ifnum\examUnit=3  \examThree  \fi
       \ifnum\examUnit=-1
         \multicolumn{2}{c}{\hrulefill\textbf{ Unit 1 }\hrulefill}\\ \examOne
