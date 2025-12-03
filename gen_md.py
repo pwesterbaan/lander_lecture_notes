@@ -41,8 +41,8 @@ for dir_title in directories:
 
     print(f'''Generating {noteKeys_dir} list''')
     list_of_pdfs=os.listdir(annotated_notes_dir)
-    # Sort alphabetically
-    ### list_of_pdfs.sort()
+    # Sort alphabetically first
+    list_of_pdfs.sort()
     # Sort by release date
     list_of_pdfs=sorted(list_of_pdfs,key=lambda x: info_dict.get('release_date').get(x,future_date))
     info_dict['list_of_pdfs']=list_of_pdfs
