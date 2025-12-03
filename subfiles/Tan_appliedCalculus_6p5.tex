@@ -6,16 +6,16 @@
   \section{6.5: Evaluating Definite Integrals}
 
   \begin{thmBox*}[The Fundamental Theorem of Calculus]
-    Let $f$ be continuous on $[a,b]$. Then, 
-      \[\int_a^b f(x)\,dx = F(b)-F(a)\]
+    Let $f$ be continuous on $[a,b]$. Then,
+      \[\int_a^b f(x)\,dx = F(x)\Big|_a^b=F(b)-F(a)\]
     where $F$ is any antiderivative of $f$; that is, $F'(x)=f(x)$.
   \end{thmBox*}
   \begin{ex*}
-    Let $R$ be the region under the graph of $f(x)=x$ on the interval $[1,3]$. Find the area of $R$ 
+    Let $R$ be the region under the graph of $f(x)=x$ on the interval $[1,3]$. Find the area of $R$
     \hspace*{\stretch{1}} \href{https://www.desmos.com/calculator/311quwg74p}{\textcolor{blue}{\underline{Graph}}}
   \end{ex*}
   \begin{extasks}[after-item-skip=\stretch{1}](1)
-    \task using geometry 
+    \task using geometry
     \task using the Fundamental Theorem of Calculus
   \end{extasks}
   \vspace*{\stretch{1}}
@@ -55,7 +55,7 @@
         \addplot[name path = floor, draw=none] expression[domain=0:4.25]{0};
         \addplot[fill=lander_blue!35] fill between[of=func and floor, soft clip={domain=a:c}];
         \addplot[fill=lander_blue!35] fill between[of=func and floor, soft clip={domain=c:b}];
-        \draw (axis cs: a,0) -- (axis cs: a,{f(a)}) 
+        \draw (axis cs: a,0) -- (axis cs: a,{f(a)})
               (axis cs: c,0) -- (axis cs: c,{f(c)})
               (axis cs: b,0) -- (axis cs: b,{f(b)});
       \end{axis}
@@ -72,7 +72,7 @@
   \end{extasks}
   \vspace*{\stretch{1}}
   \pagebreak
-  
+
   \begin{ex*}
     Find the area of each region $R$ described below:
     \hspace*{\stretch{1}}
