@@ -32,6 +32,11 @@
 %https://tex.stackexchange.com/a/216321/190910
 % define main directory depending on file
 \providecommand{\subfiles}{./subfiles}
+\providecommand{\formulaSheetTitle}[1]{
+  %% Manually shift formula sheet title upwards
+  \vspace*{-3\baselineskip}
+  \smash{\raisebox{\height}{\Large \textbf{#1}}}
+}
 
 % Macro to define title page, TOC, formula sheet and formatting
 \newcommand{\defineFrontMatter}[3]{%
@@ -65,10 +70,6 @@
   %% Formula sheet
   \runningfootrule
   \footer{\parbox{0.45\linewidth}{#1 Formula Sheet}}{\thepage}{\@title}
-  \providecommand{\formulaSheetTitle}[1]{
-    \vspace*{-3\baselineskip}
-    \smash{\raisebox{\height}{\Large \textbf{#1}}}
-  }
   \subfile{subfiles/#3_formula_sheet.tex}
 
   %% everything else
