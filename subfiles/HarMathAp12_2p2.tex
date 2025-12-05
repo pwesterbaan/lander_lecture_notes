@@ -67,6 +67,54 @@
           \end{axis}}
     \end{itemize}
   \end{defn*}
+  \vspace*{\baselineskip}
+
+  \begin{center}
+    \begin{tikzpicture}[declare function={
+      a=-1; b=3; c=4; del=0.25;
+      f(\x)=a*\x^2+b*\x+c;
+      qf(\s)=(-b+\s*sqrt(b^2-4*a*c))/(2*a);
+      xo=qf(1); xt=qf(-1);
+      vx=-b/(2*a); vy=(b^2-4*a*c)/(4*a^2);},
+      custNode/.style={
+        black,
+        align=center,
+        inner sep=2.5pt,
+        rounded corners,
+        fill=white,
+        opacity=0.8,
+        text opacity=1.0},
+      custPin/.style={
+        custNode,
+        pin edge={black!50}}]
+      \begin{axis}[
+        axis lines=center,
+        axis line style={black,->},
+        xmajorticks=false,
+        ymajorticks=false,
+        width=0.75\linewidth, height=\axisdefaultheight,
+        enlargelimits={value=0.025, auto},
+        every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=100},
+        clip=false
+        ]
+        \addplot[<->] expression[domain=xo-del:xt+del]{f(x)};
+        \addplot[soldot] coordinates{(xo,0)(xt,0)};
+        \node[custNode] (xo) at (xo,0) {};
+        \node[custNode] (xt) at (xt,0) {};
+        \node[custNode] (qf) at (vx,-0.275*vy) {$x=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$};
+        \draw[-, custNode, shorten >=10pt, shorten <=7.5pt] (qf) -- (xo);
+        \draw[-, custNode, shorten >=10pt, shorten <=7.5pt] (qf) -- (xt);
+
+        \addplot[soldot] coordinates{(0,c)} 
+          node[above left, pin={[custPin] 120:$f(0)=c$}] {};
+        \addplot[soldot] coordinates{(vx,vy)}
+          node[above, pin={[custPin] $\parens{-\dfrac{b}{2a},f\parens{-\dfrac{b}{2a}}}$}, black] {};
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \pagebreak
+
+
   \begin{ex*}
     Consider the function
       \[2x+\frac{x^2}{2}\]
@@ -77,7 +125,6 @@
   \hspace*{\stretch{1}}
   \begin{tikzpicture}
     \begin{axis}[
-      group style={group size=2 by 2, horizontal sep=20mm, vertical sep=20mm},
       grid=both, %major,minor
       grid style={line width=0.375pt, draw=gray!75},
       minor grid style={draw=gray!25},
@@ -104,7 +151,6 @@
   \hspace*{\stretch{1}}
   \begin{tikzpicture}
     \begin{axis}[
-      group style={group size=2 by 2, horizontal sep=20mm, vertical sep=20mm},
       grid=both, %major,minor
       grid style={line width=0.375pt, draw=gray!75},
       minor grid style={draw=gray!25},
