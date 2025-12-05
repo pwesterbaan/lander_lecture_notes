@@ -8,7 +8,7 @@ from pathlib import Path
 
 github_url="https://github.com/pwesterbaan/lander_lecture_notes/raw/main"
 #Default future date when no release date given
-future_date='2500-01-01T13:00:00'
+future_date='3000-01-01T13:00:00'
 
 # change to directory containing this file
 file_dir=os.path.dirname(os.path.realpath(__file__))
@@ -37,6 +37,7 @@ for dir_title in directories:
 
     # Create dictionary from csv with release dates for each section
     df = pd.read_csv(f'''{noteKeys_dir}/{class_name}_releaseDates.csv''')
+    df=df.fillna(future_date) # Handles missing dates
     info_dict['release_date']=dict(zip(df['filename'],df['release date']))
 
     print(f'''Generating {noteKeys_dir} list''')

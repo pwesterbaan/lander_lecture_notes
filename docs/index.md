@@ -54,7 +54,7 @@ Below are links to notes used at Lander University:
       ["2025-11-19T13:00:00","mathApp_harshbarger_2p1_annotated.pdf"],
       ["2025-11-21T13:00:00","mathApp_harshbarger_2p2_annotated.pdf"],
       ["2025-12-01T13:00:00","mathApp_harshbarger_2p3_annotated.pdf"],
-      ["3000-11-12T13:00:00","mathApp_harshbarger_6p4_annotated.pdf"],
+      ["3000-01-01T13:00:00","mathApp_harshbarger_6p4_annotated.pdf"],
       ])</script>
     </ul>
 </details>
@@ -68,12 +68,12 @@ Below are links to notes used at Lander University:
   <summary>math123 Annotated Notes (click to expand)</summary>
     <ul id="math123_NoteKeys">
       <script> add_links_by_date("math123_NoteKeys",[
-      ["2025-08-11T09:00:00","math123Notes_2p5_annotated.pdf"],
-      ["2025-08-16T09:00:00","math123Notes_2p6_annotated.pdf"],
       ["2025-08-23T09:00:00","math123Notes_1p4_annotated.pdf"],
       ["2025-08-26T09:00:00","math123Notes_2p1_annotated.pdf"],
       ["2025-08-28T09:00:00","math123Notes_2p2_annotated.pdf"],
       ["2025-09-06T09:00:00","math123Notes_2p4_annotated.pdf"],
+      ["2025-09-11T09:00:00","math123Notes_2p5_annotated.pdf"],
+      ["2025-09-16T09:00:00","math123Notes_2p6_annotated.pdf"],
       ["2025-09-25T09:00:00","math123Notes_3p1_annotated.pdf"],
       ["2025-09-27T09:00:00","math123Notes_3p2_annotated.pdf"],
       ["2025-09-30T09:00:00","math123Notes_3p3_annotated.pdf"],
