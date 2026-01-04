@@ -46,7 +46,7 @@
   \begin{flushright}
     \begin{tikzpicture}[scale=1.0, declare function={
       N=50;
-      mu=0.25; sig=0.0433;
+      n=100; mu=0.25; sig=sqrt(mu*(1-mu)/n);%0.0433;
       xmin=mu-3.2*sig;
       xmax=mu+3.2*sig;
       ymin=-0.1*gauss(mu,mu,sig);
@@ -57,10 +57,13 @@
         mark=none, domain={xmin}:{xmax},samples=N,smooth},
         axis lines=center,
         ymin=ymin,
+        y axis line style={opacity=0},
+        ytick=\empty,
         axis line style={black,->},
         every axis x label/.style={at={(current axis.right of origin)},anchor=north},
         xlabel=$\hat{p}$, xlabel style={at={(axis description cs:0.5,-0.0625)},anchor=north},
         clip=false,
+        height=\axisdefaultheight, width=1.2*\axisdefaultwidth
         ]
 
         % PLOTS
@@ -82,7 +85,7 @@
   \begin{flushright}
     \begin{tikzpicture}[scale=1.0, declare function={
       N=50;
-      mu=0.12; sig=0.010979;
+      n=876; mu=0.12; sig=sqrt(mu*(1-mu)/n); %0.010979;
       xmin=mu-3.2*sig;
       xmax=mu+3.2*sig;
       ymin=-0.1*gauss(mu,mu,sig);
@@ -95,10 +98,13 @@
         mark=none, domain={xmin}:{xmax},samples=N,smooth},
         axis lines=center,
         ymin=ymin,
+        y axis line style={opacity=0},
+        ytick=\empty,
         axis line style={black,->},
         every axis x label/.style={at={(current axis.right of origin)},anchor=north},
         xlabel=$\hat{p}$, xlabel style={at={(axis description cs:0.5,-0.0625)},anchor=north},
         clip=false,
+        height=\axisdefaultheight, width=1.2*\axisdefaultwidth
         ]
 
         % PLOTS
