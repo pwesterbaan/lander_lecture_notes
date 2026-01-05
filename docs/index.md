@@ -4,23 +4,26 @@
     // I'm hiding these links to encourage my students
     // to actually take notes and pay attention during class
     function add_links_by_date(noteKeysDir,dateUrlArray){
-      baseURL="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/";
-      annNotesDir=noteKeysDir+"/annotated_notes/";
+        baseURL="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/";
+        annNotesDir=noteKeysDir+"/annotated_notes/";
+
+        var list = document.createElement('ul');      // Create the list element
+
         dateUrlArray.forEach(element => {
           [dispDate, fileName]=element;
           if (new Date() >= new Date(dispDate)){
-            // TODO: Clean up this Javascript. This works for now, but creating "myItem" might be excessive?
 
-            const myLink=document.createElement('a');
+            var myLink=document.createElement('a');   // Create the link
             myLink.href = new URL(fileName,baseURL+annNotesDir);
             myLink.text = fileName;
             myLink.target = "_blank"
 
-            const myItem=document.createElement('li');
-            myItem.append(myLink);
-            document.getElementById(noteKeysDir).append(myItem);
-          };
+            var item = document.createElement('li');  // Create a list item
+            item.appendChild(myLink);                 // Add the link to it
+            list.appendChild(item);                   // Add item to the list
+          }
         });
+    document.getElementById(noteKeysDir).appendChild(list);
     }
 </script>
 
@@ -29,14 +32,27 @@
 Below are links to notes used at Lander University:
 
 <ul>
-<h1> math121 </h1>
+  <h1> math121 </h1>
+  <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121Notes.pdf" target="_blank">math121Notes.pdf</a></li>
+  <details name="annotated_notes" id="math121_NoteKeys">
+    <summary>math121 Annotated Notes (click to expand)</summary>
+  </details>
 
-<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121Notes.pdf" target="_blank">math121Notes.pdf</a></li>
+  <h1> math123 </h1>
+  <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123Notes.pdf" target="_blank">math123Notes.pdf</a></li>
+  <details name="annotated_notes" id="math123_NoteKeys">
+    <summary>math123 Annotated Notes (click to expand)</summary>
+  </details>
 
-<details name="annotated_notes">
-  <summary>math121 Annotated Notes (click to expand)</summary>
-    <ul id="math121_NoteKeys">
-      <script> add_links_by_date("math121_NoteKeys",[
+  <h1> math211 </h1>
+  <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211Notes.pdf" target="_blank">math211Notes.pdf</a></li>
+  <details name="annotated_notes" id="math211_NoteKeys">
+    <summary>math211 Annotated Notes (click to expand)</summary>
+  </details>
+</ul>
+
+<script>
+  var releaseDatesList=[
       ["2026-01-14T14:00:00","mathApp_harshbarger_1p1_annotated.pdf"],
       ["2026-01-21T14:00:00","mathApp_harshbarger_1p3_annotated.pdf"],
       ["2026-01-23T14:00:00","mathApp_harshbarger_1p4_annotated.pdf"],
@@ -55,19 +71,10 @@ Below are links to notes used at Lander University:
       ["2026-04-16T14:00:00","mathApp_harshbarger_2p2_annotated.pdf"],
       ["2026-04-22T14:00:00","mathApp_harshbarger_2p3_annotated.pdf"],
       ["3000-01-01T13:00:00","mathApp_harshbarger_6p4_annotated.pdf"],
-      ])</script>
-    </ul>
-</details>
+      ]
+  add_links_by_date("math121_NoteKeys",releaseDatesList);
 
-
-<h1> math123 </h1>
-
-<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123Notes.pdf" target="_blank">math123Notes.pdf</a></li>
-
-<details name="annotated_notes">
-  <summary>math123 Annotated Notes (click to expand)</summary>
-    <ul id="math123_NoteKeys">
-      <script> add_links_by_date("math123_NoteKeys",[
+  var releaseDatesList=[
       ["2026-01-14T09:00:00","math123Notes_1p4_annotated.pdf"],
       ["2026-01-16T09:00:00","math123Notes_2p1_annotated.pdf"],
       ["2026-01-21T09:00:00","math123Notes_2p2_annotated.pdf"],
@@ -89,19 +96,10 @@ Below are links to notes used at Lander University:
       ["2026-04-20T09:00:00","math123Notes_6p1_annotated.pdf"],
       ["2026-04-22T09:00:00","math123Notes_6p2_annotated.pdf"],
       ["2026-04-24T09:00:00","math123Notes_6p5_annotated.pdf"],
-      ])</script>
-    </ul>
-</details>
+      ]
+  add_links_by_date("math123_NoteKeys",releaseDatesList);
 
-
-<h1> math211 </h1>
-
-<li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211Notes.pdf" target="_blank">math211Notes.pdf</a></li>
-
-<details name="annotated_notes">
-  <summary>math211 Annotated Notes (click to expand)</summary>
-    <ul id="math211_NoteKeys">
-      <script> add_links_by_date("math211_NoteKeys",[
+  var releaseDatesList=[
       ["2026-01-13T11:00:00","math211Notes_1p1_annotated.pdf"],
       ["2026-01-15T11:00:00","math211Notes_1p2_1p4_1p5_annotated.pdf"],
       ["2026-01-22T11:00:00","math211Notes_2p1_2p2_2p3_annotated.pdf"],
@@ -117,9 +115,6 @@ Below are links to notes used at Lander University:
       ["2026-03-31T11:00:00","math211Notes_8p3_9p1_9p2_annotated.pdf"],
       ["2026-04-02T11:00:00","math211Notes_9p3_annotated.pdf"],
       ["2026-04-07T11:00:00","math211Notes_9p4_annotated.pdf"],
-      ])</script>
-    </ul>
-</details>
-
-
-</ul>
+      ]
+  add_links_by_date("math211_NoteKeys",releaseDatesList);
+</script>
