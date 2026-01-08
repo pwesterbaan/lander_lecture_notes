@@ -62,17 +62,17 @@
 
     \renewcommand{\arraystretch}{1.755}
     \begin{tabularx}{0.95\linewidth}{@{}>{\bfseries\hsize=1.075\hsize}X>{\hsize=0.925\hsize}X@{}}
-      \ifnum\examUnit=1 \chOne  \fi
-      \ifnum\examUnit=4 \chFour \fi
-      \ifnum\examUnit=2 \chTwo  \fi
-      \ifnum\examUnit=5 \chFive \fi
-      \ifnum\examUnit=6 \chSix  \fi
+      \ifnum\examUnit=1 \chOne  \fi%
+      \ifnum\examUnit=4 \chFour \fi%
+      \ifnum\examUnit=2 \chTwo  \fi%
+      \ifnum\examUnit=5 \chFive \fi%
+      \ifnum\examUnit=6 \chSix  \fi%
       \ifnum\examUnit=-1 %%Final Exam
         \multicolumn{2}{c}{\hrulefill\textbf{ Linear equations and inequalities }\hrulefill}\\ \chOne
         \multicolumn{2}{c}{\hrulefill\textbf{ Logs and exponentials }\hrulefill}\\ \chFive
         \multicolumn{2}{c}{\hrulefill\textbf{ Finance }\hrulefill}\\ \chSix
         \multicolumn{2}{c}{\hrulefill\textbf{ Quadratics }\hrulefill}\\ \chTwo
-      \fi
+      \fi%
     \end{tabularx}
   \end{center}
 

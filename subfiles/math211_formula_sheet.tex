@@ -36,14 +36,14 @@
 
     \renewcommand{\arraystretch}{2.5}
     \begin{tabularx}{0.95\linewidth}{@{}>{\bfseries\hsize=0.85\hsize}X>{\hsize=1.15\hsize}X@{}}
-      \ifnum\examUnit=1  \examOne    \fi
-      \ifnum\examUnit=2  \zScore \examTwo \fi
-      \ifnum\examUnit=3  \examThree  \fi
+      \ifnum\examUnit=1  \examOne    \fi%
+      \ifnum\examUnit=2  \zScore \examTwo \fi%
+      \ifnum\examUnit=3  \examThree  \fi%
       \ifnum\examUnit=-1
         \multicolumn{2}{c}{\hrulefill\textbf{ Unit 1 }\hrulefill}\\ \examOne
         \multicolumn{2}{c}{\hrulefill\textbf{ Unit 2 }\hrulefill}\\ \examTwo
         \multicolumn{2}{c}{\hrulefill\textbf{ Unit 3 }\hrulefill}\\ \examThree
-      \fi
+      \fi%
     \end{tabularx}
   \end{center}
 

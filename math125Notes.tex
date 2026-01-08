@@ -1,0 +1,50 @@
+\documentclass[mathNotesPreamble]{subfiles}
+%% Externalize graphics and save in ./images/ folder
+%% pdflatex --shell-escape <tex file>
+%% latexmk -pdf -e '$latex=q/latex %O -shell-escape %S/'
+%% The document can be compiled with the two following
+%% lines commented out, but will recompile all figures
+%% each time.
+\usetikzlibrary{external}
+\tikzexternalize[prefix=images/]
+
+\begin{document}
+  \defineFrontMatter{Math 125}
+    {\emph{Discrete Mathematics with Applications}\\ by \emph{Epp}}
+    {math125}
+  %% everything else
+
+  \providecommand{\relscalefact}{1.4}
+
+  \subfile{subfiles/discreteMath05ed_epp_01p2.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_01p3.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_02p1.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_02p2.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_02p5.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_03p1.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_03p2.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_06p1.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_06p4.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_08p1.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_08p2.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_08p3.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_08p4.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_08p5.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_01p4.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_04p9.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_10p1.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_10p2.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_10p3.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_10p4.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_10p5.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_10p6.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_07p1.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_07p2.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_07p3.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_05p1.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_05p6.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_05p7.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_09p1.tex}
+%  \subfile{subfiles/discreteMath05ed_epp_11p2.tex}
+
+\end{document}

@@ -73,15 +73,15 @@
 
     \renewcommand{\arraystretch}{2.05}
     \begin{tabularx}{0.95\linewidth}{@{}>{\bfseries\hsize=0.95\hsize}X>{\hsize=1.05\hsize}X@{}}
-      \ifnum\examUnit=1  \unitOne    \fi
-      \ifnum\examUnit=2  \lineEqns \unitTwo    \fi
-      \ifnum\examUnit=3  \expoRules \\\derivShortcuts \\\unitThree  \fi
+      \ifnum\examUnit=1  \unitOne    \fi%
+      \ifnum\examUnit=2  \lineEqns \unitTwo    \fi%
+      \ifnum\examUnit=3  \expoRules \\\derivShortcuts \\\unitThree  \fi%
       \ifnum\examUnit=-1
         \multicolumn{2}{c}{\hrulefill\textbf{ Unit 1 }\hrulefill}\\ \unitOne
         \multicolumn{2}{c}{\hrulefill\textbf{ Unit 2 }\hrulefill}\\ \unitTwo
         \multicolumn{2}{c}{\hrulefill\textbf{ Unit 3 }\hrulefill}\\ \unitThree
         \multicolumn{2}{c}{\hrulefill\textbf{ Unit 4 }\hrulefill}\\ \unitFour
-     \fi
+     \fi%
     \end{tabularx}
   \end{center}
 

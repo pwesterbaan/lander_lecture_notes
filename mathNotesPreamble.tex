@@ -1,8 +1,14 @@
 \documentclass[answers]{exam}
 \usepackage{texPreamble} %Local version of my generic preamble file
-%TODO: move package imports here instead of generic preamble and input
+%TODO move package imports here instead of generic preamble and input
 %texShortcutswesterbaan here
 % \input{texShortcutsWesterbaan}
+
+%TODO 2025-12-15
+%  Moving packages into this preamble file causes issuese with \defineFrontMatter:
+% ! You can't use `\spacefactor' in vertical mode.
+%\@ ->\spacefactor
+
 \hypersetup{hidelinks}
 \usepackage{relsize}
 \usepackage{tkz-euclide}
@@ -21,11 +27,25 @@
 %Import each subfile with the following:
 %\subfile{<file>}                             pulls content from <file> ignoring its preamble
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \usepackage{subfiles}
+
 % ----------------------------------------------------------------
 \usepgfplotslibrary{statistics}
+% https://tex.stackexchange.com/questions/209745/how-to-use-a-macro-to-store-the-default-pgfplot-properties
+%use "tikzDefaults" to import these settings
+\pgfplotsset{tikzDefaults/.style=
+  unbounded coords=jump,
+  axis on top,
+  axis lines=center,
+  axis line style={black,->},
+  enlargelimits={value=0.025, auto},
+  ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+  xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+  ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+  every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255},
+}
 
+%variable used to print formula sheet
 \newcount\examUnit
 \examUnit=-1
 
