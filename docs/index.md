@@ -1,9 +1,36 @@
+<h1>Dr. Westerbaan's Lecture Notes</h1>
+
+Below are links to notes used at Lander University:
+
+<ul>
+  <h1> math121 </h1>
+  <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121Notes.pdf" target="_blank">math121Notes.pdf</a></li>
+  <details name="annotated_notes" id="math121_NoteKeys">
+    <summary>math121 Annotated Notes (click to expand)</summary>
+  </details>
+
+  <h1> math123 </h1>
+  <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123Notes.pdf" target="_blank">math123Notes.pdf</a></li>
+  <details name="annotated_notes" id="math123_NoteKeys">
+    <summary>math123 Annotated Notes (click to expand)</summary>
+  </details>
+
+  <h1> math125 </h1>
+  <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math125Notes.pdf" target="_blank">math125Notes.pdf</a></li>
+
+  <h1> math211 </h1>
+  <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211Notes.pdf" target="_blank">math211Notes.pdf</a></li>
+  <details name="annotated_notes" id="math211_NoteKeys">
+    <summary>math211 Annotated Notes (click to expand)</summary>
+  </details>
+</ul>
+
 <script>
     // For anyone looking at this:
     // Obviously this is not a secure way to hide links
     // I'm hiding these links to encourage my students
     // to actually take notes and pay attention during class
-    function add_links_by_date(noteKeysDir,dateUrlArray){
+    function show_links_by_date(noteKeysDir,dateUrlArray){
         baseURL="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/";
         annNotesDir=noteKeysDir+"/annotated_notes/";
 
@@ -25,33 +52,7 @@
         });
     document.getElementById(noteKeysDir).appendChild(list);
     }
-</script>
 
-<h1>Dr. Westerbaan's Lecture Notes</h1>
-
-Below are links to notes used at Lander University:
-
-<ul>
-  <h1> math121 </h1>
-  <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121Notes.pdf" target="_blank">math121Notes.pdf</a></li>
-  <details name="annotated_notes" id="math121_NoteKeys">
-    <summary>math121 Annotated Notes (click to expand)</summary>
-  </details>
-
-  <h1> math123 </h1>
-  <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123Notes.pdf" target="_blank">math123Notes.pdf</a></li>
-  <details name="annotated_notes" id="math123_NoteKeys">
-    <summary>math123 Annotated Notes (click to expand)</summary>
-  </details>
-
-  <h1> math211 </h1>
-  <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211Notes.pdf" target="_blank">math211Notes.pdf</a></li>
-  <details name="annotated_notes" id="math211_NoteKeys">
-    <summary>math211 Annotated Notes (click to expand)</summary>
-  </details>
-</ul>
-
-<script>
   var releaseDatesList=[
       ["2026-01-14T14:00:00","mathApp_harshbarger_1p1_annotated.pdf"],
       ["2026-01-21T14:00:00","mathApp_harshbarger_1p3_annotated.pdf"],
@@ -72,7 +73,7 @@ Below are links to notes used at Lander University:
       ["2026-04-22T14:00:00","mathApp_harshbarger_2p3_annotated.pdf"],
       ["3000-01-01T13:00:00","mathApp_harshbarger_6p4_annotated.pdf"],
       ]
-  add_links_by_date("math121_NoteKeys",releaseDatesList);
+  show_links_by_date("math121_NoteKeys",releaseDatesList);
 
   var releaseDatesList=[
       ["2026-01-14T09:00:00","math123Notes_1p4_annotated.pdf"],
@@ -97,7 +98,7 @@ Below are links to notes used at Lander University:
       ["2026-04-22T09:00:00","math123Notes_6p2_annotated.pdf"],
       ["2026-04-24T09:00:00","math123Notes_6p5_annotated.pdf"],
       ]
-  add_links_by_date("math123_NoteKeys",releaseDatesList);
+  show_links_by_date("math123_NoteKeys",releaseDatesList);
 
   var releaseDatesList=[
       ["2026-01-13T11:00:00","math211Notes_1p1_annotated.pdf"],
@@ -116,5 +117,5 @@ Below are links to notes used at Lander University:
       ["2026-04-02T11:00:00","math211Notes_9p3_annotated.pdf"],
       ["2026-04-07T11:00:00","math211Notes_9p4_annotated.pdf"],
       ]
-  add_links_by_date("math211_NoteKeys",releaseDatesList);
+  show_links_by_date("math211_NoteKeys",releaseDatesList);
 </script>
