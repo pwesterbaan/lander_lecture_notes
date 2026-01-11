@@ -1,9 +1,189 @@
 \documentclass[../mathNotesPreamble]{subfiles}
+\usetikzlibrary{external}
 
 \providecommand{\relscalefact}{1.4}
 \begin{document}
 \relscale{\relscalefact}
   \section{1.2: The Language of Sets}
   
+  \begin{defn*}
+    \begin{itemize}
+      \item A \textbf{set} is a collection of objects.
+      \item If $S$ is a set, then we use 
+        \begin{itemize}
+          \item $x\in S$ to denote that the element $x$ is in the set $S$.
+          \item $x\notin S$ to denote that the element $x$ is \emph{not} in the set $S$.
+        \end{itemize}
+      \item The \textbf{set-roster notation} is used to denote all elements in a set between braces:
+        \[S=\set{1,2,\dots, 100}\]
+        Here, we see that $67\in S$, but $1337 \notin S$.
+      \item The \textbf{axiom of extension} says that a set is completely determined by what its elements are -- not the order in which they are listed.
+    \end{itemize}
+  \end{defn*}
+  
+  \begin{ex*}\mbox{}
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task Let $A=\set{1,2,3}$, $B=\set{3,1,2}$, and $C=\set{1,1,2,3,3,3}$. What are the elements of $A$, $B$, and $C$? How are $A$, $B$, and $C$ related?
+      \task Is $\set{0}=0$?
+      \task How many elements are in the set $\set{1,\set{1}}$?
+      \task For each nonnegative integer $n$, let $U_n=\set{n,-n}$. Find $U_1$, $U_2$, and $U_0$.
+    \end{extasks}
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  Certain sets of numbers are so frequently referred to that they are given special names and symbols:
+  \begin{center}
+    \begin{tabular}{@{}rl@{}}
+      $\mathbf{N}$ or $\bbn$ & The set of all \textbf{natural numbers}\\
+      $\mathbf{Z}$ or $\bbz$ & The set of all \textbf{integers}\\
+      $\mathbf{Q}$ or $\bbq$ & The set of all \textbf{rational numbers}, or quotient of integers\\
+      $\mathbf{R}$ or $\bbr$ & The set of all \textbf{real numbers}
+    \end{tabular}
+  \end{center}
+  \vspace*{1.5\baselineskip}
+
+  \emph{Note}: We may additionally use superscripts to indicate further properties of these sets:
+  \begin{center}
+    \begin{tabular}{@{}rl@{}}
+      $\bbz^+$ or $\bbz^{>0}$ & The set of \emph{positive} integers\\
+      $\bbq^-$ or $\bbq^{<0}$ & The set of \emph{negative} rational numbers\\
+      $\bbr^{\emph{nonneg}}$ or $\bbr^{\geq 0}$ & The set of \emph{nonnegative} real numbers
+    \end{tabular}
+  \end{center}
+  \vspace*{1.5\baselineskip}
+
+  \emph{Note}: Different sources denote the natural numbers $\bbn$ as $\bbz^+$ \emph{or} $\bbz^{\geq 0}$.
+  \pagebreak
+
+  \begin{defn*}[Set-Builder Notation]
+    Let $S$ be a set and let $P(x)$ be a property that elements of $S$ may or may not satisfy. We may define a new set to be \textbf{the set of all elements $x$ in $S$ such that $P(x)$ is true}. We denote this set as follows:
+    \tikzset{external/export=false}
+    \newcommand{\tikzmark}[2]{%
+      \tikz[baseline=(#1.base), remember picture]%
+      \node[inner sep=0pt] (#1)%
+      {\ensuremath{#2}};%
+    }
+      \[\tikzmark{leftB}{\{}x\in S \tikzmark{pipe}{\mid} P(x)\}\]
+    \begin{tikzpicture}[overlay, remember picture]
+      \node[below left = 8mm and 2mm of leftB, anchor=north east, align=left, lander_blue] (setOfAll) {the set of all};
+      \draw[->, lander_blue, shorten >=1pt] (setOfAll.north east) to (leftB.south);
+
+      \node[below right = 8mm and 2mm  of pipe, anchor=north west, align=left, lander_blue] (suchThat) {such that};
+      \draw[->, lander_blue, shorten >=1pt] (suchThat.north west) to (pipe.south);
+    \end{tikzpicture}
+    \tikzset{external/export=true}
+    \vspace*{\baselineskip}
+  \end{defn*}
+  
+  \begin{ex*}
+    Describe each of the following sets:
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task $\set{x\in \bbr\mid -2<x<5}$
+    \task $\set{x\in \bbz\mid -2<x<5}$
+    \task $\set{x\in \bbz^+\mid -2<x<5}$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{defn*}
+    If $A$ and $B$ are sets, then $A$ is called a \textbf{subset} of $B$, written $A\subseteq B$, if, and only if, every element of $A$ is also an element of $B$:
+      \begin{center}
+        $A\subseteq B$  means that for every element $x$, if $x\in A$, then $x\in B$.\\
+        $A\not\subseteq B$ means that there is at least one element $x$, such that $x\in A$ and $x\not\in B$.
+      \end{center}
+    $A$ is a \textbf{proper subset} of $B$ if, and only if, every element of $A$ is in $B$, but there is at least one element of $B$ that is not in $A$:
+      \begin{center}
+        \parbox{0.75\linewidth}{\centering
+          $A\subsetneq B$ means that for every element $x$, if $x\in A$, then $x\in B$, and there exists $x\in B$ such that $x\notin A$.}
+      \end{center}
+  \end{defn*}
+  
+  \begin{ex*}
+    Let $A=\bbz^+$, $B=\set{n\in\bbz \mid 0\leq n\leq 100}$, and $C=\set{100, 200, 300, 400, 500}$. Evaluate the truth and falsity of each of the following statements.
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](1)
+    \task $B\subseteq A$
+    \task $C$ is a proper subset of $A$
+    \task $C$ and $B$ have at least one element in common
+    \task $C\subseteq B$
+    \task $C\subseteq C$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{ex*}
+    Determine which of the following statements are true:
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](2)
+    \task $2\in\set{1,2,3}$
+    \task $\set{2}\in\set{1,2,3}$
+    \task $2\subseteq\set{1,2,3}$
+    \task $\set{2}\subseteq\set{1,2,3}$
+    \task $\set{2}\subseteq\set{\set{1},\set{2}}$
+    \task $\set{2}\in\set{\set{1},\set{2}}$
+  \end{extasks}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{defn*}
+    Given elements $a$ and $b$, the symbol $(a,b)$ denotes the \textbf{ordered pair} consisting of $a$ and $b$ together with the specification that $a$ is the first element of the pair, and $b$ is the second element. Two ordered pairs $(a,b)$ and $(c,d)$ are equal if, and only if, $a=c$ and $b=d$:
+    \[(a,b)=(c,d) \textnormal{ means that } a=c \textnormal{ and } c=d.\]
+  \end{defn*}
+  \begin{ex*}
+    \mbox{}
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task Is $(1,2)=(2,1)$?
+      \task Is $\parens{3,\dfrac{5}{10}}=\parens{\sqrt{9},\dfrac{1}{2}}$?
+    \end{extasks}
+  \end{ex*}
+  \vspace*{\stretch{1}}
+
+  \begin{defn*}
+    Let $n\in\bbn$ and let $x_1, x_2, \dots, x_n$ be (not necessarily distinct) elements. The \textbf{ordered $n$-tuple}, $(x_1, x_2, \dots, x_n)$, consists of $x_1, x_2, \dots x_n$ together with the ordering: first $x_1$, then $x_2$, and so forth up to $x_n$. and ordered $2$-tuple is called an \textbf{ordered pair}, and ordered $3$-tuple is called an \textbf{ordered triple}.
+    
+    Two ordered $n$-tuples $(x_1,x_2,\dots,x_n)$ and $(y_1,y_2,\dots,y_n)$ are \textbf{equal} if, and only if, $x_1=y_1$, $x_2=y_2$, \dots, and $x_n=y_n$:
+      \[(x_1,x_2,\dots,x_n)=(y_1,y_2,\dots,y_n) \iff x_1=y_1, x_2=y_2, \dots, x_n=y_n.\]
+  \end{defn*}
+  \begin{ex*}
+    \mbox{}
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task Is $(1,2,3,4)=(1,2,4,3)$?
+      \task Is $\parens{3,(-2)^2,\dfrac{1}{2}}=\parens{\sqrt{9}, 4,\dfrac{3}{6}}$?
+    \end{extasks}
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{defn*}
+    Given sets $A_1, A_2, \dots, A_n$, the \textbf{Cartesian product} of $A_1, A_2, \dots, A_n$, denoted 
+      \[A_1\times A_2 \times \dots \times A_n\] 
+    is the set of all ordered $n$-tuples $(a_1, a_2, \dots, a_n)$ where $a_1\in A_1$, $a_2\in A_2$, \dots, $a_n\in A_n$:
+      \[A_1\times A_2\times \dots\times A_n = \set{(a_1,a_2,\dots,a_n)\mid a_1\in A_1, a_2\in A_2,\dots, a_n\in\A_n}\]
+  \end{defn*}
+  \begin{ex*}
+    Let $A=\set{x,y}$, $B=\set{1,2,3}$, and $C=\set{a,b}$. Find the following:
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task $A\times B$
+      \task $B\times A$
+      \task $A\times A$
+      \task* How many elements are in $A\times B$, $B\times A$, and $A\times A$?
+      \task $(A\times B)\times C$
+      \task $A\times B\times C$
+      \task Describe $\bbr\times\bbr$
+    \end{extasks}
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  \pagebreak
+  
+  \begin{defn*}
+    Let $n\in\bbn$. Given a finite set $A$, a \textbf{string of length $n$ over $A$} is an ordered $n$-tuple of elements of $A$ written without parentheses or commas. The elements of $A$ are called the \textbf{characters} of the string. The \textbf{null string} over $A$ is defined to be the ``string'' with no characters, often denoted $\lambda$, and is said to have length $0$. If $A=\set{0,1}$, then a string over $A$ is called a \textbf{bit string}.
+  \end{defn*}
+  \begin{ex*}
+    Let $A=\set{a,b}$. List all strings of length $3$ over $A$ with at least two characters that are the same.
+  \end{ex*}
+  \vspace*{\stretch{1}}
+
   \pagebreak
 \end{document}
