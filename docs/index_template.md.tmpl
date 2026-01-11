@@ -7,7 +7,7 @@ Below are links to notes used at Lander University:
   <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/{{ class_dict.get('file_name') }}" target="_blank">{{ class_dict.get('file_name') }}</a></li>
 {% if class_dict.get('list_of_pdfs',{})|length >0 %}  <details name="annotated_notes" id="{{ class_dict.get('list_id') }}">
     <summary>{{ class_dict.get('name') }} Annotated Notes</summary>
-  </details><br><br>
+  </details><br>
 {% endif %}{% endfor %}</ul>
 
 <script>

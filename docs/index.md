@@ -7,25 +7,25 @@ Below are links to notes used at Lander University:
   <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121Notes.pdf" target="_blank">math121Notes.pdf</a></li>
   <details name="annotated_notes" id="math121_NoteKeys">
     <summary>math121 Annotated Notes</summary>
-  </details><br><br>
+  </details><br>
 
   <h1> math123 </h1>
   <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123Notes.pdf" target="_blank">math123Notes.pdf</a></li>
   <details name="annotated_notes" id="math123_NoteKeys">
     <summary>math123 Annotated Notes</summary>
-  </details><br><br>
+  </details><br>
 
   <h1> math125 </h1>
   <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math125Notes.pdf" target="_blank">math125Notes.pdf</a></li>
   <details name="annotated_notes" id="math125_NoteKeys">
     <summary>math125 Annotated Notes</summary>
-  </details><br><br>
+  </details><br>
 
   <h1> math211 </h1>
   <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211Notes.pdf" target="_blank">math211Notes.pdf</a></li>
   <details name="annotated_notes" id="math211_NoteKeys">
     <summary>math211 Annotated Notes</summary>
-  </details><br><br>
+  </details><br>
 </ul>
 
 <script>
