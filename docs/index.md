@@ -104,8 +104,8 @@ Below are links to notes used at Lander University:
   show_links_by_date("math123_NoteKeys",releaseDatesList);
 
   var releaseDatesList=[
-      ["","discMathEpp5_1p1_annotated.pdf"],
-      ["","discMathEpp5_1p2_annotated.pdf"],
+      ["2026-01-12T12:00:00","discMathEpp5_01p1_annotated.pdf"],
+      ["2026-01-16T12:00:00","discMathEpp5_01p2_annotated.pdf"],
       ]
   show_links_by_date("math125_NoteKeys",releaseDatesList);
 

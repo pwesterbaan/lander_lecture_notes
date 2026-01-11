@@ -43,6 +43,8 @@ for dir_path in directories:
         df = pd.read_csv(release_date_csv_file)
         df=df.fillna(future_date) # Handles missing dates
         info_dict['release_date']=dict(zip(df['filename'],df['release date']))
+    else:
+        print(f'''{release_date_csv_file:=} does not exist yet!''')
 
     # Create list of annotated notes pdfs sorted alphabetically then by release date
     list_of_pdfs=[file.name for file in annotated_notes_dir.iterdir() if file.suffix=='.pdf']
