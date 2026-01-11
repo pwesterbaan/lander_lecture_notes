@@ -5,6 +5,7 @@ The main files are `math???Notes.{pdf,tex}` which inherit their styling from `ma
 
 * [math121Notes.pdf](https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121Notes.pdf)
 * [math123Notes.pdf](https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123Notes.pdf)
+* [math125Notes.pdf](https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math125Notes.pdf)
 * [math211Notes.pdf](https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211Notes.pdf)
 
 The included preamble files contain packages and macros needed to compile:
