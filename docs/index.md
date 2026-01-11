@@ -17,6 +17,9 @@ Below are links to notes used at Lander University:
 
   <h1> math125 </h1>
   <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math125Notes.pdf" target="_blank">math125Notes.pdf</a></li>
+  <details name="annotated_notes" id="math125_NoteKeys">
+    <summary>math125 Annotated Notes (click to expand)</summary>
+  </details>
 
   <h1> math211 </h1>
   <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211Notes.pdf" target="_blank">math211Notes.pdf</a></li>
@@ -99,6 +102,12 @@ Below are links to notes used at Lander University:
       ["2026-04-24T09:00:00","math123Notes_6p5_annotated.pdf"],
       ]
   show_links_by_date("math123_NoteKeys",releaseDatesList);
+
+  var releaseDatesList=[
+      ["","discMathEpp5_1p1_annotated.pdf"],
+      ["","discMathEpp5_1p2_annotated.pdf"],
+      ]
+  show_links_by_date("math125_NoteKeys",releaseDatesList);
 
   var releaseDatesList=[
       ["2026-01-13T11:00:00","math211Notes_1p1_annotated.pdf"],

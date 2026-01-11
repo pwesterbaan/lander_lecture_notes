@@ -5,7 +5,7 @@ Below are links to notes used at Lander University:
 <ul>{% for class_dict in list_of_class_dicts %}
   <h1> {{ class_dict.get('name') }} </h1>
   <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/{{ class_dict.get('file_name') }}" target="_blank">{{ class_dict.get('file_name') }}</a></li>
-{% if class_dict.get('list_of_pdfs')|length >0 %}  <details name="annotated_notes" id="{{ class_dict.get('list_id') }}">
+{% if class_dict.get('list_of_pdfs',{})|length >0 %}  <details name="annotated_notes" id="{{ class_dict.get('list_id') }}">
     <summary>{{ class_dict.get('name') }} Annotated Notes (click to expand)</summary>
   </details>
 {% endif %}{% endfor %}</ul>
@@ -37,9 +37,9 @@ Below are links to notes used at Lander University:
         });
     document.getElementById(noteKeysDir).appendChild(list);
     }
-{% for class_dict in list_of_class_dicts %}{% if class_dict.get('list_of_pdfs')|length >0 %}
+{% for class_dict in list_of_class_dicts %}{% if class_dict.get('list_of_pdfs',{})|length >0 %}
   var releaseDatesList=[
-      {% for file in class_dict.get('list_of_pdfs') %}["{{ class_dict.get('release_date').get(file,'') }}","{{ file }}"],
+      {% for file in class_dict.get('list_of_pdfs') %}["{{ class_dict.get('release_date',{}).get(file,'') }}","{{ file }}"],
       {% endfor %}]
   show_links_by_date("{{ class_dict.get('list_id') }}",releaseDatesList);
 {% endif %}{% endfor %}</script>
