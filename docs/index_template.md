@@ -39,7 +39,7 @@ Below are links to notes used at Lander University:
     }
 {% for class_dict in list_of_class_dicts %}{% if class_dict.get('list_of_pdfs',{})|length >0 %}
   var releaseDatesList=[
-      {% for file in class_dict.get('list_of_pdfs') %}["{{ class_dict.get('release_date',{}).get(file,'') }}","{{ file }}"],
+      {% for file in class_dict.get('list_of_pdfs') %}["{{ class_dict['release_date'][file] }}","{{ file }}"],
       {% endfor %}]
   show_links_by_date("{{ class_dict.get('list_id') }}",releaseDatesList);
 {% endif %}{% endfor %}</script>
