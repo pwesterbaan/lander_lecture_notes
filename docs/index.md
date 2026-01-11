@@ -2,7 +2,7 @@
 
 Below are links to notes used at Lander University:
 
-<ul style="column-count: 2; column-gap: 40px;">
+<ul>
   <h1> math121 </h1>
   <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121Notes.pdf" target="_blank">math121Notes.pdf</a></li>
   <details name="annotated_notes" id="math121_NoteKeys">

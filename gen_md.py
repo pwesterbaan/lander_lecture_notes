@@ -17,7 +17,7 @@ file_dir = Path(__file__).resolve().parent
 
 # prepare html template
 environment = Environment(loader=FileSystemLoader(f"""{file_dir}/docs/"""))
-template    = environment.get_template("index_template.md")
+template    = environment.get_template("index_template.md.tmpl")
 
 list_of_class_dicts=[]
 # get directories for each set of class notes
