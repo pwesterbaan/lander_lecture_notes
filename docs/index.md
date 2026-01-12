@@ -1,6 +1,6 @@
 <h1>Dr. Westerbaan's Lecture Notes</h1>
 
-Below are links to notes used at Lander University:
+Below are links to notes used at Lander University. <span style="float:right">Last Modified: 2026-01-12 13:36</span>
 
 <ul>
   <h1> math121 </h1>
