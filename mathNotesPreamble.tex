@@ -16,9 +16,14 @@
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
 \usepackage{tabularx}
 \usepackage{fontawesome}
+\usepackage{slashed}
 \extraheadheight{0.25in}
 \extrafootheight{1.0in}
 \extrawidth{1in}
+
+%Denotes a relation for math125: xRy
+\newcommand{\rel}[3][R]{#2\,#1\,#3}
+\newcommand{\notrel}[3][R]{#2\,\slashed{#1}\,#3}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Start each subfiles/*.tex with the following:
