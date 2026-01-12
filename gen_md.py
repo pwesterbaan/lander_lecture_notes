@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import datetime
+from datetime import datetime
 import posixpath
 from pathlib import Path
 from urllib.parse import urljoin
@@ -10,7 +10,7 @@ from jinja2 import Environment, FileSystemLoader
 
 github_url="https://github.com/pwesterbaan/lander_lecture_notes/raw/main"
 # Default future date when no release date given
-future_date=datetime.datetime(3000,1,1,13,0,0).isoformat()
+future_date=datetime(3000,1,1,13,0,0).isoformat()
 
 # change to directory containing this file
 file_dir = Path(__file__).resolve().parent
@@ -57,7 +57,10 @@ for dir_path in directories:
     list_of_class_dicts.append(info_dict)
 
 # use template to write file
-content=template.render(list_of_class_dicts=list_of_class_dicts)
+kwargs={}
+kwargs['list_of_class_dicts']=list_of_class_dicts
+kwargs['today_str']=datetime.now().strftime('%Y-%m-%d %H:%M')
+content=template.render(**kwargs)
 
 filename=file_dir / "docs" / "index.md"
 with open(filename, mode="w", encoding="utf-8") as message:
