@@ -41,8 +41,8 @@
     \begin{flushright}
       \smash{\raisebox{-\height}{
         \newcommand{\funcMachine}{--++(0,-vert) --++(dx,-dy) |- ++(-a,-vert) |- ++(c,-h)
-           -- ++(0,-vert) --++(-dx, -dy)[sharp corners] --++(0,-vert-vgap) %bottom left portion
-          --++(b+2*dx,0)[rounded corners] --++(0,vert+vgap) --++(-dx,dy) |- ++(a,vert)
+           -- ++(0,-vert) --++(-dx, -dy){[sharp corners] --++(0,-vert-vgap) %bottom left portion
+          --++(b+2*dx,0)} --++(0,vert+vgap) --++(-dx,dy) |- ++(a,vert)
           -- ++(0,h) -| ++(-c,vert) --++(dx,dy) --++(0,vert); %top right portion
           }
         %bottom left corner is (0,0)
