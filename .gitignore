@@ -4,9 +4,10 @@ texShortcutsWesterbaan.tex
 *.autosave.xopp
 .dropboxignore
 printouts/
-subfiles/demo_lecture.tex
 subfiles/demo_lecture.pdf
+subfiles/demo_lecture.tex
 subfiles/math???_formula_sheet.pdf
+.~*\#
 \#*\#
 
 ## .gitignore tex template

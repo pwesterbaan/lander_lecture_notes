@@ -42,12 +42,20 @@ for dir_path in directories:
         # Create dictionary from csv with release dates for each section of notes
         df = pd.read_csv(release_date_csv_file)
         df=df.fillna(future_date) # Handles missing dates
-        info_dict['release_date']=dict(zip(df['filename'],df['release date']))
+        release_dates=dict(zip(df['filename'],df['release date']))
+        info_dict['release_date']=release_dates
     else:
         print(f'''{release_date_csv_file:=} does not exist yet!''')
 
     # Create list of annotated notes pdfs sorted alphabetically then by release date
-    list_of_pdfs=[file.name for file in annotated_notes_dir.iterdir() if file.suffix=='.pdf']
+    list_of_pdfs=[pdf.name for pdf in annotated_notes_dir.iterdir() if pdf.suffix=='.pdf']
+    # Verify each pdf has a release date. Default to future otherwise
+    for filename in list_of_pdfs:
+        if filename not in release_dates:
+            print(f'''\t****{filename} not listed in {release_date_csv_file}****''')
+            release_dates[filename]=future_date
+            info_dict['release_date']=release_dates
+
     list_of_pdfs.sort()
     list_of_pdfs=sorted(list_of_pdfs,key=lambda x: info_dict.get('release_date',{}).get(x,future_date))
     info_dict['list_of_pdfs']=list_of_pdfs
