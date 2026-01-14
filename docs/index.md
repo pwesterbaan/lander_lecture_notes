@@ -28,7 +28,7 @@ Below are links to notes used at Lander University:
   </details><br>
 </ul>
 
-<span style="float:right">Last Modified: 2026-01-13 14:34</span>
+<span style="float:right">Last Modified: 2026-01-14 13:10</span>
 
 <script>
     // For anyone looking at this:
@@ -59,24 +59,24 @@ Below are links to notes used at Lander University:
     }
 
   var releaseDatesList=[
-      ["2026-01-14T14:00:00","mathApp_harshbarger_1p1_annotated.pdf"],
-      ["2026-01-21T14:00:00","mathApp_harshbarger_1p3_annotated.pdf"],
-      ["2026-01-23T14:00:00","mathApp_harshbarger_1p4_annotated.pdf"],
-      ["2026-01-27T14:00:00","mathApp_harshbarger_1p5_annotated.pdf"],
-      ["2026-01-30T14:00:00","mathApp_harshbarger_1p6_annotated.pdf"],
-      ["2026-02-11T14:00:00","mathApp_harshbarger_4p1_annotated.pdf"],
-      ["2026-02-17T14:00:00","mathApp_harshbarger_4p2_annotated.pdf"],
-      ["2026-02-24T14:00:00","mathApp_harshbarger_5p1_annotated.pdf"],
-      ["2026-03-10T14:00:00","mathApp_harshbarger_5p2_annotated.pdf"],
-      ["2026-03-11T14:00:00","mathApp_harshbarger_5p3_annotated.pdf"],
-      ["2026-03-19T14:00:00","mathApp_harshbarger_6p1_annotated.pdf"],
-      ["2026-03-24T14:00:00","mathApp_harshbarger_6p2_annotated.pdf"],
-      ["2026-03-31T14:00:00","mathApp_harshbarger_6p3_annotated.pdf"],
-      ["2026-04-01T14:00:00","mathApp_harshbarger_6p5_annotated.pdf"],
-      ["2026-04-16T14:00:00","mathApp_harshbarger_2p1_annotated.pdf"],
-      ["2026-04-16T14:00:00","mathApp_harshbarger_2p2_annotated.pdf"],
-      ["2026-04-22T14:00:00","mathApp_harshbarger_2p3_annotated.pdf"],
-      ["3000-01-01T13:00:00","mathApp_harshbarger_6p4_annotated.pdf"],
+      ["2026-01-14T14:00:00","math121Notes_1p1_annotated.pdf"],
+      ["2026-01-21T14:00:00","math121Notes_1p3_annotated.pdf"],
+      ["2026-01-23T14:00:00","math121Notes_1p4_annotated.pdf"],
+      ["2026-01-27T14:00:00","math121Notes_1p5_annotated.pdf"],
+      ["2026-01-30T14:00:00","math121Notes_1p6_annotated.pdf"],
+      ["2026-02-11T14:00:00","math121Notes_4p1_annotated.pdf"],
+      ["2026-02-17T14:00:00","math121Notes_4p2_annotated.pdf"],
+      ["2026-02-24T14:00:00","math121Notes_5p1_annotated.pdf"],
+      ["2026-03-10T14:00:00","math121Notes_5p2_annotated.pdf"],
+      ["2026-03-11T14:00:00","math121Notes_5p3_annotated.pdf"],
+      ["2026-03-19T14:00:00","math121Notes_6p1_annotated.pdf"],
+      ["2026-03-24T14:00:00","math121Notes_6p2_annotated.pdf"],
+      ["2026-03-31T14:00:00","math121Notes_6p3_annotated.pdf"],
+      ["2026-04-01T14:00:00","math121Notes_6p5_annotated.pdf"],
+      ["2026-04-16T14:00:00","math121Notes_2p1_annotated.pdf"],
+      ["2026-04-16T14:00:00","math121Notes_2p2_annotated.pdf"],
+      ["2026-04-22T14:00:00","math121Notes_2p3_annotated.pdf"],
+      ["3000-01-01T13:00:00","math121Notes_6p4_annotated.pdf"],
       ]
   show_links_by_date("math121_NoteKeys",releaseDatesList);
 
@@ -106,9 +106,9 @@ Below are links to notes used at Lander University:
   show_links_by_date("math123_NoteKeys",releaseDatesList);
 
   var releaseDatesList=[
-      ["2026-01-14T12:00:00","discMathEpp5_01p1_annotated.pdf"],
-      ["2026-01-16T12:00:00","discMathEpp5_01p2_annotated.pdf"],
-      ["2026-01-16T12:00:00","discMathEpp5_01p3_annotated.pdf"],
+      ["2026-01-14T12:00:00","math125Notes_01p1_annotated.pdf"],
+      ["2026-01-16T12:00:00","math125Notes_01p2_annotated.pdf"],
+      ["2026-01-16T12:00:00","math125Notes_01p3_annotated.pdf"],
       ]
   show_links_by_date("math125_NoteKeys",releaseDatesList);
 
