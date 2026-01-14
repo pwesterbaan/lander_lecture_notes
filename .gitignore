@@ -9,6 +9,11 @@ subfiles/demo_lecture.pdf
 subfiles/math???_formula_sheet.pdf
 \#*\#
 
+# Ignore local github pages files
+_site
+.jekyll-cache
+.sass-cache
+
 ## .gitignore tex template
 ## Core latex/pdflatex auxiliary files:
 *.aux

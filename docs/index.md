@@ -1,3 +1,8 @@
+---
+layout: default
+title: Dr. Westerbaan's Lecture Notes
+---
+
 <h1>Dr. Westerbaan's Lecture Notes</h1>
 
 Below are links to notes used at Lander University:
@@ -28,7 +33,7 @@ Below are links to notes used at Lander University:
   </details><br>
 </ul>
 
-<span style="float:right">Last Modified: 2026-01-14 13:10</span>
+<span style="float:right">Last Modified: 2026-01-14 15:09</span>
 
 <script>
     // For anyone looking at this:
