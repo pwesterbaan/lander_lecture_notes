@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Dr. Westerbaan's Lecture Notes
+title: Westerbaan--Lander lecture notes
 ---
 
 <h1>Dr. Westerbaan's Lecture Notes</h1>
@@ -9,31 +9,40 @@ Below are links to notes used at Lander University:
 
 <ul>
   <h1> math121 </h1>
-  <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121Notes.pdf" target="_blank">math121Notes.pdf</a></li>
-  <details name="annotated_notes" id="math121_NoteKeys">
-    <summary>math121 Annotated Notes</summary>
-  </details><br>
+  <li>
+    <a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121Notes.pdf" target="_blank">math121Notes.pdf</a>
+    <details name="annotated_notes" id="math121_NoteKeys">
+      <summary>math121 Annotated Notes</summary>
+    </details>
+  </li><br>
 
   <h1> math123 </h1>
-  <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123Notes.pdf" target="_blank">math123Notes.pdf</a></li>
-  <details name="annotated_notes" id="math123_NoteKeys">
-    <summary>math123 Annotated Notes</summary>
-  </details><br>
+  <li>
+    <a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123Notes.pdf" target="_blank">math123Notes.pdf</a>
+    <details name="annotated_notes" id="math123_NoteKeys">
+      <summary>math123 Annotated Notes</summary>
+    </details>
+  </li><br>
 
   <h1> math125 </h1>
-  <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math125Notes.pdf" target="_blank">math125Notes.pdf</a></li>
-  <details name="annotated_notes" id="math125_NoteKeys">
-    <summary>math125 Annotated Notes</summary>
-  </details><br>
+  <li>
+    <a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math125Notes.pdf" target="_blank">math125Notes.pdf</a>
+    <details name="annotated_notes" id="math125_NoteKeys">
+      <summary>math125 Annotated Notes</summary>
+    </details>
+  </li><br>
 
   <h1> math211 </h1>
-  <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211Notes.pdf" target="_blank">math211Notes.pdf</a></li>
-  <details name="annotated_notes" id="math211_NoteKeys">
-    <summary>math211 Annotated Notes</summary>
-  </details><br>
+  <li>
+    <a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211Notes.pdf" target="_blank">math211Notes.pdf</a>
+    <details name="annotated_notes" id="math211_NoteKeys">
+      <summary>math211 Annotated Notes</summary>
+    </details>
+  </li><br>
 </ul>
 
-<span style="float:right">Last Modified: 2026-01-14 15:09</span>
+<!---<a href="about_me">About me!</a>-->
+<span style="float:right">Last Modified: 2026-01-15 09:20</span>
 
 <script>
     // For anyone looking at this:

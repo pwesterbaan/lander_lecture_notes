@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Dr. Westerbaan's Lecture Notes
+title: Westerbaan--Lander lecture notes
 ---
 
 <h1>Dr. Westerbaan's Lecture Notes</h1>
@@ -9,12 +9,15 @@ Below are links to notes used at Lander University:
 
 <ul>{% for class_dict in list_of_class_dicts %}
   <h1> {{ class_dict.get('name') }} </h1>
-  <li><a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/{{ class_dict.get('file_name') }}" target="_blank">{{ class_dict.get('file_name') }}</a></li>
-{% if class_dict.get('list_of_pdfs',{})|length >0 %}  <details name="annotated_notes" id="{{ class_dict.get('list_id') }}">
-    <summary>{{ class_dict.get('name') }} Annotated Notes</summary>
-  </details><br>
+  <li>
+    <a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/{{ class_dict.get('file_name') }}" target="_blank">{{ class_dict.get('file_name') }}</a>
+{% if class_dict.get('list_of_pdfs',{})|length >0 %}    <details name="annotated_notes" id="{{ class_dict.get('list_id') }}">
+      <summary>{{ class_dict.get('name') }} Annotated Notes</summary>
+    </details>
+  </li><br>
 {% endif %}{% endfor %}</ul>
 
+<!---<a href="about_me">About me!</a>-->
 <span style="float:right">Last Modified: {{ today_str }}</span>
 
 <script>
