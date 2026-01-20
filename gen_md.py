@@ -13,15 +13,15 @@ github_url="https://github.com/pwesterbaan/lander_lecture_notes/raw/main"
 future_date=datetime(3000,1,1,13,0,0).isoformat()
 
 # change to directory containing this file
-file_dir = Path(__file__).resolve().parent
+working_dir = Path(__file__).resolve().parent
 
 # prepare html template
-environment = Environment(loader=FileSystemLoader(f"""{file_dir}/docs/"""))
-template    = environment.get_template("index_template.md.tmpl")
+environment = Environment(loader=FileSystemLoader(working_dir))
+template    = environment.get_template("index_template.jinja2")
 
 list_of_class_dicts=[]
 # get directories for each set of class notes
-directories = sorted(file_dir.glob("*_NoteKeys"))
+directories = sorted(working_dir.glob("*_NoteKeys"))
 for dir_path in directories:
     info_dict={}
 
@@ -70,7 +70,7 @@ kwargs['list_of_class_dicts']=list_of_class_dicts
 kwargs['today_str']=datetime.now().strftime('%Y-%m-%d %H:%M')
 content=template.render(**kwargs)
 
-filename=file_dir / "docs" / "index.md"
+filename=working_dir / "docs" / "index.md"
 with open(filename, mode="w", encoding="utf-8") as message:
     message.write(content)
 print("done!")
