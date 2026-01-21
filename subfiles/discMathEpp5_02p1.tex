@@ -5,5 +5,195 @@
 \relscale{\relscalefact}
   \section{2.1: Logical Form and Logical Equivalence}
 
+  \begin{defn*}
+    A \textbf{statement} (or \textbf{proposition}) is a sentence that is true or false, but not both.
+  \end{defn*}
+  
+  \begin{ex*}
+    Determine which of the following are statements:
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $2+2=4$
+      \task $2+2=5$
+      \task $x^2+2=11$
+      \task Today is Saturday.
+      \task She is a computer science major.
+      \task Jane is a computer science major.
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+  
+  \begin{defn*}[Compound Statements]
+    Let $p$ and $q$ be statement variables.
+    \begin{itemize}
+      \item The \textbf{negation} of $p$ is ``not $p$'', and is denoted as $\sim p$ (or $\neg p$)
+      \item The \textbf{conjunction} of $p$ and $q$ is ``$p$ and $q$'', and is denoted at $p\land q$
+      \item The \textbf{disjunction} of $p$ and $q$ is ``$p$ or $q$'', and is denoted $p\lor q$.
+      \item The \textbf{exclusive or} of $p$ and $q$ is ``$p$ x-or $q$'', and is denoted $p\oplus q$ (or $p$ XOR $q$)
+    \end{itemize}
+    The \textbf{order of operations} specifies that $\sim$ is performed first.
+  \end{defn*}
+  \begin{ex*}
+    Consider the following statements:
+    \begin{center}
+      \begin{tabular}{@{}Rl@{}}
+        p: & It is raining.\\
+        q: & It is sunny.\\
+        r: & It is cloudy.
+      \end{tabular}
+    \end{center}
+    Rewrite the following compound statements in words:
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $\sim p$
+      \task $p \lor q$
+      \task $q \land r$
+      \task $q \land \sim r$
+      \task $p \land \parens{q\lor r}$
+      \task $p \oplus q$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    A \textbf{statement form} (or \textbf{propositional form}) is an expression made up of statement variables (e.g., $p$, $q$, and $r$), and logical connectives (e.g. $\sim$, $\land$, $\lor$, and $\oplus$). 
+    
+    The \textbf{truth table} for a given statement form displays the truth values that correspond to all possible combinations of truth values for its component statement variables.
+  \end{defn*}
+
+  \begin{ex*}
+    Let $p$ and $q$ be statement variables. Fill out the following truth tables:
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task 
+        \setlength{\tabcolsep}{12pt}
+        \renewcommand{\arraystretch}{1.15}
+        \begin{tabular}{@{}cc@{}}
+          \hline
+          $p$& $\sim p$\\\hline
+          T\\
+          F\\
+          \hline
+        \end{tabular}
+      \task 
+        \setlength{\tabcolsep}{12pt}
+        \renewcommand{\arraystretch}{1.15}
+        \begin{tabular}{@{}cc|c|c|c@{}}
+          \hline
+          $p$& $q$& $p\land q$& $p\lor q$& $p\oplus q$\\\hline
+          T& T &&&\\
+          T& F &&&\\
+          F& T &&&\\
+          F& F &&&\\
+          \hline
+        \end{tabular}
+      \task
+        \setlength{\tabcolsep}{12pt}
+        \renewcommand{\arraystretch}{1.15}
+        \begin{tabular}{@{}cc|ccc|c@{}}
+          \hline
+          $p$& $q$& $p\lor q$& $p\land q$& $\sim\parens{p\land q}$ & $\parens{p\lor q} \land \sim\parens{p\land q}$\\\hline
+          T& T &&&&\\
+          T& F &&&&\\
+          F& T &&&&\\
+          F& F &&&&\\
+          \hline
+        \end{tabular}
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Construct a truth table for the statement form $\parens{p\land q} \lor \sim r$.
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{defn*}
+    Two \emph{statement forms} are called \textbf{logically equivalent} if, and only if, they have identical true values for each possible substitution of statements for their statement variables. The logical equivalence of statement forms $P$ and $Q$ is denoted $P\equiv Q$.
+    
+%    Two \emph{statements} are called \textbf{logically equivalent} if, and only if, they have logically equivalent forms when identical component statement variables are used to replace identical component statements.
+  \end{defn*}
+  \begin{ex*}
+    Use truth tables to test if the following statement forms are equivalent:
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task $p$ and $\sim\parens{\sim p}$
+      \task $\sim\parens{p\land q}$ and $\sim p\land \sim q$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}[De Morgan's Laws]
+    The negation of an \emph{and} statement is logically equivalent to the \emph{or} statement in which each component is negated.
+
+    The negation of an \emph{or} statement is logically equivalent to the \emph{and} statement in which each component is negated.
+  \end{defn*}
+  \begin{ex*}
+    Use truth tables to show that the following statement forms are equivalent:
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task $\sim\parens{p \land q}$ and $\sim p\lor \sim q$
+      \task $\sim\parens{p \lor q}$ and $\sim p\land \sim q$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+  
+  \begin{ex*}
+    Using De Morgan's law to write the negation of the following statements:
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task Jim is at least 6 feet tall and weighs at least $200$ pounds.
+      \task The bus was late or Tom's watch was slow.
+      \task $-1< x\leq 4$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    A \textbf{tautology} is a statement form that is always true.
+    
+    A \textbf{contradiction} is a statement form that is always false.
+  \end{defn*}
+  \begin{ex*}
+    Complete the truth tables for $p\land \sim p$ and $p\lor \sim p$
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  
+  \begin{ex*}
+    Let \textbf{t} be a tautology, and \textbf{c} be a contradiction. Show that $p\land \textbf{t}\equiv p$ and $p\land \textbf{c}\equiv \textbf{c}$
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{thmBox*}[Theorem 2.1.1 Logical Equivalences (p 49)]
+    Given any statement variables $p$, $q$, and $r$, a tautology \textbf{t} and a contradiction \textbf{c}, the following logical equivalences hold:
+    \TabPositions{20mm,110mm}
+    \begin{enumerate}
+      \item Commutative laws: \\
+        \mbox{}\tab $p\land q \equiv q\land p$ \tab $p\lor q \equiv q\lor p$
+      \item Associative laws: \\
+        \mbox{}\tab $\parens{p\land q}\land r\equiv p\land\parens{q\land r}$ \tab $\parens{p\lor q}\lor r\equiv p\lor\parens{q\lor r}$
+      \item Distributive laws: \\
+        \mbox{}\tab $p\land \parens{q\lor r} \equiv \parens{p\land q} \lor \parens{p\land r}$ \tab $p\lor \parens{q\land r} \equiv \parens{p\lor q} \land \parens{p\lor r}$
+      \item Identity laws: \\
+        \mbox{}\tab $p\land \textbf{t} \equiv p$ \tab $p\lor \textbf{c} \equiv p$
+      \item Negation laws: \\
+        \mbox{}\tab $p\lor \sim p\equiv \textbf{t}$ \tab $p\land \sim p\equiv\textbf{c}$
+      \item Double negative law: \\
+        \mbox{}\tab $\sim\parens{\sim p}\equiv p$
+      \item Idempotent laws: \\
+        \mbox{}\tab $p\land p\equiv p$ \tab $p\lor p\equiv p$
+      \item Universal bound laws: \\
+        \mbox{}\tab $p\lor \textbf{t}\equiv \textbf{t}$ \tab $p\land \textbf{c}\equiv\textbf{c}$
+      \item De Morgan's laws: \\
+        \mbox{}\tab $\sim\parens{p\land q}\equiv \sim p\lor \sim q$ \tab $\sim\parens{p\lor q}\equiv \sim p\land \sim q$
+      \item Absorption laws: \\
+        \mbox{}\tab $p\land\parens{p\lor q}\equiv p$ \tab $p\land\parens{p\lor q}\equiv p$
+      \item Negations of \textbf{t} and \textbf{c}: \\
+        \mbox{}\tab $\sim\textbf{t} \equiv \textbf{c}$ \tab $\sim\textbf{c} \equiv \textbf{t}$
+    \end{enumerate}
+  \end{thmBox*}
+
   \pagebreak
 \end{document}
