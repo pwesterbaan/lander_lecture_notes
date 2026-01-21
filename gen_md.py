@@ -1,4 +1,13 @@
-#!/usr/bin/env python
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.14"
+# dependencies = [
+#     "datetime>=6.0",
+#     "jinja2>=3.1.6",
+#     "pandas>=3.0.0",
+#     "pathlib>=1.0.1",
+# ]
+# ///
 
 from datetime import datetime
 import posixpath

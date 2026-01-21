@@ -8,6 +8,7 @@ subfiles/demo_lecture.tex
 subfiles/demo_lecture.pdf
 subfiles/math???_formula_sheet.pdf
 \#*\#
+.python-version
 
 # Ignore local github pages files
 _site
