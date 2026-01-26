@@ -4,6 +4,237 @@
 \begin{document}
 \relscale{\relscalefact}
   \section{2.2: Conditional Statements}
+  
+  \begin{defn*}
+    If $p$ and $q$ are statement variables, the \textbf{conditional} of $q$ by $p$ is ``If $p$ then $q$'', or ``$p$ implies $q$'' and is denoted by $p\rightarrow q$. It is false when $p$ is true and $q$ is false; otherwise it is true. We call $p$ the \textbf{hypothesis} (or \textbf{antecedent}) of the conditional and $q$ the \textbf{conclusion} (or \textbf{consequent}).
+    
+    A conditional statement that is always true because the hypothesis is false is called \textbf{vacuously true}.
+  \end{defn*}
+    \[\textnormal{If } \underbrace{4,686 \textnormal{ is divisible by }6,}_{\textnormal{hypothesis}} \textnormal{ then } \underbrace{4,686 \textnormal{ is divisible by } 3}_{\textnormal{conclusion}}\]
+  \begin{ex*}
+    Consider the following statement:
+    \begin{quote}
+      If Lander is open, then we will have class.
+    \end{quote}
+    Create the truth table for $p\rightarrow q$
+    \begin{center}
+      \setlength{\tabcolsep}{12pt}
+      \renewcommand{\arraystretch}{1.15}
+      \begin{tabular}{@{}cc|c@{}}
+        \hline
+        $p$& $q$& $p\rightarrow q$\\
+        \hline
+        T&T&\\
+        T&F&\\
+        F&T&\\
+        F&F&\\
+        \hline
+      \end{tabular}
+    \end{center}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{center}
+    \emph{Note}: The \textbf{order of operations} states that $\rightarrow$ is performed last
+  \end{center}
+  \begin{ex*}
+    Create the truth table for $p\lor \sim q \rightarrow \sim p$.
+    \begin{center}
+      \setlength{\tabcolsep}{12pt}
+      \renewcommand{\arraystretch}{1.15}
+      \begin{tabular}{@{}cc|ccc|c@{}}
+        \hline
+        $p$& $q$& $\sim q$& $p \lor \sim q$& $\sim p$& $p\lor \sim q \rightarrow \sim p$\\
+        \hline
+        T&T&&&&\\
+        T&F&&&&\\
+        F&T&&&&\\
+        F&F&&&&\\
+        \hline
+      \end{tabular}
+    \end{center}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{ex*}
+    Use a truth table to show that $p \lor q \equiv \parens{p\rightarrow r} \land \parens{q\rightarrow r}$
+
+    \begin{center}
+      \setlength{\tabcolsep}{10pt}
+      \renewcommand{\arraystretch}{1.15}
+      \begin{tabular}{@{}ccc|cccc|c@{}}
+        \hline
+        $p$& $q$& $r$& $p\lor q$& $p\rightarrow r$& $q\rightarrow  r$& $p\land q\rightarrow r$& $p \lor q \equiv \parens{p\rightarrow r} \land \parens{q\rightarrow r}$\\
+        \hline
+        T&T&T&&&&&\\
+        T&T&F&&&&&\\
+        T&F&T&&&&&\\
+        T&F&F&&&&&\\
+        F&T&T&&&&&\\
+        F&T&F&&&&&\\
+        F&F&T&&&&&\\
+        F&F&F&&&&&\\
+        \hline
+      \end{tabular}
+    \end{center}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    The \textbf{negation} of ``if $p$ then $q$'' is logically equivalent to ``$p$ and not $q$'':
+      \[\sim\parens{p\rightarrow q} \equiv p\land \sim q\]
+  \end{defn*}
+  \begin{ex*}
+    Write negations for each of the following statements:
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task If my car is in the repair shop, then I cannot get to class.
+      \task If Sara lives in Athens, then she lives in Greece.
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+%  \pagebreak
+  
+  \begin{defn*}
+    The \textbf{contrapositive} of a conditional statement of the form ``If $p$ then $q$'' is
+      \[\textnormal{If } \sim q \textnormal{ then } \sim p: \quad \sim q\rightarrow \sim p\]
+    A conditional statement is logically equivalent to its contrapositive.
+  \end{defn*}
+  \begin{ex*}
+    Write each of the following statements in its equivalent contrapositive form:
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task If Howard can swim across the lake, then Howard can swim to the island.
+      \task If today is Easter, then tomorrow is Monday.
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    Suppose a conditional statement of the form ``If $p$ then $q$'' is given.
+    \TabPositions{87.5mm}
+    \begin{itemize}
+      \item The \textbf{converse} is ``If $q$ then $p$'': \tab $q\rightarrow p$
+      \item The \textbf{inverse} is ``If $\sim p$ then $\sim q$'': \tab $\mathllap{\sim} p\rightarrow \sim q$
+    \end{itemize}
+  \end{defn*}
+  \begin{ex*}
+    Write the converse and inverse of each of the following statements:
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task If Howard can swim across the lake, then Howard can swim to the island.
+        \begin{description}[itemsep=25pt]
+          \item[Converse:]
+          \item[Inverse:]
+        \end{description}
+      \task If today is Easter, then tomorrow is Monday.
+        \begin{description}[itemsep=25pt]
+          \item[Converse:]
+          \item[Inverse:]
+        \end{description}
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  
+  \noindent
+  \emph{Note}:
+  \begin{enumerate}
+    \item A conditional statement and its converse are \emph{not} logically equivalent.
+    \item A conditional statement and its inverse are \emph{not} logically equivalent.
+    \item The converse and the inverse of a conditional statement are logically equivalent to each other.
+  \end{enumerate}
+  \pagebreak
+
+  \begin{defn*}
+    If $p$ and $q$ are statements, $p$ \textbf{only if} $q$ means ``if not $q$ then not $p$'':
+    \[\sim q \rightarrow \sim p \equiv p\rightarrow q\]
+  \end{defn*}
+  \begin{ex*}
+    Rewrite the following statement in if-then form in two ways, one of which is the contrapositive of the other:
+    \begin{quote}
+      John will break the world's record for the mile run only if he runs the mile in under four minutes.
+    \end{quote}
+    \begin{description}[itemsep=\stretch{1}]
+      \item[$\mathllap{\sim} q\rightarrow \sim p$] 
+      \item[$p \rightarrow q$]
+    \end{description}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  
+  \noindent
+  \emph{Note}: 
+  \begin{enumerate}
+    \item ``$p$ only if $q$'' does \emph{not} mean $p$ if $q$
+    \item It is possible for ``$p$ only if $q$'' to be true at the same time that ``$p$ if $q$'' is false.
+    \begin{quote}
+      e.g.: If John runs a mile in under four minutes, he still might not be fast enough to break the record.
+    \end{quote}
+  \end{enumerate}
+  \pagebreak
+
+  \begin{defn*}
+    Given statement variables $p$ and $q$, the \textbf{biconditional of $p$ and $q$} is ``$p$ if, and only if, $q$'' and is denoted $p\leftrightarrow q$. It is true if both $p$ and $q$ have the same truth values and is false otherwise. The words \emph{if and only if} are sometimes abbreviated \textbf{iff}.
+  \end{defn*}
+  
+  \begin{center}
+    \emph{Note}: The \textbf{order of operations} states that $\leftrightarrow$ is coequal with $\rightarrow$
+  \end{center}
+  \begin{ex*}
+    Create the truth table for $p\leftrightarrow q$
+    \begin{center}
+      \setlength{\tabcolsep}{12pt}
+      \renewcommand{\arraystretch}{1.15}
+      \begin{tabular}{@{}cc|c@{}}
+        \hline
+        $p$& $q$& $p\leftrightarrow q$\\
+        \hline
+        T&T&\\
+        T&F&\\
+        F&T&\\
+        F&F&\\
+        \hline
+      \end{tabular}
+    \end{center}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{thmBox*}[Order of Operations for Logical Operators]
+    \setlength{\tabcolsep}{12pt}
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{@{}ll@{}}
+      $\sim$ & Evaluate negations first\\
+      $\land, \lor$ & Evaluate $\land$ and $\lor$ second. When both present, parentheses may be needed.\\
+      $\rightarrow, \leftrightarrow$ & Evaluate $\land$ and $\lor$ third. When both present, parentheses may be needed.
+    \end{tabular}
+  \end{thmBox*}
+  \pagebreak
+
+  \begin{defn*}
+    If $r$ and $s$ are statements:
+    \TabPositions{155mm}
+    \begin{enumerate}[itemsep=15pt]
+      \item $r$ is a \textbf{sufficient condition} for $s$ means ``if $r$ then $s$''. \tab $r\rightarrow s$
+      \item $r$ is a \textbf{necessary condition} for $s$ means ``if not $r$ then not $s$''. \tab $\mathllap{\sim} r\rightarrow \sim s$
+    \end{enumerate}
+    By property of the contrapositive:
+    \begin{enumerate}[resume]
+      \item $r$ is a \emph{necessary and sufficient condition} for $s$ means ``$r$ if, and only if $s$.''
+
+      \tab $r \leftrightarrow s$
+    \end{enumerate}
+  \end{defn*}
+  \begin{ex*}
+    Rewrite the following statement in the form ``If $A$ then $B$'':
+    \begin{quote}
+      Having two $45^\circ$ angles is a sufficient condition for this triangle to be a right triangle.
+    \end{quote}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{ex*}
+    Use the contrapositive to rewrite the following statement in two ways:
+    \begin{quote}
+      George's attaining age 35 is a necessary condition for his being president of the United States.
+    \end{quote}
+    \vspace*{\stretch{1}}
+  \end{ex*}
 
   \pagebreak
 \end{document}
