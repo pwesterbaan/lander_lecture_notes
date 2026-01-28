@@ -4,10 +4,10 @@
 \begin{document}
 \relscale{\relscalefact}
   \section{2.2: Conditional Statements}
-  
+
   \begin{defn*}
     If $p$ and $q$ are statement variables, the \textbf{conditional} of $q$ by $p$ is ``If $p$ then $q$'', or ``$p$ implies $q$'' and is denoted by $p\rightarrow q$. It is false when $p$ is true and $q$ is false; otherwise it is true. We call $p$ the \textbf{hypothesis} (or \textbf{antecedent}) of the conditional and $q$ the \textbf{conclusion} (or \textbf{consequent}).
-    
+
     A conditional statement that is always true because the hypothesis is false is called \textbf{vacuously true}.
   \end{defn*}
     \[\textnormal{If } \underbrace{4,686 \textnormal{ is divisible by }6,}_{\textnormal{hypothesis}} \textnormal{ then } \underbrace{4,686 \textnormal{ is divisible by } 3}_{\textnormal{conclusion}}\]
@@ -64,7 +64,7 @@
       \renewcommand{\arraystretch}{1.15}
       \begin{tabular}{@{}ccc|cccc|c@{}}
         \hline
-        $p$& $q$& $r$& $p\lor q$& $p\rightarrow r$& $q\rightarrow  r$& $p\land q\rightarrow r$& $p \lor q \equiv \parens{p\rightarrow r} \land \parens{q\rightarrow r}$\\
+        $p$& $q$& $r$& $p\lor q$& $p\rightarrow r$& $q\rightarrow  r$& $p\lor q\rightarrow r$& $p \lor q \equiv \parens{p\rightarrow r} \land \parens{q\rightarrow r}$\\
         \hline
         T&T&T&&&&&\\
         T&T&F&&&&&\\
@@ -94,7 +94,7 @@
     \vspace*{\stretch{1}}
   \end{ex*}
 %  \pagebreak
-  
+
   \begin{defn*}
     The \textbf{contrapositive} of a conditional statement of the form ``If $p$ then $q$'' is
       \[\textnormal{If } \sim q \textnormal{ then } \sim p: \quad \sim q\rightarrow \sim p\]
@@ -134,7 +134,7 @@
     \end{extasks}
     \vspace*{\stretch{1}}
   \end{ex*}
-  
+
   \noindent
   \emph{Note}:
   \begin{enumerate}
@@ -154,14 +154,14 @@
       John will break the world's record for the mile run only if he runs the mile in under four minutes.
     \end{quote}
     \begin{description}[itemsep=\stretch{1}]
-      \item[$\mathllap{\sim} q\rightarrow \sim p$] 
+      \item[$\mathllap{\sim} q\rightarrow \sim p$]
       \item[$p \rightarrow q$]
     \end{description}
     \vspace*{\stretch{1}}
   \end{ex*}
-  
+
   \noindent
-  \emph{Note}: 
+  \emph{Note}:
   \begin{enumerate}
     \item ``$p$ only if $q$'' does \emph{not} mean $p$ if $q$
     \item It is possible for ``$p$ only if $q$'' to be true at the same time that ``$p$ if $q$'' is false.
@@ -174,7 +174,7 @@
   \begin{defn*}
     Given statement variables $p$ and $q$, the \textbf{biconditional of $p$ and $q$} is ``$p$ if, and only if, $q$'' and is denoted $p\leftrightarrow q$. It is true if both $p$ and $q$ have the same truth values and is false otherwise. The words \emph{if and only if} are sometimes abbreviated \textbf{iff}.
   \end{defn*}
-  
+
   \begin{center}
     \emph{Note}: The \textbf{order of operations} states that $\leftrightarrow$ is coequal with $\rightarrow$
   \end{center}
