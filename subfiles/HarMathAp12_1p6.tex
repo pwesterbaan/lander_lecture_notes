@@ -40,14 +40,16 @@
       P(\x)=R(\x)-C(\x);},
       every node/.append style={black, align=left, font=\large}]
       \begin{groupplot}[
-        group style={group size=3 by 1, horizontal sep=20mm},
+        scaled ticks=false,
+        yticklabel style={/pgf/number format/.cd,fixed},%,precision=5},
+        group style={group size=3 by 1, horizontal sep=30mm},
         axis lines=center,
         axis line style={black,->},
         xmin=0, xmax=15000,
         ymin=0, ymax=350000,
         width=0.3\linewidth/0.8,
         ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
-        xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=west, xshift=5pt},
+        xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=south west, xshift=5pt},
         every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255},
         yticklabel style={/pgf/number format/fixed},
         ]
