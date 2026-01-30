@@ -19,7 +19,7 @@
     Create the truth table for $p\rightarrow q$
     \begin{center}
       \setlength{\tabcolsep}{12pt}
-      \renewcommand{\arraystretch}{1.15}
+      \renewcommand{\arraystretch}{1.2}
       \begin{tabular}{@{}cc|c@{}}
         \hline
         $p$& $q$& $p\rightarrow q$\\
@@ -42,7 +42,7 @@
     Create the truth table for $p\lor \sim q \rightarrow \sim p$.
     \begin{center}
       \setlength{\tabcolsep}{12pt}
-      \renewcommand{\arraystretch}{1.15}
+      \renewcommand{\arraystretch}{1.2}
       \begin{tabular}{@{}cc|ccc|c@{}}
         \hline
         $p$& $q$& $\sim q$& $p \lor \sim q$& $\sim p$& $p\lor \sim q \rightarrow \sim p$\\
@@ -57,14 +57,14 @@
     \vspace*{\stretch{1}}
   \end{ex*}
   \begin{ex*}
-    Use a truth table to show that $p \lor q \equiv \parens{p\rightarrow r} \land \parens{q\rightarrow r}$
+    Use a truth table to show that $p \lor q \rightarrow r \equiv \parens{p\rightarrow r} \land \parens{q\rightarrow r}$
 
     \begin{center}
       \setlength{\tabcolsep}{10pt}
-      \renewcommand{\arraystretch}{1.15}
-      \begin{tabular}{@{}ccc|cccc|c@{}}
+      \renewcommand{\arraystretch}{1.2}
+      \begin{tabular}{@{}ccc|cc|cc|c@{}}
         \hline
-        $p$& $q$& $r$& $p\lor q$& $p\rightarrow r$& $q\rightarrow  r$& $p\lor q\rightarrow r$& $\parens{p\rightarrow r} \land \parens{q\rightarrow r}$\\
+        $p$& $q$& $r$& $p\lor q$& $p\lor q\rightarrow r$& $p\rightarrow r$& $q\rightarrow  r$& $\parens{p\rightarrow r} \land \parens{q\rightarrow r}$\\
         \hline
         T&T&T&&&&&\\
         T&T&F&&&&&\\
@@ -182,7 +182,7 @@
     Create the truth table for $p\leftrightarrow q$
     \begin{center}
       \setlength{\tabcolsep}{12pt}
-      \renewcommand{\arraystretch}{1.15}
+      \renewcommand{\arraystretch}{1.2}
       \begin{tabular}{@{}cc|c@{}}
         \hline
         $p$& $q$& $p\leftrightarrow q$\\
