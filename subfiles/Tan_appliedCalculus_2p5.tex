@@ -51,7 +51,7 @@
     \end{align*}
     if the values of $f(x)$ can be made as close to $L$ as we please by taking $x$ sufficiently close to (but not equal to) $a$ and to the right of $a$.
 
-    The function $f$ has a \textbf{left-hand limit} $L$ as $x$ approaches $a$ from the left, written
+    The function $f$ has a \textbf{left-hand limit} $M$ as $x$ approaches $a$ from the left, written
     \begin{align*}
       \lim_{x\to a^-} f(x)=M
     \end{align*}
@@ -85,8 +85,8 @@
         grid style={line width=0.35pt, draw=gray!75},
         axis lines=center,
         axis line style={black,-},
-        xmin=-5, xmax=7,
-        ymin=-5, ymax=5,
+        xmin=-5, xmax=5,
+        ymin=-2.5, ymax=2.5,
         xtick={-6,-5,...,7},
         ytick={-6,-5,...,6},
         enlargelimits={abs=0.75},
@@ -95,7 +95,7 @@
         every axis plot/.append style={line width=0.95pt, color=lander_blue},
         ]
           %% Using 'samples at' instead of domain to control plotting discontinuities
-          \addplot[->,samples at={-6,-5.975,...,-2.005,-2,-1.95,...,-1.05,-1.005,-1,-0.95,...,7.5}] {g(x)};
+          \addplot[->,samples at={-6,-5.975,...,-2.005,-2,-1.95,...,-1.025,-1.005,-1,-0.95,...,7.5}] {g(x)};
           \addplot[holdot] coordinates{(-1,0)(2,-2)};
           \addplot[soldot] coordinates{(-1,-1)(2,1)};
       \end{axis}
