@@ -42,7 +42,7 @@ Below are links to notes used at Lander University:
 </ul>
 
 <!---<a href="about_me">About me!</a>-->
-<span style="float:right">Last Modified: 2026-02-02 15:33</span>
+<span style="float:right">Last Modified: 2026-02-03 08:24</span>
 
 <script>
     // For anyone looking at this:
@@ -124,6 +124,7 @@ Below are links to notes used at Lander University:
       ["2026-01-16T12:00:00","math125Notes_01p2_annotated.pdf"],
       ["2026-01-21T12:00:00","math125Notes_01p3_annotated.pdf"],
       ["2026-01-26T12:00:00","math125Notes_02p1_annotated.pdf"],
+      ["2026-01-28T12:00:00","math125Notes_02p2_annotated.pdf"],
       ["2026-02-02T12:00:00","math125Notes_02p5_annotated.pdf"],
       ]
   show_links_by_date("math125_NoteKeys",releaseDatesList);
