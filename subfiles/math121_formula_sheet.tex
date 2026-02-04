@@ -59,8 +59,10 @@
   }
   \begin{center}
     \formulaSheetTitle{Math 121 Formula Sheet}
+    \vspace*{\baselineskip}
 
-    \renewcommand{\arraystretch}{1.755}
+    \renewcommand{\arraystretch}{2}
+    \ifnum\examUnit=-1 \renewcommand{\arraystretch}{1.825} \fi%
     \begin{tabularx}{0.95\linewidth}{@{}>{\bfseries\hsize=1.075\hsize}X>{\hsize=0.925\hsize}X@{}}
       \ifnum\examUnit=1 \chOne  \fi%
       \ifnum\examUnit=4 \chFour \fi%
