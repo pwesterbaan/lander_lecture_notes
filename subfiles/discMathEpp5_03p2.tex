@@ -5,5 +5,116 @@
 \relscale{\relscalefact}
   \section{3.2: Predicates and Quantified Statements II}
 
+  \begin{defn*}
+    \begin{itemize}
+      \item 
+        The negation of a statement of the form
+          \[\forall x \textnormal{ in } D,\ Q(x)\]
+        is logically equivalent to a statement of the form
+          \[\exists x\textnormal{ in } D \st \sim Q(x).\]
+          \[\sim\parens{\forall x\in D,\ Q(x)} \equiv \exists x\in D\st \sim Q(x).\]
+      \item 
+        The negation of a statement of the form
+          \[\exists x\textnormal{ in } D \st Q(x)\]
+        is logically equivalent to a statement of the form
+          \[\forall x\textnormal{ in } D,\ \sim Q(x).\]
+          \[\sim\parens{\exists x\in D\st Q(x)}\equiv \forall x\in D,\ \sim Q(x)\]
+    \end{itemize}
+  \end{defn*}
+
+  \begin{ex*}
+    Negate the following statements:
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task $\forall$ primes $p$, $p$ is odd
+      \task $\exists$ a triangle $T$ such that the sum of the angles of $T$ equals $200^\circ$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
   \pagebreak
+
+  \begin{ex*}
+    Rewrite the following statements formally, then write the formal and informal negations.
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task No politicians are honest
+      \task The number $1,357$ is not divisible by any integer between $1$ and $37$.
+    \end{extasks}
+    \vspace{\stretch{1}}
+  \end{ex*}
+  \begin{ex*}
+    Write informal negations for the following statements:
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task All computer programs are finite.
+      \task Some computer hackers are over $40$.
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{thmBox*}[Negation of a Universal Conditional Statement]
+    \[\sim\parens{\forall x, \textnormal{ if } P(x) \textnormal{ then } Q(x)} \equiv \exists x\st P(x) \textnormal{ and } \sim Q(x)\]
+  \end{thmBox*}
+
+  \begin{defn*}
+    A statement of the form
+      \[\forall x \textnormal{ in } D, \textnormal{ if } P(x) \textnormal{ then } Q(x)\]
+    is called \textbf{vacuously true} or \textbf{true by default} if, and only if, $P(x)$ is false for every $x$ in $D$.
+  \end{defn*}
+  \begin{ex*}
+    The following statement is vacuously true since it's negation is false:
+    \begin{quote}
+      All elephants enrolled in my class are passing.
+    \end{quote}
+    \vspace*{3\baselineskip}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    Consider a statement of the form $\forall x\in D$, if $P(x)$ then $Q(x)$.
+    \TabPositions{90mm}
+    \begin{enumerate}
+      \item Its \textbf{contrapositive} is the statement \tab $\forall x\in D$, if $\sim Q(x)$ then $\sim P(x)$.
+      \item Its \textbf{converse} is the statement \tab $\forall x\in D$, if $Q(x)$ then $P(x)$.
+      \item Its \textbf{inverse} is the statement \tab $\forall x\in D$, if $\sim P(x)$ then $\sim Q(x)$.
+    \end{enumerate}
+  \end{defn*}
+  \begin{ex*}
+    Write a formal and informal contrapositive, converse, and inverse for the following statement:
+    \begin{quote}
+      If a real number is greater than $2$, then its square is greater than $4$.
+    \end{quote}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    \TabPositions{105mm}
+    \begin{itemize}
+      \item ``$\forall x, r(x)$ is a \textbf{sufficient condition} for $s(x)$'' \tab $\rightarrow$ ``$\forall x$, if $r(x)$ then $s(x)$''
+        \vspace*{0.5\baselineskip}
+      \item ``$\forall x, r(x)$ is a \textbf{necessary condition} for $s(x)$'' \tab $\rightarrow$ ``$\forall x$, if $\sim r(x)$ then $\sim s(x)$''
+
+        \tab $\rightarrow$ ``$\forall x$, if $s(x)$ then $r(x)$''
+        \vspace*{0.5\baselineskip}
+      \item ``$\forall x, r(x)$ \textbf{only if} $s(x)$'' \tab $\rightarrow$ ``$\forall x$, if $\sim s(x)$, then $\sim r(x)$''
+
+        \tab $\rightarrow$ ``$\forall x$, if $r(x)$ then $s(x)$''
+    \end{itemize}
+  \end{defn*}
+  \begin{ex*}
+    Rewrite each of the following as a universal conditional statement, quantified either explicitly or implicitly. Do not use the word \emph{necessary} or \emph{sufficient}.
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task Squareness is a sufficient condition for rectangularity.
+      \task Being at least $35$ years old is a necessary condition for being president of the United States.
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{ex*}
+    Rewrite the following as a universal conditional statement:
+    \begin{quote}
+      A product of two numbers is $0$ only if one of the numbers is $0$.
+    \end{quote}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
 \end{document}
