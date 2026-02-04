@@ -5,5 +5,116 @@
 \relscale{\relscalefact}
   \section{3.1: Predicates and Quantified Statements I}
 
+  \begin{defn*}
+    A \textbf{predicate} is a sentence that contains a finite number of variables and becomes a statement when specific values are substituted for the variables. 
+
+    The \textbf{domain} of a predicate variable is the set of all values that may be substituted in place of the variable.
+  \end{defn*}
+
+  \begin{ex*}
+    Let $P(x)$ be the predicate ``$x^2>x$'' with domain the set $\bbr$. Write $P(2)$, $P\parens{\frac{1}{2}}$, and $P\parens{-\frac{1}{2}}$, and indicate which of these statements are true and which are false.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+
+  \begin{defn*}
+    If $P(x)$ is a predicate and $x$ has domain $D$, the \textbf{truth set} of $P(x)$ is the set of all elements of $D$ that make $P(x)$ true when they are substituted for $x$. The truth set of $P(x)$ is denoted
+      \[\set{x\in D \mid P(x)}\]
+  \end{defn*}
+
+  \begin{ex*}
+    Let $Q(n)$ be the predicate ``$n$ is a factor of $8$''. Find the truth set of $Q(n)$ if
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task the domain of $n$ is $\bbz^+$
+      \task the domain of $n$ is $\bbz$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    Let $Q(x)$ be a predicate and $D$ the domain of $x$.
+    \begin{itemize}
+      \item \textbf{Quantifiers} are words that refer to quantities such as ``some'' or ``all'' and tell for how many elements a given predicate is true.
+      \item The \textbf{universal quantifier} is represented by the symbol ``$\forall$''.
+      \item A \textbf{universal statement} is a statement of the form ``$\forall x\in D$, $Q(x)$''.
+        \begin{itemize}
+          \item It is defined to be true if, and only if, $Q(x)$ is true for \emph{each} individual $x$ in $D$. 
+          \item It is defined to be false if, and only if, $Q(x)$ is false for \emph{at least one} $x$ in $D$. 
+        \end{itemize}
+      \item A value for $x$ for which $Q(x)$ is false is called a \textbf{counterexample} to the universal statement.
+    \end{itemize}
+  \end{defn*}
+
+  \begin{ex*}
+    Let $D=\set{1,2,3,4,5}$, and consider the statement
+      \[\forall x\in D, x^2 \geq x.\]
+    Write one way to read this statement out loud, and show that it is true.
+    \vspace*{\stretch{1}}
+
+    \noindent The above example uses the \textbf{method of exhaustion}.
+  \end{ex*}
+
+  \begin{ex*}
+    Consider the statement
+      \[\forall x\in\bbr, x^2\geq x.\]
+    Find a counter example to show that this statement is false.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    Let $Q(x)$ be a predicate and $D$ the domain of $x$.
+    \begin{itemize}
+      \item The \textbf{existential quantifier} is represented by the symbol ``$\exists$''.
+      \item  An \textbf{existential statement} is a statement of the form ``$\exists x\in D$ such that $Q(x)$''. 
+      \begin{itemize}
+        \item It is defined to be true if, and only if, $Q(x)$ is true for \emph{at least one} $x$ in $D$. 
+        \item It is false if, and only if, $Q(x)$ is false \emph{for all} $x$ in $D$.
+      \end{itemize}
+    \end{itemize}
+  \end{defn*}
+
+  \begin{ex*}
+    Consider the statement
+      \[\exists m\in\bbz^+ \st m^2=m.\]
+    Write one way to read this statement out loud, and show that it is true.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+
+  \begin{ex*}
+    Let $E=\set{5, 6, 7, 8}$ and consider the statement
+      \[\exists m\in E \st m^2=m.\]
+    Show that this statement is false.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Rewrite the following statements formally using quantifiers and variables:
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task All triangles have three sides.
+      \task No dogs have wings.
+      \task Some programs are structured.
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    A \textbf{universal conditional statement} is of the form:
+      \[\forall x, \textnormal{ if } P(x) \textnormal{ then } Q(x).\]
+  \end{defn*}
+
+  \begin{ex*}
+    Rewrite each of the following statements in the form  
+      \[\forall \underline{\hspace*{20mm}}, \textnormal{ if } \underline{\hspace*{20mm}} \textnormal{ then } \underline{\hspace*{20mm}}\]
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task If a real number is an integer, then it is a rational number.
+      \task All bytes have eight bits.
+      \task No fire trucks are green.
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+
   \pagebreak
 \end{document}
