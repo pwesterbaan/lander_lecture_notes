@@ -5,5 +5,209 @@
 \relscale{\relscalefact}
   \section{6.1: Set Theory: Definitions and the Element Method of Proof}
 
+  \begin{thmBox*}[Element Argument: The Basic Method for Proving that One set is a Subset of Another]
+    Let sets $X$ and $Y$ be given. To prove that $X\subseteq Y$,
+    \begin{enumerate}
+      \item \textbf{suppose} that $x$ is a particular but arbitrarily chosen element of $X$,
+      \item \textbf{show} that $x$ is an element of $Y$
+    \end{enumerate}
+  \end{thmBox*}
+  \begin{ex*}
+    Define sets $A$ and $B$ as follows:
+      \begin{align*}
+        A&=\set{m\in \bbz \,\middle|\, m=6r+12 \textnormal{ for some } r\in\bbz}\\
+        B&=\set{n\in \bbz \,\middle|\, n=3s \textnormal{ for some } s\in\bbz}
+      \end{align*}
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task Outline a proof that $A\subseteq B$
+      \task Prove that $A\subseteq B$
+      \task Disprove that $B\subseteq A$
+    \end{extasks}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    Given sets $A$ and $B$, $A \textbf{ equals } B$, written $\mathbf{A=B}$, if, and only if, every element of $A$ is in $B$ and every element of $B$ is in $A$:
+    \[A=B \Leftrightarrow A\subseteq B \textnormal{ and } B\subseteq A.\]
+  \end{defn*}
+  \begin{ex*}
+    Define sets $A$ and $B$ as follows:
+      \begin{align*}
+        A&=\set{m\in \bbz \,\middle|\, m=6r+12 \textnormal{ for some } r\in\bbz}\\
+        B&=\set{n\in \bbz \,\middle|\, n=3s \textnormal{ for some } s\in\bbz}
+      \end{align*}
+    Is $A=B$?
+  \end{ex*}
+  \pagebreak
+  
+  \begin{defn*}
+    Given an integer $n$ and a positive integer $d$, when $n$ is divided by $d$, then
+    \begin{align*}
+      n\operatorname{div} d &=\textnormal{ the integer quotient }\\
+      n\operatorname{mod} d &=\textnormal{ the nonnegative integer remainder }
+    \end{align*}
+    If $n$ and $d$ are integers and $d>0$, then
+      \[n\operatorname{div} d=q \quad\textnormal{ and }\quad n\operatorname{mod} d=r \quad\Leftrightarrow\quad n=dq+r\]
+  \end{defn*}
+  \begin{ex*}
+    Compute the following:
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $32 \operatorname{div} 9$,\ \ $32 \operatorname{mod} 9$
+      \task $365 \operatorname{div} 7$,\ \ $365 \operatorname{mod} 7$
+    \end{extasks}
+    \vspace*{\stretch{1.5}}
+  \end{ex*}
+  
+  \begin{ex*}
+    If it is currently $11$:$00$ am, what time will it be in 
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $37$ hours?
+      \task $51$ hours?
+      \task $11$ hours?
+      \task $-1$ hours?
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  
+  \begin{ex*}
+    Let $A=\set{4, \sqrt{16}, 19 \operatorname{mod} 15}$ and $B=\set{12 \operatorname{mod} 8}$. Is $A\subseteq B$? Is $B\subseteq A$?
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+  
+  %TODO Venn diagrams (p380)
+
+  \begin{defn*}
+    Let $A$ and $B$ be subsets of a universal set $U$.
+    \begin{enumerate}
+      \item The \textbf{union} of $A$ and $B$ is the set of all elements that are in at least one of $A$ or $B$.
+        \[A\cup B=\set{x\in U \,\middle|\, x\in A \textnormal{ or } x\in B}\]
+      \item The \textbf{intersection} of $A$ and $B$ is the set of all elements that are common to both $A$ and $B$.
+        \[A\cap B=\set{x\in U \,\middle|\, x\in A \textnormal{ and } x\in B}\]
+      \item The \textbf{difference} of $A$ and $B$ is the set of all elements that are in $B$ and not $A$.
+        \[B-A=\set{x\in U \,\middle|\, x\in B \textnormal{ and } x\notin A}\]
+      \item The \textbf{complement} of $A$ is the set of all elements in $U$ that are not in $A$.
+        \[A^c=\set{x\in U \,\middle|\, x\notin A}\]
+    \end{enumerate}
+  \end{defn*}
+  \newcommand{\vennDiagram}[1]{
+    \begin{tikzpicture}[scale=0.775]
+      \draw (0,0) circle (1) (0,1)  node [text=black,above left] {$A$}
+        (1,0) circle (1) (1,1)  node [text=black,above right] {$B$}
+        (-2,-2) node [text=black,above right] {$U$} rectangle (3,2);
+      \node[above] at (0.5,2) {\ensuremath{#1}};
+    \end{tikzpicture}
+  }
+  \begin{ex*}
+    Represent the following sets using the Venn diagrams below:
+    \vspace*{\baselineskip}
+
+    \noindent%
+    \vennDiagram{A\cup B} \hspace*{\stretch{1}}%
+    \vennDiagram{A\cap B} \hspace*{\stretch{1}}%
+    \vennDiagram{B - A} \hspace*{\stretch{1}}%
+    \vennDiagram{A^c}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Let the universal set be the set $U=\set{a,b,c,d,e,f,g}$, and let $A=\set{a,c,e,g}$ and $B=\set{d,e,f,g}$. Find
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $A\cup B$
+      \task $A\cap B$
+      \task $B-A$
+      \task $A^c$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+
+  \begin{defn*}
+    Given real numbers $a$ and $b$ with $a\leq b$:
+    \begin{align*}
+      (a,b) &= \set{x\in\bbr\,\middle|\, a<x<b}& 
+      (a,b] &= \set{x\in\bbr\,\middle|\, a<x\leq b}\\
+      [a,b) &= \set{x\in\bbr\,\middle|\, a\leq x<b}& 
+      [a,b] &= \set{x\in\bbr\,\middle|\, a\leq x\leq b}
+    \end{align*}
+  \end{defn*}
+  \begin{ex*}
+    Let the universal set be $\bbr$, and let $A=(-1,0]$ and $B=[0,1)$. Find
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $A\cup B$
+      \task $A\cap B$
+      \task $B-A$
+      \task $A^c$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    Given sets $A_0, A_1, A_2,\dots$ that are subsets of a universal set $U$ and given a nonnegative integer $n$, 
+    \begin{align*}
+      \bigcup_{i=0}^n A_i&= \set{x\in U\,\middle|\, x\in A_i, \textnormal{ for at least one } i=0,1,2,\dots,n}\\
+      \bigcap_{i=0}^n A_i&= \set{x\in U\,\middle|\, x\in A_i, \textnormal{ for every } i=0,1,2,\dots,n}
+    \end{align*}
+  \end{defn*}
+  \begin{ex*}
+    For each positive integer $i$, let $A_i=\set{x\in \bbr\,\middle|\, -\dfrac{1}{i}< x< \dfrac{1}{i}}=\parens{-\dfrac{1}{i},\dfrac{1}{i}}$. Find
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $A_1\cup A_2\cup A_3$
+      \task $A_1\cap A_2\cap A_3$
+      \task $\displaystyle\bigcup_{i=1}^\infty A_i$
+      \task $\displaystyle\bigcap_{i=1}^\infty A_i$
+    \end{extasks}
+    \vspace{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    The \textbf{empty set} (or \textbf{null set}), denoted $\varnothing$, is the set with no elements.
+      \[\set{1,3}\cap \set{2,4}=\varnothing\]
+    Two sets are called \textbf{disjoint} if, and only if, they have no elements in common:
+      \[A\cap B=\varnothing.\]
+    Sets $A_1, A_2, A_3, \dots$ are \textbf{mutually disjoint} (or \textbf{pairwise disjoint}) if, and only if, no two sets $A_i$ and $A_j$ with distinct subscripts have any elements in common:
+      \[A_i \cap A_j=\varnothing \textnormal{ whenever } i\neq j.\]
+  \end{defn*}
+  \begin{ex*}\mbox{}
+
+    \noindent
+    Let $A_1=\set{3,5}$, $A_2=\set{1,4,6}$, and $A_3=\set{2}$. Are $A_1$, $A_2$, and $A_3$ mutually disjoint?
+    \vspace*{\stretch{1}}
+
+    \noindent
+    Let $B_1=\set{2,4,6}$, $B_2=\set{3,7}$, and $B_3=\set{4,5}$. Are $B_1$, $B_2$, $B_3$ mutually disjoint?
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    A finite or infinite collection of nonempty sets $\set{A_1, A_2, A_3, \dots}$ is a \textbf{partition} of a set $A$ if, and only if,
+    \begin{enumerate}
+      \item $A$ is the union of all the $A_i$;
+      \item the sets $A_1, A_2, A_3, \dots$ are mutually disjoint.
+    \end{enumerate}
+  \end{defn*}
+  \begin{ex*}\mbox{}
+
+    \noindent
+    Let $A=\set{1,2,3,4,5,6}$, $A_1=\set{1,2}$, $A_2=\set{3,4}$, and $A_3=\set{5,6}$. Is $\set{A_1, A_2, A_3}$ a partition of $A$?
+    \vspace*{\stretch{1}}
+
+    \noindent
+    Let $\bbz$ be the set of all integers and let 
+      \[T_i=\set{n\in \bbz\,\middle|\, n=3k+i, \textnormal{ for some integer } k}.\]
+    Is $\set{T_0, T_1, T_3}$ a partition of $\bbz$?
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+  
+  \begin{defn*}
+    Given a set $A$, the \textbf{power set} of $A$, denoted $\mathscr{P}(A)$, is the set of all subsets of $A$.
+  \end{defn*}
+  \begin{ex*}
+    Find $\mathscr{P}(\set{x,y})$.
+  \end{ex*}
+
   \pagebreak
 \end{document}
