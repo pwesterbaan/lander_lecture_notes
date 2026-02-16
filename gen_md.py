@@ -76,7 +76,7 @@ for dir_path in directories:
 # use template to write file
 kwargs={}
 kwargs['list_of_class_dicts']=list_of_class_dicts
-kwargs['today_str']=datetime.now().strftime('%Y-%m-%d %H:%M')
+kwargs['today_str']=datetime.now().isoformat(timespec='minutes')
 content=template.render(**kwargs)
 
 filename=working_dir / "docs" / "index.md"
