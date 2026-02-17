@@ -88,7 +88,9 @@
           ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=0.5, text opacity=1},
           xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
           ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
-          every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}]
+          every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255},
+          height=0.95*\axisdefaultheight,
+          ]
             \draw[fill=lander_blue!50, opacity=0.5] plot[smooth, samples=255, domain=0:7000] (\x,{j(\x)}) -| (0,0) -- cycle;
             \addplot[<->] expression[domain=900:6000]{h(x)}
               node[pos=0.2, sloped, above, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$x+y=6,000$};
