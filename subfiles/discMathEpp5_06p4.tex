@@ -92,4 +92,44 @@
   \end{thmBox*}
 
   \pagebreak
+  
+  \begin{center}
+    \textbf{Example boolean algebras:}
+    \renewcommand{\arraystretch}{1.25}
+    \begin{tabular}{@{}L@{\hspace*{25mm}}L@{}} \toprule
+      \lnret{ \textbf{Logical Equivalences}\\ For all statement variables $p$, $q$, and $r$:}& 
+      \lnret{ \textbf{Set Properties}\\ For all sets $A$, $B$, and $C$:}\\ \midrule
+      p\lor q \equiv q\lor p& A\cup B= B\cup A\\
+      p\land q \equiv q\land p& A\cap B = B\cap A\\\midrule
+      %
+      p\land (q\land r)\equiv (p\land q)\land r& A\cap (B\cap C) = (A\cap B)\cap C\\
+      p\lor (q\lor r)\equiv (p\lor q)\lor r& A\cup (B\cup C) = (A\cup B)\cup C\\\midrule
+      %
+      p\land(q\lor r)\equiv (p\land q)\lor (p\land r)& A\cap (B\cup C)=(A\cap B)\cup (A\cap C)\\
+      p\lor(q\land r)\equiv (p\lor q)\land (p\lor r)& A\cup (B\cap C)=(A\cup B)\cap (A\cup C)\\\midrule
+      %
+      p\lor\mathbf{c} \equiv p& A\cup \varnothing = A\\
+      p\land\mathbf{t} \equiv p& A\cap U = A\\\midrule
+      %
+      p\lor \sim p\equiv \mathbf{t}& A\cup A^c=U\\
+      p\land \sim p\equiv \mathbf{c}& A\cap A^c=\varnothing\\\midrule
+      %
+      \sim(\sim p)\equiv p& (A^c)^c=A\\\midrule
+      %
+      p\land p\equiv p& A\cup A=A\\
+      p\lor p\equiv p& A\cap A=A\\\midrule
+      %
+      p\lor\mathbf{t}\equiv \mathbf{t}& A\cup U=U\\
+      p\land\mathbf{c}\equiv \mathbf{c}& A\cap\varnothing=\varnothing\\\midrule
+      %
+      \sim(p\lor q)\equiv\sim p\land\sim q& (A\cup B)^c=A^c\cap B^c\\
+      \sim(p\land q)\equiv\sim p\lor\sim q& (A\cap B)^c=A^c\cup B^c\\\midrule
+      %
+      p\lor(p\land q)\equiv p& A\cup(A\cap B)=A\\
+      p\land(p\lor q)\equiv p& A\cap(A\cup B)=A\\\midrule
+      %
+      \sim\mathbf{t}\equiv \mathbf{c}& U^c=\varnothing\\
+      \sim\mathbf{c}\equiv \mathbf{t}& \varnothing^c=U\\\bottomrule
+    \end{tabular}
+  \end{center}
 \end{document}
