@@ -5,5 +5,123 @@
 \relscale{\relscalefact}
   \section{8.1: Relations on Sets}
 
+  \begin{defn*}
+    A relation $R$ from $A$ to $B$ is called a \textbf{binary relation} because it is a subset of a Cartesian product of two sets.
+  \end{defn*}
+  \begin{ex*}
+    Define a relation $L$ from $\bbr$ to $\bbr$:
+      \[\forall x, y\in\bbr,\ \rel[L]xy \Leftrightarrow x<y.\]
+    \begin{extasks}[after-item-skip=\stretch{1}](4)
+      \task Is $\rel[L]{57}{53}$?
+      \task Is $\rel[L]{(-17)}{(-14)}$?
+      \task Is $\rel[L]{143}{143}$?
+      \task Is $\rel[L]{(-35)}{1}$?
+      \task* Draw the graph of $L$ as a subset of the Cartesian plane $\bbr\times \bbr$.
+    \end{extasks}
+    \begin{flushright}
+      \begin{tikzpicture}
+        \begin{axis}[
+          xmin=-6, xmax=6,
+          ymin=-6, ymax=6,
+          xmajorticks=false,
+          ymajorticks=false,
+          ]
+        \end{axis}
+      \end{tikzpicture}
+    \end{flushright}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    Two integers $m$ and $n$ are \textbf{congruent modulo $2$} if, and only if, $m\operatorname{mod} 2=n\operatorname{mod} 2$.
+  \end{defn*}
+  \begin{ex*}
+    Define a relation $E$ from $\bbz$ to $\bbz$:
+      \[\forall (m,n)\in\bbz\times\bbz,\ \rel[E]mn \Leftrightarrow m-n \textnormal{ is even.}\]
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task Is $\rel[E]{4}{0}$? Is $\rel[E]{2}{6}$? Is $\rel[E]{3}{(-3)}$? Is $\rel[E]{5}{2}$?
+      \task Prove that if $n$ is any odd integer, then $\rel[E]{n}{1}$.
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{ex*}
+    Let $X=\set{a,b,c}$. Define a relation $\mathbf{S}$ from $\mathscr{P}(X)$ to $\mathscr{P}(X)$ as follows:
+      \[\forall A,B\in\mathscr{P}(X),\ \rel[\mathbf{S}]{A}{B} \Leftrightarrow A \textnormal{ has at least as many elements as } B.\]
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task Is $\rel[\mathbf{S}]{\set{a,b}}{\set{b,c}}$?
+      \task Is $\rel[\mathbf{S}]{\set{a}}{\varnothing}$?
+      \task Is $\rel[\mathbf{S}]{\set{b,c}}{\set{a,b,c}}$?
+      \task Is $\rel[\mathbf{S}]{\set{c}}{\set{a}}$?
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    Let $R$ be a relation from $A$ to $B$. Define the inverse relation $R\inv$ from $B$ to $A$ as follows:
+      \[R\inv =\set{(y,x)\in B\times A\,\middle|\, (x,y)\in R}.\]
+  \end{defn*}
+  \begin{ex*}
+    Let $A=\set{2,3,4}$ and $B=\set{2,6,8}$, and let $R$ be the ``divides'' relation from $A$ to $B$:
+      \[\forall (x,y)\in A\times B,\ \rel{x}{y} \Leftrightarrow x \mid y\]
+    Explicitly state which ordered pairs are in $R$ and $R\inv$. Draw arrow diagrams for both.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+  
+  \begin{ex*}
+    Define a relation $R$ from $\bbr$ to $\bbr$ as follows:
+      \[\forall (x,y)\in\bbr\times \bbr,\ \rel{x}{y} \Leftrightarrow y=2\abs{x}.\]
+    Draw the graphs of $R$ and $R\inv$ in the Cartesian plane. Is $R\inv$ a function?
+    \vspace*{\stretch{1}}
+    
+    \hspace*{\stretch{0.25}}
+    \begin{tikzpicture}
+      \begin{axis}[
+        xmin=-6, xmax=6,
+        ymin=-6, ymax=6,
+        xmajorticks=false,
+        ymajorticks=false,
+        ]
+      \end{axis}
+    \end{tikzpicture}
+    \hspace*{\stretch{1}}
+    \begin{tikzpicture}
+      \begin{axis}[
+        xmin=-6, xmax=6,
+        ymin=-6, ymax=6,
+        xmajorticks=false,
+        ymajorticks=false,
+        ]
+      \end{axis}
+    \end{tikzpicture}
+    \hspace*{\stretch{0.25}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    A \textbf{relation on a set $A$} is a relation from $A$ to $A$.
+    
+    A \textbf{graph} $G$ consists of two finite sets: 
+    \begin{itemize}
+      \item a nonempty set $V(G)$ of \textbf{vertices} and
+      \item a set $E(G)$ of \textbf{edges},
+    \end{itemize}
+    where each edge is associated with a set consisting of either one or two vertices called its endpoints.
+
+    A \textbf{directed graph} is a graph whose edges are directional.
+  \end{defn*}
+  \begin{ex*}
+    Let $A=\set{3,4,5,6,7,8}$ and define a relation $R$ on $A$ as follows
+      \[\forall x,y\in A,\ \rel{x}{y} \Leftrightarrow 2 \mid (x-y).\]
+    Draw the directed graph of $R$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    Given sets $A_1, A_2, \dots, A_n$, an $\mathbf{n}$\textbf{-ary relation} $R$ on $A_1\times A_2\times \dots\times A_n$ is a subset of $A_1\times A_2\times\dots\times A_n$. The special case of $2$-ary, $3$-ary, and $4$-ary relations are called \textbf{binary}, \textbf{ternary}, and \textbf{quaternary relations}, respectively.
+  \end{defn*}
+
   \pagebreak
 \end{document}
