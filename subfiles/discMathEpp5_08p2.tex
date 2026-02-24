@@ -3,7 +3,96 @@
 \providecommand{\relscalefact}{1.4}
 \begin{document}
 \relscale{\relscalefact}
-  \section{8.2: Relfexivity, Symmetry, and Transitivity}
+  \section{8.2: Reflexivity, Symmetry, and Transitivity}
+
+  \begin{defn*}
+    Let $R$ be a relation on a set $A$.
+    \begin{enumerate}
+      \item $R$ is \textbf{reflexive} if, and only if, for every $x\in A$, $\rel{x}{x}$.
+        \[\forall x\in A, (x,x)\in R\]
+      \item $R$ is \textbf{symmetric} if, and only if, for every $x,y \in A$, if $\rel{x}{y}$ then $\rel{y}{x}$.
+        \[\forall x,y \in A, \textnormal{ if }(x,y)\in R \textnormal{ then } (y,x) \in R\]
+      \item $R$ is \textbf{transitive} if, and only if, for every $x,y,z\in A$, if $\rel{x}{y}$ and $\rel{y}{z}$, then $\rel{x}{z}$.
+        \[\forall x,y,z\in A, \textnormal{ if } (x,y)\in R\textnormal{ and } (y,z)\in R \textnormal{ then } (x,z)\in R\]
+    \end{enumerate}
+  \end{defn*}
+  \textit{Note:} A relation $R$ is \vspace*{\baselineskip}
+
+  \begin{tabular}{@{}ll@{}}
+    not reflexive & $\Leftrightarrow\exists x\in A \st \notrel{x}{x}$\\
+     &\phantom{$\Leftrightarrow$}\textbf{ or} $(x,x)\notin R$.\\[10pt]
+    not symmetric & $\Leftrightarrow\exists x,y\in A \st \rel{x}{y}$ but $\notrel{y}{x}$\\
+     &\phantom{$\Leftrightarrow$}\textbf{ or} $(x,y)\in R$ but $(y,x)\notin R$.\\[10pt]
+    not transitive & $\Leftrightarrow\exists x,y,z\in A \st \rel{x}{y}$ and $\rel{y}{z}$, but $\notrel{x}{z}$\\
+     &\phantom{$\Leftrightarrow$}\textbf{ or} $(x,y)\in R$ and $(y,z)\in R$, but $(x,z)\notin R$.
+  \end{tabular}
+  \vspace*{\stretch{1}}
+  
+  \begin{tabular}{@{}ll@{}}
+    irreflexive & $\Leftrightarrow \forall x\in A, \notrel{x}{x}$\\[10pt]
+    asymmetric & $\Leftrightarrow \forall x,y\in A,$ if $\rel{x}{y}$ then $\notrel{y}{x}$\\[10pt]
+    intransitive & $\Leftrightarrow \forall x,y,z\in A,$ if $\rel{x}{y}$ and $\rel{y}{z}$, then $\notrel{x}{z}$
+  \end{tabular}
+  \pagebreak
+
+  \begin{ex*}
+    Define a relation $R$ on $\bbr$ as follows:
+      \[\rel{x}{y} \Leftrightarrow x=y.\]
+    Is $R$ reflexive? Is $R$ symmetric? Is $R$ transitive?
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  
+  \begin{ex*}
+    Define a relation $R$ on $\bbr$ as follows:
+      \[\rel{x}{y} \Leftrightarrow x<y.\]
+    Is $R$ reflexive? Is $R$ symmetric? Is $R$ transitive?
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{ex*}
+    Let $A=\set{0,1,2,3}$ and define relations $R$, $S$, and $T$ on $A$ as follows:
+    \begin{align*}
+      R&=\set{(0,0),(0,1),(0,3),(1,0),(1,1),(2,2),(3,0),(3,3)}\\
+      S&=\set{(0,0),(0,2),(0,3),(2,3)}\\
+      T&=\set{(0,1),(2,3)}
+    \end{align*}
+    For each relation, draw the directed graph, then identify if it is reflexive, symmetric, and/or transitive.
+
+    \newcommand{\myGraphOutline}{
+      \smash{\raisebox{-\height}{
+        \begin{tikzpicture}[declare function={x=3; y=-2;}]
+          \node at (0,0)[circle,fill,inner sep=1.5pt, label=180:$0$]{};
+          \node at (x,0)[circle,fill,inner sep=1.5pt, label=0:$1$]{};
+          \node at (0,y)[circle,fill,inner sep=1.5pt, label=180:$3$]{};
+          \node at (x,y)[circle,fill,inner sep=1.5pt, label=0:$2$]{};
+        \end{tikzpicture}
+      }}
+    }
+
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task $R$ \hspace*{\stretch{1}} \myGraphOutline
+      \task $S$ \hspace*{\stretch{1}} \myGraphOutline
+      \task $T$ \hspace*{\stretch{1}} \myGraphOutline
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Define a relation $T$ on $\bbz$ as follows:
+      \[\forall m,n\in\bbz,\ \rel[T]{m}{n} \Leftrightarrow 3\mid (m-n).\]
+    This relation is called \textbf{congruence modulo $3$.} \newline Is $T$ reflexive, symmetric, and/or transitive?
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+  
+  \begin{ex*}
+    Define a relation $S$ on $\bbr$ as follows:
+      \[\forall x,y\in\bbr,\ \rel[S]{x}{y} \Leftrightarrow \abs{x}+\abs{y}=1.\]
+    Is $S$ reflexive, symmetric, and/or transitive?
+    \vspace*{\stretch{1}}
+  \end{ex*}
 
   \pagebreak
 \end{document}
