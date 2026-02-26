@@ -5,5 +5,81 @@
 \relscale{\relscalefact}
   \section{8.3: Equivalence Relations}
 
+  \begin{defn*}
+    Given a partition of a set $A$, the \textbf{relation induced by the partition}, $R$, is defined on $A$ as follows: 
+    \[\forall x,y\in A,\  \rel{x}{y}\ \Leftrightarrow\ \parbox{0.45\linewidth}{ there is a subset $A_i$ of the partition such that both $x$ and $y$ are in $A_i$.} \]
+  \end{defn*}
+  \begin{ex*}
+    Let $A=\set{0,1,2,3,4}$ and consider the following partition of $A$:
+      \[\set{0,3,4},\set{1},\set{2}.\]
+    Find the relation $R$ induced by this partition
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{thmBox*}
+    Let $A$ be a set with a partition and let $R$ be the relation induced by the partition. Then $R$ is reflexive, symmetric, and transitive.
+  \end{thmBox*}
+  \pagebreak
+
+  \begin{defn*}
+    Let $A$ be a set and $R$ a relation on $A$, $R$ is an \textbf{equivalence relation} if, and only if, $R$ is reflexive, symmetric, and transitive.
+  \end{defn*}
+  \begin{ex*}
+    Let $X$ be the set of all nonempty subsets of $\set{1,2,3}$. Then
+      \[X=\set{\set{1},\set{2},\set{3},\set{1,2},\set{1,3},\set{2,3},\set{1,2,3}}.\]
+    Define a relation $\mathbf{R}$ on $X$ as follows:
+      \[\forall A,B\in X,\ \rel[\mathbf{R}]{A}{B} \Leftrightarrow \textnormal{ the least element of $A$ equals the least element of $B$.}\]
+    Prove that $\mathbf{R}$ is an equivalence relation on $X$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    Suppose $A$ is a set and $R$ is an equivalence relation on $A$. For each element $a$ in $A$, the \textbf{equivalence class of} $a$, denoted $\sbrkt{a}$ and called the \textbf{class of} $a$, is the set of all elements $x$ in $A$ such that $x$ is related to $a$ by $R$:
+      \[\sbrkt{a}=\set{x\in A\middle| \rel{x}{a}}.\]
+  \end{defn*}
+  \begin{ex*}
+    Let $A=\set{0,1,2,3,4}$ and define a relation $R$ on $A$ as follows:
+      \[R=\set{\set{0,0},\set{0,4},\set{1,1},\set{1,3},\set{2,2},\set{3,1},\set{3,3},\set{4,0},\set{4,4}}.\]
+    Find the \emph{distinct} equivalence classes of $R$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Recall the equivalence relation $\mathbf{R}$ defined on the nonempty subsets of $\set{1,2,3}$, $X$:
+      \[X=\set{\set{1},\set{2},\set{3},\set{1,2},\set{1,3},\set{2,3},\set{1,2,3}}.\]
+    List the equivalence classes of $\mathbf{R}$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Consider the equivalence relation $R$ on a set $A$:
+      \[\forall x,y\in A\, \rel{x}{y} \Leftrightarrow x=y.\]
+    Describe the distinct equivalence classes of $R$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{thmBox*}
+    Suppose $A$ is a set, $R$ is an equivalence relation on $A$ and $a$ and $b$ are elements of $A$.
+    \begin{itemize}
+      \item If $\rel{a}{b}$, then $\sbrkt{a}=\sbrkt{b}$, and
+      \item either $\sbrkt{a}\cap \sbrkt{b}=\varnothing$ or $\sbrkt{a}=\sbrkt{b}$.
+    \end{itemize}
+  \end{thmBox*}
+  \pagebreak
+
+  \begin{ex*}
+    Let $R$ be the relation of congruence modulo $3$ on the set $\bbz$:
+      \[\rel{m}{n} \Leftrightarrow 3\mid (m-n).\]
+    Describe the distinct equivalence classes of $R$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  
+  \begin{defn*}
+    Let $m, n\in\bbz$ and let $d\in\bbz^+$. We say $m$ \textbf{is congruent to} $n$ \textbf{modulo} $d$
+      \[m\equiv n \mod d\]
+    if, and only if,
+      \[d\mid (m-n).\]
+  \end{defn*}
   \pagebreak
 \end{document}
