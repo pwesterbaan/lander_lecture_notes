@@ -4,6 +4,124 @@
 \begin{document}
 \relscale{\relscalefact}
   \section{8.4: Modular Arithmetic with Applications to Cryptography}
+  \begin{defn*}
+    The \textbf{Caesar cipher} encrypts messages by shifting letters by a fixed amount (typically 3 places). The encrypted messages are decrypted by shifting in the opposite direction.
+  \end{defn*}
+  \begin{ex*}
+    Use a Ceasar cipher with a shift of $3$ to 
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task encrypt the message MATH RULES
+      \task decrypt the message ODQGHU
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    Given integers $a$ and $n$ with $n>1$, the \textbf{residue of $a$ modulo $n$} is $a \mod n$, the non-negative remainder obtained when $a$ is divided by $n$.
+    \begin{itemize}
+      \item The numbers $0, 1, \dots, n-1$ are called a \textbf{complete set of residues modulo $n$.}
+      \item \textbf{Reducing a number modulo $n$} means to set it equal to its residue modulo $n$.
+      \item If a modulus $n>1$ is fixed throughout a discussion and an integer $a$ is given, the words ``modulo $n$'' are often dropped and we simply speak of \textbf{the residue of $a$.}
+    \end{itemize}
+  \end{defn*}
+
+  \begin{thmBox*}[Theorem 8.4.2: Congruence Modulo $n$ is an Equivalence Relation]
+    If $n$ is any integer with $n>1$, congruence modulo $n$ is an equivalence relation on the set of all integers. The distinct equivalence classes of the relation are the sets $\sbrkt{0}, \sbrkt{1}, \sbrkt{2},\dots,\sbrkt{n-1}$, where for each $a=0,1,2,\dots,n-1$,
+    \begin{align*}
+      \sbrkt{a}&=\set{m\in\bbz \;\middle|\; m\equiv a \mod n}\\
+        &=\set{m\in\bbz \;\middle|\; m=a+kn \textnormal{ for some integer } k}
+    \end{align*}
+  \end{thmBox*}
+
+  \begin{thmBox*}[Theorem 8.4.3: Modular Arithmetic]
+    Let $a,b,c,d,$ and $n$ be integers with $n>1$, and suppose
+      \[a\equiv c\mod n \qquad \textnormal{ and } \qquad b\equiv d \mod n.\]
+    Then
+    \begin{enumerate}
+      \item $(a+b)\equiv (c+d)\mod n$
+      \item $(a-b)\equiv (c-d)\mod n$
+      \item $\mathrlap{ab}\phantom{a^m}\equiv \phantom{c^m} \mathllap{cd} \mod n$
+      \item $a^m\equiv c^m \mod n$, for every positive integer $m$.
+    \end{enumerate}
+  \end{thmBox*}
+  \pagebreak
+
+  \begin{thmBox*}[Corollary 8.4.4]
+    Let $a,b$ and $n$ be integers with $n>1$. Then
+      \[ab\equiv\sbrkt{(a\operatorname{\,mod} n)(b\operatorname{\,mod} n)}(\operatorname{mod} n)\]
+    or, equivalently,
+      \[ab\mod n =\sbrkt{(a\operatorname{\,mod} n)(b\operatorname{\,mod} n)}(\operatorname{mod} n)\]
+    In particular, if $m$ is a positive integer, then
+      \[a^m \equiv \sbrkt{(a\operatorname{\,mod} n)^m}(\operatorname{mod} n).\]
+  \end{thmBox*}
+
+  \begin{ex*}
+    Compute the following
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $55+26\mod 4$
+      \task $55-26\mod 4$
+      \task $55\cdot 26\mod 4$
+      \task $55^2\mod 4$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \noindent
+  Recall the following property of exponents:
+  \begin{itemize}
+    \item $x^{2a}=(x^a)^2$
+    \item $x^{a+b}=x^ax^b$
+  \end{itemize}
+  for all real numbers $x, a,$ and $b$ with $x\geq 0$. By Corollary 8.4.4, 
+    \[x^7 \mod n = \sbrkt{(x^4 \operatorname{\, mod}n)(x^2 \operatorname{\, mod}n)(x^1 \operatorname{\, mod}n)}\mod n.\]
+  \vspace*{\baselineskip}
+
+  \begin{ex*}
+    Compute the following:
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $144^4\mod 713$
+      \task $12^{43}\mod 713$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    An integer $d$ is said to be a \textbf{linear combination of integers} $a$ and $b$ if, and only if, there exists integers $s$ and $t$ such that $as+bt=d$.
+  \end{defn*}
+
+  \begin{thmBox*}[Theorem 8.4.5: Writing a Greatest Common Divisor as a Linear Combination]
+    For all integers $s$ and $b$, not both zero, if $d=\gcd(a,b)$, then there exist integers $s$ and $t$ such that $as+bt=d$.
+  \end{thmBox*}
+  \pagebreak
+
+  \begin{algorithm}[H]
+    \TabPositions{40mm}
+    \SetKwInOut{Input}{Input}
+    \SetKwInOut{Output}{Output}
+    \Input{$A,B$ [integers with $A>B>0$]}
+
+    $a:=A, b:=B, s:=1, t:=0, u:=0, v:=1$\\
+    \While{$b\neq 0$}{
+      $r:=a\operatorname{\,mod} b$,\tab $q:=a\operatorname{\,div} b$\\
+      $a:=b$,\tab $b:=r$\\
+      $u_{\textnormal{new}}:=s-uq$,\tab $v_{\textnormal{new}}:=t-vq$\\
+      $s:=u$,\tab $t:=v$\\
+      $u:=u_{\textnormal{new}}$,\tab $v:=v_{\textnormal{new}}$
+    }
+    $\gcd:=a$\\
+    \Output{$\gcd$ [a positive integer], $s, t$ [integers]}
+    \caption{Algorithm 8.4.1: Extended Euclidean Algorithm}
+  \end{algorithm}
+
+  \begin{ex*}
+    Use the extended Euclidean algorithm to express $\gcd(330,156)$ as a linear combination of $330$ and $156$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+  %TODO Start with inverse modulo n (p 534)
 
   \pagebreak
 \end{document}
