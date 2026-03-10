@@ -76,7 +76,7 @@
   \end{itemize}
   for all real numbers $x, a,$ and $b$ with $x\geq 0$. By Corollary 8.4.4, 
     \[x^7 \mod n = \sbrkt{(x^4 \operatorname{\, mod}n)(x^2 \operatorname{\, mod}n)(x^1 \operatorname{\, mod}n)}\mod n.\]
-  \vspace*{\baselineskip}
+%  \vspace*{0.5\baselineskip}
 
   \begin{ex*}
     Compute the following:
@@ -91,10 +91,59 @@
   \begin{defn*}
     An integer $d$ is said to be a \textbf{linear combination of integers} $a$ and $b$ if, and only if, there exists integers $s$ and $t$ such that $as+bt=d$.
   \end{defn*}
+%  \pagebreak
 
   \begin{thmBox*}[Theorem 8.4.5: Writing a Greatest Common Divisor as a Linear Combination]
     For all integers $s$ and $b$, not both zero, if $d=\gcd(a,b)$, then there exist integers $s$ and $t$ such that $as+bt=d$.
   \end{thmBox*}
+
+  \begin{ex*}
+    Use the extended Euclidean algorithm to express $\gcd(330,156)$ as a linear combination of $330$ and $156$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \noindent
+  \textbf{Finding an Inverse Modulo $n$:}
+  \begin{ex*}
+    \mbox{}
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task Find an inverse for $43$ modulo $660$. (Solve $43s\equiv 1 (\mod 660)$.)
+      \task Find a positive inverse for $3$ modulo $40$. (Solve $3s\equiv 1 (\mod 40)$.)
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+  
+%  \noindent
+%%  \textbf{RSA Crypotography}
+  \begin{defn*}[RSA Cryptography]
+    \textbf{RSA Encryption}, named after Rivest, Shamir, and Adleman, uses modular arithmetic to encrypt and decrypt a plaintext message, $M$, into a ciphertext, $C$. 
+
+    Given prime integers $p$ and $q$, and a positive integer $e$ that is relatively prime to $(p-1)(q-1)$,
+    \begin{itemize}
+      \item 
+         messages are encrypted using the formula:
+          \[C = M^e \mod pq.\]
+        The number pair $(pq,e)$ is a \textbf{public key}, which is shared. 
+
+      \item 
+        messages are decrypted using the formula:
+          \[M = C^d \mod pq\]
+        The number pair $(pq,d)$ is a \textbf{private key}. The integer $d$ is a positive inverse to $e$ modulo $(p-1)(q-1)$.
+    \end{itemize}
+    The security of RSA encryption relies on the difficult in factoring very large numbers.
+  \end{defn*}
+  \pagebreak
+
+  \begin{ex*}
+    Let $p=5$ and $q=11$. Since $(p-1)(q-1)=40$, we may choose $e=3$, which is relatively prime to $40$.
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task Encrypt the plaintext ``HI''
+      \task Decrypt the ciphertext ``17 14''
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
   \pagebreak
 
   \begin{algorithm}[H]
@@ -103,7 +152,7 @@
     \SetKwInOut{Output}{Output}
     \Input{$A,B$ [integers with $A>B>0$]}
 
-    $a:=A, b:=B, s:=1, t:=0, u:=0, v:=1$\\
+    $a:=A,\ b:=B,\ s:=1,\ t:=0,\ u:=0,\ v:=1$\\
     \While{$b\neq 0$}{
       $r:=a\operatorname{\,mod} b$,\tab $q:=a\operatorname{\,div} b$\\
       $a:=b$,\tab $b:=r$\\
@@ -115,13 +164,6 @@
     \Output{$\gcd$ [a positive integer], $s, t$ [integers]}
     \caption{Algorithm 8.4.1: Extended Euclidean Algorithm}
   \end{algorithm}
-
-  \begin{ex*}
-    Use the extended Euclidean algorithm to express $\gcd(330,156)$ as a linear combination of $330$ and $156$.
-    \vspace*{\stretch{1}}
-  \end{ex*}
   \pagebreak
-  %TODO Start with inverse modulo n (p 534)
 
-  \pagebreak
 \end{document}
