@@ -42,7 +42,7 @@ Below are links to notes used at Lander University:
 </ul>
 
 <!---<a href="about_me">About me!</a>-->
-<span style="float:right">Last Modified: 2026-03-10T17:04</span>
+<span style="float:right">Last Modified: 2026-03-10T22:06</span>
 
 <script>
     // For anyone looking at this:
@@ -127,12 +127,13 @@ Below are links to notes used at Lander University:
       ["2026-01-28T12:00:00","math125Notes_02p2_annotated.pdf"],
       ["2026-02-02T12:00:00","math125Notes_02p5_annotated.pdf"],
       ["2026-02-04T12:00:00","math125Notes_03p1_annotated.pdf"],
-      ["2026-02-06T12:00:00","math125Notes_03p2_annotated.pdf"],
-      ["2026-02-09T12:00:00","math125Notes_06p1_annotated.pdf"],
-      ["2026-02-11T12:00:00","math125Notes_06p4_annotated.pdf"],
-      ["2026-02-13T12:00:00","math125Notes_08p1_annotated.pdf"],
-      ["2026-02-16T12:00:00","math125Notes_08p2_annotated.pdf"],
-      ["2026-02-18T12:00:00","math125Notes_08p3_annotated.pdf"],
+      ["2026-02-09T12:00:00","math125Notes_03p2_annotated.pdf"],
+      ["2026-02-16T12:00:00","math125Notes_06p1_annotated.pdf"],
+      ["2026-02-20T12:00:00","math125Notes_06p4_annotated.pdf"],
+      ["2026-02-23T12:00:00","math125Notes_08p1_annotated.pdf"],
+      ["2026-02-25T12:00:00","math125Notes_08p2_annotated.pdf"],
+      ["2026-03-09T12:00:00","math125Notes_08p3_annotated.pdf"],
+      ["2026-03-11T12:00:00","math125Notes_08p4_annotated.pdf"],
       ]
   show_links_by_date("math125_NoteKeys",releaseDatesList);
 

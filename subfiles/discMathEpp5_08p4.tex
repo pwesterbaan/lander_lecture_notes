@@ -98,13 +98,30 @@
   \end{thmBox*}
 
   \begin{ex*}
-    Use the extended Euclidean algorithm to express $\gcd(330,156)$ as a linear combination of $330$ and $156$.
+    Use the extended Euclidean algorithm to express $\gcd(660,43)$ as a linear combination of $660$ and $43$.
     \vspace*{\stretch{1}}
   \end{ex*}
   \pagebreak
+  
+  \begin{defn*}
+    Given any integer $a$ and any positive integer $n$, if there exists an integer $s$ such that $as\equiv 1 (\mod n)$, then $s$ is called \textbf{an inverse for $a$ modulo $n$}.
+    
+    Integers $a$ and $b$ are \textbf{relatively prime} if, and only if, $\gcd(a,b)=1$.
+  \end{defn*}
+  
+  \begin{thmBox*}[Corollary 8.4.6]
+    If $a$ and $b$ are relatively prime integers, then there exist integers $s$ and $t$ such that $as+bt=1$.
+    \vspace*{0.5\baselineskip}
 
-  \noindent
-  \textbf{Finding an Inverse Modulo $n$:}
+    \noindent 
+    \textbf{Corollary 8.4.7}
+
+    \noindent
+    For all integers $a$ and $n$, if $\gcd(a,n)=1$, then there exists an integer $s$ such that $as\equiv 1 (\mod n)$, and so $s$ is an inverse for $a$ modulo $n$.
+  \end{thmBox*}
+
+%  \noindent
+%  \textbf{Finding an Inverse Modulo $n$:}
   \begin{ex*}
     \mbox{}
     \begin{extasks}[after-item-skip=\stretch{1}](1)
@@ -132,7 +149,7 @@
           \[M = C^d \mod pq\]
         The number pair $(pq,d)$ is a \textbf{private key}. The integer $d$ is a positive inverse to $e$ modulo $(p-1)(q-1)$.
     \end{itemize}
-    The security of RSA encryption relies on the difficult in factoring very large numbers.
+    The security of RSA encryption relies on the difficulty of factoring very large numbers.
   \end{defn*}
   \pagebreak
 
