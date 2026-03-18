@@ -2,7 +2,7 @@
 # script used to feed numbers into pdftk based on section name of notes
 #TODO: (multiple) auto complete in .bashrc
 
-toc="Table Of Contents"  # Ignore page numbers for TOC
+toc="Table Of Contents | Page i"  # Ignore page numbers for TOC
 
 # args: pattern filename output
 # eg:   ./getPdfPages.sh 6.5: math123Notes.pdf math123_NoteKeys/math123Notes_6p5.pdf
@@ -36,8 +36,8 @@ done
 
 # Print matching page range
 pages=$(comm -23 --nocheck-order \
-             <(pdfgrep --page-number --no-filename --cache --fixed-strings "$pattern" $fname | cut -d: -f1 | sort --numeric --unique) \
-             <(pdfgrep --page-number --no-filename --cache --fixed-strings "$toc" $fname | cut -d: -f1 | sort --unique ))
+             <(pdfgrep --page-number --no-filename --cache "$pattern" $fname | cut -d: -f1 | sort --numeric --unique) \
+             <(pdfgrep --page-number --no-filename --cache "$toc" $fname | cut -d: -f1 | sort --unique ))
 
 # check if $pages is empty
 if [ ! -z "$pages" ]; then
@@ -45,7 +45,7 @@ if [ ! -z "$pages" ]; then
     if [ ! -n "$output" ]; then
 	#TODO: Autocomplete for filenames
 	echo $(echo "$pages" | head -n1)-$(echo "$pages" | tail -n1)
-	read -p "Specify output file? " output
+	read -p "Specify output file: " output
     fi
 
     # Check if $output defined now
