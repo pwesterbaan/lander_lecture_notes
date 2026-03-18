@@ -7,7 +7,7 @@
   \begin{defn*}
     Let $R$ be a relation on a set $A$. $R$ is \textbf{antisymmetric} if, and only if, for every $a$ and $b$ in $A$, if $\rel{a}{b}$ and $\rel{b}{a}$, then $a=b$.
     \vspace*{\baselineskip}
-    
+
     Alternatively, if $a\neq b$, then either $\notrel{a}{b}$ or $\notrel{b}{a}$.
   \end{defn*}
   \begin{ex*}
@@ -37,7 +37,7 @@
   \begin{defn*}
     The symbol $\preceq$ is often used to denote a general partial order relation.
   \end{defn*}
-  
+
   \begin{thmBox*}[Lexicographic Order]
     Let $A$ be a set with a partial order relation $R$, and let $S$ be a set of strings over $A$. Define a relation $\preceq$ on $S$ as follows:
     \begin{quote}
@@ -49,7 +49,7 @@
       \item If $\lambda$ is the null string, then $\lambda \preceq s$.
     \end{enumerate}
     If no strings are related by $\preceq$ other than by these three conditions, then $\preceq$ is a partial order relation on $S$.
-    
+
     This partial order relation is called the \textbf{lexicographic order for $S$} that corresponds to the partial order $R$ on $A$.
   \end{thmBox*}
   \pagebreak
@@ -58,8 +58,8 @@
     Let $A=\set{x,y}$ and let $R$ be the following partial order relation on $A$:
       \[R=\set{(x,x),(x,y),(y,y)}\]
     \begin{extasks}[after-item-skip=\stretch{1}](2)
-      \task* Is $x\preceq x$? \hspace*{\stretch{1}} 
-        Is $x\preceq xx$? \hspace*{\stretch{1}} 
+      \task* Is $x\preceq x$? \hspace*{\stretch{1}}
+        Is $x\preceq xx$? \hspace*{\stretch{1}}
         Is $yx\preceq yxy$? \hspace*{\stretch{1}}
       \task Is $xxxyyy\preceq xy$?
       \task Is $x\preceq y$?
@@ -81,12 +81,12 @@
   \begin{ex*}
     Let $A=\set{1,2,3,9,18}$. Consider the partial order relation ``divides'':
       \[\rel[D]{a}{b} \Leftrightarrow a\mid b\]
-    
+
     \newcommand{\parRelGraph}{%
       \vspace*{1.5\baselineskip}
       \newline \centering
       \begin{tikzpicture}[
-        every node/.style={circle, fill=black, inner sep=1.5pt}, 
+        every node/.style={circle, fill=black, inner sep=1.5pt},
         label distance=2pt
       ]
         \node[label=-45:1] at (0,0) {};
@@ -118,17 +118,17 @@
 
   \begin{defn*}
     Suppose $\preceq$ is a partial order relation on a set $A$. Elements $a$ and $b$ of $A$ are said to be \textbf{comparable} if, and only if, either $a\preceq b$ or $b\preceq a$. Otherwise, $a$ and $b$ are called \textbf{noncomparable}. \vspace*{0.75\baselineskip}
-    
+
     When all the elements of a partial order relation are comparable, the relation is called a \textbf{total order}. \vspace*{0.75\baselineskip}
 
     If $R$ is a partial order relation on a set $A$, and for any two elements $a$ and $b$ in $A$ either $\rel{a}{b}$ or $\rel{b}{a}$, then $R$ is a \textbf{total order relation} on $A$. \vspace*{0.75\baselineskip}
-    
+
     A set $A$ is called a \textbf{partially ordered set} (or \textbf{poset}) with respect to a relation $\preceq$ if, and only if, $\preceq$ is a partial order relation on $A$. \vspace*{0.75\baselineskip}
-    
+
     A set $A$ is called a \textbf{totally ordered set} with respect to a relation $\preceq$ if, and only if $A$ is partially ordered with respect to $\preceq$ and $\preceq$ is a total order. \vspace*{0.75\baselineskip}
-    
+
     A subset $B$ of $A$ is called a \textbf{chain} if, and only if, the elements in each pair of elements in $B$ are comparable. The \textbf{length of a chain} is one less than the number of elements in the chain. \vspace*{0.75\baselineskip}
-    
+
     \emph{Note}: The Hasse diagram for a total order relation can be drawn as a single vertical chain.
   \end{defn*}
   \begin{ex*}
@@ -143,14 +143,14 @@
       \item \textbf{maximal element of $A$} $\Leftrightarrow \forall b\in A$, either $b\preceq a$ or $b$ and $a$ are not comparable.
       \item \textbf{greatest element of $A$} $\Leftrightarrow \forall b\in A$, $b\preceq a$.
       \item \textbf{minimal element of $A$} $\Leftrightarrow \forall b\in A$, either $a\preceq b$ or $b$ and $a$ are not comparable.
-      \item \textbf{greatest element of $A$} $\Leftrightarrow \forall b\in A$, $a\preceq b$.
-    \end{enumerate}      
+      \item \textbf{least element of $A$} $\Leftrightarrow \forall b\in A$, $a\preceq b$.
+    \end{enumerate}
   \end{defn*}
   \begin{ex*}
     Let $A=\set{a,b,c,d,e,f,g,h,i}$ have the partial ordering $\preceq$ defined by the following Hasse diagram. Find all maximal, minimal, greatest, and least elements of $A$.
     \begin{center}
       \begin{tikzpicture}[node distance=15mm and 20mm,
-        every node/.style={circle, fill=black, inner sep=1.5pt}, 
+        every node/.style={circle, fill=black, inner sep=1.5pt},
         label distance=2pt
       ]
         \node[label=180:a] (a) at (0,0) {};
@@ -162,7 +162,7 @@
         \node[above = of f, label=0:g] (g) {};
         \node[above right = of e, label=0:h] (h) {};
         \node[below = of h, label=0:i] (i) {};
-        
+
         \draw (a) -- (b)  -- (d) -- (e) -- (f) -- (g) -- (a);
         \draw (b) -- (c) (e) -- (h) -- (g) (h) -- (i);
       \end{tikzpicture}
