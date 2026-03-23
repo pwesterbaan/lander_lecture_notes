@@ -5,5 +5,44 @@
 \relscale{\relscalefact}
   \section{4.9: Application: The Handshake Theorem}
 
+  \begin{defn*}
+    The total degree of a graph is the sum of the degrees of all the vertices of the graph.  
+  \end{defn*}
+  
+  \begin{thmBox*}[Theorem 4.9.1: The Handshake Theorem]
+    If $G$ is any graph, then the sum of the degrees of all the vertices of $G$ equals twice the number of edges of $G$. Specifically, if the vertices of $G$ are $v_1,v_2,\dots,v_n$, where $n$ is a positive integer, then
+    \begin{align*}
+      \textnormal{the total degree of } G&= \operatorname{deg}(v_1)+\operatorname{deg}(v_2)+\dots+\operatorname{deg}(v_n)\\
+        &=2\cdot\parens{\textnormal{the number of edges of $G$}}
+    \end{align*}
+  \end{thmBox*}
+  
+  \begin{thmBox*}[Corollary 4.9.2]
+    The total degree of a graph is even.
+  \end{thmBox*}
+  
+  \begin{ex*}
+    Draw a graph with the specified properties, or show that no such graph exists
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task A graph with four vertices of degrees $1$, $1$, $2$, and $3$
+      \task A graph with four vertices of degrees $1$, $1$, $3$, and $3$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{thmBox*}[Proposition 4.9.3]
+    In any graph there is an even number of vertices of odd degree.
+  \end{thmBox*}
+  \begin{ex*}
+    Is there a graph with $10$ vertices of degrees $1,1,2,2,2,3,4,4,4,$ and $6$?
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{ex*}
+    At a meeting attended by a group of people, four people shook hands with one other person, six people shook hands with two other people, two people shook hands with three other people, and the rest shook hands with four other people. No two people shook hands with each other more than once, and a total of $23$ handshakes occurred. How many people attended the meeting?
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
   \pagebreak
 \end{document}

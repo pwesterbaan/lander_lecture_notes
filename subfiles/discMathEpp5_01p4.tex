@@ -4,6 +4,132 @@
 \begin{document}
 \relscale{\relscalefact}
   \section{1.4: The Language of Graphs}
+  
+  \begin{defn*}
+    A \textbf{graph} $G$ consists of two finite sets: 
+    \begin{itemize}
+      \item a nonempty set $V(G)$ of \textbf{vertices} and
+      \item a set $E(G)$ of \textbf{edges},
+    \end{itemize}
+    where each edge is associated with a set consisting of either one or two vertices called its \textbf{endpoints}.
+
+    The correspondence from edges to endpoints is called the \textbf{edge-endpoint function}.
+
+    \begin{itemize}
+      \item An edge with just one endpoint is called a \textbf{loop}.
+      \item Two or more distinct edges with the same set of endpoints are said to be \textbf{parallel}.
+      \item An edge is said to \textbf{connect} its endpoints.
+      \item Two vertices that are connected by an edge are called \textbf{adjacent}.
+      \item A vertex that is an endpoint of a loop is said to be \textbf{adjacent to itself}.
+      \item An edge is said to be \textbf{incident on} each of its endpoints.
+      \item Two edges incident on the same endpoint are called \textbf{adjacent}.
+      \item A vertex on which no edges are incident is called \textbf{isolated}.
+    \end{itemize}
+  \end{defn*}
+  \pagebreak
+  
+  \begin{ex*}
+    Consider the following graph:
+    \begin{center}
+      \begin{tikzpicture}[node distance=15mm and 20mm,
+        myNode/.style={circle, fill=black, inner sep=1.5pt},
+        every loop/.style={looseness=50},
+        label distance=2pt
+      ]
+        \node[myNode, label=90:$v_1$] (v1) at (0,0) {};
+        \node[myNode, label=-150:$v_2$] (v2) at (-4,-2.4) {};
+        \node[myNode, label=-90:$v_3$] (v3) at (1,-2.5) {};
+        \node[myNode, label=-90:$v_4$] (v4) at (3,-0.5) {};
+        \node[myNode, label=-0:$v_5$] (v5) at (5,-2.4) {} 
+          edge [in=-150,out=-50,loop] 
+          node[below] {$e_6$} (v5);
+        \node[myNode, label=-25:$v_6$] (v6) at (5.5,0.25) {} 
+          edge [in=130,out=30,loop]
+          node[above] {$e_7$} (v6);
+
+        \draw (v1) -- (v2) node[pos=0.5, above] {$e_1$} -- (v3) node[pos=0.5, below] {$e_4$};
+        \draw (v1) to [bend right=45] node[left] {$e_2$} (v3);
+        \draw (v3) to [bend right=45] node[right] {$e_3$} (v1);
+        \draw (v5) -- (v6) node[pos=0.5, right] {$e_5$};
+      \end{tikzpicture}
+    \end{center}
+    \noindent
+    Write the vertex set, the edge set, and give a table showing the edge-endpoint function.
+    \vspace*{\stretch{1}}
+%  \end{ex*}
+  \pagebreak
+  
+%  \begin{ex*}
+%    Consider the following graph:
+    \begin{center}
+      \begin{tikzpicture}[node distance=15mm and 20mm,
+        myNode/.style={circle, fill=black, inner sep=1.5pt},
+        every loop/.style={looseness=50},
+        label distance=2pt
+      ]
+        \node[myNode, label=90:$v_1$] (v1) at (0,0) {};
+        \node[myNode, label=-150:$v_2$] (v2) at (-4,-2.4) {};
+        \node[myNode, label=-90:$v_3$] (v3) at (1,-2.5) {};
+        \node[myNode, label=-90:$v_4$] (v4) at (3,-0.5) {};
+        \node[myNode, label=-0:$v_5$] (v5) at (5,-2.4) {} 
+          edge [in=-150,out=-50,loop] 
+          node[below] {$e_6$} (v5);
+        \node[myNode, label=-25:$v_6$] (v6) at (5.5,0.25) {} 
+          edge [in=130,out=30,loop]
+          node[above] {$e_7$} (v6);
+
+        \draw (v1) -- (v2) node[pos=0.5, above] {$e_1$} -- (v3) node[pos=0.5, below] {$e_4$};
+        \draw (v1) to [bend right=45] node[left] {$e_2$} (v3);
+        \draw (v3) to [bend right=45] node[right] {$e_3$} (v1);
+        \draw (v5) -- (v6) node[pos=0.5, right] {$e_5$};
+      \end{tikzpicture}
+    \end{center}
+    \noindent
+    Find all
+      \begin{tasks}[label=~,after-item-skip=\stretch{1}](2)
+        \task edges that are incident on $v_1$
+        \task vertices that are adjacent to $v_1$
+        \task edges that are adjacent to $e_1$
+        \task loops
+        \task parallel edges
+        \task vertices that are adjacent to themselves
+        \task isolated vertices
+      \end{tasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    Let $G$ be a graph and $v$ a vertex of $G$. A \textbf{directed graph}, or \textbf{digraph}, consists of two finite sets: 
+    \begin{itemize}
+      \item a nonempty set $V(G)$ of vertices and
+      \item a set $D(G)$ of directed edges,
+    \end{itemize}
+    where each is associated with an ordered pair of vertices called its \textbf{endpoints}. 
+    
+    If edge $e$ is associated with the pair $(v,w)$ of vertices, then $e$ is said to be the (\textbf{directed}) \textbf{edge} from $v$ to $w$.
+    
+    The degree of $v$, denoted $\operatorname{deg}(v)$, equals the number of edges that are incident on $v$, with an edge that is a loop counted twice.
+  \end{defn*}
+  \begin{ex*}
+    Find the degree of each vertex of the graph $G$ shown below.
+    \begin{center}
+      \begin{tikzpicture}[node distance=15mm and 20mm,
+        myNode/.style={circle, fill=black, inner sep=1.5pt},
+        every loop/.style={looseness=50},
+        label distance=2pt
+      ]
+        \node[myNode, label=-90:$v_1$] (v1) at (-1,0) {};
+        \node[myNode, label=90:$v_2$] (v2) at (2,1) {};
+        \node[myNode, label=180:$v_3$] (v3) at (2.5,-1.5) {} 
+          edge [in=-130,out=-30,loop] 
+          node[right, pos=0.15] {$e_3$} (v3);
+
+        \draw (v2) to [bend right=45] node[left] {$e_1$} (v3);
+        \draw (v3) to [bend right=45] node[right] {$e_2$} (v2);
+      \end{tikzpicture}
+    \end{center}
+  \end{ex*}
 
   \pagebreak
 \end{document}
