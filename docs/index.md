@@ -12,7 +12,7 @@ Below are links to notes used at Lander University:
   <li>
     <a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math121Notes.pdf" target="_blank">math121Notes.pdf</a>
     <details name="annotated_notes" id="math121_NoteKeys">
-      <summary>math121 Annotated Notes</summary>
+      <summary>math121 Annotated Notes (Click to expand)</summary>
     </details>
   </li><br>
 
@@ -20,7 +20,7 @@ Below are links to notes used at Lander University:
   <li>
     <a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math123Notes.pdf" target="_blank">math123Notes.pdf</a>
     <details name="annotated_notes" id="math123_NoteKeys">
-      <summary>math123 Annotated Notes</summary>
+      <summary>math123 Annotated Notes (Click to expand)</summary>
     </details>
   </li><br>
 
@@ -28,7 +28,7 @@ Below are links to notes used at Lander University:
   <li>
     <a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math125Notes.pdf" target="_blank">math125Notes.pdf</a>
     <details name="annotated_notes" id="math125_NoteKeys">
-      <summary>math125 Annotated Notes</summary>
+      <summary>math125 Annotated Notes (Click to expand)</summary>
     </details>
   </li><br>
 
@@ -36,13 +36,13 @@ Below are links to notes used at Lander University:
   <li>
     <a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math211Notes.pdf" target="_blank">math211Notes.pdf</a>
     <details name="annotated_notes" id="math211_NoteKeys">
-      <summary>math211 Annotated Notes</summary>
+      <summary>math211 Annotated Notes (Click to expand)</summary>
     </details>
   </li><br>
 </ul>
 
 <!---<a href="about_me">About me!</a>-->
-<span style="float:right">Last Modified: 2026-03-18T13:43</span>
+<span style="float:right">Last Modified: 2026-03-22T20:10</span>
 
 <script>
     // For anyone looking at this:
