@@ -4,6 +4,200 @@
 \begin{document}
 \relscale{\relscalefact}
   \section{10.2: Matrix Representations of Graphs}
+  \begin{defn*}
+    An $m\times n$ \textbf{matrix $A$ over a set $S$} is a rectangular array of elements of $S$ arranged into $m$ rows and $n$ columns:
+      \[A=\begin{bmatrix}
+        a_{11}& a_{12}& \dots& a_{1j}& \dots& a_{jn}\\
+        a_{21}& a_{22}& \dots& a_{2j}& \dots& a_{2n}\\
+        \vdots& \vdots& \ddots& \vdots& \ddots& \vdots\\
+        a_{i1}& a_{i2}& \dots& a_{ij}& \dots& a_{in}\\
+        \vdots& \vdots& \ddots& \vdots& \ddots& \vdots\\
+        a_{m1}& a_{m2}& \dots& a_{mj}& \dots& a_{mn}\\
+      \end{bmatrix}\]
+  \end{defn*}
+    \emph{Note}: Two matrices $A$ and $B$ are only equal if every component of $A$ and $B$ are equal:
+      \[A=B \Leftrightarrow a_{ij}=b_{ij}\hspace*{8pt} \forall i=1,2,\dots,m, \textnormal{ and } \forall j=1,2,\dots,n.\]
+  \vspace*{\stretch{1}}
+
+  \begin{defn*}
+    Let $G$ be a directed graph with ordered vertices $v_1, v_2,\dots, v_n$. The \textbf{adjacency matrix of $G$} is the $n\times n$ matrix $A=(a_{ij})$ over the set of nonnegative integers such that 
+      \[a_{ij}=\textnormal{ the number of arrows from } v_i \textnormal{ to } v_j,\ \forall i,j=1,2,\dots,n.\]
+  \end{defn*}
+
+  \noindent
+  \begin{minipage}{0.475\linewidth}
+    \begin{center}
+      \begin{tikzpicture}[
+        node distance=30mm,
+        myNode/.style={circle, fill=black, inner sep=1.5pt},
+        every loop/.style={looseness=30, ->},
+        label distance=2pt
+      ]
+        \node[myNode, label=-90:$v_1$] (v1) at (0,0) {}
+          edge [in=90,out=180,loop] 
+          node[above left] {$e_1$} (v1);
+        \node[myNode, right=of v1, label=0:$v_2$]  (v2) {}
+          edge [in=45,out=135,loop] 
+          node[above] {$e_3$} (v2);
+        \node[myNode, below right=of v1, label=-180:$v_3$]  (v3) {};
+%
+        \draw[->] (v2) to [bend right=45] node[above left] {$e_4$} (v3);
+        \draw[->] (v2) to [bend left=45] node[below right] {$e_5$} (v3);
+        \draw (v2) -- (v1) node[pos=0.5, above] {$e_2$};
+        \draw (v3) -- (v1) node[pos=0.5, below left] {$e_6$};
+      \end{tikzpicture}
+    \end{center}
+  \end{minipage}\hspace*{\stretch{1}}%
+  \begin{minipage}{0.5\linewidth}
+    \begin{align*}
+      A&=
+        \begin{blockarray}{cccc}
+          & v_1& v_2& v_3\\
+          \begin{block}{c[ccc]}
+            v_1& 1& 0& 0\\
+            v_2& 1& 1& 2\\
+            v_3& 1& 0& 0\\
+          \end{block}
+        \end{blockarray}
+    \end{align*}
+  \end{minipage}
+  \pagebreak
+
+  \begin{ex*}
+    Let 
+      \[A=
+      \begin{bmatrix}
+        0& 1& 1& 0\\
+        1& 1& 0& 2\\
+        0& 0& 1& 1\\
+        2& 1& 0& 0
+      \end{bmatrix}
+      \]
+    Draw a directed graph that has $A$ as its adjacency matrix.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{ex*}
+    Find the adjacency matrix for the following graph:
+
+    \begin{tikzpicture}[
+      node distance=30mm,
+      myNode/.style={circle, fill=black, inner sep=1.5pt},
+      every loop/.style={looseness=40},
+      label distance=2pt
+    ]
+      \node[myNode, label=180:$v_1$] (v1) at (0,0) {};
+      \node[myNode, right=of v1, label=0:$v_2$]  (v2) {}
+        edge [in=45,out=135,loop] 
+        node[above] {$e_3$} (v2);
+      \node[myNode, below=of v2, label=0:$v_3$]  (v3) {};
+      \node[myNode, below=of v1, label=-180:$v_4$]  (v4) {}
+        edge [in=-45,out=-135,loop] 
+        node[below] {$e_6$} (v4);
+%
+      \draw (v1) -- (v4) node[pos=0.5, left] {$e_1$};
+      \draw (v2) to [bend left=25] node[below right] {$e_4$} (v3);
+      \draw (v2) to [bend right=25] node[below left] {$e_5$} (v3);
+      \draw (v1) -- (v2) node[pos=0.5, above] {$e_2$};
+      \draw (v2) -- (v4) node[pos=0.5, above left] {$e_7$};
+    \end{tikzpicture}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Find the adjacency matrix of the following disconnected graph:
+
+%    \noindent
+%    \begin{minipage}{0.475\linewidth}
+      \begin{center}
+        \begin{tikzpicture}[
+          node distance=25mm and 20mm,
+          myNode/.style={circle, fill=black, inner sep=1.5pt},
+          every loop/.style={looseness=30, ->},
+          label distance=2pt
+        ]
+          \node[myNode, label=-90:$v_1$] (v1) at (0,0) {}
+            edge [in=90,out=180,loop] 
+            node[above left] {$e_1$} (v1);
+          \node[myNode, right=of v1, label=0:$v_2$]  (v2) {};
+          \node[myNode, below right=of v1, label=-180:$v_3$]  (v3) {};
+          \node[myNode, right=of v2, label=0:$v_4$]  (v4) {};
+          \node[myNode, right=of v3, label=0:$v_5$] (v5) {}
+            edge [in=-45,out=-135,loop] 
+            node[below right] {$e_6$} (v5);
+          \node[myNode, right=of v4, label=0:$v_6$]  (v6) {};
+          \node[myNode, right=of v5, label=0:$v_7$]  (v7) {};
+%
+          \draw (v1) -- (v3) node[pos=0.5, below left] {$e_2$};
+          \draw (v2) to [bend right=25] node[above left] {$e_3$} (v3);
+          \draw (v2) to [bend left=25] node[below right] {$e_4$} (v3);
+          \draw (v4) -- (v5) node[pos=0.5, right] {$e_5$};
+          \draw (v6) to [bend right=25] node[above left] {$e_7$} (v7);
+          \draw (v6) to [bend left=25] node[below right] {$e_8$} (v7);
+        \end{tikzpicture}
+      \end{center}
+%    \end{minipage}\hspace*{\stretch{1}}%
+%    \begin{minipage}{0.475\linewidth}
+%      %Space for matrix
+%    \end{minipage}
+  \end{ex*}
+  \vspace*{\stretch{1}}
+  \begin{thmBox*}[Theorem 10.2.1]
+    Let $G$ be a graph with connected components $G_1, G_2,\dots, G_k$. If there are $n_i$ vertices in each connected component $G_i$ and these vertices are numbered consecutively, then the adjacency matrix of $G$ has the form
+      \[\begin{bmatrix}
+        A_1& O& O& \dots& O\\
+        O& A_2& O& \dots& O\\
+        O& O& A_3& \dots& O\\
+        \vdots& \vdots& \vdots& \ddots& \vdots\\
+        O& O& O& \dots& A_k
+      \end{bmatrix}\]
+    where each $A_i$ is the $n_i\times n_i$ adjacency matrix of $G_i$, $\forall i=1,2,\dots,k$, and the $O$'s represent matrices whose entries are all $0$.
+  \end{thmBox*}
+  \pagebreak
+
+  \begin{defn*}
+    Suppose that all elements in matrices $A$ and $B$ are real numbers. If the number of elements $n$ in the $i$th row of $A$ equals the number of elements in the $j$th column of $B$, then the \textbf{scalar product} or \textbf{dot product} of the $i$th row of $A$ and the $j$th column of $B$ is the real number obtained as follows:
+      \[
+        \begin{bmatrix}
+          a_{i1}& a_{i2}& \dots& a_{in}
+        \end{bmatrix}
+        \begin{bmatrix}
+          b_{1j}\\ b_{2j}\\ \vdots\\ b_{nj}
+        \end{bmatrix}
+        = a_{i1} b_{1j}+ a_{i2}b_{2j} + \dots+ a_{in}b_{nj}.
+      \]
+  \end{defn*}
+  \begin{ex*}
+    Multiple the following matrices:
+      \[
+      \begin{bmatrix}
+        -2& -3& 4& 5
+      \end{bmatrix}
+      \begin{bmatrix}
+        -1\\ 0\\ 1\\ -3
+      \end{bmatrix}
+      \]
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    Let $A=(a_{ij})$ be an $m\times k$ matrix, and $B=(b_{ij})$ a $k\times n$ matrix with real entries. The matrix product of $A$ times $B$, denoted $AB$ is the matrix $(c_{ij})$ defined as:
+      \[c_{ij}=a_{i1}b_{1j}+a_{i2}b_{2j}+\dots+a_{ik}b_{kj}=\sum_{r=1}^k a_{ir}b_{rj}\]
+    for each $i=1,2,\dots,m$ and $j=1,2,\dots,n$.
+  \end{defn*}
+  \begin{ex*}
+    Multiply the following matrices:
+    \[
+      \begin{bmatrix}
+        2&0&-1\\
+        -2& 0& 2
+      \end{bmatrix}
+      \begin{bmatrix}
+        5& 5& \\
+        -2& -3\\
+        3& -4
+      \end{bmatrix}
+    \]
+  \end{ex*}
 
   \pagebreak
 \end{document}
