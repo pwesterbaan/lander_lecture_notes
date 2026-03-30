@@ -5,5 +5,224 @@
 \relscale{\relscalefact}
   \section{10.4: Trees: Examples and Basic Properties}
 
+  \begin{defn*}
+    \begin{itemize}
+      \item A \textbf{closed walk} is a finite alternating sequence of adjacent vertices and edges that starts and ends at the same vertex.
+      \item A \textbf{circuit} is a closed walk that contains at least one edge and does not contain a repeated edge.
+      \item A graph is said to be \textbf{circuit-free} if, and only if, it has no circuits. 
+      \item A graph is called a \textbf{tree} if, and only if, it is circuit-free and connected. 
+      \item A \textbf{trivial tree} is a graph that consists of a single vertex. 
+      \item A graph is called a \textbf{forest} if, and only if, it is circuit-free and not connected.
+    \end{itemize}
+  \end{defn*}
+
+  \begin{center}
+    Trees
+
+    \begin{tikzpicture}[node distance=5mm,
+      myNode/.style={circle, fill=black, inner sep=1.5pt},
+      every loop/.style={looseness=50},
+      label distance=2pt
+    ]
+      %%%Random shape tree%%%
+      \node[myNode] (v1) at (0,0) {};
+      \node[myNode, above=of v1] (v2) {};
+      \node[myNode, above=2mm of v2] (v3) {};
+      \node[myNode, above=of v3] (v4) {};
+      \node[myNode, above=10mm of v4] (v5) {};
+      \draw (v1) -- (v2) -- (v3) -- (v4) -- (v5);
+      
+      \node[myNode, above right=2mm and 4mm of v2]  (v2a) {};
+      \node[myNode, above right=3mm and 6mm of v2a] (v2b) {};
+      \node[myNode, above right=3mm and 6mm of v2b] (v2c) {};
+        \node[myNode, right=of v2a] (v2aa) {};
+        \node[myNode, above=of v2c] (v2ba) {};
+      \draw (v2) -- (v2a) -- (v2b) -- (v2c);
+      \draw (v2a) -- (v2aa) (v2b) -- (v2ba);
+
+      \node[myNode, above left=3mm of v3]  (v3a) {};
+      \node[myNode, above left=3mm of v3a] (v3b) {};
+      \node[myNode, above left=3mm of v3b] (v3c) {};
+        \node[myNode, above left=1mm and 4mm of v3a] (v3aa) {};
+        \node[myNode, above=of v3b] (v3ba) {};
+      \draw (v3) -- (v3a) -- (v3b) -- (v3c);
+      \draw (v3a) -- (v3aa) (v3b) -- (v3ba);
+      
+      \node[myNode, above right=of v4]   (v4a) {};
+      \node[myNode, above right=of v4a]  (v4b) {};
+      \node[myNode, above right=of v4b]  (v4c) {};
+        \node[myNode, right=of v4a]  (v4aa) {};
+        \node[myNode, above right=6mm and 2mm of v4b]  (v4ba) {};
+      \draw (v4) -- (v4a) -- (v4b) -- (v4c);
+      \draw (v4a) -- (v4aa) (v4b) -- (v4ba);
+      
+      %%%Single node%%%
+      \coordinate (mid15) at ($(v1)!0.5!(v5)$);
+      \coordinate (mid15) at (mid15 -| v2c);
+      \node[myNode, right=25mm of mid15] (singleton) {};
+      
+      %%%T-shaped tree%%%
+      \node[myNode, right=25mm of singleton] (tl) {};
+      \node[myNode, right=10mm of tl] (tr) {};
+      \node[myNode] (midPt) at ($(tl)!0.50!(tr)$) {};
+      \node[myNode, below=of midPt] (bot) {};
+      
+      \draw (tl) -- (tr) (midPt) -- (bot);
+      
+      %%%Symmetric tree%%%
+      \coordinate (brRefPt) at (tr |- v1);
+      %great-grand-children
+      \node[myNode] (ggc1) at ($(brRefPt)+(25mm,0)$) {};
+      \node[myNode, right=of ggc1] (ggc2) {};
+      \node[myNode, right=of ggc2] (ggc3) {};
+      \node[myNode, right=of ggc3] (ggc4) {};
+      \node[myNode, right=of ggc4] (ggc5) {};
+      \node[myNode, right=of ggc5] (ggc6) {};
+      \node[myNode, right=of ggc6] (ggc7) {};
+      \node[myNode, right=of ggc7] (ggc8) {};
+      
+      %grand-children
+      \coordinate (gc12) at ($(ggc1)!0.50!(ggc2)$);
+      \node[myNode] (gc1) at ($(gc12)!0.33!(gc12|-v4ba)$) {};
+      \coordinate (gc34) at ($(ggc3)!0.50!(ggc4)$);
+      \node[myNode] (gc2) at (gc34|-gc1) {};
+      \coordinate (gc56) at ($(ggc5)!0.50!(ggc6)$);
+      \node[myNode] (gc3) at (gc56|-gc1) {};
+      \coordinate (gc78) at ($(ggc7)!0.50!(ggc8)$);
+      \node[myNode] (gc4) at (gc78|-gc1) {};
+      
+      %children
+      \coordinate (c12) at ($(gc1)!0.50!(gc2)$);
+      \node[myNode] (c1) at ($(c12)!0.50!(c12|-v4ba)$) {};
+      \coordinate (c34) at ($(gc3)!0.50!(gc4)$);
+      \node[myNode] (c2) at (c34|-c1) {};
+      
+      %root
+      \coordinate (root) at ($(c12)!0.50!(c34)$);
+      \node[myNode] (root) at (root|-v4ba) {};
+
+      \draw (root) -- (c1) -- (gc1) -- (ggc1);
+      \draw                   (gc1) -- (ggc2);
+      \draw           (c1) -- (gc2) -- (ggc3);
+      \draw                   (gc2) -- (ggc4);
+      \draw (root) -- (c2) -- (gc3) -- (ggc5);
+      \draw                   (gc3) -- (ggc6);
+      \draw           (c2) -- (gc4) -- (ggc7);
+      \draw                   (gc4) -- (ggc8);
+    \end{tikzpicture}
+    \vspace*{\stretch{1}}
+
+    Non-trees
+    \begin{tikzpicture}[node distance=10mm,
+      every node/.style={circle, fill=black, inner sep=1.5pt},
+      every loop/.style={looseness=50},
+      label distance=2pt
+    ]
+      %%%Constellation type thing%%%
+      \node (v1) at (0,0) {};
+      \node[below right=of v1] (v2) {};
+        \node[left=of v2, yshift=-2.5mm] (v2a) {};
+      \node[below right=of v2] (v3) {};
+        \node[above right=of v3,  yshift=5mm]   (v3a) {};
+        \node[      right=of v3a, yshift=2.5mm] (v3b) {};
+        \node[      below=of v3b, xshift=2.5mm] (v3c) {};
+      \node[below right=of v3] (v4) {};
+        \node[left=of v4] (v4a) {};
+      
+      \draw (v1) -- (v2) -- (v3) -- (v4) -- (v4a);
+      \draw (v2a) -- (v2) -- (v3a);
+      \draw (v3) -- (v3a) -- (v3b) -- (v3c);
+
+      %%%Rabbit ears%%%
+      \coordinate (brRefPt) at (v3c |- v4);
+      \node (v1) at ($(brRefPt)+(20mm,0)$) {};
+      \node[above right=of v1, yshift=7.5mm] (v2) {};
+      \node[above=of v2, xshift=1mm] (v3) {};
+      \node[above right=of v2, yshift=-5mm] (v4) {};
+      
+      \draw (v1) edge[bend right] (v2);
+      \draw (v1) edge[bend left] (v2);
+      \draw (v3) -- (v2) -- (v4);
+      
+      %%%single loop%%%
+      \coordinate (brRefPt) at (v4 |- v1);
+      \node (v1) at ($(brRefPt)+(20mm,0)$) {} edge [in=135,out=45,loop] (v1);
+
+      %%%1Forest1%%%
+      \node (v1) at ($(brRefPt)+(50mm,0)$) {};
+      \node[above=of v1] (v2) {};
+        \node[left=of v2, yshift=13mm] (v2a) {};
+      \node[above=of v2] (v3) {};
+        \node[above right=of v3, yshift=-5mm] (v3a) {};
+      \node[above=of v3] (v4) {};
+
+      \draw (v1) -- (v2) -- (v3) -- (v4);
+      \draw (v2) -- (v2a);
+      \draw (v3) -- (v3a);
+      
+      \node[right=of v1, xshift=15mm] (v1) {};
+      \node[above=of v1] (v2) {};
+      \node[above left=of v2, yshift=5mm] (v3) {};
+      \node[above left=of v3, yshift=5mm] (v4) {};
+      \node[above=5mm of v3a] (v5) {};
+      \node[above right=6mm and 4mm of v2] (v6) {};
+      \node[above right=5mm and 3.3333mm of v6] (v7) {};
+      \node[right=3mm of v7] (v8) {};
+      \node[above right=12mm and 8mm of v7] (v9) {};
+      \node (v10) at ($(v4)!0.50!(v9)$) {};
+
+      \draw (v1) -- (v2) -- (v3) -- (v4);
+      \draw (v2) -- (v6) -- (v7) -- (v9);
+      \draw (v3) -- (v5);
+      \draw (v6) -- (v8);
+      \draw (v7) -- (v10);
+    \end{tikzpicture}
+    \vspace*{0.5\baselineskip}
+  \end{center}
+  \pagebreak
+
+  \begin{thmBox*}[Lemma 10.4.1]
+    Any tree that has more than one vertex has at least one vertex of degree $1$.
+  \end{thmBox*}
+
+  \begin{defn*}
+    Let $T$ be a tree. If $T$ has at least two vertices, then
+    \begin{itemize}
+      \item a vertex of degree $1$ in $T$ is called a \textbf{leaf} (or a \textbf{terminal vertex}), and
+      \item a vertex of degree greater than $1$ in $T$ is called an \textbf{internal vertex} (or a \textbf{branch vertex}).
+    \end{itemize}
+    The unique vertex in a trivial tree is also called a \textbf{leaf} or \textbf{terminal vertex}.
+  \end{defn*}
+
+  \begin{thmBox*}[Theorem 10.4.2]
+    For any positive integer $n$, any tree with $n$ vertices has $n-1$ edges.
+    \vspace*{\baselineskip}
+
+    \noindent \textbf{Theorem 10.4.4} \newline
+    For any positive integer $n$, if $G$ is a connected graph with $n$ vertices and $n-1$ edges, then $G$ is a tree.
+    \vspace*{\baselineskip}
+
+    \noindent \textbf{Corollary 10.4.5} \newline
+    If $G$ is any graph with $n$ vertices and $m$ edges, where $m$ and $n$ are positive integers and $m\geq n$, then $G$ has a circuit.
+  \end{thmBox*}
+
+  \begin{ex*}
+    A graph $G$ has ten vertices and twelve edges. Is it a tree?
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    For the following, either draw a graph matching the description given, or justify why no such graph exists:
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task Tree, nine vertices, nine edges
+      \task Graph, connected, nine vertices, nine edges
+      \task Graph, circuit-free, nine vertices, six edges
+      \task Tree, six vertices, total degree $14$
+      \task Tree, five vertices, total degree $8$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+
   \pagebreak
 \end{document}

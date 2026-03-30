@@ -20,7 +20,7 @@
   \vspace*{\stretch{1}}
 
   \begin{defn*}
-    Let $G$ be a directed graph with ordered vertices $v_1, v_2,\dots, v_n$. The \textbf{adjacency matrix of $G$} is the $n\times n$ matrix $A=(a_{ij})$ over the set of nonnegative integers such that 
+    Let $G$ be a directed graph with ordered vertices $v_1, v_2,\dots, v_n$. The \textbf{adjacency matrix of $G$} is the $n\times n$ matrix $A=(a_{ij})$ over the set of nonnegative integers such that
       \[a_{ij}=\textnormal{ the number of arrows from } v_i \textnormal{ to } v_j,\ \forall i,j=1,2,\dots,n.\]
   \end{defn*}
 
@@ -34,17 +34,17 @@
         label distance=2pt
       ]
         \node[myNode, label=-90:$v_1$] (v1) at (0,0) {}
-          edge [in=90,out=180,loop] 
+          edge [in=90,out=180,loop]
           node[above left] {$e_1$} (v1);
         \node[myNode, right=of v1, label=0:$v_2$]  (v2) {}
-          edge [in=45,out=135,loop] 
+          edge [in=45,out=135,loop]
           node[above] {$e_3$} (v2);
         \node[myNode, below right=of v1, label=-180:$v_3$]  (v3) {};
 %
         \draw[->] (v2) to [bend right=45] node[above left] {$e_4$} (v3);
         \draw[->] (v2) to [bend left=45] node[below right] {$e_5$} (v3);
-        \draw (v2) -- (v1) node[pos=0.5, above] {$e_2$};
-        \draw (v3) -- (v1) node[pos=0.5, below left] {$e_6$};
+        \draw[->] (v2) -- (v1) node[pos=0.5, above] {$e_2$};
+        \draw[->] (v3) -- (v1) node[pos=0.5, below left] {$e_6$};
       \end{tikzpicture}
     \end{center}
   \end{minipage}\hspace*{\stretch{1}}%
@@ -64,7 +64,7 @@
   \pagebreak
 
   \begin{ex*}
-    Let 
+    Let
       \[A=
       \begin{bmatrix}
         0& 1& 1& 0\\
@@ -87,11 +87,11 @@
     ]
       \node[myNode, label=180:$v_1$] (v1) at (0,0) {};
       \node[myNode, right=of v1, label=0:$v_2$]  (v2) {}
-        edge [in=45,out=135,loop] 
+        edge [in=45,out=135,loop]
         node[above] {$e_3$} (v2);
       \node[myNode, below=of v2, label=0:$v_3$]  (v3) {};
       \node[myNode, below=of v1, label=-180:$v_4$]  (v4) {}
-        edge [in=-45,out=-135,loop] 
+        edge [in=-45,out=-135,loop]
         node[below] {$e_6$} (v4);
 %
       \draw (v1) -- (v4) node[pos=0.5, left] {$e_1$};
@@ -112,17 +112,17 @@
         \begin{tikzpicture}[
           node distance=25mm and 20mm,
           myNode/.style={circle, fill=black, inner sep=1.5pt},
-          every loop/.style={looseness=30, ->},
+          every loop/.style={looseness=30},
           label distance=2pt
         ]
           \node[myNode, label=-90:$v_1$] (v1) at (0,0) {}
-            edge [in=90,out=180,loop] 
+            edge [in=90,out=180,loop]
             node[above left] {$e_1$} (v1);
           \node[myNode, right=of v1, label=0:$v_2$]  (v2) {};
           \node[myNode, below right=of v1, label=-180:$v_3$]  (v3) {};
           \node[myNode, right=of v2, label=0:$v_4$]  (v4) {};
           \node[myNode, right=of v3, label=0:$v_5$] (v5) {}
-            edge [in=-45,out=-135,loop] 
+            edge [in=-45,out=-135,loop]
             node[below right] {$e_6$} (v5);
           \node[myNode, right=of v4, label=0:$v_6$]  (v6) {};
           \node[myNode, right=of v5, label=0:$v_7$]  (v7) {};

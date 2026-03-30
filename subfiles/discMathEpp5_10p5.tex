@@ -5,5 +5,36 @@
 \relscale{\relscalefact}
   \section{10.5: Rooted Trees}
 
+  \begin{defn*}
+    \begin{itemize}
+      \item A \textbf{rooted tree} is a tree in which there is one vertex that is distinguished from the others and is called the \textbf{root}.
+      \item The \textbf{level} of a vertex is the number of edges along the unique path between it and the root.
+      \item The \textbf{height} of a rooted tree is the maximum level of any vertex of the tree.
+      \item Given the root or any internal vertex $v$ of a rooted tree, the \textbf{children} of $v$ are all those vertices that are adjacent to $v$ and are one level farther away from the root than $v$. 
+      \item If $w$ is a child of $v$, then $v$ is called the \textbf{parent} of $w$, and two distinct vertices that are both children of the same parent are called \textbf{siblings}. 
+      \item Given two distinct vertices $v$ and $w$, if $v$ lies on the unique path between $w$ and the root, then $v$ is an \textbf{ancestor} of $w$ and $w$ is a \textbf{descendant} of $w$.
+    \end{itemize}
+  \end{defn*}
+  %TODO draw figure 10.5.1
+  \pagebreak
+
+  \begin{defn*}
+    \begin{itemize}
+      \item A \textbf{binary tree} is a rooted tree in which every parent has at most two children.
+      \item Each child in a binary tree is designated either a \textbf{left child} or a \textbf{right child} (but not both), and every parent has at most one left child and one right child.
+      \item A \textbf{full binary tree} is a binary tree in which each parent has exactly two children.
+    \end{itemize}
+
+    Given any parent $v$ in a binary tree $T$, if $v$ has a left child, then the \textbf{left subtree} of $v$ is the binary tree
+    \begin{itemize}
+      \item whose root is the left child of $v$,
+      \item whose vertices consist of the left child of $v$ and all its descendants, and 
+      \item whose edges consist of all those edges of $T$ that connect the vertices of the left subtree.
+    \end{itemize}
+    The \textbf{right subtree} of $v$ is defined analogously.
+  \end{defn*}
+  %TODO draw figure 10.5.2
+  \pagebreak
+
   \pagebreak
 \end{document}
