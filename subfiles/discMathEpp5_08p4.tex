@@ -8,7 +8,7 @@
     The \textbf{Caesar cipher} encrypts messages by shifting letters by a fixed amount (typically 3 places). The encrypted messages are decrypted by shifting in the opposite direction.
   \end{defn*}
   \begin{ex*}
-    Use a Ceasar cipher with a shift of $3$ to 
+    Use a Ceasar cipher with a shift of $3$ to
     \begin{extasks}[after-item-skip=\stretch{1}](1)
       \task encrypt the message MATH RULES
       \task decrypt the message ODQGHU
@@ -74,7 +74,7 @@
     \item $x^{2a}=(x^a)^2$
     \item $x^{a+b}=x^ax^b$
   \end{itemize}
-  for all real numbers $x, a,$ and $b$ with $x\geq 0$. By Corollary 8.4.4, 
+  for all real numbers $x, a,$ and $b$ with $x\geq 0$. By Corollary 8.4.4,
     \[x^7 \mod n = \sbrkt{(x^4 \operatorname{\, mod}n)(x^2 \operatorname{\, mod}n)(x^1 \operatorname{\, mod}n)}\mod n.\]
 %  \vspace*{0.5\baselineskip}
 
@@ -102,18 +102,18 @@
     \vspace*{\stretch{1}}
   \end{ex*}
   \pagebreak
-  
+
   \begin{defn*}
     Given any integer $a$ and any positive integer $n$, if there exists an integer $s$ such that $as\equiv 1 (\mod n)$, then $s$ is called \textbf{an inverse for $a$ modulo $n$}.
-    
+
     Integers $a$ and $b$ are \textbf{relatively prime} if, and only if, $\gcd(a,b)=1$.
   \end{defn*}
-  
+
   \begin{thmBox*}[Corollary 8.4.6]
     If $a$ and $b$ are relatively prime integers, then there exist integers $s$ and $t$ such that $as+bt=1$.
     \vspace*{0.5\baselineskip}
 
-    \noindent 
+    \noindent
     \textbf{Corollary 8.4.7}
 
     \noindent
@@ -131,20 +131,20 @@
     \vspace*{\stretch{1}}
   \end{ex*}
   \pagebreak
-  
+
 %  \noindent
 %%  \textbf{RSA Crypotography}
   \begin{defn*}[RSA Cryptography]
-    \textbf{RSA Encryption}, named after Rivest, Shamir, and Adleman, uses modular arithmetic to encrypt and decrypt a plaintext message, $M$, into a ciphertext, $C$. 
+    \textbf{RSA Encryption}, named after Rivest, Shamir, and Adleman, uses modular arithmetic to encrypt and decrypt a plaintext message, $M$, into a ciphertext, $C$.
 
     Given prime integers $p$ and $q$, and a positive integer $e$ that is relatively prime to $(p-1)(q-1)$,
     \begin{itemize}
-      \item 
+      \item
          messages are encrypted using the formula:
           \[C = M^e \mod pq.\]
-        The number pair $(pq,e)$ is a \textbf{public key}, which is shared. 
+        The number pair $(pq,e)$ is a \textbf{public key}, which is shared.
 
-      \item 
+      \item
         messages are decrypted using the formula:
           \[M = C^d \mod pq\]
         The number pair $(pq,d)$ is a \textbf{private key}. The integer $d$ is a positive inverse to $e$ modulo $(p-1)(q-1)$.
@@ -164,6 +164,7 @@
   \pagebreak
 
   \begin{algorithm}[H]
+    \LinesNotNumbered
     \TabPositions{40mm}
     \SetKwInOut{Input}{Input}
     \SetKwInOut{Output}{Output}

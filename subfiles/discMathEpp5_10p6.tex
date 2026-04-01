@@ -4,6 +4,130 @@
 \begin{document}
 \relscale{\relscalefact}
   \section{10.6: Spanning Trees and a Shortest Path Algorithm}
+  \begin{defn*}
+    A \textbf{spanning tree} for a graph $G$ is a subgraph of $G$ that contains every vertex of $G$ and is a tree.
+  \end{defn*}
+  \begin{thmBox*}[Proposition 10.6.1]
+    \begin{enumerate}
+      \item Every connected graph has a spanning tree.
+      \item Any two spanning trees for a graph have the same number of edges.
+    \end{enumerate}
+  \end{thmBox*}
+  \begin{defn*}
+    \begin{itemize}
+      \item A \textbf{weighted graph} is a graph for which each edge has an associated positive real number \textbf{weight}.
+      \item The sum of the weights of all the edges is the \textbf{total weight} of the graph.
+      \item A \textbf{minimum spanning tree} for a connected, weighted graph is a spanning tree that has the least possible total weight compared to all other spanning trees for the graph.
+    \end{itemize}
+    If $G$ is a weighted graph and $e$ is an edge of $G$, then $w(e)$ denotes the weight of $e$ and $w(G)$ denotes the total weight of $G$.
+  \end{defn*}
+  \pagebreak
+
+  \begin{algorithm}[H]
+    \LinesNotNumbered
+    \TabPositions{40mm}
+    \SetKwInOut{Input}{Input}
+    \SetKwInOut{Output}{Output}
+    \Input{$G$ [a connected, weighted graph with $n$ vertices]}
+
+    Initialize $T$ to have all the vertices of $G$ and no edges.\\
+    Let $E$ be the set of all the edges of $G$, and let $m:=0$\\
+    \While{$m<n-1$}{
+      Find an edge $e$ in $E$ of least weight\\
+      Delete $e$ from $E$\\
+      \uIf{adding $e$ to $T$ does not produce a circuit}{
+        add $e$ to the edge set of $T$\\
+        $m:=m+1$
+      }
+    }
+    \Output{$T$ [a minimum spanning tree for $G$]}
+    \caption{Algorithm 10.6.1: Kruskal}
+  \end{algorithm}
+  \begin{ex*}
+    Use Kruskal's algorithm to find a minimum spanning tree of the following graph:
+    \begin{center}
+      \begin{tikzpicture}[
+        every node/.style={circle, fill=black, inner sep=1.5pt},
+        nodeLabel/.style={fill=none, font=\large, pos=0.5, inner sep=1.5pt},
+        ]
+        \node[label=180:Minneapolis] (minn) {};
+        \node[below right=5mm and 35mm of minn, label=0:Milwakee] (milk) {};
+        \node[below=10mm of milk, label=180:Chicago] (chic) {};
+        \node[below left=25mm and 25mm of chic, label=180:St. Louis] (stl) {};
+        \node[right=40mm of stl, label=0:Louisville] (loui) {};
+        \node[below left=15mm and 10mm of loui, label=0:Nashville] (nash) {};
+        \node[above right=10mm and 10mm of loui, label=0:Cinncinnati] (cinn) {};
+        \node[above right=25mm and 2mm of cinn, label=0:Detroit] (detr) {};
+        
+        \draw (minn) -- node[nodeLabel, above] {355} 
+              (chic) -- node[nodeLabel, left] {74} 
+              (milk) -- node[nodeLabel, pos=0.4, above right] {348} 
+              (loui) -- node[nodeLabel, below left] {269} 
+              (chic) -- node[nodeLabel, pos=0.7, above left] {262} 
+              (stl)  -- node[nodeLabel, pos=0.3, below] {242} 
+              (loui) -- node[nodeLabel, pos=0.6, below right] {83} 
+              (cinn) -- node[nodeLabel, right] {230} 
+              (detr) -- node[nodeLabel, above left] {306} 
+              (loui) -- node[nodeLabel, pos=0.3, below right] {151} 
+              (nash) -- node[nodeLabel, pos=0.7, below left] {695} 
+              (minn);
+      \end{tikzpicture}
+    \end{center}
+  \end{ex*}
+  \pagebreak
+
+  \begin{algorithm}[H]
+    \LinesNotNumbered
+    \TabPositions{40mm}
+    \SetKwInOut{Input}{Input}
+    \SetKwInOut{Output}{Output}
+    \Input{$G$ [a connected, weighted graph with $n$ vertices]}
+
+    Pick a vertex $v$ of $G$ and let $T$ be the graph with one vertex, $v$, and no edges\\
+    Let $V$ be the set of all the vertices of $G$ except $v$\\
+    \For{$i:=1$ \textbf{to} $n-1$}{
+      Find an edge $e$ of $G$ such that
+      \begin{enumerate}
+        \item $e$ connects $T$ to one of the vertices in $V$, and
+        \item $e$ has the least weight of all edges connecting $T$ to a vertex in $V$
+      \end{enumerate}
+      Let $w$ be the endpoint of $e$ that is in $V$.\\
+      Add $e$ and $w$ to the edge and vertex sets of $T$, and delete $w$ from $V$
+    }
+    \Output{$T$ [a minimum spanning tree for $G$]}
+    \caption{Algorithm 10.6.2: Prim's Algorithm}
+  \end{algorithm}
+  \begin{ex*}
+    Use Prim's algorithm to find a minimum spanning tree of the following graph:
+    \begin{center}
+      \begin{tikzpicture}[
+        every node/.style={circle, fill=black, inner sep=1.5pt},
+        nodeLabel/.style={fill=none, font=\large, pos=0.5, inner sep=1.5pt},
+        ]
+        \node[label=180:Minneapolis] (minn) {};
+        \node[below right=5mm and 35mm of minn, label=0:Milwakee] (milk) {};
+        \node[below=10mm of milk, label=180:Chicago] (chic) {};
+        \node[below left=25mm and 25mm of chic, label=180:St. Louis] (stl) {};
+        \node[right=40mm of stl, label=0:Louisville] (loui) {};
+        \node[below left=15mm and 10mm of loui, label=0:Nashville] (nash) {};
+        \node[above right=10mm and 10mm of loui, label=0:Cinncinnati] (cinn) {};
+        \node[above right=25mm and 2mm of cinn, label=0:Detroit] (detr) {};
+        
+        \draw (minn) -- node[nodeLabel, above] {355} 
+              (chic) -- node[nodeLabel, left] {74} 
+              (milk) -- node[nodeLabel, pos=0.4, above right] {348} 
+              (loui) -- node[nodeLabel, below left] {269} 
+              (chic) -- node[nodeLabel, pos=0.7, above left] {262} 
+              (stl)  -- node[nodeLabel, pos=0.3, below] {242} 
+              (loui) -- node[nodeLabel, pos=0.6, below right] {83} 
+              (cinn) -- node[nodeLabel, right] {230} 
+              (detr) -- node[nodeLabel, above left] {306} 
+              (loui) -- node[nodeLabel, pos=0.3, below right] {151} 
+              (nash) -- node[nodeLabel, pos=0.7, below left] {695} 
+              (minn);
+      \end{tikzpicture}
+    \end{center}
+  \end{ex*}
 
   \pagebreak
 \end{document}
