@@ -10,15 +10,15 @@
       \item A \textbf{rooted tree} is a tree in which there is one vertex that is distinguished from the others and is called the \textbf{root}.
       \item The \textbf{level} of a vertex is the number of edges along the unique path between it and the root.
       \item The \textbf{height} of a rooted tree is the maximum level of any vertex of the tree.
-      \item Given the root or any internal vertex $v$ of a rooted tree, the \textbf{children} of $v$ are all those vertices that are adjacent to $v$ and are one level farther away from the root than $v$. 
-      \item If $w$ is a child of $v$, then $v$ is called the \textbf{parent} of $w$, and two distinct vertices that are both children of the same parent are called \textbf{siblings}. 
+      \item Given the root or any internal vertex $v$ of a rooted tree, the \textbf{children} of $v$ are all those vertices that are adjacent to $v$ and are one level farther away from the root than $v$.
+      \item If $w$ is a child of $v$, then $v$ is called the \textbf{parent} of $w$, and two distinct vertices that are both children of the same parent are called \textbf{siblings}.
       \item Given two distinct vertices $v$ and $w$, if $v$ lies on the unique path between $w$ and the root, then $v$ is an \textbf{ancestor} of $w$ and $w$ is a \textbf{descendant} of $v$.
     \end{itemize}
   \end{defn*}
 
   \begin{center}
     \begin{tikzpicture}[
-      level distance=12.5mm, 
+      level distance=12.5mm,
       level 1/.style={sibling distance=30mm},
       level 2/.style={sibling distance=15mm},
       level 3/.style={sibling distance=10mm},
@@ -38,7 +38,7 @@
           child[missing]
         }
         child {node[label=-90:$v_3$] (v3) {}};
-      
+
       \coordinate (labels) at ($(v0)+(45mm,0)$);
       \draw[dashed, shorten <=5mm] (v0) -- (labels|-v0) node[myLabels] {Level $0$};
       \draw[dashed, shorten <=5mm] (v3) -- (labels|-v3) node[myLabels] {Level $1$};
@@ -58,7 +58,7 @@
     Given any parent $v$ in a binary tree $T$, if $v$ has a left child, then the \textbf{left subtree} of $v$ is the binary tree
     \begin{itemize}
       \item whose root is the left child of $v$,
-      \item whose vertices consist of the left child of $v$ and all its descendants, and 
+      \item whose vertices consist of the left child of $v$ and all its descendants, and
       \item whose edges consist of all those edges of $T$ that connect the vertices of the left subtree.
     \end{itemize}
     The \textbf{right subtree} of $v$ is defined analogously.
@@ -66,7 +66,7 @@
 
   \begin{center}
     \begin{tikzpicture}[
-      level distance=12.5mm, 
+      level distance=12.5mm,
       level/.style={sibling distance=70mm/#1},
       every node/.style={circle, fill=black, inner sep=1.5pt},]
       \node[label=90:Root] (v0) {}
@@ -117,16 +117,16 @@
 %  \pagebreak
 
   \begin{thmBox*}[Theorem 10.5.1]
-    If $k$ is a positive integer and $T$ is a full binary tree with $k$ internal vertices, then 
+    If $k$ is a positive integer and $T$ is a full binary tree with $k$ internal vertices, then
     \begin{itemize}
       \item $T$ has a total of $2k+1$ vertices, and
       \item $T$ has $k+1$ leaves.
     \end{itemize}
-    
+
     \textbf{Theorem 10.5.2}\newline
     For ever integer $h\geq 0$, if $T$ is any binary tree with height $h$ and $t$ leaves, then
       \[t\leq 2^h \Leftrightarrow \log_2(t)\leq h.\]
-      
+
     \textbf{Corollary 10.5.3}\newline
     A full binary tree of height $h$ has $2^h$ leaves.
   \end{thmBox*}
@@ -136,7 +136,7 @@
       \task %Q 10.5.13
         Binary tree, height $4$, eight leaves
       \task %Q 10.5.15
-        Binary Full binary tree, nine vertices, five internal vertices
+        Full binary tree, nine vertices, five internal vertices
       \task %Q 10.5.16
         Full binary tree, four internal vertices
       \task %Q 10.5.18
@@ -162,7 +162,7 @@
       \[15, 10, 19, 25, 12, 4\]
     \begin{center}
       \begin{tikzpicture}[
-        level distance=15mm, 
+        level distance=15mm,
         level/.style={sibling distance=40mm/#1},
         every node/.style={circle, draw=black, minimum size=25pt, inner sep=0pt},]
         \node (15) {$15$}

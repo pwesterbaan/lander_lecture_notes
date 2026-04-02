@@ -45,34 +45,37 @@
   \end{algorithm}
   \begin{ex*}
     Use Kruskal's algorithm to find a minimum spanning tree of the following graph:
-    \begin{center}
+
+    \vspace*{\stretch{1}}
+    % \begin{center}
       \begin{tikzpicture}[
         every node/.style={circle, fill=black, inner sep=1.5pt},
         nodeLabel/.style={fill=none, font=\large, pos=0.5, inner sep=1.5pt},
         ]
         \node[label=180:Minneapolis] (minn) {};
-        \node[below right=5mm and 35mm of minn, label=0:Milwakee] (milk) {};
+        \node[below right=5mm and 35mm of minn, label=0:Milwaukee] (milk) {};
         \node[below=10mm of milk, label=180:Chicago] (chic) {};
         \node[below left=25mm and 25mm of chic, label=180:St. Louis] (stl) {};
         \node[right=40mm of stl, label=0:Louisville] (loui) {};
         \node[below left=15mm and 10mm of loui, label=0:Nashville] (nash) {};
         \node[above right=10mm and 10mm of loui, label=0:Cinncinnati] (cinn) {};
         \node[above right=25mm and 2mm of cinn, label=0:Detroit] (detr) {};
-        
-        \draw (minn) -- node[nodeLabel, above] {355} 
-              (chic) -- node[nodeLabel, left] {74} 
-              (milk) -- node[nodeLabel, pos=0.4, above right] {348} 
-              (loui) -- node[nodeLabel, below left] {269} 
-              (chic) -- node[nodeLabel, pos=0.7, above left] {262} 
-              (stl)  -- node[nodeLabel, pos=0.3, below] {242} 
-              (loui) -- node[nodeLabel, pos=0.6, below right] {83} 
-              (cinn) -- node[nodeLabel, right] {230} 
-              (detr) -- node[nodeLabel, above left] {306} 
-              (loui) -- node[nodeLabel, pos=0.3, below right] {151} 
-              (nash) -- node[nodeLabel, pos=0.7, below left] {695} 
+
+        \draw (minn) -- node[nodeLabel, above] {355}
+              (chic) -- node[nodeLabel, left] {74}
+              (milk) -- node[nodeLabel, pos=0.4, above right] {348}
+              (loui) -- node[nodeLabel, below left] {269}
+              (chic) -- node[nodeLabel, pos=0.7, above left] {262}
+              (stl)  -- node[nodeLabel, pos=0.3, below] {242}
+              (loui) -- node[nodeLabel, pos=0.6, below right] {83}
+              (cinn) -- node[nodeLabel, right] {230}
+              (detr) -- node[nodeLabel, above left] {306}
+              (loui) -- node[nodeLabel, pos=0.3, below right] {151}
+              (nash) -- node[nodeLabel, pos=0.7, below left] {695}
               (minn);
       \end{tikzpicture}
-    \end{center}
+    % \end{center}
+    \vspace*{\stretch{1}}
   \end{ex*}
   \pagebreak
 
@@ -99,34 +102,37 @@
   \end{algorithm}
   \begin{ex*}
     Use Prim's algorithm to find a minimum spanning tree of the following graph:
-    \begin{center}
+
+    % \begin{center}
+    \vspace*{\stretch{1}}
       \begin{tikzpicture}[
         every node/.style={circle, fill=black, inner sep=1.5pt},
         nodeLabel/.style={fill=none, font=\large, pos=0.5, inner sep=1.5pt},
         ]
         \node[label=180:Minneapolis] (minn) {};
-        \node[below right=5mm and 35mm of minn, label=0:Milwakee] (milk) {};
+        \node[below right=5mm and 35mm of minn, label=0:Milwaukee] (milk) {};
         \node[below=10mm of milk, label=180:Chicago] (chic) {};
         \node[below left=25mm and 25mm of chic, label=180:St. Louis] (stl) {};
         \node[right=40mm of stl, label=0:Louisville] (loui) {};
         \node[below left=15mm and 10mm of loui, label=0:Nashville] (nash) {};
         \node[above right=10mm and 10mm of loui, label=0:Cinncinnati] (cinn) {};
         \node[above right=25mm and 2mm of cinn, label=0:Detroit] (detr) {};
-        
-        \draw (minn) -- node[nodeLabel, above] {355} 
-              (chic) -- node[nodeLabel, left] {74} 
-              (milk) -- node[nodeLabel, pos=0.4, above right] {348} 
-              (loui) -- node[nodeLabel, below left] {269} 
-              (chic) -- node[nodeLabel, pos=0.7, above left] {262} 
-              (stl)  -- node[nodeLabel, pos=0.3, below] {242} 
-              (loui) -- node[nodeLabel, pos=0.6, below right] {83} 
-              (cinn) -- node[nodeLabel, right] {230} 
-              (detr) -- node[nodeLabel, above left] {306} 
-              (loui) -- node[nodeLabel, pos=0.3, below right] {151} 
-              (nash) -- node[nodeLabel, pos=0.7, below left] {695} 
+
+        \draw (minn) -- node[nodeLabel, above] {355}
+              (chic) -- node[nodeLabel, left] {74}
+              (milk) -- node[nodeLabel, pos=0.4, above right] {348}
+              (loui) -- node[nodeLabel, below left] {269}
+              (chic) -- node[nodeLabel, pos=0.7, above left] {262}
+              (stl)  -- node[nodeLabel, pos=0.3, below] {242}
+              (loui) -- node[nodeLabel, pos=0.6, below right] {83}
+              (cinn) -- node[nodeLabel, right] {230}
+              (detr) -- node[nodeLabel, above left] {306}
+              (loui) -- node[nodeLabel, pos=0.3, below right] {151}
+              (nash) -- node[nodeLabel, pos=0.7, below left] {695}
               (minn);
       \end{tikzpicture}
-    \end{center}
+    % \end{center}
+    \vspace*{\stretch{1}}
   \end{ex*}
 
   \pagebreak
