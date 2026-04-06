@@ -4,6 +4,102 @@
 \begin{document}
 \relscale{\relscalefact}
   \section{5.1: Sequences}
-
+  \begin{defn*}
+    A \textbf{sequence} is a function whose domain is either all the integers between two given integers or all the integers greater than or equal to a given integer.
+  \end{defn*}
+  \begin{ex*}
+    Given
+      \begin{align*}
+        a_k&=\frac{k}{k+1},\ k\in \bbz^{\geq 1}& 
+        b_i&=\frac{i-1}{i},\ i\in \bbz^{\geq 2}
+      \end{align*}
+    Compute the first five terms of both sequences
+    \vspace*{\stretch{1}}
+  \end{ex*}
   \pagebreak
+
+  \begin{ex*}
+    Find an explicit formula for a sequence with the following initial terms:
+      \[1,\ -\frac{1}{4},\ \frac{1}{9},\ -\frac{1}{16},\ \frac{1}{25},\ -\frac{1}{36},\ \dots\]
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{defn*}
+    Let $m,n\in \bbz$ with $m\leq n$. The \textbf{summation} of $a_k$ from $m$ to $n$ is given by:
+      \[\sum_{k=m}^n a_k= a_m+a_{m+1}+a_{m+2}+\dots+a_{n-1}+a_n\]
+    where $k$ is the \textbf{index}, $m$ is the \textbf{lower limit}, and $n$ is the \textbf{upper limit}.
+  \end{defn*}
+  \begin{ex*}
+    Rewrite the following using summation notation:
+      \[1-\frac{1}{4}+\frac{1}{9}-\frac{1}{16}+\frac{1}{25}-\frac{1}{36}\]
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Compute $\displaystyle \sum_{k=1}^5 k^2$
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{ex*}
+    Write $\displaystyle \sum_{k=1}^n 2^k+2^{n+1}$ as a single summation
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Rewrite $\displaystyle \sum_{i=1}^{n+1} \frac{1}{i^2}$ by separating off the final term
+    \vspace*{\stretch{1}}
+  \end{ex*}
+
+  \begin{ex*}
+    Evaluate the following telescoping sum:
+      \[\sum_{k=1}^n \frac{1}{k(k+1)}=\sum_{k=1}^n \parens{\frac{1}{k}-\frac{1}{k+1}}\]
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    Let $m,n\in \bbz$ with $m\leq n$. The \textbf{product} of $a_k$ from $m$ to $n$ is given by:
+      \[\prod_{k=m}^n a_k= a_m\cdot a_{m+1}\cdot a_{m+2}\cdot \dots\cdot a_{n-1}\cdot a_n\]
+    where $k$ is the \textbf{index}, $m$ is the \textbf{lower limit}, and $n$ is the \textbf{upper limit}.
+  \end{defn*}
+  \begin{ex*}
+    Compute the following:
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $\displaystyle \prod_{k=1}^5 k$
+      \task $\displaystyle \prod_{k=1}^{10} \frac{k}{k+1}$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+
+  \begin{ex*}
+    Rewrite the following summation so that the index begins at $k=1$:
+      \[\sum_{k=0}^6 \frac{1}{k+1}\]
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    For each positive integer $n$, the quantity \textbf{$n$ factorial}, denoted $n!$, is defined to be the product of all of the integers from $1$ to $n$:
+      \[n!=n\cdot (n-1)\dots 3\cdot 2\cdot 1=\prod_{k=1}^n k\]
+    \textbf{Zero factorial}, denoted $0!$, is defined to be $1$:
+      \[0!=1\]
+  \end{defn*}
+  \begin{ex*}
+    Simplify the following expressions:
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $\dfrac{8!}{7!}$
+      \task $\dfrac{5!}{2!\cdot 3!}$
+      \task $\dfrac{(n+1)!}{n!}$
+      \task $\dfrac{n!}{(n-3)!}$
+      \task* $\dfrac{1}{2!\cdot 4!}+\dfrac{1}{3!\cdot 3!}$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{defn*}
+    Let $n, r\in\bbz$ with $0\leq r\leq n$. Then
+      \[{n \choose r} =\frac{n!}{r!(n-r)!}\]
+    is \textbf{$n$ choose $r$}, which represents the number of subsets of size $r$ that can be chosen from a set with $n$ elements.
+  \end{defn*}
+  \pagebreak
+
 \end{document}
