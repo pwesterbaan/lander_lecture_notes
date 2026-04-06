@@ -86,7 +86,7 @@
     \begin{extasks}[after-item-skip=\stretch{1}](1)
       \task $f(x)=4x+2$
       \task $g(s)=\dfrac{s+2}{s-3}$
-      \task $h(t)=\dfrac{e^t+e^{-t}}{2}$
+      \task $h(t)=\dfrac{e^t+e^{-t}}{2}$ 
     \end{extasks}
     \vspace*{\stretch{1}}
   \end{ex*}
@@ -96,12 +96,173 @@
     Let $F$ be a function from a set $X$ to a set $Y$. $F$ is \textbf{onto} (or \textbf{surjective}) if, and only if, given any element $y$ in $Y$, it is possible to find an element $x$ in $X$ with the property that $y=F(x)$
       \[F:X\to Y \textnormal{ is onto } \Leftrightarrow \forall y\in Y,\ \exists x\in X \textnormal{ such that } F(x)=y.\]
   \end{defn*}
+  \vspace*{0.5\baselineskip}
 
-  %TODO example 7.2.4: add example where onto, but not one-to-one
-  %TODO example 7.2.5: onto? (reals and ints)
-  %TODO define bijection (p452)
-  %TODO inverse theorem and define inverse function (p455)
-  %TODO example 7.2.13: find inverse function
+  \begin{ex*}
+    Do any of the arrow diagrams below define a function that is onto?
+    \begin{center}
+      \hspace*{\stretch{0.75}}
+      \begin{tikzpicture}[
+        node distance=5mm,
+        myPoint/.style={circle, fill, inner sep=1pt},
+        myArrow/.style={->, shorten >=2.5pt, shorten <=1.25pt}
+        ]
+        \draw (-2,0) circle [x radius=1.25, y radius=2];
+        \node at (-2,2.5) {$X$};
+        \draw (2,0) circle [x radius=1.25, y radius=2];
+        \node at (2,2.5) {$Y$};
+        %
+        \node[myPoint, label=180:$3$, xshift=5pt] (3) at (-2,0) {};
+        \node[myPoint, above=of 3, label=180:$2$] (2) {};
+        \node[myPoint, above=of 2, label=180:$1$] (1) {};
+        \node[myPoint, below=of 3, label=180:$4$] (4) {};
+        \node[myPoint, below=of 4, label=180:$5$] (5) {};
+        %
+        \node[myPoint, label=0:$c$, yshift=-2.5, xshift=-5pt] (c) at (2,0) {};
+        \node[myPoint, above=of c, label=0:$b$] (b) {};
+        \node[myPoint, above=of b, label=0:$a$] (a) {};
+        \node[myPoint, below=of c, label=0:$d$] (d) {};
+%        \node[myPoint, below=of d, label=0:$e$] (e) {};
+        %
+        \draw[myArrow] (1) -- (c);
+        \draw[myArrow] (2) -- (a);
+        \draw[myArrow] (3) -- (c);
+        \draw[myArrow] (4) -- (d);
+        \draw[myArrow] (5) -- (d);
+        %
+        \node (F) at (0,2.3) {$F$};
+        \draw[->] ($(F)+(-0.75,-0.55)$) to [bend left] ($(F)+(0.75,-0.55)$);
+      \end{tikzpicture}
+      \hspace*{\stretch{1}}
+      \begin{tikzpicture}[
+        node distance=5mm,
+        myPoint/.style={circle, fill, inner sep=1pt},
+        myArrow/.style={->, shorten >=2.5pt, shorten <=1.25pt}
+        ]
+        \draw (-2,0) circle [x radius=1.25, y radius=2];
+        \node at (-2,2.5) {$X$};
+        \draw (2,0) circle [x radius=1.25, y radius=2];
+        \node at (2,2.5) {$Y$};
+        %
+        \node[myPoint, label=180:$3$, xshift=5pt] (3) at (-2,0) {};
+        \node[myPoint, above=of 3, label=180:$2$] (2) {};
+        \node[myPoint, above=of 2, label=180:$1$] (1) {};
+        \node[myPoint, below=of 3, label=180:$4$] (4) {};
+        \node[myPoint, below=of 4, label=180:$5$] (5) {};
+        %
+        \node[myPoint, label=0:$c$, yshift=-2.5, xshift=-5pt] (c) at (2,0) {};
+        \node[myPoint, above=of c, label=0:$b$] (b) {};
+        \node[myPoint, above=of b, label=0:$a$] (a) {};
+        \node[myPoint, below=of c, label=0:$d$] (d) {};
+%        \node[myPoint, below=of d, label=0:$e$] (e) {};
+        %
+        \draw[myArrow] (1) -- (c);
+        \draw[myArrow] (2) -- (a);
+        \draw[myArrow] (3) -- (c);
+        \draw[myArrow] (4) -- (d);
+        \draw[myArrow] (5) -- (b);
+        %
+        \node (G) at (0,2.3) {$G$};
+        \draw[->] ($(G)+(-0.75,-0.55)$) to [bend left] ($(G)+(0.75,-0.55)$);
+      \end{tikzpicture}
+      \hspace*{\stretch{0.75}}
+      \vspace*{\stretch{1}}
 
+      \hspace*{\stretch{0.75}}
+      \begin{tikzpicture}[
+        node distance=5mm,
+        myPoint/.style={circle, fill, inner sep=1pt},
+        myArrow/.style={->, shorten >=2.5pt, shorten <=1.25pt}
+        ]
+        \draw (-2,0) circle [x radius=1.25, y radius=2];
+        \node at (-2,2.5) {$X$};
+        \draw (2,0) circle [x radius=1.25, y radius=2];
+        \node at (2,2.5) {$Y$};
+        %
+        \node[myPoint, label=180:$3$, xshift=5pt] (3) at (-2,0) {};
+        \node[myPoint, above=of 3, label=180:$2$] (2) {};
+        \node[myPoint, above=of 2, label=180:$1$] (1) {};
+        \node[myPoint, below=of 3, label=180:$4$] (4) {};
+        \node[myPoint, below=of 4, label=180:$5$] (5) {};
+        %
+        \node[myPoint, label=0:$c$, yshift=-2.5, xshift=-5pt] (c) at (2,0) {};
+        \node[myPoint, above=of c, label=0:$b$] (b) {};
+        \node[myPoint, above=of b, label=0:$a$] (a) {};
+        \node[myPoint, below=of c, label=0:$d$] (d) {};
+%        \node[myPoint, below=of d, label=0:$e$] (e) {};
+        %
+        \draw[myArrow] (1) -- (c);
+        \draw[myArrow] (2) -- (a);
+        \draw[myArrow] (3) -- (c);
+        \draw[myArrow] (4) -- (d);
+        \draw[myArrow] (5) -- (b);
+        \draw[myArrow] (5) -- (d);
+        %
+        \node (H) at (0,2.3) {$H$};
+        \draw[->] ($(H)+(-0.75,-0.55)$) to [bend left] ($(H)+(0.75,-0.55)$);
+      \end{tikzpicture}
+      \hspace*{\stretch{1}}
+      \begin{tikzpicture}[
+        node distance=7.5mm,
+        myPoint/.style={circle, fill, inner sep=1pt},
+        myArrow/.style={->, shorten >=2.5pt, shorten <=1.25pt}
+        ]
+        \draw (-2,0) circle [x radius=1.25, y radius=2];
+        \node at (-2,2.5) {$X$};
+        \draw (2,0) circle [x radius=1.25, y radius=2];
+        \node at (2,2.5) {$Y$};
+        %
+        \node[myPoint, label=180:$3$, yshift=-3.75mm, xshift=5pt] (3) at (-2,0) {};
+        \node[myPoint, above=of 3, label=180:$2$] (2) {};
+        \node[myPoint, above=of 2, label=180:$1$] (1) {};
+        \node[myPoint, below=of 3, label=180:$4$] (4) {};
+%        \node[myPoint, below=of 4, label=180:$5$] (5) {};
+        %
+        \node[myPoint, label=0:$c$, yshift=-3.75, xshift=-5pt] (c) at (2,0) {};
+        \node[myPoint, above=of c, label=0:$b$] (b) {};
+        \node[myPoint, above=of b, label=0:$a$] (a) {};
+        \node[myPoint, below=of c, label=0:$d$] (d) {};
+%        \node[myPoint, below=of d, label=0:$e$] (e) {};
+        %
+        \draw[myArrow] (1) -- (b);
+        \draw[myArrow] (2) -- (a);
+        \draw[myArrow] (3) -- (c);
+        \draw[myArrow] (4) -- (d);
+        %
+        \node (J) at (0,2.3) {$J$};
+        \draw[->] ($(J)+(-0.75,-0.55)$) to [bend left] ($(J)+(0.75,-0.55)$);
+      \end{tikzpicture}
+      \hspace*{\stretch{0.75}}
+    \end{center}
+  \end{ex*}
+  \vspace*{\stretch{1}}
   \pagebreak
+
+  \begin{ex*}
+    For the following functions, prove they are onto, or show that they are not:
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task $f:\bbr \to \bbr$ where $f(x)=4x-1,\ \forall x\in \bbr$
+      \task $g:\bbz \to \bbz$ where $g(n)=4n-1,\ \forall n\in \bbz$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    A \textbf{one-to-one correspondence} (or \textbf{bijection}) from a set $X$ to a set $Y$ is a function $F:X\to Y$ that is \emph{both} one-to-one and onto.
+    \vspace*{\baselineskip}
+    
+    If $F$ is a one-to-one correspondence, then $F\inv$ exists:
+      \[F(x)=y \Leftrightarrow F\inv(y)=x\]
+  \end{defn*}
+  \begin{ex*}
+    Find the inverse of the following functions:
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task $f(x)=4x+2$
+      \task $g(s)=\dfrac{s+2}{s-3}$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
 \end{document}
