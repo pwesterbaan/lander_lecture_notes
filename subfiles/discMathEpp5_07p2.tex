@@ -4,6 +4,104 @@
 \begin{document}
 \relscale{\relscalefact}
   \section{7.2: One-to-One, Onto, and Inverse Functions}
+  \begin{defn*}
+    Let $F$ be a function from a set $X$ to a set $Y$. $F$ is \textbf{one-to-one} (or \textbf{injective}) if, and only if, for all elements $x_1$ and $x_2$ in $X$,
+      \[\textnormal{if } F(x_1)=F(x_2), \textnormal{ then } x_1=x_2,\]
+    or, equivalently,
+      \[\textnormal{if } x_1\neq x_2, \textnormal{ then } F(x_1)\neq F(x_2).\]
+
+      \[F:X \to Y \textnormal{ is one-to-one } \Leftrightarrow \forall x_1, x_2 \in X, \textnormal{ if } F(x_1)=F(x_2) \textnormal{ then } x_1=x_2.\]
+  \end{defn*} 
+
+  \begin{ex*}
+    Do either of the arrow diagrams below define a one-to-one function?
+    \begin{center}
+      \hspace*{\stretch{0.75}}
+      \begin{tikzpicture}[
+        node distance=7.5mm,
+        myPoint/.style={circle, fill, inner sep=1pt},
+        myArrow/.style={->, shorten >=2.5pt, shorten <=1.25pt}
+        ]
+        \draw (-2,0) circle [x radius=1.25, y radius=2];
+        \node at (-2,2.5) {$X$};
+        \draw (2,0) circle [x radius=1.25, y radius=2];
+        \node at (2,2.5) {$Y$};
+        %
+        \node[myPoint, label=180:$2$, yshift=3.75mm, xshift=5pt] (2) at (-2,0) {};
+        \node[myPoint, above=of 2, label=180:$1$] (1) {};
+        \node[myPoint, below=of 2, label=180:$3$] (3) {};
+        \node[myPoint, below=of 3, label=180:$4$] (4) {};
+        %
+        \node[myPoint, label=0:$c$, xshift=-5pt] (c) at (2,0) {};
+        \node[myPoint, above=of c, label=0:$b$] (b) {};
+        \node[myPoint, above=of b, label=0:$a$] (a) {};
+        \node[myPoint, below=of c, label=0:$d$] (d) {};
+        \node[myPoint, below=of d, label=0:$e$] (e) {};
+        %
+        \draw[myArrow] (1) -- (c);
+        \draw[myArrow] (2) -- (b);
+        \draw[myArrow] (3) -- (d);
+        \draw[myArrow] (4) -- (e);
+        %
+        \node (F) at (0,2.3) {$F$};
+        \draw[->] ($(F)+(-0.75,-0.55)$) to [bend left] ($(F)+(0.75,-0.55)$);
+      \end{tikzpicture}
+      \hspace*{\stretch{1}}
+      \begin{tikzpicture}[
+        node distance=7.5mm,
+        myPoint/.style={circle, fill, inner sep=1pt},
+        myArrow/.style={->, shorten >=2.5pt, shorten <=1.25pt}
+        ]
+        \draw (-2,0) circle [x radius=1.25, y radius=2];
+        \node at (-2,2.5) {$X$};
+        \draw (2,0) circle [x radius=1.25, y radius=2];
+        \node at (2,2.5) {$Y$};
+        %
+        \node[myPoint, label=180:$2$, yshift=3.75mm, xshift=5pt] (2) at (-2,0) {};
+        \node[myPoint, above=of 2, label=180:$1$] (1) {};
+        \node[myPoint, below=of 2, label=180:$3$] (3) {};
+        \node[myPoint, below=of 3, label=180:$4$] (4) {};
+        %
+        \node[myPoint, label=0:$c$, xshift=-5pt] (c) at (2,0) {};
+        \node[myPoint, above=of c, label=0:$b$] (b) {};
+        \node[myPoint, above=of b, label=0:$a$] (a) {};
+        \node[myPoint, below=of c, label=0:$d$] (d) {};
+        \node[myPoint, below=of d, label=0:$e$] (e) {};
+        %
+        \draw[myArrow] (1) -- (c);
+        \draw[myArrow] (2) -- (a);
+        \draw[myArrow] (3) -- (c);
+        \draw[myArrow] (4) -- (e);
+        %
+        \node (G) at (0,2.3) {$G$};
+        \draw[->] ($(G)+(-0.75,-0.55)$) to [bend left] ($(G)+(0.75,-0.55)$);
+      \end{tikzpicture}
+      \hspace*{\stretch{0.75}}
+    \end{center}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    For the following functions, prove they are one-to-one, or show that they are not:
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task $f(x)=4x+2$
+      \task $g(s)=\dfrac{s+2}{s-3}$
+      \task $h(t)=\dfrac{e^t+e^{-t}}{2}$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    Let $F$ be a function from a set $X$ to a set $Y$. $F$ is \textbf{onto} (or \textbf{surjective}) if, and only if, given any element $y$ in $Y$, it is possible to find an element $x$ in $X$ with the property that $y=F(x)$
+      \[F:X\to Y \textnormal{ is onto } \Leftrightarrow \forall y\in Y,\ \exists x\in X \textnormal{ such that } F(x)=y.\]
+  \end{defn*}
+
+  %TODO example 7.2.4: add example where onto, but not one-to-one
+  %TODO example 7.2.5: onto? (reals and ints)
+  %TODO define bijection (p452)
+  %TODO inverse theorem and define inverse function (p455)
+  %TODO example 7.2.13: find inverse function
 
   \pagebreak
 \end{document}

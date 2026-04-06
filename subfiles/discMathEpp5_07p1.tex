@@ -4,6 +4,143 @@
 \begin{document}
 \relscale{\relscalefact}
   \section{7.1: Functions Defined on General Sets}
+  \begin{defn*}
+    A \textbf{function $f$ from a set $X$ to a set $Y$}, denoted $f:X\to Y$, is a relation from $X$, the \textbf{domain} of $f$, to $Y$, the \textbf{co-domain} of $f$, that satisfies
+    \begin{enumerate}
+      \item every element in $X$ is related to some element in $Y$, and
+      \item no element in $X$ is related to more than one element in $Y$.
+    \end{enumerate}
+    Then, given any element $x\in X$, there is a unique element in $Y$ that is related to $x$ by $f$:
+      \[\forall x\in X,\ f(x)\in Y\]
+    The set of all values of $f$ taken together is called the \textbf{range of $f$} or the \textbf{image of $X$ under $f$}:
+      \[\textnormal{range of } f=\set{y\in Y \mid y=f(x),\ \textnormal{ for some } x\in X}.\]
+    Given an element $y\in Y$, there may exist elements in $X$ with $y$ as their image. When $x$ is an element such that $f(x)=y$, then $x$ is called a \textbf{a preimage of $y$} or \textbf{an inverse image of $y$}:
+      \[\textnormal{the inverse image of } y=\set{x\in X \mid f(x)=y}.\]
+  \end{defn*}
+  \pagebreak
+
+  \begin{ex*}
+    Using the arrow diagram below, identify the following:
+    \begin{flushright}
+      \begin{minipage}{0.4\linewidth}
+        \begin{center}
+          \smash{\raisebox{-\height}{
+          \begin{tikzpicture}[
+            myPoint/.style={circle, fill, inner sep=1pt},
+            myArrow/.style={->, shorten >=7.5pt, shorten <=5pt}]
+            \draw (-2,0) circle [x radius=1.25, y radius=1.9];
+            \node at (-2,2.5) {$X$};
+            \draw (2,0) circle [x radius=1.25, y radius=1.9];
+            \node at (2,2.5) {$Y$};
+            \node[myPoint, label=180:$x_2$] (xo) at (-1.85,0) {};
+            \node[myPoint, above=of xo, label=180:$x_1$] (xmo){};
+            \node[myPoint, below=of xo, label=180:$x_3$] (xpo) {};
+            %
+            \node[myPoint, label=0:$y_2$] (fxo) at (1.85,0) {};
+            \node[myPoint, above=of fxo, label=0:$y_1$] (fxmo) {};
+            \node[myPoint, below=of fxo, label=0:$y_3$] (fxpo) {};
+            \draw[myArrow] (xmo) to [bend left=10] (fxmo);
+            \draw[myArrow] (xo) to [bend left=10] (fxo);
+            \draw[myArrow] (xpo) to [bend right=12.5] (fxo);
+            \node (f) at (0,2.3) {$f$};
+            \draw[->] ($(f)+(-0.75,-0.55)$) to [bend left] ($(f)+(0.75,-0.55)$);
+          \end{tikzpicture}
+          }}
+        \end{center}
+      \end{minipage}
+    \end{flushright}  
+
+    \begin{extasks}[after-item-skip=\stretch{1}](3)
+      \task* domain and co-domain
+      \task* range
+      \task $f(x_1)$
+      \task $f(x_2)$
+      \task $f(x_3)$
+      \task* Is $x_3$ an inverse image of $y_2$? Is $x_2$ an inverse image of $y_3$?
+      \task* Find the inverse image of $y_1$, $y_2$, and $y_3$
+      \task* Represent $f$ as a set of ordered pairs
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Given a set $X$, define a function $I_X: X\to X$ (\textbf{identity function on $X$}):
+      \[I_X(x)=x,\ \forall x\in X\]
+    What are the domain, co-domain, and range of $I_X$?
+    \vspace*{\stretch{1}}
+  \end{ex*}
+
+  \begin{defn*}
+    \begin{align*}
+      \intertext{For $b>0$ and $b\neq 1$, the \textbf{logarithmic function}}
+      y&=\log_b(x) \tag{logarithmic form}
+      \intertext{has domain $x>0$, base $b$, and is defined by}
+      b^y&=x \tag{exponential form}
+    \end{align*}
+  \end{defn*}
+
+  \begin{ex*}
+    Find the following:
+    \begin{extasks}[after-item-skip=\stretch{1}](3)
+      \task $\log_3(9)$
+      \task $\log_2\parens{\frac{1}{2}}$
+      \task $\log_{10}(1)$
+      \task $\log_2\parens{2^m}$
+      \task* $2^{\log_2(m)},\ (m>0)$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}
+    If $X\to Y$ is a function and $A\subseteq X$ and $C\subseteq Y$, then
+      \[f(A)=\set{y\in Y \mid y=f(x) \textnormal{ for some } x\in A}\]
+    and
+      \[f\inv(C)=\set{x\in X \mid f(x) \in C}.\]
+    $f(A)$ is called the \textbf{image of $A$}, and $f\inv(C)$ is called the \textbf{inverse image of $C$}.
+  \end{defn*}
+  \begin{ex*}
+    Let $X=\set{1,2,3,4}$ and $Y=\set{a,b,c,d,e}$, and define $F:X\to Y$ by the following arrow diagram:
+
+      \begin{center}
+        \begin{tikzpicture}[
+          node distance=10mm,
+          myPoint/.style={circle, fill, inner sep=1pt},
+          myArrow/.style={->, shorten >=2.5pt, shorten <=1.25pt}
+          ]
+          \draw (-2,0) circle [x radius=1.25, y radius=2.5];
+          \draw (2,0) circle [x radius=1.25, y radius=2.65];
+          %
+          \node[myPoint, label=180:$2$, yshift=5mm, xshift=5pt] (2) at (-2,0) {};
+          \node[myPoint, above=of 2, label=180:$1$] (1) {};
+          \node[myPoint, below=of 2, label=180:$3$] (3) {};
+          \node[myPoint, below=of 3, label=180:$4$] (4) {};
+          %
+          \node[myPoint, label=0:$c$, xshift=-5pt] (c) at (2,0) {};
+          \node[myPoint, above=of c, label=0:$b$] (b) {};
+          \node[myPoint, above=of b, label=0:$a$] (a) {};
+          \node[myPoint, below=of c, label=0:$d$] (d) {};
+          \node[myPoint, below=of d, label=0:$e$] (e) {};
+          %
+          \draw[myArrow] (1) -- (b);
+          \draw[myArrow] (2) -- (a);
+          \draw[myArrow] (3) -- (d);
+          \draw[myArrow] (4) -- (b);
+        \end{tikzpicture}
+      \end{center}
+    Let $A=\set{1,4}$, $C=\set{a,b}$, and $D=\set{c,e}$. Find 
+      \begin{extasks}[after-item-skip=\stretch{1}](2)
+        \task $F(A)$ 
+        \task $F(X)$
+        \task $F\inv(C)$
+        \task $F\inv(D)$
+      \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+
+  %TODO example 7.1.13: action of function on a subset of a set (and prior defn)
+  %TODO example 7.1.14: interaction of a function with union (???)
 
   \pagebreak
 \end{document}
