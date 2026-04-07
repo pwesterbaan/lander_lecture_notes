@@ -32,16 +32,16 @@
             \node at (-2,2.5) {$X$};
             \draw (2,0) circle [x radius=1.25, y radius=1.9];
             \node at (2,2.5) {$Y$};
-            \node[myPoint, label=180:$x_2$] (xo) at (-1.85,0) {};
-            \node[myPoint, above=of xo, label=180:$x_1$] (xmo){};
-            \node[myPoint, below=of xo, label=180:$x_3$] (xpo) {};
+            \node[myPoint, label=180:$2$] (2) at (-1.85,0) {};
+            \node[myPoint, above=of 2, label=180:$1$] (1){};
+            \node[myPoint, below=of 2, label=180:$3$] (3) {};
             %
-            \node[myPoint, label=0:$y_2$] (fxo) at (1.85,0) {};
-            \node[myPoint, above=of fxo, label=0:$y_1$] (fxmo) {};
-            \node[myPoint, below=of fxo, label=0:$y_3$] (fxpo) {};
-            \draw[myArrow] (xmo) to [bend left=10] (fxmo);
-            \draw[myArrow] (xo) to [bend left=10] (fxo);
-            \draw[myArrow] (xpo) to [bend right=12.5] (fxo);
+            \node[myPoint, label=0:$b$] (b) at (1.85,0) {};
+            \node[myPoint, above=of b, label=0:$a$] (a) {};
+            \node[myPoint, below=of b, label=0:$c$] (c) {};
+            \draw[myArrow] (1) to [bend left=10] (a);
+            \draw[myArrow] (2) to [bend left=10] (b);
+            \draw[myArrow] (3) to [bend right=12.5] (b);
             \node (f) at (0,2.3) {$f$};
             \draw[->] ($(f)+(-0.75,-0.55)$) to [bend left] ($(f)+(0.75,-0.55)$);
           \end{tikzpicture}
@@ -53,11 +53,11 @@
     \begin{extasks}[after-item-skip=\stretch{1}](3)
       \task* domain and co-domain
       \task* range
-      \task $f(x_1)$
-      \task $f(x_2)$
-      \task $f(x_3)$
-      \task* Is $x_3$ an inverse image of $y_2$? Is $x_2$ an inverse image of $y_3$?
-      \task* Find the inverse image of $y_1$, $y_2$, and $y_3$
+      \task $f(1)$
+      \task $f(2)$
+      \task $f(3)$
+      \task* Is $2$ an inverse image of $b$? Is $2$ an inverse image of $c$?
+      \task* Find the inverse image of $1$, $2$, and $3$
       \task* Represent $f$ as a set of ordered pairs
     \end{extasks}
     \vspace*{\stretch{1}}
