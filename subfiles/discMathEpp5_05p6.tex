@@ -4,6 +4,62 @@
 \begin{document}
 \relscale{\relscalefact}
   \section{5.6: Defining Sequences Recursively}
+  %TODO WebAssign: 5.6.006, 8, 16, 21, 24, 32, 36, 40
 
+  %TODO define recurrence relation (p325)
+  \begin{defn*}
+    A \textbf{recurrence relation} for a sequence $a_0, a_1, a_2,\dots$ is a formula that relates each term $a_k$ to a certain subset of its predecessors $a_{k-1}, a_{k-2}, \dots, a_{k-i}$, where $i$ is an integer with $k-i\geq 0$.
+    
+    If $i$ is a fixed integer, the \textbf{initial conditions} for such a recurrence relation specify the values $a_0, a_1, a_2, \dots, a_{i-1}$. 
+%    If $i$ depends on $k$, the initial conditions specify the values of $a_0, a_1, \dots, a_m$, where $m$ is an integer with $m\geq 0$.
+  \end{defn*}
+  \begin{ex*}
+    Define a sequence $c_0, c_1, c_2, \dots$ recursively as follows: For every integer $k\geq 2$,
+    \begin{align*}
+      c_k&=c_{k-1}+k c_{k-2}+1\\
+      c_0&=1 \textnormal{ and } c_1=2
+    \end{align*}
+    Find the first $5$ elements of this sequence.
+  \end{ex*}
   \pagebreak
+
+  %TODO fibonacci numbers
+  \begin{ex*}
+    The \textbf{Fibonacci Numbers} are a sequence commonly attributed to Leonardo of Pisa (a.k.a \href{https://en.wikipedia.org/wiki/Fibonacci}{\textcolor{blue}{\underline{Fibonacci}}}). He posed the following problem:
+    \begin{quote}
+      A single pair of rabbits (male and female) is born at the beginning of a year. Assume the following conditions:
+      \begin{enumerate}
+        \item Rabbit pairs are not fertile during their first month of life but thereafter give birth to one new male/female pair at the end of every month.
+        \item No rabbits die.
+      \end{enumerate}
+      How many rabbits will there be at the end of the year?
+    \end{quote}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak 
+
+  %TODO tower of hanoi
+  \begin{ex*}
+    The \textbf{Tower of Hanoi} is a puzzle with $8$ circular disks of wood with holes in the center. The disks are stacked from the smallest down to the largest. The objective of the game is to move the stack, one disk at a time, from one pole to another without placing a larger disk above a smaller disk:
+    \begin{center}
+      \href{https://www.mathsisfun.com/games/towerofhanoi.html}{\textcolor{blue}{\underline{Tower of Hanoi}}}
+    \end{center}
+    What is the minimum number of moves required to solve this puzzle?
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Use mathematical induction to prove that for each integer $n\geq 0$, $F_{n+2}F_n-F_{n+1}^2=(-1)^n$
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{ex*}
+    Consider the following recursive sequence:
+      \[x_n=\sqrt{4+3x_{n-1}}\]
+    Find 
+      \[\lim_{n\to \infty} x_n\]
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
 \end{document}
