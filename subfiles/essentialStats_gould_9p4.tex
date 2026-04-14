@@ -37,6 +37,7 @@
   \begin{center}
     \begin{tikzpicture}
       \begin{axis}[
+        axis on top=true,
         domain=-4:4,
         samples=255,
         axis x line=middle,
@@ -49,10 +50,11 @@
         clip=false,
         width=\linewidth, height=\axisdefaultheight
         ]
-        \addplot[thick,lander_blue] {gauss(x,0,1)};
         % Shade rejection regions
         \addplot[domain=-4:-1.96, fill=red!30, draw=none] {gauss(x,0,1)} \closedcycle;
         \addplot[domain=1.96:4, fill=red!30, draw=none] {gauss(x,0,1)} \closedcycle;
+
+        \addplot[thick,lander_blue] {gauss(x,0,1)};
         % Curly braces for regions
         \draw [decorate,decoration={brace,amplitude=10pt,mirror}] (axis cs:-4,-0.06) -- (axis cs:-1.98,-0.06)
           node[midway, yshift=-30pt, align=center] {$p$-value $<\alpha$ \\ Reject $H_0$};
