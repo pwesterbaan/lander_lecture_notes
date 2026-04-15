@@ -4,7 +4,72 @@
 \begin{document}
 \relscale{\relscalefact}
   \section{9.1:  Introduction to Probability}
-  
+  %TODO define sample space, P(E) equally likely, number of elements in A (?)
+  \begin{defn*}
+    A \textbf{sample space} is the set of all possible outcomes of a random process or experiment. An \textbf{event} is a subset of a sample space.
+    
+    If $S$ is a finite sample space in which all outcomes are equally likely and $E$ is an even in $S$, then the \textbf{probability of $E$} denoted $P(E)$, is
+      \[P(E)=\frac{\textnormal{number of outcomes in } E}{\textnormal{total number of outcomes in } S}\]
+    \vspace*{0.5\baselineskip}
+    
+    For any finite set $A$, $N(A)$ denotes the number of elements in $A$. Thus,
+      \[P(E)=\frac{N(E)}{N(S)}\]
+  \end{defn*}
+  %TODO deck of cards example (9.9.1), rolling dice example (9.1.2)
+  \begin{ex*}
+    Consider a deck of $52$ playing cards divided into four suits: 
+      \raisebox{-0.6ex}{
+        \hfill \scalebox{1.65}{\ensuremath{\spadesuit}} 
+        \hfill \scalebox{1.65}{\ensuremath{\textcolor{red}{\varheartsuit}}} 
+        \hfill \scalebox{1.65}{\ensuremath{\clubsuit}} 
+        \hfill \scalebox{1.65}{\ensuremath{\textcolor{red}{\vardiamondsuit}}}
+      }
+     \begin{extasks}[after-item-skip=\stretch{1}](1)
+       \task What is the sample space?
+       \task What is the event that the chosen card is a red face card?
+       \task What is the probability that the chosen card is a red face card?
+     \end{extasks}
+     \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Consider rolling a pair of $6$-sided die. 
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task Write the sample space $S$ of possible outcomes.
+      \task Write the event $E$ that the numbers appearing face up have a sum of $6$ and find the probability of this event.
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  %TODO Theorem 9.1.1 num elements in a list
+  \begin{thmBox*}[The Number of Elements in a List]
+    If $m$ and $n$ are integers and $m\leq n$, then there are $n-m+1$ integers from $m$ to $n$ inclusive.
+  \end{thmBox*}
+  %TODO example 9.1.4 (elements in subset)
+  \begin{ex*}
+    \mbox{}
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task How many three-digit integers are divisible by $5$?
+      \task What is the probability that a randomly chosen three-digit integer is divisible by $5$?
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+ 
+  %TODO example 9.1.5 (elements in array)
+  \begin{ex*}
+    Let $A[1], A[2],\dots, A[n]$ be a one-dimensional array, where $n$ is a positive integer.
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task Suppose the array is cut at a middle value $A[m]$ so that two subarrays are formed:
+        \[A[1], A[2],\dots, A[m] \textnormal{ and } A[m+1], A[m+2],\dots, A[n]\]
+        How many elements does each subarray have?
+      \task 
+        What is the probability that a randomly chosen element of the array has an even subscript?
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
 
   \pagebreak
 \end{document}
