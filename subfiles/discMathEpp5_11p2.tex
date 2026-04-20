@@ -3,7 +3,159 @@
 \providecommand{\relscalefact}{1.4}
 \begin{document}
 \relscale{\relscalefact}
-  \section{11.2: Big-\ensuremath{O}, Big-Omega, and Big-Theta Notations}
+  \section{11.2: Big-\ensuremath{\mathcal{O}}, Big-Omega, and Big-Theta Notations}
+
+  %TODO Define notation
+  \begin{defn*}
+    Let $f$ and $g$ be real-valued functions defined on the same set of nonnegative integer, with $g(n)\geq 0$ for every integer $n\geq r$, where $r$ is a positive real number. Then $f$ is of order at least $g$, written $f(n)$ is $\Omega\parens{g(n)}$ if, and only if, there exists positive real numbers $A$ and $a\geq r$ such that
+      \[A g(n)\leq f(n) \textnormal{ for every integer } n\geq a.\]
+  \end{defn*}
+  \vspace*{\baselineskip}
+
+  \begin{center}
+    \begin{tikzpicture}[ declare function={
+      g(\x)=ln(\x+1);
+      f(\x)=exp(-(\x-1)^2)+\x^(-\x)+ln(\x+2)-1;
+      Ag(\x)=g(\x)/ln(6);
+      a=6.14629; fa=f(a);
+      n=15; fn=f(n); Agn=Ag(n);
+      }]
+      \begin{axis}[
+        axis lines=center,
+        axis line style={black,->},
+        xtick={a,n},
+        xticklabels={$a$,$n$},
+        ytick=\empty,
+        enlargelimits={value=0.125, auto},
+        width=0.75\linewidth, height=\axisdefaultheight,
+%        title style={align=center},
+        ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+        xlabel=, %xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+        ylabel=, %ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+        every axis plot/.append style={domain=0:20, line width=0.95pt, color=lander_blue, samples=255},
+        title={$f(n) \textnormal{ is } \Omega\parens{g(n)}$}
+      ]
+        \addplot[-] {f(x)}
+          node[pos=1.0, right, black] {$f$};
+        \addplot[-, black] {Ag(x)}
+          node[pos=1.0, right, black] {$Ag$};
+        \addplot[soldot, black] coordinates{(a,fa)(n,fn)(n,Agn)};
+        \node[label=120:${(n,f(n))}$] at (n,fn) {};
+        \node[label=-45:${(n,Ag(n))}$] at (n,Agn) {};
+        \draw[dashed] (a,fa) -- (a,0) (n,fn) -- (n,0);
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \pagebreak
+
+  \begin{defn*}
+    Let $f$ and $g$ be real-valued functions defined on the same set of nonnegative integer, with $g(n)\geq 0$ for every integer $n\geq r$, where $r$ is a positive real number. Then $f$ is of order at most $g$, written $f(n)$ is $\mathcal{O}\parens{g(n)}$ if, and only if, there exists positive real numbers $B$ and $b\geq r$ such that
+      \[0\leq f(n)\leq Bg(n) \textnormal{ for every integer } n\geq b.\]
+  \end{defn*}
+  \vspace*{\baselineskip}
+
+  \begin{center}
+    \begin{tikzpicture}[ declare function={
+      g(\x)=ln(\x+1);
+      % f(\x)=exp(-(\x-1)^2)+ln(\x+2)-1;
+      f(\x)=exp(-(\x-1)^2)+\x^(-\x)+ln(\x+2)-1;
+      Ag(\x)=g(\x)/ln(6);
+      b=1.92689; fb=f(b);
+      n=6; fn=f(n); Agn=Ag(n); Bgn=g(n);
+      }]
+      \begin{axis}[
+        axis lines=center,
+        axis line style={black,->},
+        xtick={b,n},
+        xticklabels={$b$,$n$},
+        ytick=\empty,
+        enlargelimits={value=0.125, auto},
+        width=0.75\linewidth, height=\axisdefaultheight,
+%        title style={align=center},
+        ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+        xlabel=, %xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+        ylabel=, %ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+        every axis plot/.append style={domain=0:20, line width=0.95pt, color=lander_blue, samples=255},
+        title={$f(n) \textnormal{ is } \mathcal{O}\parens{g(n)}$}
+      ]
+        \addplot[-] {f(x)}
+          node[pos=1.0, right, black] {$f$};
+        \addplot[-, black] {g(x)}
+          node[pos=1.0, right, black] {$Bg$};
+        \addplot[soldot, black] coordinates{(b,fb)(n,fn)(n,Bgn)};
+        \node[label=-45:${(n,f(n))}$] at (n,fn) {};
+        \node[label=135:${(n,Bg(n))}$] at (n,Bgn) {};
+        \draw[dashed] (b,fb) -- (b,0) (n,Bgn) -- (n,0);
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \pagebreak
+
+  \begin{defn*}
+    Let $f$ and $g$ be real-valued functions defined on the same set of nonnegative integer, with $g(n)\geq 0$ for every integer $n\geq r$, where $r$ is a positive real number. Then $f$ is of order $g$, written $f(n)$ is $\Theta\parens{g(n)}$ if, and only if, there exists positive real numbers $A, B$ and $k\geq r$ such that
+      \[Ag(n)\leq f(n)\leq Bg(n) \textnormal{ for every integer } n\geq k.\]
+  \end{defn*}
+  \vspace*{\baselineskip}
+
+  \begin{center}
+    \begin{tikzpicture}[ declare function={
+      g(\x)=ln(\x+1);
+      % f(\x)=exp(-(\x-1)^2)+ln(\x+2)-1;
+      f(\x)=exp(-(\x-1)^2)+\x^(-\x)+ln(\x+2)-1;
+      Ag(\x)=g(\x)/ln(6);
+      k=6.14629; fk=f(k);
+      n=15; fn=f(n); Agn=Ag(n); Bgn=g(n);
+      }]
+      \begin{axis}[
+        axis lines=center,
+        axis line style={black,->},
+        xtick={k,n},
+        xticklabels={$k$,$n$},
+        ytick=\empty,
+        enlargelimits={value=0.125, auto},
+        width=0.75\linewidth, height=\axisdefaultheight,
+%        title style={align=center},
+        ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+        xlabel=, %xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+        ylabel=, %ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+        every axis plot/.append style={domain=0:20, line width=0.95pt, color=lander_blue, samples=255},
+        title={$f(n) \textnormal{ is } \Theta\parens{g(n)}$}
+      ]
+        \addplot[-] {f(x)}
+          node[pos=1.0, right, black] {$f$};
+        \addplot[-, black] {Ag(x)}
+          node[pos=1.0, right, black] {$Ag$};
+        \addplot[-, black] {g(x)}
+          node[pos=1.0, right, black] {$Bg$};
+        \addplot[soldot, black] coordinates{(k,fk)(n,fn)(n,Agn)(n,Bgn)};
+        \node[label=135:${(n,f(n))}$, yshift=-5pt] at (n,fn) {};
+        \node[label=-45:${(n,Ag(n))}$] at (n,Agn) {};
+        \node[label=135:${(n,Bg(n))}$] at (n,Bgn) {};
+        \draw[dashed] (k,fk) -- (k,0) (n,Bgn) -- (n,0);
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \vspace*{\baselineskip}
+
+  \begin{ex*}
+    Use $\Theta$-notation to express the statement
+      \[4n^6\leq 17n^6 -45n^3+2n+8 \leq 30n^6 \textnormal{ for ever integer } n\geq 3.\]
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Use $\Omega$-notation to express the statement
+      \[\frac{11}{4}n^2\leq 3\parens{\floor{\dfrac{n}{4}}}^2 +5n^2 \textnormal{ for every integer } n\geq 2\]
+    \vspace*{\stretch{1}}
+
+    Use $\mathcal{O}$-notation to express the statement
+      \[0\leq 3\parens{\floor{\dfrac{n}{4}}}^2 + 5n^2 \leq 6n^2 \textnormal{ for every integer } n\geq 1.\]
+    \vspace*{\stretch{1}}
+
+    Justify the statement: $3\parens{\floor{\dfrac{n}{4}}}^2+5n^2$, is $\Omega\parens{n^2}$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
 
   \pagebreak
 \end{document}
