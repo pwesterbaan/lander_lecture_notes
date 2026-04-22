@@ -15,6 +15,9 @@ _site
 .jekyll-cache
 .sass-cache
 
+## mylatexformat file
+*.fmt
+
 ## .gitignore tex template
 ## Core latex/pdflatex auxiliary files:
 *.aux
