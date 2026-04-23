@@ -9,8 +9,8 @@
   \begin{defn*}
     Let $G$ and $G'$ be graphs with vertex sets $V(G)$ and $V(G')$ and edge sets $E(G)$ and $E(G')$, respectively. \textbf{$G$ is isomorphic to $G'$} if, and only if, there exist one-to-one correspondences $g: V(G)\to V(G')$ and $h: E(G) \to E(G')$ that preserve the edge-endpoint functions of $G$ and $G'$ in the sense that for each $v\in V(G)$ and $e\in E(G)$,
       \[v \textnormal{ is an endpoint of } e \Leftrightarrow g(v) \textnormal{ is an endpoint of } h(e).\]
-    
-    If $G$ and $G'$ are simple (no loops or parallel edges), then $G$ is isomorphic to $G'$ if, and only if, there exists $g: V(G)\to V(G')$ such that 
+
+    If $G$ and $G'$ are simple (no loops or parallel edges), then $G$ is isomorphic to $G'$ if, and only if, there exists $g: V(G)\to V(G')$ such that
       \[\set{u,v} \textnormal{ is an edge in } G \Leftrightarrow \set{g(u), g(v)} \textnormal{ is an edge in } G'.\]
   \end{defn*}
   \begin{ex*}
@@ -43,19 +43,19 @@
       ]
         \foreach \steps/\text in {
           1/v_1,
-          2/v_4,
-          3/v_2,
-          4/v_5,
-          5/v_3}
+          2/v_2,
+          3/v_3,
+          4/v_4,
+          5/v_5}
           {
             \pgfmathsetmacro{\angle}{(1-\steps)*360/5+90};
             \draw (\angle:2 ) node[label=\angle:$\text$] (\text) {};
           }
-        \draw (v_1) -- (v_2) node[edgeLbl, above right] {$e_1$};
-        \draw (v_2) -- (v_3) node[edgeLbl, below left] {$e_3$};
-        \draw (v_3) -- (v_4) node[edgeLbl, above] {$e_5$};
-        \draw (v_4) -- (v_5) node[edgeLbl, below right] {$e_2$};
-        \draw (v_5) -- (v_1) node[edgeLbl, above left] {$e_4$};
+        \draw (v_1) -- (v_3) node[edgeLbl, above right] {$e_1$};
+        \draw (v_2) -- (v_4) node[edgeLbl, below right] {$e_5$};
+        \draw (v_3) -- (v_5) node[edgeLbl, below left] {$e_4$};
+        \draw (v_4) -- (v_1) node[edgeLbl, left] {$e_3$};
+        \draw (v_5) -- (v_2) node[edgeLbl, above] {$e_2$};
       \end{tikzpicture}
     \end{center}
     \vspace*{\stretch{1}}
@@ -99,7 +99,7 @@
           edgeLbl/.style={fill=none, inner sep=1.5pt, pos=0.5},
         ]
           \node[label=90:$w_1$] (w1) {};
-          \node[right=of w1, label=90:$w_1$] (w3) {};
+          \node[right=of w1, label=90:$w_3$] (w3) {};
           \node[below=of w3, label=-90:$w_4$] (w4) {};
           \node[below=of w1, label=-90:$w_5$] (w5) {};
           \node[label=90:$w_2$] (w2) at ($(w1)!0.50!(w4)$) {};
@@ -165,7 +165,8 @@
           \node (v5) at ($(v1)!0.50!(v3)$) {};
           \node[left=15mm of v5] (v6) {};
           %%
-          \draw (v1) -- (v2) -- (v3) -- (v4) -- (v1) -- (v5) -- (v3) (v1) -- (v6) -- (v2);
+          \draw (v1) -- (v2) -- (v3) -- (v4) -- (v1) -- (v5) -- (v3)
+          (v1) -- (v6) -- (v2) (v4) -- (v5);
         \end{tikzpicture}
       \end{center}
     \end{minipage}
@@ -268,6 +269,6 @@
      \end{minipage}
     \vspace*{\stretch{1}}
   \end{ex*}
-  
+
   \pagebreak
 \end{document}
