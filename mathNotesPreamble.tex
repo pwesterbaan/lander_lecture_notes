@@ -1,4 +1,8 @@
 \documentclass[answers]{exam}
+
+% When using mylatexformat
+% pdflatex -ini -jobname="mathNotesPreamble" "&pdflatex" mylatexformat.ltx mathNotesPreamble.tex
+
 \usepackage{texPreamble} %Local version of my generic preamble file
 %TODO move package imports here instead of generic preamble and input
 %texShortcutswesterbaan here
@@ -93,6 +97,11 @@
   \newpage
   \runningfootrule
 
+  %% everything else
+  \firstpageheader{}{}{}
+  \firstpagefooter{\parbox{0.45\linewidth}{\currentname}}{\thepage}{\@title}
+  \firstpagefootrule
+
   \IfFileExists{./subfiles/#3_formula_sheet.tex}
   {
     %% Formula sheet
@@ -102,15 +111,13 @@
     %No formula sheet exists
   }
 
-  %% everything else
-  \firstpageheader{}{}{}
-  \firstpagefooter{\parbox{0.45\linewidth}{\currentname}}{\thepage}{\@title}
-  \firstpagefootrule
+  \footer{\parbox{0.45\linewidth}{\currentname}}{\thepage}{\@title}
   \runningfooter{\parbox{0.45\linewidth}{\currentname}}{\thepage}{\@title}
   \makeatother
   \pagenumbering{arabic}
   \setcounter{page}{1}
 }
 
+%%%% \endofdump %mylatexformat
 \begin{document}
 \end{document}
