@@ -9,7 +9,7 @@
 % \input{texShortcutsWesterbaan}
 
 %TODO 2025-12-15
-%  Moving packages into this preamble file causes issuese with \defineFrontMatter:
+%  Moving packages into this preamble file causes issues with \defineFrontMatter:
 % ! You can't use `\spacefactor' in vertical mode.
 %\@ ->\spacefactor
 
@@ -97,11 +97,6 @@
   \newpage
   \runningfootrule
 
-  %% everything else
-  \firstpageheader{}{}{}
-  \firstpagefooter{\parbox{0.45\linewidth}{\currentname}}{\thepage}{\@title}
-  \firstpagefootrule
-
   \IfFileExists{./subfiles/#3_formula_sheet.tex}
   {
     %% Formula sheet
@@ -111,7 +106,11 @@
     %No formula sheet exists
   }
 
-  \footer{\parbox{0.45\linewidth}{\currentname}}{\thepage}{\@title}
+  %% everything else
+  \firstpageheader{}{}{}
+  \firstpagefooter{\parbox{0.45\linewidth}{\currentname}}{\thepage}{\@title}
+  \firstpagefootrule
+
   \runningfooter{\parbox{0.45\linewidth}{\currentname}}{\thepage}{\@title}
   \makeatother
   \pagenumbering{arabic}
