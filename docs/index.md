@@ -42,7 +42,7 @@ Below are links to notes used at Lander University:
 </ul>
 
 <!---<a href="about_me">About me!</a>-->
-<span style="float:right">Last Modified: 2026-05-27T09:38</span>
+<span style="float:right">Last Modified: 2026-05-27T21:43</span>
 
 <script>
     // For anyone looking at this:

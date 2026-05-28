@@ -43,7 +43,10 @@
         ymin=0, ymax=4,
         ymajorticks=false,
         width=0.875\linewidth, height=0.3\linewidth,
-        ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1}]
+        xlabel=, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+        ylabel=, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+        ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+        clip=false,]
         \foreach \price/\freq in {
           2.17/1,
           2.19/3,
@@ -66,7 +69,10 @@
         ymin=1-Y, ymax=1+Y,
         ymajorticks=false,
         width=0.875\linewidth, height=0.3\linewidth,
-        ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1}]
+        xlabel=, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+        ylabel=, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+        ticklabel style={font=\normalsize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+        clip=false,]
         \addplot+ [boxplot]
           table [row sep=\\,y index=0] {
             data\\
