@@ -56,11 +56,12 @@
         every axis plot post/.append style={
         mark=none, domain={xmin}:{xmax},samples=N,smooth},
         axis lines=center,
+        axis line style={black,-},
         ymin=ymin,
         y axis line style={opacity=0},
         ytick=\empty,
-        axis line style={black,->},
         every axis x label/.style={at={(current axis.right of origin)},anchor=north},
+        ylabel=,
         xlabel=$\hat{p}$, xlabel style={at={(axis description cs:0.5,-0.0625)},anchor=north},
         clip=false,
         height=\axisdefaultheight, width=1.2*\axisdefaultwidth
@@ -72,7 +73,7 @@
         % FILL
         \path[name path=xaxis]
           (\pgfkeysvalueof{/pgfplots/xmin},0) -- (\pgfkeysvalueof{/pgfplots/xmax},0);
-        \addplot[lander_blue!50] fill between[of=xaxis and B, soft clip={domain=0.29:{mu+3*sig}}];
+        \addplot[lander_blue!50] fill between[of=xaxis and B, soft clip={domain=0.29:{mu+4*sig}}];
         \addplot[draw=black] (0.29,0) -- (0.29,{gauss(0.29,mu,sig)});
       \end{axis}
     \end{tikzpicture}
@@ -97,11 +98,12 @@
         every axis plot post/.append style={
         mark=none, domain={xmin}:{xmax},samples=N,smooth},
         axis lines=center,
+        axis line style={black,-},
         ymin=ymin,
         y axis line style={opacity=0},
         ytick=\empty,
-        axis line style={black,->},
         every axis x label/.style={at={(current axis.right of origin)},anchor=north},
+        ylabel=,
         xlabel=$\hat{p}$, xlabel style={at={(axis description cs:0.5,-0.0625)},anchor=north},
         clip=false,
         height=\axisdefaultheight, width=1.2*\axisdefaultwidth
@@ -113,7 +115,7 @@
         % FILL
         \path[name path=xaxis]
           (\pgfkeysvalueof{/pgfplots/xmin},0) -- (\pgfkeysvalueof{/pgfplots/xmax},0);
-        \addplot[lander_blue!50] fill between[of=xaxis and B, soft clip={domain=0.1347:{mu+3*sig}}];
+        \addplot[lander_blue!50] fill between[of=xaxis and B, soft clip={domain=0.1347:{mu+4*sig}}];
         \addplot[draw=black] (0.1347,0) -- (0.1347,{gauss(0.1347,mu,sig)});
       \end{axis}
     \end{tikzpicture}

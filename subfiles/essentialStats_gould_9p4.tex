@@ -35,7 +35,9 @@
   \vspace*{\baselineskip}
 
   \begin{center}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[
+      myBrace/.style={decorate,decoration={brace,amplitude=10pt,mirror}},
+      braceNode/.style={midway,yshift=-37.5pt, align=center}]
       \begin{axis}[
         axis on top=true,
         domain=-4:4,
@@ -44,24 +46,29 @@
         axis y line=none,
         axis line style={black,-},
         xtick={-1.96,0,1.96},
-        xticklabels={$-t^*$,$\mu_0$,$t^*$},
+        xticklabels={,$\mu_0$,},
         xticklabel style = {font=\LARGE},
         ytick=\empty,
         clip=false,
-        width=\linewidth, height=\axisdefaultheight
+        width=\linewidth, height=\axisdefaultheight,
+        xlabel=
         ]
         % Shade rejection regions
         \addplot[domain=-4:-1.96, fill=red!30, draw=none] {gauss(x,0,1)} \closedcycle;
         \addplot[domain=1.96:4, fill=red!30, draw=none] {gauss(x,0,1)} \closedcycle;
 
         \addplot[thick,lander_blue] {gauss(x,0,1)};
+        % denote crit values
+        \node[font=\LARGE] at (-1.96,-0.075) {$-t^*$};
+        \node[font=\LARGE] at (0,-0.075) {$0$};
+        \node[font=\LARGE] at (1.96,-0.075) {$t^*$};
         % Curly braces for regions
-        \draw [decorate,decoration={brace,amplitude=10pt,mirror}] (axis cs:-4,-0.06) -- (axis cs:-1.98,-0.06)
-          node[midway, yshift=-30pt, align=center] {$p$-value $<\alpha$ \\ Reject $H_0$};
-        \draw [decorate,decoration={brace,amplitude=10pt,mirror}] (axis cs:-1.94,-0.06) -- (axis cs:1.94,-0.06)
-          node[midway,yshift=-30pt, align=center] {$p$-value $>\alpha$ \\ Fail to reject $H_0$};
-        \draw [decorate,decoration={brace,amplitude=10pt,mirror}] (axis cs:1.98,-0.06) -- (axis cs:4,-0.06)
-          node[midway,yshift=-30pt, align=center] {$p$-value $<\alpha$ \\ Reject $H_0$};
+        \draw [myBrace] (axis cs:-4,-0.1) -- (axis cs:-1.98,-0.1)
+          node[braceNode] {$\abs{t}> t^*$\\$p$-value $<\alpha$ \\ Reject $H_0$};
+        \draw [myBrace] (axis cs:-1.94,-0.1) -- (axis cs:1.94,-0.1)
+          node[braceNode] {$\abs{t}< t^*$\\$p$-value $>\alpha$ \\ Fail to reject $H_0$};
+        \draw [myBrace] (axis cs:1.98,-0.1) -- (axis cs:4,-0.1)
+          node[braceNode] {$\abs{t}> t^*$\\$p$-value $<\alpha$ \\ Reject $H_0$};
       \end{axis}
     \end{tikzpicture}
   \end{center}
