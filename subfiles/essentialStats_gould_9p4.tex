@@ -46,7 +46,7 @@
         axis y line=none,
         axis line style={black,-},
         xtick={-1.96,0,1.96},
-        xticklabels={,$\mu_0$,},
+        xticklabels={,$\mu\mathrlap{_0}$,},
         xticklabel style = {font=\LARGE},
         ytick=\empty,
         clip=false,
@@ -59,9 +59,9 @@
 
         \addplot[thick,lander_blue] {gauss(x,0,1)};
         % denote crit values
-        \node[font=\LARGE] at (-1.96,-0.075) {$-t^*$};
+        \node[font=\LARGE] at (-1.96,-0.075) {$\mathllap{-}t\mathrlap{^*}$};
         \node[font=\LARGE] at (0,-0.075) {$0$};
-        \node[font=\LARGE] at (1.96,-0.075) {$t^*$};
+        \node[font=\LARGE] at (1.96,-0.075) {$t\mathrlap{^*}$};
         % Curly braces for regions
         \draw [myBrace] (axis cs:-4,-0.1) -- (axis cs:-1.98,-0.1)
           node[braceNode] {$\abs{t}> t^*$\\$p$-value $<\alpha$ \\ Reject $H_0$};
