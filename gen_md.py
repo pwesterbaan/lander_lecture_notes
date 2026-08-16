@@ -54,7 +54,9 @@ for dir_path in directories:
         release_dates=dict(zip(df['filename'],df['release date']))
         info_dict['release_date']=release_dates
     else:
-        print(f'''{release_date_csv_file:=} does not exist yet!''')
+        print(f'''!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!''')
+        print(f'''!{class_name}_releaseDates.csv does not exist yet!''')
+        print(f'''!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!''')
 
     # Create list of annotated notes pdfs sorted alphabetically then by release date
     list_of_pdfs=[pdf.name for pdf in annotated_notes_dir.iterdir() if pdf.suffix=='.pdf']

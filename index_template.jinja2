@@ -14,8 +14,8 @@ Below are links to notes used at Lander University:
 {% if class_dict.get('list_of_pdfs',{})|length >0 %}    <details name="annotated_notes" id="{{ class_dict.get('list_id') }}">
       <summary>{{ class_dict.get('name') }} Annotated Notes (Click to expand)</summary>
     </details>
-  </li><br>
-{% endif %}{% endfor %}</ul>
+{% endif %}
+  </li><br>{% endfor %}</ul>
 
 <!---<a href="about_me">About me!</a>-->
 <span style="float:right">Last Modified: {{ today_str }}</span>
