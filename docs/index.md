@@ -11,6 +11,9 @@ Below are links to notes used at Lander University:
   <h1> math114 </h1>
   <li>
     <a href="https://github.com/pwesterbaan/lander_lecture_notes/raw/main/math114Notes.pdf" target="_blank">math114Notes.pdf</a>
+    <details name="annotated_notes" id="math114_NoteKeys">
+      <summary>math114 Annotated Notes (Click to expand)</summary>
+    </details>
 
   </li><br>
   <h1> math121 </h1>
@@ -47,7 +50,7 @@ Below are links to notes used at Lander University:
   </li><br></ul>
 
 <!---<a href="about_me">About me!</a>-->
-<span style="float:right">Last Modified: 2026-08-16T14:39</span>
+<span style="float:right">Last Modified: 2026-08-17T15:45</span>
 
 <script>
     // For anyone looking at this:
@@ -76,6 +79,11 @@ Below are links to notes used at Lander University:
         });
     document.getElementById(noteKeysDir).appendChild(list);
     }
+
+  var releaseDatesList=[
+      ["2026-08-19T10:00:00","math114Notes_1p1_annotated.pdf"],
+      ]
+  show_links_by_date("math114_NoteKeys",releaseDatesList);
 
   var releaseDatesList=[
       ["2026-08-21T13:00:00","math121Notes_1p1_annotated.pdf"],
