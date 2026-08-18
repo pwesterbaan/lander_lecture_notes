@@ -68,9 +68,11 @@
 }
 
 % Macro to define title page, TOC, formula sheet and formatting
-\newcommand{\defineFrontMatter}[3]{%
+\newcommand{\defineFrontMatter}[4][]{%
   \makeatletter
-  \title{#1 Class notes\\[0.25\baselineskip]\TheSemester}
+
+  \title{#2 Class notes\\[0.25\baselineskip]\TheSemester}
+  \hypersetup{pdftitle={#2 Class notes}}
   \author{Peter Westerbaan}
 
   \pagestyle{headandfoot}
@@ -81,7 +83,7 @@
   \vspace*{\stretch{1}}
   \begin{center}
     {\huge \@title}\\[\baselineskip]
-    To accompany\\ #2 \\[\baselineskip]
+    To accompany\\ #3 \\[\baselineskip]
     \@author\\[\baselineskip]
     Last updated: \@date\\
   \end{center}
@@ -97,13 +99,24 @@
   \newpage
   \runningfootrule
 
-  \IfFileExists{./subfiles/#3_formula_sheet.tex}
+  \IfFileExists{./subfiles/#4_formula_sheet.tex}
   {
     %% Formula sheet
-    \footer{\parbox{0.45\linewidth}{#1 Formula Sheet}}{Page \thepage}{\@title}
-    \subfile{subfiles/#3_formula_sheet.tex}
+    \footer{\parbox{0.45\linewidth}{#2 Formula Sheet}}{Page \thepage}{\@title}
+    \subfile{subfiles/#4_formula_sheet.tex}
+    \newpage
   }{
     %No formula sheet exists
+  }
+
+  \IfFileExists{#1.tex}
+  {
+    %% Optional file (e.g. unit circle)
+    \footer{\parbox{0.45\linewidth}{}}{Page \thepage}{\@title}
+    \subfile{#1.tex}
+    \newpage
+  }{
+    %No optional file exists
   }
 
   %% everything else

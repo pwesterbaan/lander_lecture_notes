@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{texPreamble}
+% ----------------------------------------------------------------
+\begin{document}
+  \newcommand{\aRad}{0.625}
+  \newcommand{\rRad}{0.9}
+  \newcommand{\cRad}{1.2}
+  \newcommand{\lCol}{gray!90}
+  \begin{center}
+    \Large
+    \vspace*{-3\baselineskip}
+    \textbf{Unit Circle}
+    \vspace*{0.5\baselineskip}
+    \[\big(\cos\parens{\theta},\ \sin\parens{\theta}\big)\]
+    \vspace*{0.5\baselineskip}
+    \begin{center}
+      \begin{tikzpicture}[scale=6, line width=0.8pt]
+        \draw[line width=0.5pt] (0,0) circle(1);
+        \foreach \x in {0,30,...,360} {
+            % lines from center to point
+            \draw[\lCol] (0cm,0cm) -- (\x:1);
+            % draw each angle in degrees
+            \draw (\x:\aRad) node[fill=white, inner sep=2.5pt] {$\x^\circ$};
+          }
+
+        \foreach \x in {45,135,225,315} {
+            % lines from center to point
+            \draw[\lCol] (0cm,0cm) -- (\x:1);
+            % draw each angle in degrees
+            \draw (\x:\aRad) node[fill=white, inner sep=2.5pt] {$\x^\circ$};
+          }
+        \foreach \x/\xtext in {
+          30/\frac{\pi}{6},
+          45/\frac{\pi}{4},
+          60/\frac{\pi}{3},
+          90/\frac{\pi}{2},
+          120/\frac{2\pi}{3},
+          135/\frac{3\pi}{4},
+          150/\frac{5\pi}{6},
+          180/\pi,
+          210/\frac{7\pi}{6},
+          225/\frac{5\pi}{4},
+          240/\frac{4\pi}{3},
+          270/\frac{3\pi}{2},
+          300/\frac{5\pi}{3},
+          315/\frac{7\pi}{4},
+          330/\frac{11\pi}{6},
+          360/2\pi}
+            \draw (\x:\rRad) node[fill=white, inner sep=2.5pt] {$\xtext$};
+        \foreach \x/\xtext/\y in {
+          % the coordinates for the first quadrant
+          30/\frac{\sqrt{3}}{2}/\frac{1}{2},
+          45/\frac{\sqrt{2}}{2}/\frac{\sqrt{2}}{2},
+          60/\frac{1}{2}/\frac{\sqrt{3}}{2},
+          % the coordinates for the second quadrant
+          150/-\frac{\sqrt{3}}{2}/\frac{1}{2},
+          135/-\frac{\sqrt{2}}{2}/\frac{\sqrt{2}}{2},
+          120/-\frac{1}{2}/\frac{\sqrt{3}}{2},
+          % the coordinates for the third quadrant
+          210/-\frac{\sqrt{3}}{2}/-\frac{1}{2},
+          225/-\frac{\sqrt{2}}{2}/-\frac{\sqrt{2}}{2},
+          240/-\frac{1}{2}/-\frac{\sqrt{3}}{2},
+          % the coordinates for the fourth quadrant
+          330/\frac{\sqrt{3}}{2}/-\frac{1}{2},
+          315/\frac{\sqrt{2}}{2}/-\frac{\sqrt{2}}{2},
+          300/\frac{1}{2}/-\frac{\sqrt{3}}{2}}
+            \draw (\x:\cRad) node {$\left(\xtext,\y\right)$};
+            \draw (-\cRad,0cm) node{$(-1,0)$}
+              (\cRad,0cm)  node{$(1,0)$}
+              (0cm,-\cRad) node{$(0,-1)$}
+              (0cm,\cRad)  node{$(0,1)$};
+      \end{tikzpicture}
+    \end{center}
+    \vspace*{0.5\baselineskip}
+    \[180^\circ=\pi \text{ rad}\vspace{-20pt}\]
+  \end{center}
+\end{document}
+% ----------------------------------------------------------------

@@ -1,3 +1,4 @@
+% \input{accessibilityHeader}
 \documentclass[mathNotesPreamble]{subfiles}
 %% Externalize graphics and save in ./images/ folder
 %% pdflatex --shell-escape <tex file>
@@ -9,7 +10,7 @@
 \tikzexternalize[prefix=images/]
 
 \begin{document}
-  \defineFrontMatter{Math 114}
+  \defineFrontMatter[unitCircle]{Math 114}
     {\emph{Precalculus 2e}\\ by \emph{Abramson}}
     {math114}
   %% everything else
@@ -18,7 +19,7 @@
 
   \phantomsection\addcontentsline{toc}{section}{\Large \protect Unit 1}\nopagebreak
     \subfile{subfiles/precalculus_2e_abramson_1p1}
-  %   \subfile{subfiles/precalculus_2e_abramson_1p3}
+    \subfile{subfiles/precalculus_2e_abramson_1p2}
   %   \subfile{subfiles/precalculus_2e_abramson_1p3}
   %   \subfile{subfiles/precalculus_2e_abramson_1p5}
   %   \subfile{subfiles/precalculus_2e_abramson_1p5}

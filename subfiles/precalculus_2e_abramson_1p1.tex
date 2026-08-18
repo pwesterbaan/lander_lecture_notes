@@ -29,6 +29,7 @@
       a=1.25; b=1.25; c=5.5;
       dx=0.9*a; dy=0.6*a;
       h=1.75; vert=0.6; vgap=0.2;}]
+      \tikzalt{Diagram of a function machine}
       \begin{scope}
         \clip (-0.1+0,h+2*vert+dy) rectangle ++(0.2+a+b+c,-4*vert-2*dy-h);
         \draw[line width=1pt, fill=lander_blue!25, rounded corners=6pt]
@@ -45,6 +46,7 @@
   \begin{minipage}{0.495\linewidth}
     \begin{center}
       \begin{tikzpicture}
+        \tikzalt{Ellipses demonstrating a function mapping from domain to range}
         \draw (-2,0) circle [x radius=1, y radius=2];
         \node at (-2,2.5) {Domain};
         \draw (2,0) circle [x radius=1, y radius=1.75];
@@ -142,6 +144,7 @@
     \begin{tabular}{c@{\hspace*{40pt}}c}
       \begin{tikzpicture}[declare function={
         f(\x)=(\x-1.5)*(\x+1)*(\x+2)+6;}]
+        \tikzalt{A graph of a cubic function}
         \begin{axis}[
           axis lines=center,
           axis line style={black,->},
@@ -158,6 +161,7 @@
         \end{axis}
       \end{tikzpicture} &
       \begin{tikzpicture}
+        \tikzalt{A graph of a non-explicit function}
         \begin{axis}[
           axis lines=center,
           axis line style={black,->},
@@ -176,6 +180,7 @@
       \end{tikzpicture}\\[2\baselineskip]
       \begin{tikzpicture}[declare function={
         f(\x)=sqrt(\x^2-1);}]
+        \tikzalt{A graph of a discontinuous function}
         \begin{axis}[
           axis lines=center,
           axis line style={black,->},
@@ -195,6 +200,7 @@
       \begin{tikzpicture}[declare function={
         g(\x)=1.25*(abs(\x)-1);
         f(\x)=g(\x)<=0 ? sqrt(1-x^2) : g(\x);}]
+        \tikzalt{A graph of a continuous, non-differentiable function}
         \begin{axis}[
           axis lines=center,
           axis equal,
