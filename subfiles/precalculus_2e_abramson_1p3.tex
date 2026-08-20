@@ -213,6 +213,29 @@
     \end{flushright}
   \end{ex*}
   \vspace*{\stretch{1}}
+
+  \begin{ex*}
+    Using the following graph, find any relative and absolute extrema.
+    \begin{flushright}
+      \smash{\raisebox{-\height}{
+      \begin{tikzpicture}[declare function={
+        f(\x)=-\x^2*(\x^2-8);}]
+        \begin{axis}[
+          grid=both, %major,minor
+          grid style={line width=0.375pt, draw=gray!60},
+          minor grid style={draw=gray!75},
+          ytick={-12,-8,...,20},
+          xmin=-3.5, xmax=3.5,
+          ymin=-10.5, ymax=19.5,
+          ]
+          \addplot[-] expression[domain=-2.5:3]{f(x)};
+          \addplot[soldot] coordinates{(-2.5,{f(-2.5)})(3,{f(3)})};
+        \end{axis}
+      \end{tikzpicture}
+      }}
+    \end{flushright}
+  \end{ex*}
+  \vspace*{\stretch{1}}
   \pagebreak
 
 \end{document}
