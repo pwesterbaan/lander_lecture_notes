@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # script used to feed numbers into pdftk based on section name of notes
 #TODO: (multiple) auto complete in .bashrc
+#TODO: auto complete when "specify output file:"
 
 toc="Table Of Contents | Page i"  # Ignore page numbers for TOC
 
@@ -14,10 +15,11 @@ output=$3
 #https://www.howtogeek.com/beginner-friendly-ways-to-level-up-your-bash-scripts/
 _help() {
   cat <<EOF
-Usage: $(basename "$0") [OPTIONS] \"pattern\" \"fname\" \"output\"
+Usage: $(basename "$0") [OPTIONS] "pattern" "fname" "output"
 
 OPTIONS
   -h     display this help menu
+  -d     enable debug
 EOF
 }
 
