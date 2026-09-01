@@ -50,7 +50,7 @@ Below are links to notes used at Lander University:
   </li><br></ul>
 
 <!---<a href="about_me">About me!</a>-->
-<span style="float:right">Last Modified: 2026-09-01T07:58</span>
+<span style="float:right">Last Modified: 2026-09-01T08:58</span>
 
 <script>
     // For anyone looking at this:
@@ -82,9 +82,10 @@ Below are links to notes used at Lander University:
 
   var releaseDatesList=[
       ["2026-08-19T10:00:00","math114Notes_1p1_annotated.pdf"],
-      ["2026-08-19T10:00:00","math114Notes_1p2_annotated.pdf"],
-      ["2026-08-24T10:00:00","math114Notes_1p3_annotated.pdf"],
-      ["2026-08-24T10:00:00","math114Notes_1p4_annotated.pdf"],
+      ["2026-08-24T10:00:00","math114Notes_1p2_annotated.pdf"],
+      ["2026-08-28T10:00:00","math114Notes_1p3_annotated.pdf"],
+      ["2026-08-31T10:00:00","math114Notes_1p4_annotated.pdf"],
+      ["2026-09-02T10:00:00","math114Notes_1p5_annotated.pdf"],
       ]
   show_links_by_date("math114_NoteKeys",releaseDatesList);
 

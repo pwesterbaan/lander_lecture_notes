@@ -11,9 +11,9 @@
   \begin{ex*}
     Using the graphs below, sketch the shifted functions as indicated:
     \begin{extasks}[after-item-skip=\stretch{1}](2)
-      \task 
+      \task
         Graph $f(x)+2$:
-        
+
         \begin{tikzpicture}[declare function={
           cubeRoot(\x)=\x/abs(\x)*abs(\x)^(1/3);}
           ]
@@ -31,9 +31,9 @@
             \addplot[->] expression[domain=1:6]{cubeRoot(x)};
           \end{axis}
         \end{tikzpicture}
-      \task 
+      \task
         Graph $f(x)-1$:
-        
+
         \begin{tikzpicture}[declare function={
           f(\x)=(\x-1)*(\x+1);}
           ]
@@ -60,9 +60,9 @@
   \begin{ex*}
     Using the graphs below, sketch the shifted functions as indicated:
     \begin{extasks}[after-item-skip=\stretch{1}](2)
-      \task 
+      \task
         Graph $f(x+2)$:
-        
+
         \begin{tikzpicture}[declare function={
           cubeRoot(\x)=\x/abs(\x)*abs(\x)^(1/3);}
           ]
@@ -81,9 +81,9 @@
           \end{axis}
         \end{tikzpicture}
 
-      \task 
+      \task
         Graph $f(x-1)$:
-        
+
         \begin{tikzpicture}[declare function={
           f(\x)=(\x-1)*(\x+1);}
           ]
@@ -100,9 +100,9 @@
           \end{axis}
         \end{tikzpicture}
 
-      \task 
+      \task
         Graph $f(x-2)+1$:
-        
+
         \begin{tikzpicture}
           \begin{axis}[
             grid=both, %major,minor
@@ -117,10 +117,10 @@
             \addplot[->] expression[domain=1:6]{sqrt(x)};
           \end{axis}
         \end{tikzpicture}
-        
-      \task 
+
+      \task
         Graph $f(x+1)-3$:
-        
+
         \begin{tikzpicture}
           \begin{axis}[
             grid=both, %major,minor
@@ -137,11 +137,11 @@
     \end{extasks}
   \end{ex*}
   \pagebreak
-  
+
   \begin{ex*}
     Identify the shifts which transform the blue graph into the red graph:
     \begin{extasks}[after-item-skip=\stretch{1}](2)
-      \task 
+      \task
         \begin{tikzpicture}[declare function={
           cubeRoot(\x)=\x/abs(\x)*abs(\x)^(1/3);
           h=-1; k=2;
@@ -156,7 +156,7 @@
             minor x tick num=1,
             minor y tick num=1,
             ]
-            
+
             \addplot[<-] expression[domain=-6:-1]{cubeRoot(x)};
             \addplot[-] expression[domain=-1:1]{cubeRoot(x)};
             \addplot[->] expression[domain=1:6]{cubeRoot(x)};
@@ -167,7 +167,7 @@
           \end{axis}
         \end{tikzpicture}
 
-      \task 
+      \task
         \begin{tikzpicture}[declare function={
           f(\x)=\x^2;
           h=2; k=-3;
@@ -188,7 +188,7 @@
           \end{axis}
         \end{tikzpicture}
 
-      \task 
+      \task
         \begin{tikzpicture}[declare function={
           f(\x)=sqrt(\x);
           h=-4; k=-3;
@@ -210,7 +210,7 @@
           \end{axis}
         \end{tikzpicture}
 
-      \task 
+      \task
         \begin{tikzpicture}[declare function={
           f(\x)=abs(\x);
           h=2; k=1;
@@ -238,15 +238,15 @@
   \begin{defn*}[Reflections]
     Given a function $f(x)$, a new function $g(x)=-f(x)$ is a \textbf{vertical reflection} of the function $f(x)$, sometimes called a reflection about the $x$-axis.
     \vspace*{0.5\baselineskip}
-    
+
     Given a function $f(x)$, a new function $g(x)=f(-x)$ is a \textbf{horizontal reflection} of the function $f(x)$, sometimes called a reflection about the $y$-axis.
   \end{defn*}
 
-  
+
   \begin{ex*}
     Transform the graphs below as indicated:
     \begin{extasks}[after-item-skip=\stretch{1}](2)
-      \task 
+      \task
         Graph $f(-x)$:
 
         \begin{tikzpicture}[declare function={
@@ -266,7 +266,7 @@
           \end{axis}
         \end{tikzpicture}
 
-      \task 
+      \task
         Graph $-f(x)$:
 
         \begin{tikzpicture}[declare function={
@@ -284,7 +284,7 @@
           \end{axis}
         \end{tikzpicture}
 
-      \task 
+      \task
         Graph $-f(-x)$:
 
         \begin{tikzpicture}[declare function={
@@ -303,7 +303,7 @@
           \end{axis}
         \end{tikzpicture}
 
-      \task 
+      \task
         Graph $-f(x)+1$
 
         \begin{tikzpicture}[declare function={
@@ -323,7 +323,7 @@
     \end{extasks}
   \end{ex*}
   \pagebreak
-  
+
   %Even and odd functions
   \begin{defn*}[Even and Odd functions]
     A function is called an even function if for every input $x$
@@ -359,12 +359,12 @@
       \item If $a<0$, then there will be a combination of a vertical stretch/compression with a vertical reflection.
     \end{itemize}
   \end{defn*}
-  
+
   \begin{ex*}
     Given the graph of $f(x)$ below, graph $g(x)=2f(x)$:
     \begin{center}
       \begin{tikzpicture}[declare function={
-        f(\x)=\x<=3 ? 2*\x^2/9+1 : 
+        f(\x)=\x<=3 ? 2*\x^2/9+1 :
               (\x<=6 ? -\x/3 + 4  : 14-2*\x);
         }]
         \begin{axis}[
@@ -390,12 +390,12 @@
       \item If $b<0$, then there will be a combination of a horizontal stretch/compression with a horizontal reflection.
     \end{itemize}
   \end{defn*}
-  
+
   \begin{ex*}
     Given the graph of $f(x)$ below, graph $g(x)=f(2x)$:
     \begin{center}
       \begin{tikzpicture}[declare function={
-        f(\x)=\x<=3 ? 2*\x^2/9+1 : 
+        f(\x)=\x<=3 ? 2*\x^2/9+1 :
               (\x<=6 ? -\x/3 + 4  : 14-2*\x);
         }]
         \begin{axis}[
@@ -416,13 +416,13 @@
   % sequence of transformations
   \begin{thmBox*}[Combining Transformations]
     \begin{itemize}
-      \item 
+      \item
         When combining vertical transformations written in the form $af(x)+k$, first vertically stretch by $a$ and then shift by $k$.
-      \item 
+      \item
         When combining horizontal transformations written in the form $f(bx-h)$, first horizontally shift by $h$ and then horizontally stretch by $\dfrac{1}{b}$.
-      \item 
+      \item
         When combining horizontal transformations written in the form $f(b(x-h))$, first horizontally stretch by $\dfrac{1}{b}$ and then horizontally shift by $h$.
-      \item 
+      \item
         Horizontal and vertical transformations are independent of the order them are performed.
     \end{itemize}
   \end{thmBox*}
@@ -440,6 +440,8 @@
             minor grid style={draw=gray!75},
             ymin=-6.25, ymax=6.25,
             width=0.625*\linewidth,
+            minor x tick num=1,
+            minor y tick num=1,
             ]
             \addplot[-] expression[domain=-2:2]{f(x)};
         \end{axis}
