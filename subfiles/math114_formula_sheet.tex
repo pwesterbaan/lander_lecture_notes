@@ -11,8 +11,12 @@
 \examUnit=-1 %TODO (based on chapter number)
 \begin{document}
   \providecommand{\formulaSheetTitle}[1]{{\Large \textbf{#1}}}
+  \newcommand{\expoRules}{
+    Fractional exponents: & $\mathllap{x^{a/b}}=\sqrt[b]{x^a}$\\
+    Subtracting exponents: & $\mathllap{x^{a-b}}=\dfrac{x^a}{x^b}$\\
+  }
   \newcommand{\unitOne}{%
-    \mbox{} %Remove later
+    Average Rate of Change: & $\dfrac{f(b)-f(a)}{b-a}$\\
   }
   \newcommand{\unitTwo}{%
   }
@@ -29,8 +33,9 @@
       \ifnum\examUnit=2 \unitTwo \fi%
       \ifnum\examUnit=3 \unitThree \fi%
       \ifnum\examUnit=-1 %%Final Exam
-        % \multicolumn{2}{c}{\hrulefill\textbf{ Linear functions }\hrulefill}\\
-      \unitOne
+        \multicolumn{2}{c}{\hrulefill\textbf{ Unit One }\hrulefill}\\
+        \expoRules
+        \unitOne
         % \multicolumn{2}{c}{\hrulefill\textbf{ Polynomial and Rational functions }\hrulefill}\\ \unitTwo
         % \multicolumn{2}{c}{\hrulefill\textbf{ Trigonometry }\hrulefill}\\ \unitThree
       \fi%

@@ -6,7 +6,7 @@
   \section{1.5: Transformation of Functions}
   %Vertical and horizontal shifts
   \begin{defn*}[Vertical Shift]
-    Given a function $f(x)$, a new function $g(x)=f(x)+k$, where $k$ is a constant, is a \textbf{vertical shift} of the function $f(x)$. All the output values shift vertically by $k$ units (\textbf{up} if $k>0$, \textbf{down} if $k<0$).
+    Given a function $f(x)$, a new function $g(x)=f(x)+k$, where $k$ is a constant, is a \textbf{vertical shift} of the function $f(x)$. All the output values shift vertically by $k$ units (\textbf{up} if $h>0$, \textbf{down} if $h<0$).
   \end{defn*}
   \begin{ex*}
     Using the graphs below, sketch the shifted functions as indicated:
@@ -413,7 +413,41 @@
   \end{ex*}
   \pagebreak
 
-  %TODO sequence of transformations
+  % sequence of transformations
+  \begin{thmBox*}[Combining Transformations]
+    \begin{itemize}
+      \item 
+        When combining vertical transformations written in the form $af(x)+k$, first vertically stretch by $a$ and then shift by $k$.
+      \item 
+        When combining horizontal transformations written in the form $f(bx-h)$, first horizontally shift by $h$ and then horizontally stretch by $\dfrac{1}{b}$.
+      \item 
+        When combining horizontal transformations written in the form $f(b(x-h))$, first horizontally stretch by $\dfrac{1}{b}$ and then horizontally shift by $h$.
+      \item 
+        Horizontal and vertical transformations are independent of the order them are performed.
+    \end{itemize}
+  \end{thmBox*}
+
+  \begin{ex*}
+    Given the graph of $f(x)$ below, graph $g(x)=f\parens{\dfrac{1}{2}x+1}-3$:
+    \begin{center}
+      \begin{tikzpicture}[declare function={
+        f(\x)=sqrt(4-x^2);
+        }]
+        \begin{axis}[
+            grid=both, %major,minor
+            grid style={line width=0.375pt, draw=gray!60},
+            axis equal,
+            minor grid style={draw=gray!75},
+            ymin=-6.25, ymax=6.25,
+            width=0.625*\linewidth,
+            ]
+            \addplot[-] expression[domain=-2:2]{f(x)};
+        \end{axis}
+      \end{tikzpicture}
+    \end{center}
+  \end{ex*}
+  \pagebreak
+
   %TODO pick out homework problems
 
   \pagebreak
