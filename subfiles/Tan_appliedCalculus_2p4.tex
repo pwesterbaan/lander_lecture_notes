@@ -182,7 +182,7 @@
   \begin{extasks}[after-item-skip=\stretch{1}](1)
     \task $\displaystyle \lim_{x\to \infty} \dfrac{2x^2+3x-4}{x^2-7x+1}$
     \task $\displaystyle \lim_{x\to -\infty} \dfrac{3x^2+4}{2x^3}$
-    \task $\displaystyle \lim_{x\to \pm\infty} \dfrac{3x^5+2x^3-4}{x^4+4x^2-1}$
+    \task $\displaystyle \lim_{x\to \pm\infty} \dfrac{3x^5+2x^3-4}{7x^4+4x^2-1}$
   \end{extasks}
   \vspace*{\stretch{1}}
   \pagebreak
@@ -198,14 +198,11 @@
         grid style={line width=0.35pt, draw=gray!75},
         axis lines=center,
         axis line style={->},
-        % xmin=-6, xmax=6,
         ymin=-2.5, ymax=2.5,
         enlargelimits={value=0.05, auto},
         ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
         width=0.95\linewidth,
         height=\axisdefaultheight,
-        % xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
-        % ylabel= $f(x)$, ylabel style={align=left, at={(ticklabel* cs:1)},anchor=south west},
         every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}
         ]
         \addplot[<->] expression[domain=-6:6] {f(x)};
