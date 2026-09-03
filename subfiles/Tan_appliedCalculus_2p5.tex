@@ -73,9 +73,9 @@
   \begin{center}
     % \smash{\raisebox{-\height}{
     \begin{tikzpicture}[declare function={
-      g(\x)=\x<-2 ? 1/(2*(\x+2))+3 :
+      g(\x)=\x<-2 ? 1/(2*(\x+2))+exp(1)-1 :
         (\x==-2 ? inf :
-        (\x< -1 ? 1/(\x+2)-2:
+        (\x< -1 ? 1/(\x+2)-3:
         (\x==-1 ? inf :
         (\x<  1 ? 2*(-\x^2+1):
         (\x<  3 ? 2*(\x-2)^2-2: -exp(4*(3-\x))+1))));}]
@@ -91,13 +91,14 @@
         ytick={-6,-5,...,6},
         enlargelimits={abs=0.75},
         width=0.8*\linewidth, height=\axisdefaultheight,
+        xlabel=,ylabel=,
         ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
         every axis plot/.append style={line width=0.95pt, color=lander_blue},
         ]
           %% Using 'samples at' instead of domain to control plotting discontinuities
-          \addplot[->,samples at={-6,-5.975,...,-2.005,-2,-1.95,...,-1.025,-1.005,-1,-0.95,...,7.5}] {g(x)};
+          \addplot[->,samples at={-6,-5.975,...,-2.005,-2,-1.95,...,-1.0015,-1.005,-1,-0.975,...,7.5}] {g(x)};
           \addplot[holdot] coordinates{(-1,0)(2,-2)};
-          \addplot[soldot] coordinates{(-1,-1)(2,1)};
+          \addplot[soldot] coordinates{(-1,-2)(2,1)};
       \end{axis}
     \end{tikzpicture}
     % }}
