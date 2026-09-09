@@ -3,7 +3,102 @@
 \providecommand{\relscalefact}{1.4}
 \begin{document}
 \relscale{\relscalefact}
-  \section{}
+  \section{2.1: Linear Functions}
+  %% Borrow from 121 notes (save parallel, perp, vert, horiz for 2p2)
+  %slope
+  %point-slope form
+  %slope-intercept form\
+  
+    \begin{defn*}[Slope of a Nonvertical Line]
+      If $(x_1,y_1)$ and $(x_2,y_2)$ are any two distinct points on a nonvertical line $L$, then the slope $m$ of $L$ is given by
+        \[m=\frac{\Delta y}{\Delta x}=\frac{y_2-y_1}{x_2-x_1}\]
+    \end{defn*}
 
-  \pagebreak
+    \begin{flushright}
+      \smash{\raisebox{-\height}{
+      \begin{tikzpicture}[scale=1.0, declare function={
+        f(\x)=\x/3+2/3;
+        a=2; b=5;
+        fa=f(a); fb=f(b);}]
+        \begin{axis}[
+          axis lines=center,
+          axis line style={black,->},
+          xmin=-2, xmax=8,
+          enlargelimits={abs=0.75},
+          ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
+          xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+          ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+          every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}
+          ]
+          \coordinate (MP) at ({(a,fa)}-|{(b,fb)});
+          \addplot[<->,domain=-2.5:8] {f(x)} node[pos=0.9, above left, black] {$L$};
+          \addplot[soldot] coordinates{(a,fa)} 
+            node [black, above left, font=\normalsize, inner sep=1pt]
+            {$(x_1,y_1)$};
+          \addplot[soldot] coordinates{(b,fb)} 
+            node [black, above left, font=\normalsize, inner sep=1pt]
+            {$(x_2,y_2)$};
+          \draw[dashed] (a,fa) -| (b,fb);
+          \node[below, font=\normalsize] at ($(a,fa)!0.5!(MP)$) {$\Delta x=x_2-x_1$};
+          \node[right, font=\normalsize] at ($(b,fb)!0.5!(MP)$) {$\Delta y=y_2-y_1$};
+        \end{axis}
+      \end{tikzpicture}
+      }}
+    \end{flushright}
+
+    \begin{minipage}{0.5\linewidth}
+      \begin{ex*}
+        Compute the slope of the line passing through the points
+      \end{ex*}
+    \end{minipage}
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task $(x_1,y_1)=(1,1)$ and $(x_2,y_2)=(4,2)$
+      \task $(x_1,y_1)=(3,-1)$ and $(x_2,y_2)=(-2,8)$
+      \task $(x_1,y_1)=(3,2)$ and $(x_2,y_2)=(-1,2)$
+      \task $(x_1,y_1)=(4,1)$ and $(x_2,y_2)=(4,4)$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+    \pagebreak
+    
+    \begin{defn*}[Point-Slope Form of an Equation of a Line]
+      An equation of the line that has slope $m$ and passes through the point $(x_1,y_1)$ is given by
+        \[y-y_1=m(x-x_1)\]
+    \end{defn*}
+    
+    \begin{ex*}
+      Find the equation of the line going through the points
+    \end{ex*}
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task $(x_1,y_1)=(-2,1)$ and $(x_2,y_2)=(3,-2)$
+      \task $(x_1,y_1)=(3,4)$ and $(x_2,y_2)=(-1,4)$
+      \task $(x_1,y_1)=(2,0)$ and $(x_2,y_2)=(2,1)$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+    \pagebreak
+    
+    \begin{defn*}[Slope-Intercept Form of an Equation of a Line]
+      An equation of the line that has slope $m$ and intersects the $y$-axis at the point $(0,b)$ is given by
+        \[y=mx+b\]
+    \end{defn*}
+    \begin{ex*}
+      Rewrite the equations in the previous example in slope-intercept form.
+      \vspace*{\stretch{1}}
+    \end{ex*}
+    \pagebreak
+
+    \begin{ex*}
+      Marcus currently has $200$ songs in his music collection. Every month, he adds $15$ new songs. Write a formula for the number of songs, $N$, in his collection as a function of time, $t$, the number of months. How many songs will he own in a year?
+      \vspace*{\stretch{1}}
+    \end{ex*}
+
+    \textbf{Forms of Linear Equations}
+      \begin{align*}
+        \textnormal{General form: }& Ax+By=C\\
+        \textnormal{Point-slope form: }& y-y_1=m(x-x_1)\\
+        \textnormal{Slope-intercept form: }& y=mx+b\\
+        \textnormal{Vertical line: }& x=a\\
+        \textnormal{Horizontal line: }& y=b
+      \end{align*}
+
+    \pagebreak
 \end{document}
