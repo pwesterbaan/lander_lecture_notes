@@ -72,7 +72,7 @@
     \formulaSheetTitle{Math 123 Formula Sheet}
 
     \renewcommand{\arraystretch}{2.05}
-    \begin{tabularx}{0.95\linewidth}{@{}>{\bfseries\hsize=0.95\hsize}X>{\hsize=1.05\hsize}X@{}}
+    \begin{tabular}{@{}>{\bfseries}p{0.475\linewidth}p{0.50\linewidth}@{}}
       \ifnum\examUnit=1  \unitOne    \fi%
       \ifnum\examUnit=2  \lineEqns \unitTwo    \fi%
       \ifnum\examUnit=3  \expoRules \\\derivShortcuts \\\unitThree  \fi%
@@ -82,7 +82,7 @@
         \multicolumn{2}{c}{\hrulefill\textbf{ Unit 3 }\hrulefill}\\ \unitThree
         \multicolumn{2}{c}{\hrulefill\textbf{ Unit 4 }\hrulefill}\\ \unitFour
      \fi%
-    \end{tabularx}
+    \end{tabular}
   \end{center}
 
   \pagebreak

@@ -31,7 +31,7 @@
 
     \renewcommand{\arraystretch}{2}
     \ifnum\examUnit=-1 \renewcommand{\arraystretch}{1.8} \vspace*{-\baselineskip} \fi%
-    \begin{tabularx}{0.95\linewidth}{@{}>{\bfseries\hsize=1.075\hsize}X>{\hsize=0.925\hsize}X@{}}
+    \begin{tabular}{@{}>{\bfseries}p{0.51\linewidth}p{0.44\linewidth}@{}}
       \ifnum\examUnit=1 \unitOne \fi%
       \ifnum\examUnit=2 \unitTwo \fi%
       \ifnum\examUnit=3 \unitThree \fi%
@@ -42,7 +42,7 @@
         % \multicolumn{2}{c}{\hrulefill\textbf{ Polynomial and Rational functions }\hrulefill}\\ \unitTwo
         % \multicolumn{2}{c}{\hrulefill\textbf{ Trigonometry }\hrulefill}\\ \unitThree
       \fi%
-    \end{tabularx}
+    \end{tabular}
   \end{center}
 
   \pagebreak

@@ -64,7 +64,7 @@
 
     \renewcommand{\arraystretch}{2}
     \ifnum\examUnit=-1 \renewcommand{\arraystretch}{1.8} \vspace*{-\baselineskip} \fi%
-    \begin{tabularx}{0.95\linewidth}{@{}>{\bfseries\hsize=1.075\hsize}X>{\hsize=0.925\hsize}X@{}}
+    \begin{tabular}{@{}>{\bfseries}p{0.51\linewidth}p{0.44\linewidth}@{}}
       \ifnum\examUnit=1 \chOne  \fi%
       \ifnum\examUnit=4 \chFour \fi%
       \ifnum\examUnit=2 \chTwo  \fi%
@@ -76,7 +76,7 @@
         \multicolumn{2}{c}{\hrulefill\textbf{ Finance }\hrulefill}\\ \chSix
         \multicolumn{2}{c}{\hrulefill\textbf{ Quadratics }\hrulefill}\\ \chTwo
       \fi%
-    \end{tabularx}
+    \end{tabular}
   \end{center}
 
   \pagebreak

@@ -35,7 +35,7 @@
     \formulaSheetTitle{Math 211 Formula Sheet}
 
     \renewcommand{\arraystretch}{2.5}
-    \begin{tabularx}{0.95\linewidth}{@{}>{\bfseries\hsize=0.85\hsize}X>{\hsize=1.15\hsize}X@{}}
+    \begin{tabular}{@{}>{\bfseries}p{0.40\linewidth}p{0.55\linewidth}@{}}
       \ifnum\examUnit=1  \examOne    \fi%
       \ifnum\examUnit=2  \zScore \examTwo \fi%
       \ifnum\examUnit=3  \examThree  \fi%
@@ -44,7 +44,7 @@
         \multicolumn{2}{c}{\hrulefill\textbf{ Unit 2 }\hrulefill}\\ \examTwo
         \multicolumn{2}{c}{\hrulefill\textbf{ Unit 3 }\hrulefill}\\ \examThree
       \fi%
-    \end{tabularx}
+    \end{tabular}
   \end{center}
 
   \pagebreak
