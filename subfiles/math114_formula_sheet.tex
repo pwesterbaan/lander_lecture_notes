@@ -2,7 +2,7 @@
 \usepackage[margin=1in]{geometry}
 \usepackage{amsmath, xfrac, actuarialsymbol, mathtools}
 \usepackage{xcolor}
-\usepackage{booktabs}
+\usepackage{booktabs,array}
 \usepackage{colorPalette}
 \newcommand*{\sbrkt}[1]{{\left[#1\right]}}
 \newcommand*{\parens}[2][]{{\left(\vphantom{#1[}#2\right)}}
@@ -11,6 +11,10 @@
 \examUnit=-1 %TODO (based on chapter number)
 \begin{document}
   \providecommand{\formulaSheetTitle}[1]{{\Large \textbf{#1}}}
+  \newcommand{\quadForm}{
+    Quadratic formula: & $\mathllap{x}=\dfrac{-b\pm\sqrt{b^2-4ac}}{2a}$\\[5pt]
+    Vertex of a parabola: & $\parens{h,k}$ where $h=-\dfrac{b}{2a}$,\ \  $k=f\parens{h}=c-\dfrac{b^2}{4a}$\\
+  }
   \newcommand{\expoRules}{
     Fractional exponents: & $\mathllap{x^{a/b}}=\sqrt[b]{x^a}$\\
     Subtracting exponents: & $\mathllap{x^{a-b}}=\dfrac{x^a}{x^b}$\\[5pt]
@@ -31,14 +35,16 @@
 
     \renewcommand{\arraystretch}{2}
     \ifnum\examUnit=-1 \renewcommand{\arraystretch}{1.8} \vspace*{-\baselineskip} \fi%
-    \begin{tabular}{@{}>{\bfseries}p{0.51\linewidth}p{0.44\linewidth}@{}}
+    \begin{tabular}{@{}>{\bfseries}p{0.495\linewidth}p{0.5\linewidth}l@{}}
       \ifnum\examUnit=1 \unitOne \fi%
-      \ifnum\examUnit=2 \unitTwo \fi%
+      \ifnum\examUnit=2 \unitTwo\\ \quadForm \fi%
       \ifnum\examUnit=3 \unitThree \fi%
       \ifnum\examUnit=-1 %%Final Exam
         \multicolumn{2}{c}{\hrulefill\textbf{ Unit One }\hrulefill}\\
         \expoRules
         \unitOne
+      \multicolumn{2}{c}{\hrulefill\textbf{ Unit Two }\hrulefill}\\
+        \unitTwo\\ \quadForm
         % \multicolumn{2}{c}{\hrulefill\textbf{ Polynomial and Rational functions }\hrulefill}\\ \unitTwo
         % \multicolumn{2}{c}{\hrulefill\textbf{ Trigonometry }\hrulefill}\\ \unitThree
       \fi%
