@@ -7,7 +7,7 @@
   \section{3.1: Complex Numbers}
 
   \begin{defn*}[Imaginary and Complex Numbers]
-    We can extend the Real numbers by defining:
+    We can extend the real numbers by defining:
       \[i=\sqrt{-1}.\]
     A \textbf{complex number} is a number of the form $a+bi$ where
     \begin{itemize}
@@ -32,7 +32,7 @@
   \end{align*}
   \begin{tikzpicture}[overlay, remember picture,
     myArrow/.style={->, shorten >=5pt, shorten <=1pt, line width=1pt}]
-    \node[lander_blue] at ($(realPart.south)+(-2,-1)$) (realText) {Real part};
+    \node[lander_blue] at ($(realPart.south)+(-2,-1)$) (realText) {real part};
     \draw[myArrow, lander_blue] (realText) -- (realPart.south);
     %
     \node[red!90!black] at ($(imagPart.south)+(2,-1)$) (imagText) {Imaginary part};

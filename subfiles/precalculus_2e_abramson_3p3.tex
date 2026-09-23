@@ -3,7 +3,132 @@
 \providecommand{\relscalefact}{1.4}
 \begin{document}
 \relscale{\relscalefact}
-  \section{}
+  \section{3.3: Power Functions and Polynomial Functions}
+  \begin{defn*}[Power Function]
+    A \textbf{power function} is a function that can be represented in the form
+      \[f(x)=kx^p\]
+    where $k$ and $p$ are real numbers, and $k$ is known as the \textbf{coefficient}.
+  \end{defn*}
+  \begin{ex*}
+    \TabPositions{35mm}
+    Identify which of the following functions are power functions:
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $f(x)=1$ \tab Constant
+      \task $f(x)=x$ \tab Identity
+      \task $f(x)=x^2$ \tab Quadratic
+      \task $f(x)=x^3$ \tab Cubic
+      \task $f(x)=\dfrac{1}{x}$ \tab Reciprocal
+      \task $f(x)=\dfrac{1}{x^2}$ \tab Reciprocal squared
+      \task $f(x)=\sqrt{x}$ \tab Square root
+      \task $f(x)=\sqrt[3]{x}$ \tab Cube root
+      \task $f(x)=2^x$ \tab Exponential
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \noindent
+  \textbf{Identifying End Behavior of Power Functions}
+
+  \noindent
+  Below are example graphs of power functions $f(x)=kx^n$:
+  \begin{center}
+    \begin{tikzpicture}[
+      funcLabel/.style={circle, inner sep=0.5pt, fill=white,opacity=0.0, text opacity=1}]
+      \begin{groupplot}[
+        group style={group size=2 by 2,horizontal sep=3cm, vertical sep=4cm},
+        axis on top,
+        axis lines=center,
+        axis line style={black,->},
+        xmin=-2, xmax=2,
+        enlargelimits={abs=0.5},
+        xlabel=, ylabel=,
+        clip=false,
+        ]
+        \nextgroupplot[ymin=-1, ymax=4, title={$n$ Even, $k>0$}]
+          \addplot[<->] expression[domain=-2:2]{x^2}
+            node[pos=0.95, right, funcLabel] {$x^2$};
+          \addplot[<->, red!50!black] expression[domain=-1.414:1.414]{x^4}
+            node[pos=0.95, right, funcLabel] {$x^4$};
+          \addplot[<->, green!50!black] expression[domain=-1.26:1.26]{x^6}
+            node[pos=0.95, left, funcLabel] {$x^6$};
+        %
+        \nextgroupplot[ymin=-4, ymax=4, title={$n$ Odd, $k>0$}]
+          \addplot[<->] expression[domain=-1.587:1.587]{x^3}
+            node[pos=0.95, right, funcLabel] {$x^3$};
+          \addplot[<->, red!50!black] expression[domain=-1.320:1.320]{x^5}
+            node[pos=1.01, above right, funcLabel] {$x^5$};
+          \addplot[<->, green!50!black] expression[domain=-1.219:1.219]{x^7}
+            node[pos=0.95, left, funcLabel] {$x^7$};
+        %
+        \nextgroupplot[ymin=-4, ymax=1, title={$n$ Even, $k<0$}]
+          \addplot[<->] expression[domain=-2:2]{-x^2}
+            node[pos=0.95, right, funcLabel] {$-x^2$};
+          \addplot[<->, red!50!black] expression[domain=-1.414:1.414]{-x^4}
+            node[pos=0.95, below, funcLabel] {$-x^4$};
+          \addplot[<->, green!50!black] expression[domain=-1.26:1.26]{-x^6}
+            node[pos=0.95, left, funcLabel] {$-x^6$};
+        %
+        \nextgroupplot[ymin=-4, ymax=4, title={$n$ Odd, $k<0$}]
+          \addplot[<->] expression[domain=-1.587:1.587]{-x^3}
+            node[pos=0.95, right, funcLabel] {$-x^3$};
+          \addplot[<->, red!50!black] expression[domain=-1.320:1.320]{-x^5}
+            node[pos=0.975, below, funcLabel] {$-x^5$};
+          \addplot[<->, green!50!black] expression[domain=-1.219:1.219]{-x^7}
+            node[pos=0.95, left, funcLabel] {$-x^7$};
+      \end{groupplot}
+    \end{tikzpicture}
+  \end{center}
+  \pagebreak
+
+  \begin{ex*}
+    Describe the end behavior of the graphs of the following power functions:
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $f(x)=x^8$
+      \task $g(x)=-x^9$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+
+  \begin{defn*}[Polynomial Functions]
+    Let $n$ be a non-negative integer. A \textbf{polynomial function} is a function that can be written in the form
+      \[f(x)=a_nx^n+a_{n-1}x^{n-1}+\dots+a_2x^2+a_1x+a_0\]
+    Each $a_i$ is a coefficient and can be any real number, and $a_n\neq 0$.\\[\baselineskip]
+
+    The \textbf{degree} of the polynomial is the highest power that the variable is raised to. The \textbf{leading coefficient} is the coefficient associated with the term containing the highest power of the variable.
+  \end{defn*}
+  \begin{ex*}
+    Describe the end behavior of the graphs of the following polynomials:
+    \hspace*{\stretch{1}}
+    \textcolor{blue}{\underline{\href{https://www.desmos.com/calculator/lewqpko988}{Graphs}}}
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $f(x)=5x^{4}+2x^{3}-x-4$
+      \task $g(x)=-2x^{6}-x^{5}+3x^{4}+x^{3}$
+      \task $h(x)=3x^{5}-4x^{4}+2x^{2}+1$
+      \task $j(x)=-6x^{3}+7x^{2}+3x+1$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}[Intercepts and Turning Points of Polynomial Functions]
+    A \textbf{turning point} is a point at which the graph changes direction from increasing to decreasing, or decreasing to increasing.\\
+
+     The $y$-intercept is the point at which the function has an input value of zero.\\
+
+     The $x$-intercepts are the points at which the output value is zero.\\
+     
+     A polynomial of degree $n$ will have, at most, $n$ $x$-intercepts, and $n-1$ turning points.
+  \end{defn*}
+  
+  \begin{thmBox*}[Complex Conjugate Root Theorem]
+    If a polynomial $f(x)$ has real coefficients, and $a+bi$ is a root of $f(x)$, then $a-bi$ is also a root of $f(x)$.
+  \end{thmBox*}
+  \begin{ex*}
+    Find the intercepts of 
+      \[f(x)=x^4-4x^2-45\]
+    \vspace*{\stretch{1}}
+  \end{ex*}
 
   \pagebreak
 \end{document}
