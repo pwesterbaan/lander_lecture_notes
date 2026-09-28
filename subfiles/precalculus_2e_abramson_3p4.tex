@@ -3,7 +3,131 @@
 \providecommand{\relscalefact}{1.4}
 \begin{document}
 \relscale{\relscalefact}
-  \section{}
+  \section{3.4: Graphs of Polynomial Functions}
+    %Characteristics - smooth, continous
+    \begin{thmBox*}
+      Graphs of polynomials are smooth and continuous with infinite end behavior.
+    \end{thmBox*}
+    \begin{center}
+      \begin{tikzpicture}[
+        funcLabel/.style={circle, inner sep=0.5pt, fill=white,opacity=0.0, text opacity=1},
+        declare function={
+          f(\x)=(\x+2)*\x*(\x-3);
+          g(\x)=2*\x-f(3.1);
+        }]
+        \begin{groupplot}[
+          group style={group size=2 by 2,horizontal sep=3cm, vertical sep=3cm},
+          axis lines=center,
+          axis line style={black,->},
+          xmin=-4, xmax=4,
+          enlargelimits={abs=0.5},
+          xmajorticks=false,
+          ymajorticks=false,
+          xlabel=, ylabel=,
+          ]
+          \nextgroupplot[ymin=-8, ymax=8, title={Smooth and continuous}]
+            \addplot[<->] expression[domain=-2.5:3.4]{f(x)};
+          \nextgroupplot[ymin=-8, ymax=8, title={Not continuous}]
+            \addplot[<-] expression[domain=-2.5:3.1]{f(x)};
+            \addplot[soldot] coordinates{(3.1,{f(3.1)})};
+            \addplot[->] expression[samples at={3.1,3.9}]{g(x)};
+            \addplot[holdot] coordinates{(3.1,{g(3.1)})};
+          \nextgroupplot[title={Not smooth}, axis equal]
+            \addplot[<->] expression[domain=-4:4]{abs(x)};
+          \nextgroupplot[title={Finite end behavior}]
+            \addplot[<->] expression[domain=-4:4, samples=512]{sin(deg(7*\x))/x};
+        \end{groupplot}
+      \end{tikzpicture}
+    \end{center}
+    \pagebreak
+
+    %Find x-intercepts of polynomial functions
+    \begin{ex*}
+      Find the $x$- and $y$-intercepts of the following functions:
+      \begin{extasks}[after-item-skip=\stretch{1}](2)
+        \task $f(x)=2(x-4)(x+1)(x-6)$
+        \task $g(x)=4x(x-2)^2(x+1)$
+        \task $h(x)=x^4-x^2$
+        \task $j(x)=x^3+2x^2-9x-18$
+      \end{extasks}
+      \vspace*{\stretch{1}}
+    \end{ex*}
+    \pagebreak
+    
+    %Zeros and multiplicities
+    \begin{defn*}[Multiplicity of a Root]
+      If a polynomial contains a factor of the form $(x-h)^p$, then the behavior near the $x$-intercept $h$ is determined by the power $p$. We say that $x=h$ is a zero of \textbf{multiplicity} $p$.
+      
+      When $p$ is, 
+      \begin{itemize}
+        \item even, the graph will touch the $x$-axis
+        \item odd, the graph will cross the $x$-axis
+      \end{itemize}
+      The degree of the polynomial is the sum of the multiplicities.
+    \end{defn*}
+    \begin{center}
+      \begin{tikzpicture}[
+        funcLabel/.style={circle, inner sep=0.5pt, fill=white,opacity=0.0, text opacity=1},
+        declare function={
+          f(\x)=(\x+10)*\x/10;
+          g(\x)=(20+\x)^2*x^2/2500;
+          h(\x)=(x+5)*x^3/10;
+        }]
+        \begin{groupplot}[
+          group style={group size=3 by 1,horizontal sep=2.75cm},
+          axis lines=center,
+          axis line style={black,->},
+          xmin=-4, xmax=4,
+          ymin=-2, ymax=4,
+          enlargelimits={abs=0.5},
+          xmajorticks=false,
+          ymajorticks=false,
+          xlabel=, ylabel=,
+          width=0.35\linewidth,
+          ]
+          \nextgroupplot[title={Single zero}]
+            \addplot[<->] expression[domain=-2.5:3.4]{f(x)};
+          \nextgroupplot[title={Zero with multiplicity $2$}]
+            \addplot[<->] expression[domain=-4:4]{g(x)};
+          \nextgroupplot[xmin=-2, xmax=2, title={Zero with multiplicity $3$}]
+            \addplot[<->] expression[domain=-1.9:1.8]{h(x)};
+        \end{groupplot}
+      \end{tikzpicture}
+    \end{center}
+
+    \begin{ex*}
+      For the following, find the zeros, and the multiplicities of each:
+      \begin{extasks}[after-item-skip=\stretch{1}](2)
+        \task $f(x)=(x+2)^3(x-3)^2$
+        \task $g(x)=x^5(x-1)^3(x+2)$
+      \end{extasks}
+      \vspace*{\stretch{1}}
+    \end{ex*}
+    \pagebreak
+
+    %Writing Formulas for Polynomial Functions
+    \begin{ex*}
+      Find a formula for the polynomial of minimum degree represented in the graph below:
+      \begin{center}
+        \begin{tikzpicture}[declare function={
+          f(\x)=(\x+1)*(\x-1)^3*(\x-4)^2;
+          g(\x)=-2*f(\x)/f(0);
+          }]
+          \begin{axis}[
+            axis lines=center,
+            axis line style={black,->},
+            xtick={-6,-5,...,6},
+            xlabel=, ylabel=,
+            enlargelimits={abs=0.5},
+            width=0.75\linewidth, height=\axisdefaultheight,
+            ]
+            \addplot[<->] expression[domain=-1.125:4.425]{g(x)};
+          \end{axis}
+        \end{tikzpicture}
+      \end{center}
+      \vspace*{\stretch{1}}
+    \end{ex*}
+    
 
   \pagebreak
 \end{document}

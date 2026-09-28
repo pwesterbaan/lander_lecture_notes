@@ -8,7 +8,7 @@
   \begin{defn*}
     A quadratic is a function of degree two. The \textbf{general form of a quadratic function} is
       \[f(x)=ax^2+bx+c \quad (a\neq 0)\]
-    where $a$, $b$, and $c$ represent constants. The \textbf{standard form of a quadratic} is 
+    where $a$, $b$, and $c$ represent constants. The \textbf{standard form of a quadratic} is
       \[f(x)=a\parens{x-h}^2+k.\]
     A \textbf{parabola} is the shape of the graph of a quadratic function, with a vertex at $(h,k)$:
       \[h=-\dfrac{b}{2a}, \quad \textnormal{ and }\quad k=f\parens{h}=c-\dfrac{b^2}{4a}\]
@@ -51,6 +51,7 @@
         axis line style={black,->},
         xmajorticks=false,
         ymajorticks=false,
+        xlabel=,ylabel=,
         width=0.85\linewidth, height=0.875*\axisdefaultheight,
         enlargelimits={value=0.025, auto},
         every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=100},
@@ -64,29 +65,32 @@
         \draw[-, custNode, shorten >=10pt, shorten <=7.5pt] (qf) -- (xo);
         \draw[-, custNode, shorten >=10pt, shorten <=7.5pt] (qf) -- (xt);
 
-        \addplot[soldot] coordinates{(0,c)} 
+        \addplot[soldot] coordinates{(0,c)}
           node[above left, pin={[custPin] 120:$f(0)=c$}] {};
         \addplot[soldot] coordinates{(vx,vy)}
-          node[above, pin={[custPin] $\parens{-\dfrac{b}{2a},f\parens{-\dfrac{b}{2a}}}$}, black] {};
+          node[above, pin={[custPin] $\parens{-\dfrac{b}{2a},\ c-\dfrac{b^2}{4a}}$}, black] {};
       \end{axis}
     \end{tikzpicture}
   \end{center}
   \pagebreak
 
   \begin{ex*}
-    Find the vertex of the following quadratic functions by
+    Expand the standard form of a quadratic, then write $h$ and $k$ in terms of $a$, $b$, and $c$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Find the vertex of $f(x)=2x^2-6x+7$ by
     \begin{itemize}
       \item computing $h$ and $k$, and
       \item rewriting the quadratic in standard form by completing the square.
     \end{itemize}
     Identify if the vertex is the maximum or minimum value.
-    \begin{extasks}[after-item-skip=\stretch{1}](1)
-      \task $f(x)=2x^2-6x+7$
-    \end{extasks}
     \vspace*{4\baselineskip}
     \begin{itemize}
       \setlength{\itemsep}{\stretch{1}}
-      \item Factor out ``a'' from the first two terms
+      \item Factor ``$a$'' from the first two terms
       \item Add and subtract $h^2$
       \item Bring $-h^2$ out
       \item Simplify
@@ -96,19 +100,16 @@
   \pagebreak
 
   \begin{ex*}
-    Find the vertex of the following quadratic functions by
+    Find the vertex of $g(x)=13-3x^2+4x$ by
     \begin{itemize}
       \item computing $h$ and $k$, and
       \item rewriting the quadratic in standard form by completing the square.
     \end{itemize}
     Identify if the vertex is the maximum or minimum value.
-    \begin{extasks}[after-item-skip=\stretch{1}](1)
-      \task $g(x)=13-3x^2+4x$
-    \end{extasks}
     \vspace*{4\baselineskip}
     \begin{itemize}
       \setlength{\itemsep}{\stretch{1}}
-      \item Factor out ``a'' from the first two terms
+      \item Factor ``$a$'' from the first two terms
       \item Add and subtract $h^2$
       \item Bring $-h^2$ out
       \item Simplify
@@ -130,6 +131,34 @@
     \end{extasks}
     \vspace*{\stretch{1}}
   \end{ex*}
+  \pagebreak
+
+  \begin{thmBox*}[Solving quadratic equations via factoring:]
+    \begin{ex*}
+      Solve $2x^2+x=3x+12$
+      \begin{align*}
+        &\textnormal{1. Rewrite the equation in the general form:}&
+          2x^2-2x-12&=0\\[5mm]
+        &\textnormal{2. Rewrite $bx$ using factors of $ac$:}&
+          2x^2\textcolor{red}{-6x+4x}-12&=0 \\[5mm]
+        &\textnormal{3. Factor out like terms:}&
+          2x(x-3)+4(x-3)&=0 \\[5mm]
+        &\textnormal{4. Factor by grouping:}&
+          (x-3)(2x+4)&=0 \\[5mm]
+        &\textnormal{5. Solve for the roots:}&
+          x=3 \textnormal{ and } x=-2
+      \end{align*}
+    \end{ex*}
+  \end{thmBox*}
+
+  \begin{ex*}
+    Solve the following for $x$ via factoring:
+  \end{ex*}
+  \begin{extasks}[after-item-skip=\stretch{1}](2)
+    \task $(x+3)(x-1)=5$
+    \task $-4x^2+8x-3=0$
+  \end{extasks}
+  \vspace*{\stretch{1}}
   \pagebreak
 
   \begin{ex*}
