@@ -3,7 +3,81 @@
 \providecommand{\relscalefact}{1.4}
 \begin{document}
 \relscale{\relscalefact}
-  \section{}
+  \section{3.5: Dividing Polynomials}
+    %Numeric long division
+    %Identify dividend=(divisor*quotient)+remainder
+    \begin{ex*}
+      Compute $178 \div 3$ using long division. Identify the dividend, divisor, quotient, and remainder.
+      \vspace*{\stretch{1}}
+    \end{ex*}
+    
+    \begin{defn*}[The Division Algorithm]
+      The \textbf{Division Algorithm} states that, given a polynomial dividend $f(x)$ and a non-zero polynomial divisor $d(x)$ where the degree of $d(x)$ is less than or equal to the degree of $f(x)$, there exist unique polynomials $q(x)$ and $r(x)$ such that 
+        \[f(x)=d(x)q(x)+r(x)\]
+      where $q(x)$ is the quotient and $r(x)$ is the remainder. The remainder is either equal to zero, or has degree strictly less than $d(x)$.
+      
+      If $r(x)=0$, then $d(x)$ divides evenly into $f(x)$. This means that, in this case, both $d(x)$ and $q(x)$ are factors of $f(x)$.
+    \end{defn*}
+    \pagebreak
+    
+    \begin{ex*}
+      Use polynomial long division on the following:
+      \begin{extasks}[after-item-skip=\stretch{1}](1)
+        \task $\dfrac{5x^2+3x-2}{x+1}$
+        \task $\dfrac{2x^2+5x-7}{3x-2}$
+      \end{extasks}
+      \vspace*{\stretch{1}}
+    \end{ex*}
+    \pagebreak
+
+    %synthetic division
+    \begin{defn*}[Synthetic Division]
+      Synthetic division is a shortcut that can be used when the divisor is of the form $(x-k)$. In \textbf{synthetic division}, only the coefficients are used in the division process.
+      \vspace*{0.5\baselineskip}
+
+      Given two polynomials, use synthetic division to divide:
+      \begin{enumerate}
+        \item Write $k$ for the divisor.
+        \item Write the coefficients of the dividend.
+        \item Bring the lead coefficient down.
+        \item Multiply the lead coefficient by $k$. Write the product in the next column.
+        \item Add the terms of the second column. \label{synDiv:step:add}
+        \item Multiply the result by $k$. Write the product in the next column. \label{synDiv:step:mult}
+        \item Repeat steps \ref{synDiv:step:add} and \ref{synDiv:step:mult} for the remaining columns.
+        \item Use the bottom numbers to write the quotient. The number in the last column is the remainder. 
+      \end{enumerate}
+    \end{defn*}
+
+    \begin{ex*}
+      Use synthetic division on the following:
+      \polyset{resultleftrule, resultbottomrule, arraycolsep=10pt}
+      \begin{extasks}[after-item-skip=\stretch{1}](1)
+        \task $\dfrac{5x^2+3x-2}{x+1}$
+          \hspace*{\stretch{1}}
+          \polyhornerscheme[x=-1, stage=1]{5x^2+3x-2}
+        \task $\dfrac{2x^2+5x-7}{3x-2}$
+          \hspace*{\stretch{1}}
+          \polyhornerscheme[x=2/3, stage=1]{2x^2+5x-7}
+      \end{extasks}
+    \end{ex*}
+    \pagebreak
+
+    \begin{ex*}
+      Use synthetic division on the following:
+      \polyset{resultleftrule, resultbottomrule, arraycolsep=10pt}
+      \begin{extasks}[after-item-skip=\stretch{1}](1)
+        \task $\dfrac{5x^2-3x-36}{x-3}$
+          \hspace*{\stretch{1}}
+          \polyhornerscheme[x=3, stage=1]{5x^2-3x-36}
+        \task $\dfrac{4x^3+10x^2-6x-20}{x+2}$
+          \hspace*{\stretch{1}}
+          \polyhornerscheme[x=-2, stage=1]{4x^3+10x^2-6x-20}
+        \task $\dfrac{-9x^4+10x^3+7x^2-6}{x-1}$
+          \hspace*{\stretch{1}}
+          \polyhornerscheme[x=1, stage=1]{-9x^4+10x^3+7x^2-6}
+      \end{extasks}
+      \vspace*{\stretch{1}}
+    \end{ex*}
 
   \pagebreak
 \end{document}

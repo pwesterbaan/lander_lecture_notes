@@ -3,7 +3,154 @@
 \providecommand{\relscalefact}{1.4}
 \begin{document}
 \relscale{\relscalefact}
-  \section{}
+  \section{3.7: Rational Functions}
+  \begin{defn*}[Rational Function]
+    A \textbf{rational function} is a function of the form
+      \[r(x)=\dfrac{f(x)}{g(x)},\]
+    where $f(x)$ and $g(x)$ are polynomials.
+  \end{defn*}
+  \vspace*{\stretch{1}}
+  
+  \begin{center}
+    \begin{tikzpicture}[
+      custNode/.style={
+        black,
+        align=center,
+        inner sep=2.5pt,
+        rounded corners,
+        fill=white,
+        opacity=0.8,
+        text opacity=1.0},
+      ]
+      \begin{groupplot}[
+        group style={group size=2 by 1,horizontal sep=3cm},
+        grid=both, %major,minor
+        grid style={line width=0.375pt, draw=gray!60},
+        minor grid style={draw=gray!75},
+        axis lines=center,
+        axis line style={black,->},
+        xmin=-6, xmax=6,
+        ymin=-6, ymax=6,
+        enlargelimits={abs=0.5},
+        ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=0.5, text opacity=1},
+        xlabel=, ylabel=,
+        every axis plot/.append style={domain=xmin:xmax, line width=0.95pt, color=lander_blue, samples=255},]
+        \nextgroupplot
+          \addplot[<->] expression[domain=-6:-1/6]{1/x};
+          \addplot[<->] expression[domain=1/6:6]{1/x};
+          \node[custNode] at (4,4) {$f(x)=\dfrac{1}{x}$};
+        \nextgroupplot
+          \addplot[<->] expression[domain=-6:-1/sqrt(6)]{1/x^2};
+          \addplot[<->] expression[domain=1/sqrt(6):6]{1/x^2};
+          \node[custNode] at (4,4) {$f(x)=\dfrac{1}{x^2}$};
+      \end{groupplot}
+    \end{tikzpicture}
+  \end{center}
+  \vspace*{\stretch{1}}
+  
+  %vertical asymptotes
+  \begin{defn*}[Asymptotes]
+    A \textbf{vertical asymptote} of a graph is a vertical line $x=a$ where the graph tends towards positive or negative infinity as the input approaches $a$ from either the left or the write. We write
+      \[\textnormal{As } x \to a^-,\ f(x)\to \pm\infty \quad\textnormal{ or }\quad x\to a^+,\ f(x)\to \pm\infty.\]
+    A \textbf{horizontal asymptote} of a graph is a horizontal line $y=b$ where the graph approaches the line as the inputs increase or decrease without bound. We write
+      \[\textnormal{As } x\to \infty \textnormal{ or } x\to\infty,\ f(x)\to b.\]
+  \end{defn*}
+  \pagebreak
+
+  %end behavior - horizontal asymptotes, slant asymptotes
+  \begin{ex*}
+    Describe the asymptotes, intercepts, and domain of 
+      \[f(x)=\dfrac{1}{(x+1)(x-2)^2}\]
+    using the graph below:
+    \begin{center}
+      \begin{tikzpicture}[declare function={
+        f(\x)=1/((\x+1)*(\x-2)^2);
+        }]
+        \begin{axis}[
+          grid=both, %major,minor
+          grid style={line width=0.375pt, draw=gray!50},
+          minor grid style={draw=gray!75},
+          axis lines=center,
+          axis line style={black,->},
+          xmin=-6, xmax=6,
+          ymin=-6, ymax=6,
+          minor x tick num=1,
+          enlargelimits={abs=0.5},
+          ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=0.5, text opacity=1},
+          xlabel=, ylabel=,
+          width=0.65\linewidth, height=1.1*\axisdefaultheight,
+          every axis plot/.append style={domain=xmin:xmax, line width=0.95pt, color=lander_blue, samples=255},
+          ]
+          \addplot[<->] expression[domain=-6:-1.0169]{f(x)};
+          \addplot[<->] expression[domain=-0.98271:1.76408]{f(x)};
+          \addplot[<->] expression[domain=2.21863:6]{f(x)};
+        \end{axis}
+      \end{tikzpicture}
+    \end{center}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Describe the asymptotes, intercepts, and domain of 
+      \[f(x)=\dfrac{2x^4-2x^3+x^2+2x-2}{\parens{x^2-1}\parens{x^2+1}}\]
+    using the graph below:
+    \begin{center}
+      \begin{tikzpicture}[declare function={
+        f(\x)=(2*x^4-2*x^3+x^2+2*x-2)/((\x^2-1)*(\x^2+1));
+        }]
+        \begin{axis}[
+          grid=both, %major,minor
+          grid style={line width=0.375pt, draw=gray!50},
+          minor grid style={draw=gray!75},
+          axis lines=center,
+          axis line style={black,->},
+          xmin=-6, xmax=6,
+          ymin=-6, ymax=6,
+          minor x tick num=1,
+          enlargelimits={abs=0.5},
+          ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=0.5, text opacity=1},
+          xlabel=, ylabel=,
+          width=0.65\linewidth, height=1.1*\axisdefaultheight,
+          every axis plot/.append style={domain=xmin:xmax, line width=0.95pt, color=lander_blue, samples=255},
+          ]
+          \addplot[<->] expression[domain=-6:-1.07373]{f(x)};
+          \addplot[<->] expression[domain=-0.97404:0.96724]{f(x)};
+          \addplot[<->] expression[domain=1.04645:6]{f(x)};
+        \end{axis}
+      \end{tikzpicture}
+    \end{center}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Describe the asymptotes, intercepts, and domain of 
+      \[f(x)=\dfrac{x^2-3x+4}{2\parens{x-1}}\]
+    using the graph below:
+    \begin{center}
+      \begin{tikzpicture}[declare function={
+        f(\x)=(\x^2-3*\x+4)/(2*(\x-1));
+        }]
+        \begin{axis}[
+          grid=both, %major,minor
+          grid style={line width=0.375pt, draw=gray!50},
+          minor grid style={draw=gray!75},
+          axis lines=center,
+          axis line style={black,->},
+          xmin=-6, xmax=6,
+          ymin=-6, ymax=6,
+          minor x tick num=1,
+          enlargelimits={abs=0.5},
+          ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=0.5, text opacity=1},
+          xlabel=, ylabel=,
+          width=0.65\linewidth, height=1.1*\axisdefaultheight,
+          every axis plot/.append style={domain=xmin:xmax, line width=0.95pt, color=lander_blue, samples=255},
+          ]
+          \addplot[<->] expression[domain=-6:0.83095]{f(x)};
+          \addplot[<->] expression[domain=1.14435:6]{f(x)};
+        \end{axis}
+      \end{tikzpicture}
+    \end{center}
+  \end{ex*}
 
   \pagebreak
 \end{document}
