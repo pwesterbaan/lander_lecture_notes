@@ -91,7 +91,7 @@
           every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255},
           height=0.95*\axisdefaultheight,
           ]
-            \draw[fill=lander_blue!50, opacity=0.5] plot[smooth, samples=255, domain=0:7000] (\x,{j(\x)}) -| (0,0) -- cycle;
+            \draw[fill=lander_blue!50, opacity=0.5] plot[smooth, samples=255, domain=0:4500] (\x,{j(\x)}) -| (0,0) -- cycle;
             \addplot[<->] expression[domain=900:6000]{h(x)}
               node[pos=0.2, sloped, above, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$x+y=6,000$};
             \addplot[<->] expression[domain=2750:4500]{f(x)}
@@ -132,31 +132,31 @@
   \end{minipage}\hspace*{\stretch{1}}%
   \begin{minipage}{0.45\linewidth}
     \begin{flushright}
-     \begin{tikzpicture}[declare function={
+      \begin{tikzpicture}[declare function={
         f(\x)=-3*\x+13500; g(\x)=-0.75*\x+5250; h(\x)=-\x+6000;
         j(\x)=f(\x)<=h(\x) ? f(\x) : k(\x);
         k(\x)=h(\x)<=g(\x) ? h(\x) : g(\x);}]
-          \begin{axis}[
-            grid=both, %major,minor
-            grid style={line width=0.3pt, draw=gray!35},
-            major grid style={line width=0.375pt, draw=gray!75},
-            axis lines=center,
-            axis line style={black,->},
-            xmin=-15, xmax=7400,
-            ymin=-15, ymax=5500,
-            ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=0.5, text opacity=1},
-            xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
-            ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
-            every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}]
-              \draw[fill=lander_blue!50, opacity=0.5] plot[smooth, samples=100, domain=0:4500] (\x,{j(\x)}) -| (0,0) -- cycle;
-              \addplot[<->] expression[domain=900:6000]{h(x)}
-                node[pos=0.2, sloped, above, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$x+y=6,000$};
-              \addplot[<->] expression[domain=2750:4500]{f(x)}
-                node[pos=0.225, above right, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$9x+3y=40,500$};
-              \addplot[<->] expression[domain=0:7000]{g(x)}
-                node[pos=0.77, sloped, above, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$\frac{3}{4}x+y=5,250$};
-          \end{axis}
-        \end{tikzpicture}
+        \begin{axis}[
+          grid=both, %major,minor
+          grid style={line width=0.3pt, draw=gray!35},
+          major grid style={line width=0.375pt, draw=gray!75},
+          axis lines=center,
+          axis line style={black,->},
+          xmin=-15, xmax=7400,
+          ymin=-15, ymax=5500,
+          ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=0.5, text opacity=1},
+          xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+          ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+          every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}]
+            \draw[fill=lander_blue!50, opacity=0.5] plot[smooth, samples=100, domain=0:4500] (\x,{j(\x)}) -| (0,0) -- cycle;
+            \addplot[<->] expression[domain=900:6000]{h(x)}
+              node[pos=0.2, sloped, above, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$x+y=6,000$};
+            \addplot[<->] expression[domain=2750:4500]{f(x)}
+              node[pos=0.225, above right, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$9x+3y=40,500$};
+            \addplot[<->] expression[domain=0:7000]{g(x)}
+              node[pos=0.77, sloped, above, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$\frac{3}{4}x+y=5,250$};
+         \end{axis}
+      \end{tikzpicture}
     \end{flushright}
   \end{minipage}
   \pagebreak
@@ -187,30 +187,31 @@
   \end{minipage}\hspace*{\stretch{1}}%
   \begin{minipage}{0.45\linewidth}
     \begin{flushright}
-     \begin{tikzpicture}[declare function={
+      \begin{tikzpicture}[declare function={
         f(\x)=-3*\x+13500; g(\x)=-0.75*\x+5250; h(\x)=-\x+6000;
-        j(\x)=f(\x)<=h(\x) ? f(\x) : (h(\x)<=g(\x) ? h(\x) : g(\x));}]
-          \begin{axis}[
-            grid=both, %major,minor
-            grid style={line width=0.3pt, draw=gray!35},
-            major grid style={line width=0.375pt, draw=gray!75},
-            axis lines=center,
-            axis line style={black,->},
-            xmin=-15, xmax=7400,
-            ymin=-15, ymax=5500,
-            ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=0.5, text opacity=1},
-            xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
-            ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
-            every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}]
-              \draw[fill=lander_blue!50, opacity=0.5] plot[smooth, samples=100, domain=0:4500] (\x,{j(\x)}) -| (0,0) -- cycle;
-              \addplot[<->] expression[domain=900:6000]{h(x)}
-                node[pos=0.2, sloped, above, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$x+y=6,000$};
-              \addplot[<->] expression[domain=2750:4500]{f(x)}
-                node[pos=0.225, above right, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$9x+3y=40,500$};
-              \addplot[<->] expression[domain=0:7000]{g(x)}
-                node[pos=0.77, sloped, above, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$\frac{3}{4}x+y=5,250$};
-          \end{axis}
-        \end{tikzpicture}
+        j(\x)=f(\x)<=h(\x) ? f(\x) : k(\x);
+        k(\x)=h(\x)<=g(\x) ? h(\x) : g(\x);}]
+        \begin{axis}[
+          grid=both, %major,minor
+          grid style={line width=0.3pt, draw=gray!35},
+          major grid style={line width=0.375pt, draw=gray!75},
+          axis lines=center,
+          axis line style={black,->},
+          xmin=-15, xmax=7400,
+          ymin=-15, ymax=5500,
+          ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=0.5, text opacity=1},
+          xlabel=$x$, xlabel style={at={(ticklabel* cs:1)},anchor=north west},
+          ylabel=$y$, ylabel style={at={(ticklabel* cs:1)},anchor=south west},
+          every axis plot/.append style={line width=0.95pt, color=lander_blue, samples=255}]
+            \draw[fill=lander_blue!50, opacity=0.5] plot[smooth, samples=100, domain=0:4500] (\x,{j(\x)}) -| (0,0) -- cycle;
+            \addplot[<->] expression[domain=900:6000]{h(x)}
+              node[pos=0.2, sloped, above, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$x+y=6,000$};
+            \addplot[<->] expression[domain=2750:4500]{f(x)}
+              node[pos=0.225, above right, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$9x+3y=40,500$};
+            \addplot[<->] expression[domain=0:7000]{g(x)}
+              node[pos=0.77, sloped, above, black, fill=white, opacity=0.75, text opacity=1.0, font=\large, inner sep=2pt] {$\frac{3}{4}x+y=5,250$};
+        \end{axis}
+      \end{tikzpicture}
     \end{flushright}
   \end{minipage}
   \pagebreak
