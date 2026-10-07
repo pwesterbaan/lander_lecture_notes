@@ -1,17 +1,73 @@
 \documentclass{article}
-\usepackage{booktabs, tabularx}
+\usepackage{booktabs,tikz,pgfplots}
 \usepackage[margin=0.55in]{geometry}
 \usepackage[table]{xcolor}
 
+\pgfplotsset{compat=newest}
+%\usepgfplotslibrary{statistics}
+\usepgfplotslibrary{fillbetween}
+%\usetikzlibrary{patterns}
+%\usetikzlibrary{arrows,arrows.meta}
+%\usetikzlibrary{calc, positioning, shapes, math}
+
 \definecolor{lightgray}{gray}{0.825}
 \newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcolumntype{M}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \pagenumbering{gobble}
 
 \begin{document}
+\pgfmathdeclarefunction{gauss}{3}{%
+  \pgfmathparse{1/(#3*sqrt(2*pi))*exp(-((#1-#2)^2)/(2*#3^2))}%
+  }
+
+  \providecommand{\zscoreTitle}[1]{#1}
+  \newcommand{\normalIcon}[1]{%
+    \hspace*{15mm}
+    \begin{tikzpicture}[scale=0.3, declare function={
+      N=50; Z=#1;
+      mu=0; sig=1;
+      xmin=mu-3.2*sig;
+      xmax=mu+3.2*sig;
+      ymin=-0.1*gauss(mu,mu,sig);
+      ymax=1.01*gauss(mu,mu,sig);}]
+
+      \begin{axis}[
+        every axis plot post/.append style={
+        mark=none, domain={xmin}:{xmax},samples=N,smooth},
+        axis x line=center,
+        axis y line=none,
+        xmajorticks=false,
+        ymin=ymin, ymax=ymax,
+        ymajorticks=false,
+        axis line style={black,-},
+        xlabel=, ylabel=,
+        width=100mm, height=50mm,
+        ]
+
+        % PLOTS
+        \addplot[black,thick, name path=B] {gauss(x,mu,sig)};
+
+        % FILL
+        \path[name path=xaxis]
+          (\pgfkeysvalueof{/pgfplots/xmin},0) -- (\pgfkeysvalueof{/pgfplots/xmax},0);
+        \addplot[lightgray] fill between[of=xaxis and B, soft clip={domain={mu-3*sig}:Z}];
+      \end{axis}
+    \end{tikzpicture}
+    \hspace*{-50mm}
+  }
+
   \begin{center}
+    \zscoreTitle{
+      \vspace*{-2\baselineskip}
+      \centering
+      {\Large \textbf{$z$ score table}, $z\leq 0$}
+      \normalIcon{-0.75}
+      \vspace*{\baselineskip}
+      }
+
     \rowcolors{1}{}{lightgray}
     \renewcommand{\arraystretch}{1.4}
-    \begin{tabularx}{\linewidth}{*{11}{Y}}\toprule
+    \begin{tabular}{*{11}{M{12.9mm}}}\toprule
 $Z$ & 0.00 & 0.01 & 0.02 & 0.03 & 0.04 & 0.05 & 0.06 & 0.07 & 0.08 & 0.09\\\midrule
 -3.9 & 0.00005 & 0.00005 & 0.00004 & 0.00004 & 0.00004 & 0.00004 & 0.00004 & 0.00004 & 0.00003 & 0.00003\\
 -3.8 & 0.00007 & 0.00007 & 0.00007 & 0.00006 & 0.00006 & 0.00006 & 0.00006 & 0.00005 & 0.00005 & 0.00005\\
@@ -54,9 +110,20 @@ $Z$ & 0.00 & 0.01 & 0.02 & 0.03 & 0.04 & 0.05 & 0.06 & 0.07 & 0.08 & 0.09\\\midr
 -0.1 & 0.46017 & 0.45620 & 0.45224 & 0.44828 & 0.44433 & 0.44038 & 0.43644 & 0.43251 & 0.42858 & 0.42465\\
 -0.0 & 0.50000 & 0.49601 & 0.49202 & 0.48803 & 0.48405 & 0.48006 & 0.47608 & 0.47210 & 0.46812 & 0.46414\\
 \bottomrule
-    \end{tabularx}
+    \end{tabular}
+  \end{center}
     \pagebreak
-    \begin{tabularx}{\linewidth}{*{11}{Y}}\toprule
+  \begin{center}
+    \zscoreTitle{
+      \vspace*{-2\baselineskip}
+      {\Large \textbf{$z$ score table}, $z\leq 0$}
+      \normalIcon{0.75}
+      \vspace*{\baselineskip}
+      }
+
+    \rowcolors{1}{}{lightgray}
+    \renewcommand{\arraystretch}{1.4}
+    \begin{tabular}{*{11}{M{12.9mm}}}\toprule
 $Z$ & 0.00 & 0.01 & 0.02 & 0.03 & 0.04 & 0.05 & 0.06 & 0.07 & 0.08 & 0.09\\\midrule
 0.0 & 0.50000 & 0.50399 & 0.50798 & 0.51197 & 0.51595 & 0.51994 & 0.52392 & 0.52790 & 0.53188 & 0.53586\\
 0.1 & 0.53983 & 0.54380 & 0.54776 & 0.55172 & 0.55567 & 0.55962 & 0.56356 & 0.56749 & 0.57142 & 0.57535\\
@@ -99,6 +166,6 @@ $Z$ & 0.00 & 0.01 & 0.02 & 0.03 & 0.04 & 0.05 & 0.06 & 0.07 & 0.08 & 0.09\\\midr
 3.8 & 0.99993 & 0.99993 & 0.99993 & 0.99994 & 0.99994 & 0.99994 & 0.99994 & 0.99995 & 0.99995 & 0.99995\\
 3.9 & 0.99995 & 0.99995 & 0.99996 & 0.99996 & 0.99996 & 0.99996 & 0.99996 & 0.99996 & 0.99997 & 0.99997\\
 \bottomrule
-    \end{tabularx}
+    \end{tabular}
   \end{center}
 \end{document}
