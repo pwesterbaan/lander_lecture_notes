@@ -26,6 +26,8 @@
     Slope-Intercept form: & $\mathllap{y}=mx+b$\\
   }
   \newcommand{\unitTwo}{%
+    General form: & $ax^2+bx+c=0$\\
+    Standard form: & $a\parens{x-h}^2+k=0$\\
   }
   \newcommand{\unitThree}{%
   }
@@ -37,14 +39,14 @@
     \ifnum\examUnit=-1 \renewcommand{\arraystretch}{1.8} \vspace*{-\baselineskip} \fi%
     \begin{tabular}{@{}>{\bfseries}p{0.495\linewidth}p{0.5\linewidth}l@{}}
       \ifnum\examUnit=1 \unitOne \fi%
-      \ifnum\examUnit=2 \unitTwo\\ \quadForm \fi%
+      \ifnum\examUnit=2 \unitTwo \quadForm \fi%
       \ifnum\examUnit=3 \unitThree \fi%
       \ifnum\examUnit=-1 %%Final Exam
         \multicolumn{2}{c}{\hrulefill\textbf{ Unit One }\hrulefill}\\
         \expoRules
         \unitOne
       \multicolumn{2}{c}{\hrulefill\textbf{ Unit Two }\hrulefill}\\
-        \unitTwo\\ \quadForm
+        \unitTwo \quadForm
         % \multicolumn{2}{c}{\hrulefill\textbf{ Polynomial and Rational functions }\hrulefill}\\ \unitTwo
         % \multicolumn{2}{c}{\hrulefill\textbf{ Trigonometry }\hrulefill}\\ \unitThree
       \fi%
