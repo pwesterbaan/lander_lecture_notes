@@ -71,12 +71,14 @@
           ]
           \nextgroupplot
             \draw[myLine] (-0.866,0.5) -- (0,0) -- (1,0);
-            \draw[black,->] (0.5,0) arc [start angle=0, end angle=150, radius=0.5]
-              node[pos=0.5, above right, inner sep=0pt] {$150^\circ$};
+            \draw[black,->] (0.5,0) arc [start angle=0, end angle=150, radius=0.5];
+%              node[pos=0.5, above right, inner sep=0pt] {$150^\circ$};
+            \node at (50:0.8) {$150^\circ$};
           \nextgroupplot
             \draw[myLine] (0.707,-0.707) -- (0,0) -- (1,0);
-            \draw[black,->] (0.5,0) arc [start angle=0, end angle=-45, radius=0.5]
-              node[pos=0.05, below right, inner sep=5pt] {$-45^\circ$};
+            \draw[black,->] (0.5,0) arc [start angle=0, end angle=-45, radius=0.5];
+%              node[pos=0.05, below right, inner sep=5pt] {$-45^\circ$};
+            \node at (-22.5:0.9) {$-45^\circ$};
         \end{groupplot}
       \end{tikzpicture}
     \end{center}
