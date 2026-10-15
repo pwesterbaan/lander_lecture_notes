@@ -12,15 +12,15 @@
         every node/.style={circle, minimum size=5pt, inner sep=1pt, fill=lander_blue, text=black, draw=lander_blue}]
         \draw (0,0) -- (4,0.5)
           node[pos=0, label=below: $E$] {}
-          node[pos=0.8, label=below: $F$, fill=white] {}; 
+          node[pos=0.8, label=below: $F$, fill=white] {};
       \end{tikzpicture}
     \end{center}
-    
+
     An \textbf{angle} is the union of two rays having a common endpoint. The endpoint is called the \textbf{vertex} of the angle. Angles can be named using a point on each ray and the vertex. The following is $\angle DEF$:
     \begin{center}
       \hspace*{\stretch{1}}%
       \begin{minipage}{0.4\linewidth}
-        \centering 
+        \centering
         \begin{tikzpicture}[
           ->, draw=lander_blue, line width=1pt,
           every node/.style={circle, minimum size=5pt, inner sep=1pt, fill=lander_blue, text=black, draw=lander_blue}]
@@ -28,7 +28,7 @@
             node[pos=0.75, label=left: $D$, fill=white] {};
           \draw (0,0) -- (4,0.5)
             node[pos=0, label=left: $E$, label=below right: Vertex] {}
-            node[pos=0.8, label=below: $F$, draw=lander_blue, fill=white] {}; 
+            node[pos=0.8, label=below: $F$, draw=lander_blue, fill=white] {};
         \end{tikzpicture}
       \end{minipage} \hspace*{\stretch{1}}%
       \begin{minipage}{0.4\linewidth}
@@ -44,8 +44,8 @@
             node[pos=0.75, label=left: Terminal side] {};
           \draw (E) -- (F)
             node[pos=0, label=left: Vertex] {}
-            node[pos=0.5, label=below: Initial side] {}; 
-          
+            node[pos=0.5, label=below: Initial side] {};
+
           \draw[black,->] ($(E)+(1,0)$) arc [start angle=0, end angle=56.3099, radius=1cm];
 %          \tkzFillAngle[fill= ClemsonOrange!90,size=1.0cm, opacity=0.95](C,B,A)
 %          \tkzLabelAngle[pos = 0.75, draw=none, fill=none](F,E,D){$\theta$}
@@ -54,7 +54,7 @@
       \hspace*{\stretch{1}}%
     \end{center}
     When we create an angle, we fix one ray, called the \textbf{initial side}, and rotate the \textbf{terminal side} about the vertex.
-    
+
     An angle drawn on the $xy$-plane is said to be in \textbf{standard position} if its vertex is located at the origin, and the initial side extends along the $x$-axis:
     \begin{center}
       \begin{tikzpicture}[
@@ -72,12 +72,10 @@
           \nextgroupplot
             \draw[myLine] (-0.866,0.5) -- (0,0) -- (1,0);
             \draw[black,->] (0.5,0) arc [start angle=0, end angle=150, radius=0.5];
-%              node[pos=0.5, above right, inner sep=0pt] {$150^\circ$};
             \node at (50:0.8) {$150^\circ$};
           \nextgroupplot
             \draw[myLine] (0.707,-0.707) -- (0,0) -- (1,0);
             \draw[black,->] (0.5,0) arc [start angle=0, end angle=-45, radius=0.5];
-%              node[pos=0.05, below right, inner sep=5pt] {$-45^\circ$};
             \node at (-22.5:0.9) {$-45^\circ$};
         \end{groupplot}
       \end{tikzpicture}
@@ -131,7 +129,7 @@
     \end{extasks}
     \vspace*{\stretch{1}}
   \end{ex*}
-  
+
     \begin{ex*}
     Convert the following angles to degrees:
     \begin{extasks}[after-item-skip=\stretch{1}](2)
@@ -144,7 +142,7 @@
   \end{ex*}
   \pagebreak
 
-  \begin{ex*} 
+  \begin{ex*}
     The following circle contains certain angles of interest. Find the angles of each in both degrees and radians:
     \vspace*{2\baselineskip}
 
@@ -152,10 +150,10 @@
     \begin{center}
       \begin{tikzpicture}[scale=6, line width=0.8pt]
         \draw[line width=0.5pt] (0,0) circle(1);
-        \foreach \x in {0,30,...,360} 
+        \foreach \x in {0,30,...,360}
             \draw[\lCol] (0cm,0cm) -- (\x:1);
 
-        \foreach \x in {45,135,225,315} 
+        \foreach \x in {45,135,225,315}
             \draw[\lCol] (0cm,0cm) -- (\x:1);
       \end{tikzpicture}
     \end{center}
@@ -164,7 +162,7 @@
 
   \begin{defn*}
     \textbf{Coterminal angles} are two angles in standard position that have the same terminal side.
-    
+
 %    An angle's \textbf{reference angle} is the size of the smallest is the size of the smallest acute angle, $t'$, formed by the terminal side of the angle $t$ and the horizontal axis.
   \end{defn*}
   \begin{ex*}

@@ -3,7 +3,207 @@
 \providecommand{\relscalefact}{1.4}
 \begin{document}
 \relscale{\relscalefact}
-  \section{}
+  \section{5.2: Unit Circle: Sine and Cosine Functions}
+  \begin{defn*}[Unit Circle]
+    A \textbf{unit circle} has a center at $(0,0)$ and radius $1$. In a unit circle, the length of the intercepted arc is equal to the radian measure of the central angle $\theta$.
+    \vspace*{\baselineskip}
+    
+    Let $(x,y)$ be the endpoint on the unit circle of an arc of arc length $s$. 
+    
+    The $(x,y)$ coordinates of this point can be described as functions of the angle.
+  \end{defn*}
+  \vspace*{\baselineskip}
+
+  \begin{center}
+    \begin{tikzpicture}[
+      declare function={d=40;}, 
+      nodeLabel/.style={pos=0.5, inner sep=5pt, black, fill=white, opacity=0.8, text opacity=1},]
+      \begin{axis}[
+        axis lines=center,
+        axis equal, 
+        axis line style={->},
+        ymin=-1.25, ymax=1.25,
+        xmin=-1.25, xmax=1.25,
+        xmajorticks=false,
+        ymajorticks=false,
+        every axis plot/.append style={line width=0.95pt},
+        width=0.85\linewidth,
+        ]
+          \coordinate (O) at (0,0);
+          \draw[lander_blue, line width=0.95pt] (O) circle [radius=1];
+          \draw[line width=1.5pt, red] (d:1) 
+            -- ({(d:1)} |- {O}) node[right, nodeLabel] {$\sin(\theta)$}
+            -- (O) node[below, nodeLabel] {$\cos(\theta)$};
+          \draw[line width=1.5pt] (O) -- (d:1) node[above left, pos=0.5] {$1$};
+          \draw[black,->] (0.35,0) arc [start angle=0, end angle=d, radius=0.35];
+          \node at (d/2:0.2) {$\theta$};
+          \addplot[soldot] coordinates{({cos(d)},{sin(d)})} node[above right, black] {$(x,y)$};
+          \node at (1,1) {I};
+          \node at (-1,1) {II};
+          \node at (-1,-1) {III};
+          \node at (1,-1) {IV};
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \pagebreak
+
+  \begin{defn*}[Pythagorean Identity]
+    The \textbf{Pythagorean Identity} states that, for any real number $\theta$,
+      \[\cos^2\parens{\theta}+\sin^2\parens{\theta}=1\]
+  \end{defn*}
+  \begin{ex*}
+    If $\sin(\theta)=\dfrac{3}{7}$ and $\theta$ is in the second quadrant, find $\cos(\theta)$.
+    \vspace*{\stretch{1}}
+    
+    If $\cos(\theta)=\dfrac{24}{25}$ and $\theta$ is in the fourth quadrant, find $\sin(\theta)$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
 
   \pagebreak
+
+  We can find certain values of $\cos(\theta)$ and $\sin(\theta)$ using special triangles:
+  \vspace*{0.5\baselineskip}
+
+  \noindent
+  \begin{minipage}{0.475\linewidth}
+    \begin{center}
+      \begin{tikzpicture}[declare function={r=6.5;}]
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (60:r);
+        \coordinate (C) at (r,0);
+        \coordinate (M) at ($(A)!0.5!(C)$);
+        \draw (A) -- node[pos=0.5, above left] {$1$} 
+              (B) -- node[pos=0.5, above right] {$1$}
+              (C) -- node[pos=0.5, below] {$1$}
+              cycle;
+        
+        \draw[dashed] (B) -- (M);
+        \tkzMarkRightAngle[size=.4](C,M,B);
+      \end{tikzpicture}
+    \end{center}
+  \end{minipage}%
+  \hspace*{\stretch{1}}
+  \begin{minipage}{0.475\linewidth}
+    \begin{center}
+      \begin{tikzpicture}
+        \begin{axis}[
+          axis lines=center,
+          axis equal, 
+          axis line style={->},
+          ymin=-1.25, ymax=1.25,
+          xmin=-1.25, xmax=1.25,
+          xmajorticks=false,
+          ymajorticks=false,
+          every axis plot/.append style={line width=0.95pt},
+          width=\linewidth,
+          ]
+            \coordinate (O) at (0,0);
+            \draw[lander_blue, line width=0.95pt] (O) circle [radius=1];
+            \draw (O) -- (60:1) edge[dashed] ({(60:1)}|-{O});
+            \draw (O) -- (30:1) edge[dashed] ({(30:1)}|-{O});
+        \end{axis}
+      \end{tikzpicture}
+    \end{center}
+  \end{minipage}%
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  We can find certain values of $\cos(\theta)$ and $\sin(\theta)$ using special triangles:
+  \vspace*{0.5\baselineskip}
+
+  \noindent
+  \begin{minipage}{0.475\linewidth}
+    \begin{center}
+      \begin{tikzpicture}[declare function={r=8;}]
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (45:r);
+        \coordinate (C) at (A-|B);
+        %
+        \draw (A) -- node[pos=0.5, above left] {$1$} 
+              (B) -- node[pos=0.5, above right] {$s$}
+              (C) -- node[pos=0.5, below] {$s$}
+              cycle;
+
+        \tkzMarkRightAngle[size=.4](A,C,B);
+      \end{tikzpicture}
+    \end{center}
+  \end{minipage}%
+  \hspace*{\stretch{1}}
+  \begin{minipage}{0.475\linewidth}
+    \begin{center}
+      \begin{tikzpicture}
+        \begin{axis}[
+          axis lines=center,
+          axis equal, 
+          axis line style={->},
+          ymin=-1.25, ymax=1.25,
+          xmin=-1.25, xmax=1.25,
+          xmajorticks=false,
+          ymajorticks=false,
+          every axis plot/.append style={line width=0.95pt},
+          width=\linewidth,
+          ]
+            \coordinate (O) at (0,0);
+            \draw[lander_blue, line width=0.95pt] (O) circle [radius=1];
+            \draw (O) -- (45:1) edge[dashed] ({(45:1)}|-{O});
+        \end{axis}
+      \end{tikzpicture}
+    \end{center}
+  \end{minipage}%
+  \vspace*{\stretch{0.5}}
+  \pagebreak
+
+  \begin{ex*}
+    Fill out the remaining coordinates and radian measures below:
+  \end{ex*}
+  \vspace*{\stretch{0.5}}
+  \begin{center}
+    \newcommand{\lCol}{gray!90}
+    \begin{tikzpicture}[declare function={
+      r=7;
+      rRad=0.875*r;
+      cRad=1.2*r;
+      }]
+      \draw[line width=1pt] (0,0) circle(r);
+      \foreach \x in {0,30,...,360} \draw[\lCol] (0,0) -- (\x:r);
+      \foreach \x in {45,135,225,315} \draw[\lCol] (0,0) -- (\x:r);
+      \ifprintanswers\foreach \x/\xtext in {
+        30/\dfrac{\pi}{6},
+        45/\dfrac{\pi}{4},
+        60/\dfrac{\pi}{3}}
+        \draw (\x:rRad) node[fill=white] {$\xtext$};
+    \foreach \x/\xtext/\y in {
+      30/\frac{\sqrt{3}}{2}/\frac{1}{2},
+      45/\frac{\sqrt{2}}{2}/\frac{\sqrt{2}}{2},
+      60/\frac{1}{2}/\frac{\sqrt{3}}{2}}
+        \draw (\x:cRad) node {$\left(\xtext,\y\right)$};
+    \draw (-cRad,0) node{$(-1,0)$}
+          (cRad,0)  node{$(1,0)$}
+          (0,-cRad) node{$(0,-1)$}
+          (0,cRad)  node{$(0,1)$};\fi
+    \end{tikzpicture}
+  \end{center}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \begin{ex*}
+    Determine if $\cos(\theta)$ and $\sin(\theta)$ are even, odd, or neither.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{ex*}
+    State the domain and range of $\cos(\theta)$ and $\sin(\theta)$
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Find the coordinate of the point on a circle with radius $15$ corresponding to an angle of $220^\circ$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{ex*}
+    Find the coordinate of the point on a circle with radius $5$ corresponding to an angle of $\dfrac{3\pi}{4}$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
 \end{document}
