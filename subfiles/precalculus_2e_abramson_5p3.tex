@@ -3,7 +3,232 @@
 \providecommand{\relscalefact}{1.4}
 \begin{document}
 \relscale{\relscalefact}
-  \section{}
+  \section{5.3: The Other Trigonometric Functions}
+  \begin{defn*}
+    \begin{align*}
+      \sec\parens{\theta}&= \dfrac{1}{\cos\parens{\theta}}& 
+      \tan\parens{\theta}&= \dfrac{\sin\parens{\theta}}{\cos\parens{\theta}}\\[15pt]
+      \csc\parens{\theta}&= \dfrac{1}{\sin\parens{\theta}}& 
+      \cot\parens{\theta}&= \dfrac{\cos\parens{\theta}}{\sin\parens{\theta}}
+    \end{align*}
+  \end{defn*}
+  \begin{ex*}
+    Simplify the following:
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task 
+        $\dfrac{\sec(\theta)}{\tan(\theta)}$
+      \task 
+        $\tan(\theta)\cot(\theta)$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Consider the point $\parens{-\dfrac{\sqrt{3}}{2}, \dfrac{1}{2}}$ on the unit circle. Find the value of  the six trigonometric functions:
+    \begin{flushright}
+    \newcommand{\lCol}{gray!90}
+    \vspace*{-2\baselineskip}
+    \smash{\raisebox{-\height}{
+      \begin{tikzpicture}[declare function={
+        r=1;
+        d=150;
+        rRad=0.875*r;
+        cRad=1.2*r;
+        }]
+        \begin{axis}[
+          axis lines=center,
+          axis equal, 
+          axis line style={->},
+          ymin=0, ymax=1.25,
+          xmin=-1.25, xmax=1.25,
+          xtick={0.5}, 
+          xmajorticks=false,
+          ymajorticks=false,
+          every axis plot/.append style={line width=0.95pt},
+          clip=false,
+          ]
+          \draw[black!50] (r,0) arc[start angle=0, end angle=180, radius=r];
+          \draw[black,->] (0.35*r,0) arc [start angle=0, end angle=d, radius=0.35*r];
+          \node at (0.4*d:0.5*r) {$\theta$};
+          \draw[lander_blue, line width=1.5pt] (0,0) -- (d:r);
+          \draw (d:1.55*r) node {$\parens{-\dfrac{\sqrt{3}}{2},\dfrac{1}{2}}$};
+        \end{axis}
+      \end{tikzpicture}
+    }}
+    \end{flushright}
+    \vspace*{\baselineskip}
+
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task* $\cos(\theta)$
+      \task* $\sin(\theta)$
+      \task $\sec(\theta)$
+      \task $\csc(\theta)$
+      \task $\tan(\theta)$
+      \task $\cot(\theta)$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Consider the point $\parens{\dfrac{\sqrt{2}}{2}, -\dfrac{\sqrt{2}}{2}}$ on the unit circle. Find the value of the six trigonometric functions:
+    \begin{flushright}
+    \newcommand{\lCol}{gray!90}
+    \vspace*{-2\baselineskip}
+    \smash{\raisebox{-\height}{
+      \begin{tikzpicture}[declare function={
+        r=1;
+        d=-45;
+        rRad=0.875*r;
+        cRad=1.2*r;
+        }]
+        \begin{axis}[
+          axis lines=center,
+          axis equal, 
+          axis line style={->},
+          ymin=-1.25, ymax=1.25,
+          xmin=-1.25, xmax=1.25,
+          xtick={0.5}, 
+          xmajorticks=false,
+          ymajorticks=false,
+          every axis plot/.append style={line width=0.95pt},
+          clip=false,
+          ]
+          \draw[black!50] (0,0) circle(r);
+          \draw[black,->] (0.35*r,0) arc [start angle=0, end angle=d, radius=0.35*r];
+          \node at (0.4*d:0.5*r) {$\theta$};
+          \draw[lander_blue, line width=1.5pt] (0,0) -- (d:r);
+          \draw (d:1.05*r) node[anchor=north west] {$\parens{\dfrac{\sqrt{2}}{2},-\dfrac{\sqrt{2}}{2}}$};
+        \end{axis}
+      \end{tikzpicture}
+    }}
+    \end{flushright}
+    \vspace*{\baselineskip}
+
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task* $\cos(\theta)$
+      \task* $\sin(\theta)$
+      \task $\sec(\theta)$
+      \task $\csc(\theta)$
+      \task $\tan(\theta)$
+      \task $\cot(\theta)$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \noindent
+  \emph{Note}: The sign of each trig. function is determined by the quadrant
+
+  \begin{center}
+    \begin{tikzpicture}[
+      declare function={d=40;}, 
+      nodeLabel/.style={pos=0.5, inner sep=5pt, black, fill=white, opacity=0.8, text opacity=1},]
+      \begin{axis}[
+        axis lines=center,
+        axis equal, 
+        axis line style={->},
+        ymin=-1.25, ymax=1.25,
+        xmin=-1.25, xmax=1.25,
+        xmajorticks=false,
+        ymajorticks=false,
+        every axis plot/.append style={line width=0.95pt},
+        width=0.9\linewidth,
+        ]
+          \coordinate (O) at (0,0);
+          \draw[lander_blue, line width=0.95pt] (O) circle [radius=1];
+          \node at (1,1) {All};
+          \node at (-1,1) {$\sin(\theta)$};
+          \node at (-1,-1) {$\tan(\theta)$};
+          \node at (1,-1) {$\cos(\theta)$};
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \pagebreak
+
+  \begin{ex*}
+    Find the value of the six trigonometric functions when
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $\theta=\dfrac{\pi}{6}$
+      \task $\theta=\dfrac{\pi}{3}$
+      \task $\theta=-\dfrac{5\pi}{6}$
+      \task $\theta=-\dfrac{7\pi}{4}$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{thmBox*}
+    Recall that $\cos(\theta)$ is even, and $\sin(\theta)$ is odd:
+    \begin{align*}
+      \cos(\theta)&=\cos(-\theta)& 
+      -\sin(\theta)&=\sin(-\theta)\\[5pt]
+    \intertext{Thus, }
+      \sec(\theta)&=\sec(-\theta)&
+      -\csc(\theta)&=\csc(-\theta)\\[10pt]
+      %
+      -\tan(\theta)&=\tan(-\theta)&
+      -\cot(\theta)&=\cot(-\theta)
+    \end{align*}
+  \end{thmBox*}
+  \begin{ex*}
+    If $\sec(\theta)=2$, what is $\sec(-\theta)$?
+    \vspace*{\stretch{1}}
+  \end{ex*}
+
+  \begin{ex*}
+    If $\cot(\theta)=\sqrt{3}$, what is $\cot(-\theta)$?
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{thmBox*}[Alternate forms of the Pythagorean Theorem]
+    Recall the Pythagorean Identity:
+    \begin{align*}
+        \cos^2(\theta)+\sin^2(\theta)&=1
+      \intertext{We now define alternate forms:}
+        1+\tan^2(\theta)&=\sec^2(\theta)\\[5pt]
+        \cot^2(\theta)+1&=\csc^2(\theta)
+    \end{align*}
+  \end{thmBox*}
+  \begin{ex*}
+    If $\tan(\theta)=-\sqrt{3}$, and $\pi<\theta<2\pi$, find $\sec(\theta)$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{ex*}
+    If $\csc(\theta)=-\dfrac{\sqrt{3}}{3}$, and $\pi<\theta<\dfrac{3\pi}{2}$, find $\cot(\theta)$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{defn*}[Period of a Function]
+    The \textbf{period} $P$ of a repeating function $f$ is the number representing the interval such that $f(x+P)=f(x)$ for any value of $x$.
+    \vspace*{\baselineskip}
+    
+    The period for cosine, sine, secant, and cosecant is $2\pi$.
+    \vspace*{\baselineskip}
+    
+    The period for tangent and cotangent is $\pi$.
+  \end{defn*}
+  \begin{ex*}
+    If $\sin(\theta)=\dfrac{1}{5}$, find $\sin(\theta+2\pi)$ and $\sin(\theta-2\pi)$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{ex*}
+    If $\tan(\theta)=\dfrac{\sqrt{3}}{3}$, find $\tan(\theta+\pi)$ and $\cot(\theta+\pi)$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Find the value of all six trigonometric functions and identify which quadrant $\theta$ is in:
+    \begin{extasks}[after-item-skip=\stretch{1}](1)
+      \task $\cos(\theta)=\dfrac{5}{13}$ and $\sin(\theta)=-\dfrac{12}{13}$
+      \task $\csc(\theta)=-\sqrt{2}$ and $\tan(\theta)=-1$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
 
   \pagebreak
 \end{document}
