@@ -50,7 +50,7 @@ Below are links to notes used at Lander University:
   </li><br></ul>
 
 <!---<a href="about_me">About me!</a>-->
-<span style="float:right">Last Modified: 2026-10-22T20:53</span>
+<span style="float:right">Last Modified: 2026-10-23T07:48</span>
 
 <script>
     // For anyone looking at this:

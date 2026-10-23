@@ -7,6 +7,7 @@
   \begin{defn*}
     Given a right triangle with an acute angle $\theta$
     \begin{center}
+      \phantom{opposite}
       \begin{tikzpicture}[
         declare function={d=25; r=6.5;},
         line cap=round, line join=round,
@@ -16,7 +17,7 @@
         \coordinate (B) at (d:r);
         \coordinate (C) at ({r*cos(d)},0);
         \draw (A) -- node[pos=0.65, above left] {hypotenuse} 
-              (B) -- node[pos=0.5, right] {opposite \hspace*{-1in}}
+              (B) -- node[pos=0.5, right] {opposite}
               (C) -- node[pos=0.5, below] {adjacent}
               cycle;
         
