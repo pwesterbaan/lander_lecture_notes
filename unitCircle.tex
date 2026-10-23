@@ -1,5 +1,4 @@
 \documentclass{article}
-\usepackage[margin=1in]{geometry}
 \usepackage{texPreamble}
 % ----------------------------------------------------------------
 \begin{document}
@@ -17,19 +16,18 @@
     \begin{center}
       \begin{tikzpicture}[scale=6, line width=0.8pt]
         \draw[line width=0.5pt] (0,0) circle(1);
-        \foreach \x in {0,30,...,360} {
-            % lines from center to point
-            \draw[\lCol] (0cm,0cm) -- (\x:1);
-            % draw each angle in degrees
-            \draw (\x:\aRad) node[fill=white, inner sep=2.5pt] {$\x^\circ$};
-          }
+        \foreach \x in {0,1} {
+          \draw[green!50!black] ({(4*\x+1)*30}:1) -- ({(4*\x+1)*30}:-1);
+          \draw[blue] ({(2*\x+1)*45}:1) -- ({(2*\x+1)*45}:-1);
+          \draw[red] ({(\x+1)*60}:1) -- ({(\x+1)*60}:-1);
+          \draw ({(\x+1)*90}:1) -- ({(\x+1)*90}:-1);
+        }
+        \foreach \x in {0,30,...,360}
+          \draw (\x:\aRad) node[fill=white, inner sep=2.5pt] {$\x^\circ$};
 
-        \foreach \x in {45,135,225,315} {
-            % lines from center to point
-            \draw[\lCol] (0cm,0cm) -- (\x:1);
-            % draw each angle in degrees
-            \draw (\x:\aRad) node[fill=white, inner sep=2.5pt] {$\x^\circ$};
-          }
+        \foreach \x in {45,135,225,315}
+          \draw (\x:\aRad) node[fill=white, inner sep=2.5pt] {$\x^\circ$};
+
         \foreach \x/\xtext in {
           30/\frac{\pi}{6},
           45/\frac{\pi}{4},
