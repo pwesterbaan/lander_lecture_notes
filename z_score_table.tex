@@ -4,14 +4,9 @@
 \usepackage[table]{xcolor}
 
 \pgfplotsset{compat=newest}
-%\usepgfplotslibrary{statistics}
 \usepgfplotslibrary{fillbetween}
-%\usetikzlibrary{patterns}
-%\usetikzlibrary{arrows,arrows.meta}
-%\usetikzlibrary{calc, positioning, shapes, math}
 
 \definecolor{lightgray}{gray}{0.825}
-\newcolumntype{Y}{>{\centering\arraybackslash}X}
 \newcolumntype{M}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \pagenumbering{gobble}
 
@@ -42,7 +37,7 @@
         ymajorticks=false,
         axis line style={black,-},
         xlabel=, ylabel=,
-        width=100mm, height=50mm,
+        width=120mm, height=70mm,
         ]
 
         % PLOTS
@@ -61,13 +56,16 @@
     \zscoreTitle{
       \vspace*{-2\baselineskip}
       \centering
-      {\Large \textbf{$z$ score table}, $z\leq 0$}
+      {\Large \textbf{$z$ score table}
+      \vspace*{0.5\baselineskip}
+
+      $ P(Z<z),\ z\leq 0$}
       \normalIcon{-0.75}
       \vspace*{\baselineskip}
       }
 
     \rowcolors{1}{}{lightgray}
-    \renewcommand{\arraystretch}{1.4}
+    \renewcommand{\arraystretch}{1.35}
     \begin{tabular}{*{11}{M{12.9mm}}}\toprule
 $Z$ & 0.00 & 0.01 & 0.02 & 0.03 & 0.04 & 0.05 & 0.06 & 0.07 & 0.08 & 0.09\\\midrule
 -3.9 & 0.00005 & 0.00005 & 0.00004 & 0.00004 & 0.00004 & 0.00004 & 0.00004 & 0.00004 & 0.00003 & 0.00003\\
@@ -117,13 +115,16 @@ $Z$ & 0.00 & 0.01 & 0.02 & 0.03 & 0.04 & 0.05 & 0.06 & 0.07 & 0.08 & 0.09\\\midr
   \begin{center}
     \zscoreTitle{
       \vspace*{-2\baselineskip}
-      {\Large \textbf{$z$ score table}, $z\leq 0$}
+      {\Large \textbf{$z$ score table}
+      \vspace*{0.5\baselineskip}
+
+      $ P(Z<z),\ z\geq 0$}
       \normalIcon{0.75}
       \vspace*{\baselineskip}
       }
 
     \rowcolors{1}{}{lightgray}
-    \renewcommand{\arraystretch}{1.4}
+    \renewcommand{\arraystretch}{1.35}
     \begin{tabular}{*{11}{M{12.9mm}}}\toprule
 $Z$ & 0.00 & 0.01 & 0.02 & 0.03 & 0.04 & 0.05 & 0.06 & 0.07 & 0.08 & 0.09\\\midrule
 0.0 & 0.50000 & 0.50399 & 0.50798 & 0.51197 & 0.51595 & 0.51994 & 0.52392 & 0.52790 & 0.53188 & 0.53586\\
