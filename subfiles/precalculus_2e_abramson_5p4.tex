@@ -4,6 +4,364 @@
 \begin{document}
 \relscale{\relscalefact}
   \section{5.4: Right Angle Trigonometry}
+  \begin{defn*}
+    Given a right triangle with an acute angle $\theta$
+    \begin{center}
+      \begin{tikzpicture}[
+        declare function={d=25; r=6.5;},
+        line cap=round, line join=round,
+        clip=false,
+        ]
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (d:r);
+        \coordinate (C) at ({r*cos(d)},0);
+        \draw (A) -- node[pos=0.65, above left] {hypotenuse} 
+              (B) -- node[pos=0.5, right] {opposite \hspace*{-1in}}
+              (C) -- node[pos=0.5, below] {adjacent}
+              cycle;
+        
+        \tkzMarkRightAngle[size=0.4](B,C,A);
 
+        \draw[black,-] (0.2*r,0) arc [start angle=0, end angle=d, radius=0.2*r];
+        \node at (d/2:0.25*r) {$\theta$};
+      \end{tikzpicture}
+    \end{center}
+    we have
+    \begin{align*}
+      \sin(\theta)&=\dfrac{\textnormal{opposite}}{\textnormal{hypotenuse}}\\[10pt]
+      \cos(\theta)&=\dfrac{\textnormal{adjacent}}{\textnormal{hypotenuse}}\\[10pt]
+      \tan(\theta)&=\dfrac{\textnormal{opposite}}{\textnormal{adjacent}}
+    \end{align*}
+  \end{defn*}
+
+  \begin{ex*}
+    Given the following triangle, find $\cos(\alpha)$, $\sin(\alpha)$, and $\tan(\alpha)$:
+
+    \begin{flushright}
+      \begin{tikzpicture}[
+        declare function={d=acos(15/17); r=5.5;},
+        line cap=round, line join=round,
+        ]
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (d:r);
+        \coordinate (C) at ({r*cos(d)},0);
+        \draw (A) -- node[pos=0.65, above left] {$17$} 
+              (B) -- node[pos=0.5, right] {$8$}
+              (C) -- node[pos=0.5, below] {$15$}
+              cycle;
+        
+        \tkzMarkRightAngle[size=0.4](B,C,A);
+
+        \draw[black,-] (0.2*r,0) arc [start angle=0, delta angle=d, radius=0.2*r];
+        \node at (d/2:0.25*r) {$\alpha$};
+      \end{tikzpicture}
+    \end{flushright}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Given the following triangle, find $\sin(\alpha)$:
+    \begin{flushright}
+      \begin{tikzpicture}[
+        declare function={d=acos(24/25); r=5.5;},
+        line cap=round, line join=round,
+        ]
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (180-d:r);
+        \coordinate (C) at (-{r*cos(d)},0);
+        \draw (A) -- node[pos=0.65, above right] {$25$} 
+              (B) -- node[pos=0.5, left] {$7$}
+              (C) -- node[pos=0.5, below] {$24$}
+              cycle;
+        
+        \tkzMarkRightAngle[size=0.4](B,C,A);
+
+        \draw[black,-] (-0.25*r,0) arc [start angle=180, delta angle=-d, radius=0.25*r];
+        \node at (180-d/2:0.3*r) {$\alpha$};
+      \end{tikzpicture}
+    \end{flushright}
+    \vspace*{\stretch{0.5}}
+  \end{ex*}
+
+  \begin{ex*}
+    Given the following triangle, evaluate:
+    \vspace*{-\baselineskip}
+    \begin{flushright}
+      \smash{\raisebox{-\height}{
+      \begin{tikzpicture}[
+        declare function={r=5.5; alfa=acos(3/5); d=-110;},
+        line cap=round, line join=round,
+        ]
+        %C
+        %|\
+        %| \
+        %B--A
+        %transformed using Givens: G=[[cos(d),-sin(d)],[sin(d), cos(d)]]
+        \coordinate (A) at (0,0);
+        \coordinate (B) at ({-3*cos(d)},{-3*sin(d)});
+        \coordinate (C) at ({-3*cos(d)-4*sin(d)},{-3*sin(d)+4*cos(d)});
+        \draw (A) -- node[pos=0.5, left] {$3$} 
+              (B) -- node[pos=0.5, above] {$4$}
+              (C) -- node[pos=0.5, below] {$5$}
+              cycle;
+        %
+        \tkzMarkRightAngle[size=0.4](A,B,C);
+        %
+        \draw[black,-] (180+d:0.15*r) arc [start angle=180+d, delta angle=-alfa, radius=0.15*r];
+        \node at (180+d-alfa/2:0.2*r) {$\alpha$};
+      \end{tikzpicture}
+      }}
+    \end{flushright}
+    \begin{extasks}[after-item-skip=\stretch{1}](3)
+      \task $\sin(\alpha)$
+      \task* $\csc(\alpha)$
+      \task $\cos(\alpha)$
+      \task* $\sec(\alpha)$
+      \task $\tan(\alpha)$
+      \task* $\cot(\alpha)$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+
+  \begin{ex*}
+    Given the following triangle, evaluate:
+
+    \begin{flushright}
+      \vspace*{-\baselineskip}
+      \smash{\raisebox{-\height}{
+      \begin{tikzpicture}[
+        declare function={r=5.5; t=-acos(56/65);},
+        line cap=round, line join=round,
+        ]
+        %A--B
+        % \ |
+        %  \|
+        %   C
+        \coordinate (A) at (0,0);
+        \coordinate (B) at ({r*cos(t)},0);
+        \coordinate (C) at ({r*cos(t)},{r*sin(t)});
+        \draw (A) -- node[pos=0.5, above] {$56$} 
+              (B) -- node[pos=0.5, right] {$33$}
+              (C) -- node[pos=0.5, below left] {$65$}
+              cycle;
+        %
+        \tkzMarkRightAngle[size=0.4](A,B,C);
+        %
+        \draw[black,-] (0:0.175*r) arc [start angle=0, delta angle=t, radius=0.175*r];
+        \node at (t/2:0.25*r) {$t$};
+      \end{tikzpicture}
+      }}
+    \end{flushright}
+    \begin{extasks}[after-item-skip=\stretch{1}](3)
+      \task $\sin(\alpha)$
+      \task* $\csc(\alpha)$
+      \task $\cos(\alpha)$
+      \task* $\sec(\alpha)$
+      \task $\tan(\alpha)$
+      \task* $\cot(\alpha)$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \textbf{Side lengths of special angles:}
+  \uplevel{
+  \begin{center}
+    \begin{tikzpicture}[
+      declare function={r=5; ra=0.1*r;},
+      nodeLabel/.style={pos=0.5, black, inner sep=1.25pt, font=\large},
+      parAngle/.style={black, samples=30, no markers, line width=0.8pt, black!50},
+      angLabel/.style={font=\normalsize},
+      line cap=round, line join=round,
+      ]
+      \begin{groupplot}[
+        group style={group size=2 by 1,horizontal sep=0.5cm},
+        axis lines=center,
+        axis equal, 
+        axis line style={->},
+        xmin=-1.15*r, xmax=1.15*r,
+        ymin=-1.25*r, ymax=1.25*r,
+        xmajorticks=false,
+        ymajorticks=false,
+        every axis plot/.append style={line width=0.95pt},
+        width=0.5\linewidth,
+        ]
+        %    A
+        %   /|
+        %  / |
+        % O--B
+        \nextgroupplot
+          \coordinate (O) at (0,0);
+          \coordinate (A) at (60:r);
+          \coordinate (B) at (A|-O);
+          %
+          \addplot[parAngle, domain=0:60]
+            ({0.2*r*cos(x)}, {0.2*r*sin(x)});
+          \node[angLabel] at (60/2:0.3*r) {$\dfrac{\pi}{3}$};
+          %
+          \addplot[parAngle, domain=-90-30:-90]
+            ({r*cos(60) + 0.2*r*cos(x)}, {r*sin(60) + 0.2*r*sin(x)});
+          \node[angLabel, xshift=1.5pt] at (axis cs: 
+            {r*cos(60) + 0.35*r*cos(-90-30/2)}, 
+            {r*sin(60) + 0.35*r*sin(-90-30/2)}) 
+            {$\dfrac{\pi}{6}$};
+          %
+          \draw[lander_blue, line width=0.95pt] (O) circle [radius=r];
+          \draw[line width=1.25pt] 
+            (O) -- node[nodeLabel, above left] {$2s$}
+            (A) -- node[nodeLabel, right] {$\sqrt{3}s$}
+            (B) -- node[nodeLabel, below, yshift=-2pt] {$s$}
+            cycle;
+          %
+          \draw[line width=0.6pt]
+            (axis cs:{r*cos(60)-ra},0) -- (axis cs:{r*cos(60)-ra},ra) -- (axis cs:{r*cos(60)},ra);
+
+        \nextgroupplot
+          \coordinate (O) at (0,0);
+          \coordinate (A) at (45:r);
+          \coordinate (B) at (A|-O);
+          %
+          \addplot[parAngle, domain=0:45]
+            ({0.2*r*cos(x)}, {0.2*r*sin(x)});
+          \node[angLabel] at (45/2:0.35*r) {$\dfrac{\pi}{4}$};
+          %
+          \addplot[parAngle, domain=-90-45:-90]
+            ({r*cos(45) + 0.2*r*cos(x)}, {r*sin(45) + 0.2*r*sin(x)});
+          \node[angLabel, xshift=2pt] at (axis cs: 
+            {r*cos(45) + 0.35*r*cos(-90-45/2)}, 
+            {r*sin(45) + 0.35*r*sin(-90-45/2)}) 
+            {$\dfrac{\pi}{4}$};
+          %
+          \draw[lander_blue, line width=0.95pt] (O) circle [radius=r];
+          \draw[line width=1.25pt] 
+            (O) -- node[nodeLabel, above left] {$\sqrt{2}s$}
+            (A) -- node[nodeLabel, right] {$s$}
+            (B) -- node[nodeLabel, below, yshift=-2pt] {$s$}
+            cycle;
+          %
+          \draw[line width=0.6pt]
+            (axis cs:{r*cos(45)-ra},0) -- (axis cs:{r*cos(45)-ra},ra) -- (axis cs:{r*cos(45)},ra);
+      \end{groupplot}
+    \end{tikzpicture}
+  \end{center}
+  }
+  \begin{ex*}
+    Find the exact value of the trigonometric functions of $\theta=\dfrac{\pi}{3}$, using side lengths.
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $\sin(\theta)$
+      \task* $\csc(\theta)$
+      \task $\cos(\theta)$
+      \task* $\sec(\theta)$
+      \task $\tan(\theta)$
+      \task* $\cot(\theta)$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{ex*}
+    Find the exact value of the trigonometric functions of $\vartheta=\dfrac{\pi}{4}$, using side lengths.
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task $\sin(\vartheta)$
+      \task* $\csc(\vartheta)$
+      \task $\cos(\vartheta)$
+      \task* $\sec(\vartheta)$
+      \task $\tan(\vartheta)$
+      \task* $\cot(\vartheta)$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  %cofunction of complements
+  \textbf{Equal cofunctions of complements:}
+  \begin{center}
+    \begin{tikzpicture}[
+      declare function={d=30; r=5.5;},
+      line cap=round, line join=round,
+      ]
+      \coordinate (A) at (0,0);
+      \coordinate (B) at (d:r);
+      \coordinate (C) at ({r*cos(d)},0);
+      \draw (A) -- (B) -- (C) -- cycle;
+
+      \tkzMarkRightAngle[size=0.4](B,C,A);
+
+      \draw[black,-] (0.2*r,0) arc [start angle=0, delta angle=d, radius=0.2*r];
+      \node at (d/2:0.25*r) {$\alpha$};
+
+      \draw[black,-] ($(B)+(-90:0.2*r)$) arc [start angle=-90, delta angle=-90+d, radius=0.2*r];
+      \node at ($(B)+({-135+d/2}:0.3*r)$) {$\beta$};
+    \end{tikzpicture}
+  \end{center}
+  \begin{align*}
+    \sin(\alpha)&=\cos(\beta)\\
+    \sin(\beta)&=\cos(\alpha)
+  \end{align*}
+
+  \begin{defn*}[Cofunction Identities]
+    \begin{align*}
+      \cos\parens{\theta}&=\sin\parens{\dfrac{\pi}{2}-\theta}&
+      \sin\parens{\theta}&=\cos\parens{\dfrac{\pi}{2}-\theta}\\[10pt]
+      \sec\parens{\theta}&=\csc\parens{\dfrac{\pi}{2}-\theta}&
+      \csc\parens{\theta}&=\sec\parens{\dfrac{\pi}{2}-\theta}\\[10pt]
+      \cot\parens{\theta}&=\tan\parens{\dfrac{\pi}{2}-\theta}&
+      \tan\parens{\theta}&=\cot\parens{\dfrac{\pi}{2}-\theta}
+    \end{align*}
+  \end{defn*}
+  \begin{ex*}
+    If $\sin(t)=\dfrac{5}{12}$, find $\cos\parens{\dfrac{\pi}{2}-t}$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{ex*}
+    If $\csc\parens{\dfrac{\pi}{6}}=2$, find $\sec\parens{\dfrac{\pi}{3}}$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  %solve for unknown side
+  \begin{ex*}
+    Find the unknown sides of the following triangle:
+    \vspace*{-\baselineskip}
+    \begin{flushright}
+      \smash{\raisebox{-\height}{
+      \begin{tikzpicture}[
+        declare function={
+          r=5.5; alfa=30; d=-75; 
+          adj=r*cos(alfa); opp=r*sin(alfa); 
+        },
+        line cap=round, line join=round,
+        ]
+        %   C
+        %  /|
+        % / |
+        %A--B
+        %transformed using Givens: G=[[cos(d),-sin(d)],[sin(d), cos(d)]]
+        \coordinate (A) at (0,0);
+        \coordinate (B) at ({adj*cos(d)},{adj*sin(d)});
+        \coordinate (C) at ({adj*cos(d)-opp*sin(d)},{adj*sin(d)+opp*cos(d)});
+        \draw (A) -- node[pos=0.5, left] {$a$} 
+              (B) -- node[pos=0.5, below right] {$7$}
+              (C) -- node[pos=0.5, above, xshift=5pt] {$c$}
+              cycle;
+        %
+        \tkzMarkRightAngle[size=0.4](A,B,C);
+        %
+        \draw[black,-] (d:0.15*r) arc [start angle=d, delta angle=alfa, radius=0.15*r];
+        \node at (d+alfa/2:0.3*r) {$30^\circ$};
+      \end{tikzpicture}
+      }}
+    \end{flushright}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+
+  %height of tree
+  \begin{ex*}
+    To find the height of a tree, a person walks to a point $30$ feet from the base of the tree. She measures an angle of $57^\circ$ between a line of sight to the top of the tree and the ground. Find the height of the tree.
+    \begin{flushright}
+      \smash{\raisebox{-\height}{
+      \includegraphics[width=0.25\linewidth]{images/treeHeightEx}%
+      }}
+    \end{flushright}
+    \vspace*{\stretch{1}}
+  \end{ex*}
   \pagebreak
 \end{document}
