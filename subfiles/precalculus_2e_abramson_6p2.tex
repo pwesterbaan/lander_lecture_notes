@@ -38,7 +38,7 @@
         \nextgroupplot
           \pgfplotsinvokeforeach{-2,-1,...,2}{
             \addplot[<->] expression[domain=-d+#1:d+#1] {f(x)};
-            \draw[black!50, dashed] (axis cs: #1/2,{tan(deg(-d*pi))}) -- (#1/2,{tan(deg(d*pi))});
+            \draw[black!50, dashed] (axis cs: 1/2+#1,{tan(deg(-d*pi))}) -- (1/2+#1,{tan(deg(d*pi))});
           }
           \node at(0.75,2.75) {$\tan(x)$};
           \addplot[soldot] coordinates{(a,{f(a)})}
@@ -50,7 +50,7 @@
         \nextgroupplot
           \pgfplotsinvokeforeach{-2,-1,...,2}{
             \addplot[<->] expression[domain=-d+0.5+#1:d+0.5+#1] {g(x)};
-            \draw[black!50, dashed] (axis cs: #1/2+0.5,{tan(deg(-d*pi))}) -- (#1/2+0.5,{tan(deg(d*pi))});
+            \draw[black!50, dashed] (axis cs: #1,{tan(deg(-d*pi))}) -- (#1,{tan(deg(d*pi))});
           }
           \node at(0.75,2.75) {$\cot(x)$};
           \addplot[soldot] coordinates{(a,{g(a)})}
@@ -97,7 +97,7 @@
           \addplot[<->] expression[domain=-d:d] {f(x)};
           \addplot[<->] expression[domain=-d+1:d+1] {f(x)};
           \pgfplotsinvokeforeach{0,1,2}{
-            \draw[black!50, dashed] 
+            \draw[black!50, dashed]
               (-0.5+#1,{-sec(deg(d*pi))}) -- (-0.5+#1,{sec(deg(d*pi))});
           }
           \addplot[dashed, red, opacity=0.5] expression[domain=-1.5:2]{cos(deg(x*pi))};
@@ -112,7 +112,7 @@
           \addplot[<->] expression[domain=-d-0.5:d-0.5] {g(x)};
           \addplot[<->] expression[domain=-d+0.5:d+0.5] {g(x)};
           \pgfplotsinvokeforeach{-1,1}{
-            \draw[black!50, dashed] 
+            \draw[black!50, dashed]
               (#1,{cosec(deg((0.5-d)*pi))}) -- (#1,{cosec(deg((1.5+d)*pi))});
           }
           \addplot[dashed, red, opacity=0.5] expression[domain=-1.5:1.5]{sin(deg(x*pi))};
@@ -128,7 +128,7 @@
   \end{center}
   \vspace*{\stretch{1}}
   \pagebreak
- 
+
   %transformations of graphs
   \begin{thmBox*}
     The general forms of the other trigonometric functions are
@@ -213,7 +213,7 @@
           \addplot[<->] expression[domain=-d:d] {g(x)};
           \addplot[<->] expression[domain=1-d:1+d] {g(x)};
           \pgfplotsinvokeforeach{0,1,2}{
-            \draw[black!50, dashed] 
+            \draw[black!50, dashed]
               (-0.5+#1,{-sec(deg(d*pi))}) -- (-0.5+#1,{sec(deg(d*pi))});
           }
         \end{axis}
