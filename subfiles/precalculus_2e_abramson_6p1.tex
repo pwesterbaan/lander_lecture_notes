@@ -17,7 +17,7 @@
         every pin edge/.style={black!50, line width=0.5pt},
       ]
       \begin{groupplot}[
-        group style={group size=1 by 2, vertical sep=20mm},
+        group style={group size=1 by 2, vertical sep=27.5mm},
         axis lines=center,
         axis line style={->},
         xmin=0, xmax=2,
@@ -29,27 +29,29 @@
         ytick={-1,1},
         ylabel=,
         enlargelimits={abs=0.05},
-        height=\axisdefaultheight, width=0.95\linewidth,
+        height=\axisdefaultheight, width=0.975\linewidth,
         ticklabel style={font=\normalsize,inner sep=5pt,fill=white,opacity=1.0, text opacity=1},
         every axis plot/.append style={domain=0:2},
         clip=false,
         ]
-        \nextgroupplot[xlabel=$\sin(x)$, xlabel style={at={(ticklabel* cs:1)},anchor=north west}]
+        \nextgroupplot
           \addplot[<->] {g(x)};
           \addplot[soldot] coordinates{(a,{g(a)})}
-            node[nodeLabel, pin=180:$\parens{\frac{\pi}{6},\frac{1\vphantom{\sqrt{3}}}{2}}$] {};
+            node[pin=180:$\parens{\frac{\pi}{6},\frac{1\vphantom{\sqrt{3}}}{2}}$] {};
           \addplot[soldot] coordinates{(b,{g(b)})}
-            node[nodeLabel, pin=135:$\parens{\frac{\pi}{4},\frac{\sqrt{2}}{2}}$] {};
+            node[pin=135:$\parens{\frac{\pi}{4},\frac{\sqrt{2}}{2}}$] {};
           \addplot[soldot] coordinates{(c,{g(c)})}
-            node[nodeLabel, pin=90:$\parens{\frac{\pi}{3},\frac{\sqrt{3}}{2}}$] {};
-        \nextgroupplot[xlabel=$\cos(x)$, xlabel style={at={(ticklabel* cs:1)},anchor=north west}]
+            node[pin=90:$\parens{\frac{\pi}{3},\frac{\sqrt{3}}{2}}$] {};
+          \node at (1,1) {$\sin(x)$};
+        \nextgroupplot
           \addplot[<->] {f(x)};
           \addplot[soldot] coordinates{(a,{f(a)})}
-            node[nodeLabel, pin=90:$\parens{\frac{\pi}{6},\frac{\sqrt{3}}{2}}$] {};
+            node[pin=90:$\parens{\frac{\pi}{6},\frac{\sqrt{3}}{2}}$] {};
           \addplot[soldot] coordinates{(b,{f(b)})}
-            node[nodeLabel, pin=45:$\parens{\frac{\pi}{4},\frac{\sqrt{2}}{2}}$] {};
+            node[pin=45:$\parens{\frac{\pi}{4},\frac{\sqrt{2}}{2}}$] {};
           \addplot[soldot] coordinates{(c,{f(c)})}
-            node[nodeLabel, pin=0:$\parens{\frac{\pi}{3},\frac{1\vphantom{\sqrt{3}}}{2}}$] {};
+            node[pin=0:$\parens{\frac{\pi}{3},\frac{1\vphantom{\sqrt{3}}}{2}}$] {};
+          \node at (1,1) {$\cos(x)$};
       \end{groupplot}
     \end{tikzpicture}
   \end{center}
@@ -60,14 +62,14 @@
   \pagebreak
 
   \noindent%
-  Recall that 
+  Recall that
   \begin{itemize}
     \item $\sin(\theta)$ and $\cos(\theta)$ have period $2\pi$,
     \item $\sin(\theta)$ is an odd function, and
     \item $\cos(\theta)$ is an even function:
   \end{itemize}
   \vspace*{\stretch{1}}
-  
+
   \begin{center}
     \begin{tikzpicture}[
       declare function={
@@ -151,28 +153,28 @@
           \addplot[<->] {g(x)};
           \addplot[<->, red] {A*g(x)};
           \pgfplotsinvokeforeach{-1.5, -0.5, 0.5, 1.5}{
-            \draw[black!50, shorten <=5pt, shorten >=5pt, ->] 
+            \draw[black!50, shorten <=5pt, shorten >=5pt, ->]
               (axis cs: #1, {g(#1)}) -- (axis cs: #1, {A*g(#1)});
           }
         \nextgroupplot[title=$\sin(x)$ vs. $\sin\parens{x-\dfrac{2\pi}{3}}$]
           \addplot[<->] {g(x)};
           \addplot[<->, red] expression[domain=-2+C:2+C] {g(x-C)};
           \pgfplotsinvokeforeach{-1.7, -0.7, 0.3, 1.3}{
-            \draw[black!50, shorten <=5pt, shorten >=5pt, ->] 
+            \draw[black!50, shorten <=5pt, shorten >=5pt, ->]
               (axis cs: #1, {g(#1)}) -- (axis cs: #1+C, {g(#1)});
           }
         \nextgroupplot[title=$\sin(x)$ vs. $\sin\parens{\dfrac{3x}{2}}$]
           \addplot[<->] {g(x)};
           \addplot[<->, red] expression[domain=-2/B:2/B] {g(B*x)};
           \pgfplotsinvokeforeach{-1.9, -1.3, -0.75, 0.75, 1.3, 1.9}{
-            \draw[black!50, shorten <=1pt, shorten >=1pt, ->] 
+            \draw[black!50, shorten <=1pt, shorten >=1pt, ->]
               (axis cs: #1, {g(#1)}) -- (axis cs: #1/B, {g(#1)});
           }
         \nextgroupplot[title=$\sin(x)$ vs. $\sin(x)-\frac{1}{2}$]
           \addplot[<->] {g(x)};
           \addplot[<->, red] {g(x)+D};
           \pgfplotsinvokeforeach{-1.75, -0.75, 0.25, 1.25}{
-            \draw[black!50, shorten <=5pt, shorten >=5pt, ->] 
+            \draw[black!50, shorten <=5pt, shorten >=5pt, ->]
               (axis cs: #1, {g(#1)}) -- (axis cs: #1, {g(#1)+D});
           }
       \end{groupplot}
@@ -352,7 +354,7 @@
           xmin=-5.5, xmax=7.5,
           ymin=-5.25, ymax=1.25,
           xtick={-5,-3,...,7},
-          minor x tick num=1, 
+          minor x tick num=1,
           xlabel=,
           minor y tick num=1, ylabel=,
           enlargelimits={abs=0.15},

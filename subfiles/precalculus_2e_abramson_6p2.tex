@@ -3,7 +3,258 @@
 \providecommand{\relscalefact}{1.4}
 \begin{document}
 \relscale{\relscalefact}
-  \section{}
+  \section{6.2: Graphs of the Other Trigonometric Functions}
+  %graphs of tan(x)
+  %graphs of sec(x) with cos(x) dashed
+
+  \providecommand{\vPad}{\vphantom{\frac{\sqrt{3}}{3}}}
+  \vspace*{\stretch{1}}
+  \begin{center}
+    \begin{tikzpicture}[
+      declare function={
+        f(\x)=tan(deg(\x*pi));
+        g(\x)=cot(deg(\x*pi));
+        a=1/6; b=1/4; c=1/3; d=0.4;
+        },
+        every pin/.style={text=black, fill=white, opacity=0.85, text opacity=1, pin distance=1 ex},
+        every pin edge/.style={black!50, line width=0.5pt},
+      ]
+      \begin{groupplot}[
+        group style={group size=2 by 1, horizontal sep=20mm},
+        axis lines=center,
+        axis line style={->},
+        xmin=-1, xmax=1,
+        xtick={-2, -1.5, ..., 2},
+        xticklabels={$-2\pi$, $-\dfrac{3\pi}{2}$,$-\pi$, $-\dfrac{\pi}{2}$, ,
+            $\dfrac{\pi}{2}$,$\pi$, $\dfrac{3\pi}{2}$, $2\pi$},
+        minor x tick num=1,
+        ytick={-3,-2,...,3},
+        minor y tick num=1,
+        xlabel=, ylabel=,
+        enlargelimits={abs=0.05},
+        height=2*\axisdefaultheight, width=0.475\linewidth,
+        ticklabel style={font=\normalsize,inner sep=5pt,fill=white,opacity=1.0, text opacity=1},
+        ]
+        \nextgroupplot
+          \pgfplotsinvokeforeach{-2,-1,...,2}{
+            \addplot[<->] expression[domain=-d+#1:d+#1] {f(x)};
+            \draw[black!50, dashed] (axis cs: #1/2,{tan(deg(-d*pi))}) -- (#1/2,{tan(deg(d*pi))});
+          }
+          \node at(0.75,2.75) {$\tan(x)$};
+          \addplot[soldot] coordinates{(a,{f(a)})}
+            node[pin=-5:$\parens{\frac{\pi}{6},\frac{\sqrt{3}}{3}}$] {};
+          \addplot[soldot] coordinates{(b,{f(b)})}
+            node[pin=0:$\parens{\frac{\pi}{4},1 \vPad}$] {};
+          \addplot[soldot] coordinates{(c,{f(c)})}
+            node[pin=0:$\parens{\frac{\pi}{3},\sqrt{3} \vPad}$] {};
+        \nextgroupplot
+          \pgfplotsinvokeforeach{-2,-1,...,2}{
+            \addplot[<->] expression[domain=-d+0.5+#1:d+0.5+#1] {g(x)};
+            \draw[black!50, dashed] (axis cs: #1/2+0.5,{tan(deg(-d*pi))}) -- (#1/2+0.5,{tan(deg(d*pi))});
+          }
+          \node at(0.75,2.75) {$\cot(x)$};
+          \addplot[soldot] coordinates{(a,{g(a)})}
+            node[pin=180:$\parens{\frac{\pi}{6},\sqrt{3} \vPad}$] {};
+          \addplot[soldot] coordinates{(b,{g(b)})}
+            node[pin=180:$\parens{\frac{\pi}{4},1 \vPad}$] {};
+          \addplot[soldot] coordinates{(c,{g(c)})}
+            node[pin=185:$\parens{\frac{\pi}{3},\frac{\sqrt{3}}{3}}$] {};
+      \end{groupplot}
+    \end{tikzpicture}
+  \end{center}
+  \vspace*{\stretch{1}}
+  \pagebreak
+
+  \vspace*{\stretch{1}}
+  \begin{center}
+    \begin{tikzpicture}[
+      declare function={
+        f(\x)=sec(deg(\x*pi));
+        g(\x)=cosec(deg(\x*pi));
+        a=1/6; b=1/4; c=1/3; d=0.4;
+        },
+        nodeLabel/.style={inner sep=2.5pt, fill=white, opacity=0.85, text opacity=1},
+        every pin/.style={text=black, fill=white, opacity=0.85, text opacity=1},
+        every pin edge/.style={black!50, line width=0.5pt},
+      ]
+      \begin{groupplot}[
+        group style={group size=2 by 1, horizontal sep=20mm},
+        axis lines=center,
+        axis line style={->},
+        xmin=-1, xmax=1,
+        xtick={-2, -1.5, ..., 2},
+        xticklabels={$-2\pi$, $-\dfrac{3\pi}{2}$,$-\pi$, $-\dfrac{\pi}{2}$, ,
+            $\dfrac{\pi}{2}$,$\pi$, $\dfrac{3\pi}{2}$, $2\pi$},
+        minor x tick num=1,
+        ytick={-3,-2,...,3},
+        minor y tick num=1,
+        xlabel=, ylabel=,
+        enlargelimits={abs=0.1},
+        height=2*\axisdefaultheight, width=0.475\linewidth,
+        ticklabel style={font=\normalsize,inner sep=5pt,fill=white,opacity=1.0, text opacity=1},
+        ]
+        \nextgroupplot[xmin=-0.5, xmax=1.5]
+          \addplot[<->] expression[domain=-d:d] {f(x)};
+          \addplot[<->] expression[domain=-d+1:d+1] {f(x)};
+          \pgfplotsinvokeforeach{0,1,2}{
+            \draw[black!50, dashed] 
+              (-0.5+#1,{-sec(deg(d*pi))}) -- (-0.5+#1,{sec(deg(d*pi))});
+          }
+          \addplot[dashed, red, opacity=0.5] expression[domain=-1.5:2]{cos(deg(x*pi))};
+          \node at(1,2.75) {$\sec(x)$};
+          \addplot[soldot] coordinates{(a,{f(a)})}
+            node[pin=-5:$\parens{\frac{\pi}{6},\frac{2\sqrt{3}}{3}}$] {};
+          \addplot[soldot] coordinates{(b,{f(b)})}
+            node[pin=0:$\parens{\frac{\pi}{4},\sqrt{2} \vPad}$] {};
+          \addplot[soldot] coordinates{(c,{f(c)})}
+            node[pin=0:$\parens{\frac{\pi}{3},2 \vPad}$] {};
+        \nextgroupplot
+          \addplot[<->] expression[domain=-d-0.5:d-0.5] {g(x)};
+          \addplot[<->] expression[domain=-d+0.5:d+0.5] {g(x)};
+          \pgfplotsinvokeforeach{-1,1}{
+            \draw[black!50, dashed] 
+              (#1,{cosec(deg((0.5-d)*pi))}) -- (#1,{cosec(deg((1.5+d)*pi))});
+          }
+          \addplot[dashed, red, opacity=0.5] expression[domain=-1.5:1.5]{sin(deg(x*pi))};
+          \node[nodeLabel] at(0.5,2.75) {$\csc(x)$};
+          \addplot[soldot] coordinates{(a,{g(a)})}
+            node[pin=180:$\parens{\frac{\pi}{6},2 \vPad}$] {};
+          \addplot[soldot] coordinates{(b,{g(b)})}
+            node[pin=180:$\parens{\frac{\pi}{4},\sqrt{2} \vPad}$] {};
+          \addplot[soldot] coordinates{(c,{g(c)})}
+            node[pin=185:$\parens{\frac{\pi}{3},\frac{2\sqrt{3}}{3}}$] {};
+      \end{groupplot}
+    \end{tikzpicture}
+  \end{center}
+  \vspace*{\stretch{1}}
+  \pagebreak
+ 
+  %transformations of graphs
+  \begin{thmBox*}
+    The general forms of the other trigonometric functions are
+    \begin{align*}
+      y&=A\tan\parens{Bx-C}+D,&
+      y&=A\cot\parens{Bx-C}+D,\\
+      y&=A\sec\parens{Bx-C}+D,&
+      y&=A\csc\parens{Bx-C}+D.
+    \end{align*}
+    where
+    \begin{itemize}
+      \item $A$ determines the scaling factor,
+      \item $B$ determines the period,
+      \item $C$ determines the phase shift, and
+      \item $D$ determines the vertical shift.
+    \end{itemize}
+  \end{thmBox*}
+  \begin{ex*}
+    Draw one period of the function $y=\frac{1}{2}\tan\parens{\frac{\pi}{2}x}$
+    \vspace*{\stretch{1}}
+
+    \begin{flushright}
+      \begin{tikzpicture}[
+        declare function={
+          g(\x)=tan(deg(\x*pi));
+          d=0.4;
+          },
+          nodeLabel/.style={pos=0.5, inner sep=5pt},
+          every pin/.style={text=black, fill=white, opacity=0.85, text opacity=1},
+          every pin edge/.style={black!50, line width=0.5pt},
+        ]
+        \begin{axis}[
+          group style={group size=2 by 2,horizontal sep=25mm,vertical sep=22.5mm},
+          axis lines=center,
+          axis line style={->},
+          xmin=-0.55, xmax=0.55,
+%          ymin=-2.5, ymax=4.5,
+          xtick={-1,-0.5,...,1},
+          xticklabels={$-\pi$, $-\frac{\pi}{2}$,  , $\frac{\pi}{2}$, $\pi$},
+          minor x tick num=1, xlabel=,
+          minor y tick num=1, ylabel=,
+          enlargelimits={abs=0.15},
+          height=0.5\textheight, width=\axisdefaultwidth,
+          ticklabel style={font=\normalsize,inner sep=5pt,fill=white,opacity=1.0, text opacity=1},
+          every axis plot/.append style={domain=-d:d},
+          ]
+          \addplot[<->] {g(x)};
+          \draw[black!50, dashed] (axis cs: -0.5,{tan(deg(-d*pi))}) -- (-0.5,{tan(deg(d*pi))});
+          \draw[black!50, dashed] (axis cs: 0.5,{tan(deg(-d*pi))}) -- (0.5,{tan(deg(d*pi))});
+        \end{axis}
+      \end{tikzpicture}
+    \end{flushright}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Identify the domain, range, and draw one period of $y=2.5\sec\parens{\frac{2}{5}x}$.
+
+    \begin{flushright}
+      \begin{tikzpicture}[
+        declare function={
+          g(\x)=sec(deg(\x*pi));
+          d=0.45;
+          },
+          nodeLabel/.style={pos=0.5, inner sep=5pt},
+          every pin/.style={text=black, fill=white, opacity=0.85, text opacity=1},
+          every pin edge/.style={black!50, line width=0.5pt},
+        ]
+        \begin{axis}[
+          group style={group size=2 by 2,horizontal sep=25mm,vertical sep=22.5mm},
+          axis lines=center,
+          axis line style={->},
+          xmin=-0.55, xmax=1.55,
+          xtick={-1,-0.5,...,1.5},
+          xticklabels={$-\pi$, $-\frac{\pi}{2}$,  , $\frac{\pi}{2}$, $\pi$, $\frac{3\pi}{2}$},
+          minor x tick num=1, xlabel=,
+          minor y tick num=1, ylabel=,
+          enlargelimits={abs=0.1},
+          height=0.425\textheight, width=1.25*\axisdefaultwidth,
+          ticklabel style={font=\normalsize,inner sep=5pt,fill=white,opacity=1.0, text opacity=1},
+          ]
+          \addplot[<->] expression[domain=-d:d] {g(x)};
+          \addplot[<->] expression[domain=1-d:1+d] {g(x)};
+          \pgfplotsinvokeforeach{0,1,2}{
+            \draw[black!50, dashed] 
+              (-0.5+#1,{-sec(deg(d*pi))}) -- (-0.5+#1,{sec(deg(d*pi))});
+          }
+        \end{axis}
+      \end{tikzpicture}
+    \end{flushright}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{ex*}
+    Identify the domain, range, and draw one period of $y=-\cot\parens{x+\frac{\pi}{2}}$.
+
+    \begin{flushright}
+      \begin{tikzpicture}[
+        declare function={
+          g(\x)=cot(deg(\x*pi));
+          d=0.4;
+          },
+          nodeLabel/.style={pos=0.5, inner sep=5pt},
+          every pin/.style={text=black, fill=white, opacity=0.85, text opacity=1},
+          every pin edge/.style={black!50, line width=0.5pt},
+        ]
+        \begin{axis}[
+          group style={group size=2 by 2,horizontal sep=25mm,vertical sep=22.5mm},
+          axis lines=center,
+          axis line style={->},
+          xmin=-0.55, xmax=1.05,
+          xtick={-1,-0.5,...,1},
+          xticklabels={$-\pi$, $-\frac{\pi}{2}$,  , $\frac{\pi}{2}$, $\pi$},
+          minor x tick num=1, xlabel=,
+          minor y tick num=1, ylabel=,
+          enlargelimits={abs=0.15},
+          height=0.425\textheight, width=\axisdefaultwidth,
+          ticklabel style={font=\normalsize,inner sep=5pt,fill=white,opacity=1.0, text opacity=1},
+          ]
+          \addplot[<->] expression[domain=0.5-d:0.5+d] {g(x)};
+          \draw[black!50, dashed] (axis cs: 1,{tan(deg(-d*pi))}) -- (1,{tan(deg(d*pi))});
+        \end{axis}
+      \end{tikzpicture}
+    \end{flushright}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
 
   \pagebreak
 \end{document}
