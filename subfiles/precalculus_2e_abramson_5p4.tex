@@ -46,9 +46,9 @@
         \coordinate (A) at (0,0);
         \coordinate (B) at (d:r);
         \coordinate (C) at ({r*cos(d)},0);
-        \draw (A) -- node[pos=0.65, above left] {$17$}
-              (B) -- node[pos=0.5, right] {$8$}
-              (C) -- node[pos=0.5, below] {$15$}
+        \draw (A) -- node[pos=0.65, label=90+d:$17$] {}
+              (B) -- node[pos=0.5, label=0:$8$] {}
+              (C) -- node[pos=0.5, label=-90:$15$] {}
               cycle;
 
         \tkzMarkRightAngle[size=0.4](B,C,A);
@@ -70,9 +70,9 @@
         \coordinate (A) at (0,0);
         \coordinate (B) at (180-d:r);
         \coordinate (C) at (-{r*cos(d)},0);
-        \draw (A) -- node[pos=0.65, above right] {$25$}
-              (B) -- node[pos=0.5, left] {$7$}
-              (C) -- node[pos=0.5, below] {$24$}
+        \draw (A) -- node[pos=0.65, label=90-d:$25$] {}
+              (B) -- node[pos=0.5, label=180:$7$] {}
+              (C) -- node[pos=0.5, label=-90:$24$] {}
               cycle;
 
         \tkzMarkRightAngle[size=0.4](B,C,A);
@@ -101,9 +101,9 @@
         \coordinate (A) at (0,0);
         \coordinate (B) at ({-3*cos(d)},{-3*sin(d)});
         \coordinate (C) at ({-3*cos(d)-4*sin(d)},{-3*sin(d)+4*cos(d)});
-        \draw (A) -- node[pos=0.5, left] {$3$}
-              (B) -- node[pos=0.5, above] {$4$}
-              (C) -- node[pos=0.5, below] {$5$}
+        \draw (A) -- node[pos=0.5, label=-90+d:$3$] {}
+              (B) -- node[pos=0.5, label=180+d:$4$] {}
+              (C) -- node[pos=0.5, label=90-alfa+d:$5$] {}
               cycle;
         %
         \tkzMarkRightAngle[size=0.4](A,B,C);
@@ -141,9 +141,9 @@
         \coordinate (A) at (0,0);
         \coordinate (B) at ({r*cos(t)},0);
         \coordinate (C) at ({r*cos(t)},{r*sin(t)});
-        \draw (A) -- node[pos=0.5, above] {$56$}
-              (B) -- node[pos=0.5, right] {$33$}
-              (C) -- node[pos=0.5, below left] {$65$}
+        \draw (A) -- node[pos=0.5, label=90:$56$] {}
+              (B) -- node[pos=0.5, label=0:$33$] {}
+              (C) -- node[pos=0.5, label=-90+t:$65$] {}
               cycle;
         %
         \tkzMarkRightAngle[size=0.4](A,B,C);
@@ -339,9 +339,9 @@
         \coordinate (A) at (0,0);
         \coordinate (B) at ({adj*cos(d)},{adj*sin(d)});
         \coordinate (C) at ({adj*cos(d)-opp*sin(d)},{adj*sin(d)+opp*cos(d)});
-        \draw (A) -- node[pos=0.5, left] {$a$}
-              (B) -- node[pos=0.5, below right] {$7$}
-              (C) -- node[pos=0.5, above, xshift=5pt] {$c$}
+        \draw (A) -- node[pos=0.5, label=-90+d:$a$] {}
+              (B) -- node[pos=0.5, label=d:$7$] {}
+              (C) -- node[pos=0.5, label=90+d:$c$] {}
               cycle;
         %
         \tkzMarkRightAngle[size=0.4](A,B,C);
