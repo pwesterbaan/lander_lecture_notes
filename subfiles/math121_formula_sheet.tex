@@ -1,11 +1,18 @@
 \documentclass{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{amsmath, xfrac, actuarialsymbol, mathtools}
-\usepackage{xcolor}
-\usepackage{booktabs}
-\usepackage{colorPalette}
+\usepackage{amsmath, xfrac, actuarialsymbol, mathtools, array}
+\usepackage{tabto, xcolor,booktabs,colorPalette}
 \newcommand*{\sbrkt}[1]{{\left[#1\right]}}
 \newcommand*{\parens}[2][]{{\left(\vphantom{#1[}#2\right)}}
+
+\DeclarePairedDelimiter\sbrkt{[}{]}
+\makeatletter
+\let\oldsbrkt\sbrkt
+\def\sbrkt{\@ifstar{\oldsbrkt}{\oldsbrkt*}}
+\makeatother
+\newcommand*{\parens}[2][]{{\left(\vphantom{#1]}#2\right)}}
+
+\definecolor{lander_blue}{RGB}{0,53,153}
 
 \newcount\examUnit
 \examUnit=-1 %TODO (based on chapter number)
