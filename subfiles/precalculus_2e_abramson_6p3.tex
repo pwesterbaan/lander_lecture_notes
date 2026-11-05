@@ -8,9 +8,9 @@
   %Show domain/range of sin/cos/tan
   %Describe domain/range of asin/acos/atan
   \begin{thmBox*}
-    Note that $\sin(x)$ and $\cos(x)$, 
+    Note that $\sin(x)$ and $\cos(x)$,
     \begin{itemize}
-      \item take in the measure of an angle, and 
+      \item take in the measure of an angle, and
       \item return the ratio of the sides.
     \end{itemize}
     Recall that trigonometric functions are periodic:
@@ -46,7 +46,7 @@
         \end{groupplot}
       \end{tikzpicture}
     \end{center}
-    
+
     Consider the following restricted domains and associated ranges:
     \begin{center}
       \begin{tabular}{@{}lcc@{}}\toprule
@@ -65,7 +65,7 @@
     \end{align*}
   \end{thmBox*}
   \begin{ex*}
-    Since $\sin\parens{0.96593}\approx\frac{5\pi}{12}$, what is $\sin^{-1}\parens{\frac{4}{15}}$?
+    Since $\sin\parens{\frac{5\pi}{12}}\approx0.96593$, what is $\sin^{-1}\parens{0.96593}$?
     \vspace*{\stretch{1}}
   \end{ex*}
   \pagebreak
@@ -95,11 +95,11 @@
           xmin=-1, xmax=1,
           xtick={-1,0,1},
           xticklabels={-1,,1},
-          ymin=-0.5, ymax=0.5, 
+          ymin=-0.5, ymax=0.5,
           ytick={-0.5,0,0.5},
           yticklabels={$-\dfrac{\pi}{2}$,,$\dfrac{\pi}{2}$},
           minor y tick num=1,
-          ]          
+          ]
           \addplot[-] expression[domain=-1:1]{asin(x)/180};
         \nextgroupplot[title={$y=\cos(x)$},
           xmin=0, xmax=1,
@@ -110,11 +110,11 @@
           xmin=-1, xmax=1,
           xtick={-1,0,1},
           xticklabels={-1,,1},
-          ymin=0, ymax=1, 
+          ymin=0, ymax=1,
           ytick={0,0.5,1},
           yticklabels={,,$\dfrac{\pi}{2}$,$\pi$},
           minor y tick num=1,
-          ]       
+          ]
           \addplot[-] expression[domain=-1:1]{acos(x)/180};
         \nextgroupplot[title={$y=\tan(x)$},
           ymin=tan(deg(-0.45*pi)), ymax=tan(deg(0.45*pi)),
@@ -128,7 +128,7 @@
           xmin=-6.3, xmax=6.3,
           xtick={-5,0,5},
           xticklabels={-5,,5},
-          ymin=-0.5, ymax=0.5, 
+          ymin=-0.5, ymax=0.5,
           ytick={-0.5,0,0.5},
           yticklabels={$-\dfrac{\pi}{2}$,,$\dfrac{\pi}{2}$},
           minor y tick num=1,
@@ -221,8 +221,8 @@
     \begin{extasks}[after-item-skip=\stretch{1}](2)
       \task $\sin^{-1}\parens{\sin\parens{37^\circ}}$
       \task $\cos^{-1}\parens{\cos\parens{\frac{9\pi}{4}}}$
-      \task $\sin^{-1}\parens{\cos\parens{\frac{40}{41}}}$
-      \task $\tan^{-1}\parens{\sin\parens{\frac{12}{20}}}$
+      \task $\sin\parens{\cos^{-1}\parens{\frac{40}{41}}}$
+      \task $\tan\parens{\sin^{-1}\parens{\frac{3}{5}}}$
     \end{extasks}
     \vspace*{\stretch{1}}
   \end{ex*}
