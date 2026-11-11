@@ -48,20 +48,29 @@
     % &$a^{\log_a(x)}&=x& \log_a(a^x)&=x$
   }
   \newcommand{\chSix}{%
-    Simple Interest: & $\mathllap{I}=Prt$\\
-    Future value (simple interest):& $\mathllap{S}=P+I=P+Prt=P(1+rt)$\\
-    Return on Investment:& $\mathllap{ROI}=\frac{\textnormal{Gains}}{\textnormal{Cost}}$\\
-    % Future value (compound $m$ times/yr):& $\mathllap{S}=P\parens{1+\dfrac{r}{m}}^{mt}$\\
-    Future value (compound $m$ times/yr):& $\mathllap{S}=P\parens{1+i}^n$ \hfill $i=\dfrac{r}{m}$,\ \ $n=mt$\\
-%    Future value (compound $m$ times/yr):& $\mathllap{S}=P\parens{1+i}^n$, \hfill where $i=\dfrac{r}{m}$ and $n=mt$\\
-    Future value (compound continuously):& $\mathllap{S}=Pe^{rt}$\\[5pt]
-%    & $\mathllap{S_{\angln i}}=\sbrkt{\dfrac{(1+i)^n-1}{i}}$, \hfill where $i=\dfrac{r}{m}$ and $n=mt$\\
-    Future value of Ordinary Annuity:& $\mathllap{S}=R\cdot \sbrkt{\dfrac{(1+i)^n-1}{i}}$\\[10pt] % \hfill $i=\dfrac{r}{m}$,\ \ $n=mt$\\[10pt]
-    Future value of Annuity Due:& $\mathllap{S_{\textnormal{due}}}=R\cdot \sbrkt{\dfrac{(1+i)^n-1}{i}}(1+i)$\\[10pt]
-%    & $\mathllap{a_{\angln i}}=\sbrkt{\dfrac{1-\parens{1+i}^{-n}}{i}}$, \hfill where $i=\dfrac{r}{m}$ and $n=mt$\\
-%    Present value of Ordinary Annuity:& $\mathllap{A_n}=R\cdot \sbrkt{\dfrac{1-\parens{1+i}^{-n}}{i}}$ \hfill $i=\dfrac{r}{m}$, $n=mt$\\[10pt]
-%    Present value of Annuity Due:& $\mathllap{A_{(n,\textnormal{due})}}=R\cdot \sbrkt{\dfrac{1-\parens{1+i}^{-n}}{i}}(1+i)$\\
-    Amortization:& $\mathllap{R}=A_n\sbrkt{\dfrac{i}{1-(1+i)^{-n}}}$\\
+    \iftrue
+      Simple Interest: & $\mathllap{I}=Prt$\\
+      Future value (simple interest):& $\mathllap{S}=P+I=P+Prt=P(1+rt)$\\
+      Return on Investment:& $\mathllap{ROI}=\frac{\textnormal{Gains}}{\textnormal{Cost}}$\\
+      % Future value (compound $m$ times/yr):& $\mathllap{S}=P\parens{1+\dfrac{r}{m}}^{mt}$\\
+      Future value (compound $m$ times/yr):& $\mathllap{S}=P\parens{1+i}^n$ \hfill $i=\dfrac{r}{m}$,\ \ $n=mt$\\
+%      Future value (compound $m$ times/yr):& $\mathllap{S}=P\parens{1+i}^n$, \hfill where $i=\dfrac{r}{m}$ and $n=mt$\\
+      Future value (compound continuously):& $\mathllap{S}=Pe^{rt}$\\[5pt]
+%      & $\mathllap{S_{\angln i}}=\sbrkt{\dfrac{(1+i)^n-1}{i}}$, \hfill where $i=\dfrac{r}{m}$ and $n=mt$\\
+      Future value of Ordinary Annuity:& $\mathllap{S}=R\cdot \sbrkt{\dfrac{(1+i)^n-1}{i}}$\\[10pt] % \hfill $i=\dfrac{r}{m}$,\ \ $n=mt$\\[10pt]
+      Future value of Annuity Due:& $\mathllap{S_{\textnormal{due}}}=R\cdot \sbrkt{\dfrac{(1+i)^n-1}{i}}(1+i)$\\[10pt]
+%      & $\mathllap{a_{\angln i}}=\sbrkt{\dfrac{1-\parens{1+i}^{-n}}{i}}$, \hfill where $i=\dfrac{r}{m}$ and $n=mt$\\
+%      Present value of Ordinary Annuity:& $\mathllap{A_n}=R\cdot \sbrkt{\dfrac{1-\parens{1+i}^{-n}}{i}}$ \hfill $i=\dfrac{r}{m}$, $n=mt$\\[10pt]
+%      Present value of Annuity Due:& $\mathllap{A_{(n,\textnormal{due})}}=R\cdot \sbrkt{\dfrac{1-\parens{1+i}^{-n}}{i}}(1+i)$\\
+      Amortization:& $\mathllap{R}=A_n\sbrkt{\dfrac{i}{1-(1+i)^{-n}}}$\\
+    \else %TODO Josie's class
+      Future value (compound $m$ times/yr):& $\mathllap{S}=P\parens{1+\frac{r}{m}}^{mt}=P\parens{1+i}^n$\\
+      Future value (compound continuously):& $\mathllap{S}=Pe^{rt}$\\[5pt]
+%      & $\mathllap{S_{\angln i}}=\sbrkt{\dfrac{(1+i)^n-1}{i}}$, \hfill where $i=\dfrac{r}{m}$ and $n=mt$\\
+      Future value of Ordinary Annuity:& $\mathllap{S}=R\cdot \sbrkt{\dfrac{(1+\frac{r}{m})^{mt}-1}{\frac{r}{m}}}=R\cdot \sbrkt{\dfrac{(1+i)^n-1}{i}}$\\[10pt] % \hfill $i=\dfrac{r}{m}$,\ \ $n=mt$\\[10pt]
+      Future value of Annuity Due:& $\mathllap{S_{\textnormal{due}}}=R\cdot \sbrkt{\dfrac{(1+\frac{r}{m})^{mt}-1}{\frac{r}{m}}}(1+\frac{r}{m})=R\cdot \sbrkt{\dfrac{(1+i)^n-1}{i}}(1+i)$\\[10pt]
+      Amortization:& $\mathllap{R}=A_n\sbrkt{\dfrac{\frac{r}{m}}{1-(1+\frac{r}{m})^{-{mt}}}}=A_n\sbrkt{\dfrac{i}{1-(1+i)^{-n}}}$\\
+    \fi
   }
   \begin{center}
     \formulaSheetTitle{Math 121 Formula Sheet}
@@ -69,7 +78,7 @@
 
     \renewcommand{\arraystretch}{2}
     \ifnum\examUnit=-1 \renewcommand{\arraystretch}{1.8} \vspace*{-\baselineskip} \fi%
-    \begin{tabular}{@{}>{\bfseries}p{0.51\linewidth}p{0.44\linewidth}@{}}
+    \begin{tabular}{@{}>{\bfseries}p{0.47\linewidth}p{0.525\linewidth}@{}}
       \ifnum\examUnit=1 \chOne  \fi%
       \ifnum\examUnit=4 \chFour \fi%
       \ifnum\examUnit=2 \chTwo  \fi%
