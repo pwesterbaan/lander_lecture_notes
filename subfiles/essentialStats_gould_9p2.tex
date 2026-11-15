@@ -26,8 +26,10 @@
     The population distribution of \emph{all} emergency response times from the LA Fire Department is right-skewed. Suppose we repeatedly take random samples of a certain size from this population and calculate the mean response time. We know that the population has mean $\mu=6.3$ and standard deviation $\sigma=2.8$ minutes.
   \end{ex*}
   \begin{extasks}[after-item-skip=\stretch{1}](1)
-    \task Describe the sampling distribution if the sample size is $n=9$, and again when $n=81$.
+    \task Describe the sampling distribution if the sample size is $n=9$, and again when $n=36$.
   \end{extasks}
+  \vspace*{\baselineskip}
+
   \begin{center}
     \begin{tikzpicture}[scale=1.0, declare function={
       N=101;
@@ -41,10 +43,11 @@
         every axis plot post/.append style={
         mark=none, domain={xmin}:{xmax},samples=N,smooth},
         axis lines=center,
-%        ymin=ymin,
+        xlabel=, ylabel=,
+        ymajorticks=false,
         axis line style={black,->},
         every axis x label/.style={at={(current axis.right of origin)},anchor=north},
-        width=0.95*\textwidth, height=1.5*\axisdefaultheight,
+        width=0.95*\textwidth, height=1.25*\axisdefaultheight,
         ticklabel style={font=\footnotesize,inner sep=0.5pt,fill=white,opacity=1.0, text opacity=1},
         clip=false,
         ]
@@ -57,9 +60,9 @@
         \addplot[red,line width=1.5pt] {gauss(x,mu,sig/3)}
           node[pos=0.55, right, black, fill=white, opacity=0.0, text
           opacity=1.0, font=\normalsize, align=left] {\Large $\frac{\sigma}{\sqrt{9}}$};
-        \addplot[lander_FrontLawn,line width=1.5pt] {gauss(x,mu,sig/9)}
+        \addplot[lander_FrontLawn,line width=1.5pt] {gauss(x,mu,sig/6)}
           node[pos=0.5, right, black, fill=white, opacity=0.0, text
-          opacity=1.0, font=\normalsize, align=left] {\Large $\frac{\sigma}{\sqrt{81}}$};
+          opacity=1.0, font=\normalsize, align=left] {\Large $\frac{\sigma}{\sqrt{36}}$};
       \end{axis}
     \end{tikzpicture}
   \end{center}
