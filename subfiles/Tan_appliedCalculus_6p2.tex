@@ -20,13 +20,17 @@
     \textcolor{#1}{#3)}
   }
   \begin{thmBox*}
-    Let $u=g(x)$, where $g$ is differentiable on an interval, and let $f$ be continuous on the corresponding range of $g$. On that interval,
-    \[\int \textcolor{black}{f\big(
+    Let $u=g(x)$, where $g$ is differentiable on an interval, and let $f'$ be continuous on the corresponding range of $g$. On that interval,
+    \begin{align*}
+      \int \textcolor{black}{f'\big(
       \textcolor{lander_blue}{g(x)}
-    \big)}\cdot
-    \textcolor{lander_blue}{g'(x)\,dx}
-    =\int f(\textcolor{lander_blue}{u})\,
-    \textcolor{lander_blue}{du}\]
+      \big)}\cdot
+      \textcolor{lander_blue}{g'(x)\,dx}
+      &=\int f'(\textcolor{lander_blue}{u})\,
+      \textcolor{lander_blue}{du}\\
+      &=f(\textcolor{lander_blue}{u})+C\\
+      &=f\big(\textcolor{lander_blue}{g(x)}\big)+C
+    \end{align*}
   \end{thmBox*}
   \pagebreak
 
@@ -61,7 +65,7 @@
   \begin{extasks}[after-item-skip=\stretch{1}](2)
     \task $\displaystyle\int e^{-3x}\,dx$
     \task $\displaystyle\int \dfrac{t}{3t^2+1}\,dt$
-    \task $\displaystyle\int \dfrac{\parens{\ln(x)}^2}{2x}\,dx$ 
+    \task $\displaystyle\int \dfrac{\parens{\ln(x)}^2}{2x}\,dx$
     \task $\displaystyle\int u^3\parens{u^2+1}^{3/2}\,du$
   \end{extasks}
   \vspace*{\stretch{1}}
