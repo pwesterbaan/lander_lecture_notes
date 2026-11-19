@@ -3,7 +3,107 @@
 \providecommand{\relscalefact}{1.4}
 \begin{document}
 \relscale{\relscalefact}
-  \section{}
-
+  \section{7.3: Double-Angle, Half-Angle, and Reduction Formulas}
+  \begin{ex*}
+    Derive formulas for $\sin(2\theta)$, $\cos(2\theta)$, and $\tan(2\theta)$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{defn*}[Double-Angle Formulas]
+    The \textbf{double-angle formulas} are
+    \begin{align*}
+      \sin(2\theta)&=2\sin(\theta)\cos(\theta)\\[0.5\baselineskip]
+      %
+      \cos(2\theta)&=\cos^2(\theta)-\sin^2(\theta)\\
+        &=1-2\sin^2(\theta)\\
+        &=2\cos^2(\theta)-1\\[0.5\baselineskip]
+      %
+      \tan(2\theta)&=\dfrac{2\tan(\theta)}{1-\tan^2(\theta)}
+    \end{align*}
+  \end{defn*}
   \pagebreak
+
+  \begin{ex*}
+    Given $\tan(\theta)=-\dfrac{3}{4}$ and $\theta$ is in quadrant II, find
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task* $\sin(2\theta)$
+      \task $\cos(2\theta)$
+      \task $\tan(2\theta)$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{ex*}
+    Given $\sin(\alpha)=\dfrac{5}{8}$, with $\alpha$ in quadrant I, find $\cos(2\alpha)$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Given $\cos\parens{2\theta}=-\dfrac{6}{7}$ and $\dfrac{\pi}{2}\leq \theta\leq \pi$, find the value of all six trigonometric functions.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Derive formulas for $\sin^2(\theta)$, $\cos^2(\theta)$, and $\tan^2(\theta)$ in terms of $\cos(2\theta)$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{defn*}[Reduction formulas]
+    The \textbf{reduction formulas} are
+    \begin{align*}
+      \sin^2(\theta)&=\dfrac{1-\cos(2\theta)}{2}\\[0.5\baselineskip]
+      %
+      \cos^2(\theta)&=\dfrac{1+\cos(2\theta)}{2}\\[0.5\baselineskip]
+      %
+      \tan^2(\theta)&=\dfrac{1-\cos(2\theta)}{1+\cos(2\theta)}
+    \end{align*}
+  \end{defn*}
+  \pagebreak
+
+  \begin{ex*}
+    Write an equivalent expression for $\cos^4(x)$ that does not involve powers of sine or cosine greater than $1$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+
+  \begin{ex*}
+    Write an equivalent expression for $\sin^3(2x)$ that does not involve powers of sine or cosine greater than $1$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
+  \begin{ex*}
+    Derive formulas for $\sin\parens{\dfrac{\theta}{2}}$, $\cos\parens{\dfrac{\theta}{2}}$, and $\tan\parens{\dfrac{\theta}{2}}$.
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \begin{defn*}[Half-angle formulas]
+    The \textbf{half-angle formulas} are
+    \begin{align*}
+      \sin\parens{\dfrac{\theta}{2}}&=\pm\sqrt{\dfrac{1-\cos(\theta)}{2}}&
+      \cos\parens{\dfrac{\theta}{2}}&=\pm\sqrt{\dfrac{1+\cos(\theta)}{2}}\\[\baselineskip]
+      \tan\parens{\dfrac{\theta}{2}}&=\pm\sqrt{\dfrac{1-\cos(\theta)}{1+\cos(\theta)}}
+        \mathrlap{\,=\dfrac{\sin(\theta)}{1+\cos(\theta)}=\dfrac{1-\cos(\theta)}{\sin(\theta)}}
+    \end{align*}
+  \end{defn*}
+  \pagebreak
+
+  \begin{ex*}
+    Find $\sin(15^\circ)$ using a half-angle formula
+    \vspace*{\stretch{1}}
+  \end{ex*}
+
+  \begin{ex*}
+    Find $\cos\parens{\dfrac{7\pi}{8}}$ using a half-angle formula
+    \vspace*{\stretch{1}}
+  \end{ex*}
+
+  \begin{ex*}
+    Given $\tan(\alpha)=\dfrac{8}{15}$ and $\alpha$ lies in quadrant III, find the exact value of
+    \begin{extasks}[after-item-skip=\stretch{1}](2)
+      \task* $\sin\parens{\dfrac{\alpha}{2}}$
+      \task $\cos\parens{\dfrac{\alpha}{2}}$
+      \task $\tan\parens{\dfrac{\alpha}{2}}$
+    \end{extasks}
+    \vspace*{\stretch{1}}
+  \end{ex*}
+  \pagebreak
+
 \end{document}
