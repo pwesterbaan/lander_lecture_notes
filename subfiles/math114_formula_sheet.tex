@@ -17,12 +17,12 @@
 \begin{document}
   \providecommand{\formulaSheetTitle}[1]{{\Large \textbf{#1}}}
   \newcommand{\quadForm}{
-    Quadratic formula: & $\mathllap{x}=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$\\[4pt]
+    Quadratic formula: & $\mathllap{x}=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$\\
     Vertex of a parabola: & $\parens{h,k}$ where $h=-\frac{b}{2a}$,\ \  $k=f\parens{h}=c-\frac{b^2}{4a}$\\
   }
   \newcommand{\expoRules}{
     Fractional exponents: & $\mathllap{x^{a/b}}=\sqrt[b]{x^a}$\\
-    Subtracting exponents: & $\mathllap{x^{a-b}}=\frac{x^a}{x^b}$\\[4pt]
+    Subtracting exponents: & $\mathllap{x^{a-b}}=\frac{x^a}{x^b}$\\
   }
   \newcommand{\unitOne}{%
     Average Rate of Change: & $\frac{f(b)-f(a)}{b-a}$\\
@@ -36,29 +36,28 @@
   }
   \newcommand{\unitThree}{%
     Pythagorean Identity: & $\cos^2(x)+\sin^2(x)=1$\\
-    Inverse $\sin$:& $\sin(\theta)=x,\ -\frac{\pi}{2}\leq \theta\leq \frac{\pi}{2}\quad \Longleftrightarrow\quad \theta=\sin^{-1}(x),\ -1\leq x\leq 1$\\
-    Inverse $\cos$:& $\cos(\theta)=x,\ \phantom{-\frac{\pi}{2}}\mathllap{0}\leq \theta\leq \mathrlap{\pi}\phantom{\frac{\pi}{2}}\quad \Longleftrightarrow\quad \theta=\cos^{-1}(x),\ -1\leq x\leq 1$\\
-    Inverse $\tan$:& $\tan(\theta)=x,\ -\frac{\pi}{2}< \theta< \frac{\pi}{2}\quad \Longleftrightarrow\quad \theta=\tan^{-1}(x),\ -\infty< x< \infty$\\
+    Inverse Trig& $\sin(\theta)=x,\ -\frac{\pi}{2}\leq \theta\leq \frac{\pi}{2}\quad \Longleftrightarrow\quad \theta=\sin^{-1}(x),\ -1\leq x\leq 1$\\
+    & $\cos(\theta)=x,\ \phantom{-\frac{\pi}{2}}\mathllap{0}\leq \theta\leq \mathrlap{\pi}\phantom{\frac{\pi}{2}}\quad \Longleftrightarrow\quad \theta=\cos^{-1}(x),\ -1\leq x\leq 1$\\
+    & $\tan(\theta)=x,\ -\frac{\pi}{2}< \theta< \frac{\pi}{2}\quad \Longleftrightarrow\quad \theta=\tan^{-1}(x),\ -\infty< x< \infty$\\
   }
   \newcommand{\unitFour}{
-    Sum \& Diff ($\sin$): & $\sin(\alpha\pm\beta)=\sin(\alpha)\cos(\beta)\pm \cos(\alpha)\sin(\beta)$\\
-    Sum \& Diff ($\cos$): & $\cos(\alpha\pm\beta)=\cos(\alpha)\cos(\beta)\mp \sin(\alpha)\sin(\beta)$\\
-    Sum \& Diff ($\tan$): & $\tan(\alpha\pm\beta)=\frac{\tan(\alpha)\pm\tan(\beta)}{1\mp\tan(\alpha)\tan(\beta)}$\\[4pt]
+    Sum \& Diff: & $\sin(\alpha\pm\beta)=\sin(\alpha)\cos(\beta)\pm \cos(\alpha)\sin(\beta)$\\
+    & $\cos(\alpha\pm\beta)=\cos(\alpha)\cos(\beta)\mp \sin(\alpha)\sin(\beta)$\\
+    & $\tan(\alpha\pm\beta)=\frac{\tan(\alpha)\pm\tan(\beta)}{1\mp\tan(\alpha)\tan(\beta)}$\\[5pt]
     %
-    Double-Angle ($\sin$): & $\sin(2\theta)=2\sin(\theta)\cos(\theta)$ \\
-    Double-Angle ($\cos$): & $\cos(2\theta)=\cos^2(\theta)-\sin^2(\theta)=1-2\sin^2(\theta)=2\cos^2(\theta)-1$\\
-    Double-Angle ($\tan$): & $\tan(2\theta)=\frac{2\tan(\theta)}{1-\tan^2(\theta)}$\\[4pt]
+    Double-Angle: & $\sin(2\theta)=2\sin(\theta)\cos(\theta)$ \\
+    & $\cos(2\theta)=\cos^2(\theta)-\sin^2(\theta)=1-2\sin^2(\theta)=2\cos^2(\theta)-1$\\
+    & $\tan(2\theta)=\frac{2\tan(\theta)}{1-\tan^2(\theta)}$\\[5pt]
     %
-    Half-Angle ($\sin$): & $\sin\parens{\frac{\theta}{2}}= \pm\sqrt{\frac{1-\cos(\theta)}{2}}$\\
-    Half-Angle ($\cos$): & $\cos\parens{\frac{\theta}{2}}= \pm\sqrt{\frac{1+\cos(\theta)}{2}}$\\
-    Half-Angle ($\tan$): & $\tan\parens{\frac{\theta}{2}}= \pm\sqrt{\frac{1-\cos(\theta)}{1+\cos(\theta)}}=\frac{\sin(\theta)}{1+\cos(\theta)}=\frac{1-\cos(\theta)}{\sin(\theta)}$\\
+    Half-Angle: & $\sin\parens{\frac{\theta}{2}}=
+    \pm\sqrt{\frac{1-\cos(\theta)}{2}}$ \hspace*{10mm} $\cos\parens{\frac{\theta}{2}}= \pm\sqrt{\frac{1+\cos(\theta)}{2}}$\\
+    & $\tan\parens{\frac{\theta}{2}}= \pm\sqrt{\frac{1-\cos(\theta)}{1+\cos(\theta)}}=\frac{\sin(\theta)}{1+\cos(\theta)}=\frac{1-\cos(\theta)}{\sin(\theta)}$\\
   }
   \begin{center}
     \formulaSheetTitle{Math 114 Formula Sheet}
-    \vspace*{\baselineskip}
 
     \renewcommand{\arraystretch}{2}
-    \ifnum\examUnit=-1 \renewcommand{\arraystretch}{1.8} \vspace*{-\baselineskip} \fi%
+    \ifnum\examUnit=-1 \renewcommand{\arraystretch}{1.8} \else\vspace*{\baselineskip} \fi%
     \begin{tabular}{@{}>{\bfseries}p{0.4\linewidth}p{0.59\linewidth}l@{}}
       \ifnum\examUnit=1 \unitOne \fi%
       \ifnum\examUnit=2 \unitTwo \quadForm \fi%
